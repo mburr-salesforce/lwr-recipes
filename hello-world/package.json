@@ -1,0 +1,17 @@
+{
+    "name": "lwr-hello-world",
+    "version": "0.0.1-alpha13",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "clean": "rm -rf build",
+        "start": "node scripts/start-server.mjs",
+        "start:prod": "MODE=prod node scripts/start-server.mjs"
+    },
+    "devDependencies": {
+        "@lwr-js/core": "0.0.1-alpha13",
+        "@lwr-js/loader": "0.0.1-alpha13",
+        "@lwr-js/router": "0.0.1-alpha13",
+        "lwc": "^1.7.1"
+    }
+}

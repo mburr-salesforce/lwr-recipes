@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "example/home": [
+                "src/modules/example/home/home.ts"
+            ],
+            "example/chart": [
+                "src/modules/example/chart/chart.ts"
+            ],
+            "example/about": [
+                "src/modules/example/about/about.ts"
+            ],
+            "example/homePageHandler": [
+                "src/modules/example/homePageHandler/homePageHandler.ts"
+            ],
+            "example/namedPageHandler": [
+                "src/modules/example/namedPageHandler/namedPageHandler.ts"
+            ],
+            "lwr/router": [
+                "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
+            ],
+            "lwr/navigation": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+            ],
+            "lwr/navigationContext": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+            ],
+            "lwr/navigationService": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+            ]
+        },
+    },
+    "exclude": []
+}

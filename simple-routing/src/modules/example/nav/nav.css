@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #00a2df;
+    padding-bottom: 20px;
+}
+
+spa-link {
+    font-size: 1.5em;
+}
