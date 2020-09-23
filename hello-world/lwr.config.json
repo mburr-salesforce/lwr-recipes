@@ -1,6 +1,7 @@
 {
     "modules": [{ "dir": "src/modules" }],
     "application": {
+        "name": "example/app",
         "root": "example/app"
     }
 }

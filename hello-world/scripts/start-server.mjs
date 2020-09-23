@@ -1,4 +1,4 @@
-import LWR from '@lwr-js/core';
+import LWR from '@lwrjs/core';
 
 LWR.default()
     .listen(({ port, serverMode }) => {
