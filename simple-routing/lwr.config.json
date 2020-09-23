@@ -1,8 +1,6 @@
 {
     "modules": [{
         "dir": "src/modules"
-    }, {
-        "dir": "node_modules/@lwrjs/router/build/modules"
     }],
     "application": {
         "name": "example/app",
