@@ -5,6 +5,7 @@
         "dir": "node_modules/@lwrjs/router/build/modules"
     }],
     "application": {
+        "name": "example/app",
         "root": "example/app"
     }
 }

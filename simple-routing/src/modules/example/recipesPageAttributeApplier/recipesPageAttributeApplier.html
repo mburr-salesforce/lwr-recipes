@@ -1,0 +1,8 @@
+<template>
+    <template if:true={route}>
+        <example-recipes-item
+            title={route.attributes.title}
+            ingredients={route.attributes.ingredients}
+        ></example-recipes-item>
+    </template>
+</template>

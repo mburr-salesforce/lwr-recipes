@@ -4,22 +4,43 @@
         "outDir": "build",
         "experimentalDecorators": true,
         "skipLibCheck": true,
+        "target": "es2019",
+        "module": "commonjs",
+        "moduleResolution": "node",
         "baseUrl": ".",
         "paths": {
             "example/home": [
                 "src/modules/example/home/home.ts"
             ],
-            "example/chart": [
-                "src/modules/example/chart/chart.ts"
-            ],
-            "example/about": [
-                "src/modules/example/about/about.ts"
-            ],
             "example/homePageHandler": [
                 "src/modules/example/homePageHandler/homePageHandler.ts"
             ],
+            "example/link": [
+                "src/modules/example/link/link.ts"
+            ],
             "example/namedPageHandler": [
                 "src/modules/example/namedPageHandler/namedPageHandler.ts"
+            ],
+            "example/nav": [
+                "src/modules/example/nav/nav.ts"
+            ],
+            "example/navItem": [
+                "src/modules/example/navItem/navItem.ts"
+            ],
+            "example/recipes": [
+                "src/modules/example/recipes/recipes.ts"
+            ],
+            "example/recipesItem": [
+                "src/modules/example/recipesItem/recipesItem.ts"
+            ],
+            "example/recipesPageAttributeApplier": [
+                "src/modules/example/recipesPageAttributeApplier/recipesPageAttributeApplier.ts"
+            ],
+            "example/recipesPageHandler": [
+                "src/modules/example/recipesPageHandler/recipesPageHandler.ts"
+            ],
+            "example/rootRouter": [
+                "src/modules/example/rootRouter/rootRouter.ts"
             ],
             "lwr/router": [
                 "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
@@ -34,6 +55,5 @@
                 "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
             ]
         },
-    },
-    "exclude": []
+    }
 }

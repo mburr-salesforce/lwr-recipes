@@ -1,28 +1,27 @@
-import { LightningElement, api, wire } from 'lwc';
-import { NavigationContext, navigate, generateUrl, subscribe } from 'lwr/navigation';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { LightningElement, api, track, wire } from 'lwc';
+import { NavigationContext, generateUrl, navigate } from 'lwr/navigation';
+import type { ContextId } from 'lwr/navigation';
+import type { PageReference } from 'lwr/router';
 
 export default class Link extends LightningElement {
-    @api path: any;
-    @api label: any;
-    subscription: any;
-    anchor: any;
+    @api pageReference?: PageReference;
+    @track path?: string;
+    @api label?: string;
 
     @wire(NavigationContext as any)
-    navContext: any;
+    navContext?: ContextId;
 
-    connectedCallback(): void {
-        this.subscription = subscribe(this.navContext, async (route: any) => {
-            const url = await generateUrl(this.navContext, route);
-            this.anchor.className = url === this.path ? 'selected' : '';
-        });
+    async connectedCallback(): Promise<void> {
+        if (this.pageReference && this.navContext) {
+            this.path = generateUrl(this.navContext, this.pageReference);
+        }
     }
 
-    renderedCallback(): void {
-        this.anchor = (this.template as unknown as Document).querySelector('a');
-    }
-
-    handleClick(event: any): void {
+    handleClick(event: Event): void {
         event.preventDefault();
-        navigate(this.navContext, this.path);
+        if (this.pageReference && this.navContext) {
+            navigate(this.navContext, this.pageReference);
+        }
     }
 }

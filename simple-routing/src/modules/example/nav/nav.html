@@ -1,7 +1,16 @@
 <template>
-    <ul>
-        <li><example-link path="/" label="Home"></example-link></li>
-        <li><example-link path="/chart" label="Chart"></example-link></li>
-        <li><example-link path="/about" label="About"></example-link></li>
-    </ul>
+    <div class="header">
+        <nav role="navigation">
+            <ul>
+                <template for:each={navItems} for:item="item">
+                    <example-nav-item
+                        key={item.id}
+                        label={item.label}
+                        page-reference={item.pageReference}
+                        selected={item.selected}
+                    ></example-nav-item>
+                </template>
+            </ul>
+        </nav>
+    </div>
 </template>

@@ -1,8 +1,0 @@
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a.selected, a:hover {
-    border-bottom: 2px dotted black;
-}

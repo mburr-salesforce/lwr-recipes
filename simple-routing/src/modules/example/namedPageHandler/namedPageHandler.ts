@@ -1,36 +1,29 @@
-export default class RecordPageHandler {
-    callback: any;
-    redirect: any;
+import type { RouteHandlerCallback, Module, RouteInstance } from 'lwr/router';
 
-    constructor(callback: any, redirect: any) {
+export default class RecordPageHandler {
+    callback: RouteHandlerCallback;
+
+    constructor(callback: RouteHandlerCallback) {
         this.callback = callback;
-        this.redirect = redirect;
     }
 
     dispose(): void {
         /* noop */
     }
 
-    update(routeInstance: any): void {
+    update(routeInstance: RouteInstance): void {
         const { attributes } = routeInstance;
         let viewGetter;
         switch (attributes.pageName) {
-            case 'about':
-                viewGetter = (): Promise<any> => import('example/about');
-                break;
-            case 'chart':
-                viewGetter = (): Promise<any> => import('example/chart');
+            case 'recipes':
+                viewGetter = (): Promise<Module> => import('example/recipes');
                 break;
             default:
-                this.callback({
-                    status: 500,
-                });
                 return;
         }
 
         this.callback({
-            status: 200,
-            viewSet: {
+            viewset: {
                 default: viewGetter,
             },
         });

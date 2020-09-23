@@ -1,6 +1,6 @@
 {
     "modules": [{ "dir": "src/modules" }],
     "application": {
-        "root": "lwr/hello"
+        "root": "example/app"
     }
 }

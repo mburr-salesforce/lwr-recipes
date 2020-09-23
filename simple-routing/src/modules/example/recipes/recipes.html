@@ -1,0 +1,10 @@
+<template>
+    <h1>{title}</h1>
+    <ul>
+        <template for:each={recipes} for:item="item">
+            <li key={item.title}>
+                <example-link page-reference={item.pageReference} label={item.title}></example-link>
+            </li>
+        </template>
+    </ul>
+</template>

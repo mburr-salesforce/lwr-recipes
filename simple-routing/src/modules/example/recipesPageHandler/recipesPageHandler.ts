@@ -1,6 +1,6 @@
-import type { RouteHandlerCallback, Module } from 'lwr/router';
+import { Module, RouteHandlerCallback } from 'lwr/router';
 
-export default class RecordPageHandler {
+export default class RecipesPageHandler {
     callback: RouteHandlerCallback;
 
     constructor(callback: RouteHandlerCallback) {
@@ -14,7 +14,7 @@ export default class RecordPageHandler {
     update(): void {
         this.callback({
             viewset: {
-                default: (): Promise<Module> => import('example/home'),
+                default: (): Promise<Module> => import('example/recipesPageAttributeApplier'),
             },
         });
     }
