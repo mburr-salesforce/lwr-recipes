@@ -10,7 +10,7 @@
 
 - lwc modules at [src/modules/](./src/modules)
 - server creation at [scripts/start-server.mjs](./scripts/start-server.mjs)
-- static resources at [assets/](./assets)
+- static resources at [src/assets/](./src/assets)
 - LWR configuration at [lwr.config.json](./lwr.config.json)
 
 ## Commands
