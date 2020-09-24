@@ -16,3 +16,4 @@ A collection of sample projects for Lightning Web Runtime (LWR) ([source](https:
 Go to a sample to see how to install, run and learn:
 - Barebones [Hello World](./hello-world)
 - Single page app with [Simple Routing](./simple-routing)
+- Using [Base Components](./base-components)
