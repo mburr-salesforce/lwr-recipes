@@ -1,0 +1,12 @@
+li.nav-item {
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 4px 0;
+}
+
+li.nav-item.active {
+    border-bottom: 4px solid #4f4e4c;
+    padding-bottom: 0;
+}

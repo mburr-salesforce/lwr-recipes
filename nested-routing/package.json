@@ -1,0 +1,26 @@
+{
+    "name": "lwr-simple-routing",
+    "version": "0.0.2-alpha15",
+    "license": "MIT",
+    "private": true,
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rm -rf build",
+        "build": "tsc -b",
+        "start": "node build/index.js",
+        "start:prod": "MODE=prod node build/index.js"
+    },
+    "devDependencies": {
+        "@lwrjs/core": "0.0.2-alpha15",
+        "@lwrjs/loader": "0.0.2-alpha15",
+        "@lwrjs/router": "0.0.2-alpha15",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-typescript": "^7.9.0",
+        "lwc": "^1.7.1",
+        "typescript": "^3.8.3"
+    }
+}

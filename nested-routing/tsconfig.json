@@ -1,0 +1,68 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "target": "es2019",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "example/home": [
+                "src/modules/example/home/home.ts"
+            ],
+            "example/homePageHandler": [
+                "src/modules/example/homePageHandler/homePageHandler.ts"
+            ],
+            "example/link": [
+                "src/modules/example/link/link.ts"
+            ],
+            "example/nav": [
+                "src/modules/example/nav/nav.ts"
+            ],
+            "example/navItem": [
+                "src/modules/example/navItem/navItem.ts"
+            ],
+            "example/rootRouter": [
+                "src/modules/example/rootRouter/rootRouter.ts"
+            ],
+            "example/childRouter": [
+                "src/modules/example/childRouter/childRouter.ts"
+            ],
+            "example/animal": [
+                "src/modules/example/animal/animal.ts"
+            ],
+            "example/animalCat": [
+                "src/modules/example/animalCat/animalCat.ts"
+            ],
+            "example/animalDog": [
+                "src/modules/example/animalDog/animalDog.ts"
+            ],
+            "example/animalHome": [
+                "src/modules/example/animalHome/animalHome.ts"
+            ],
+            "example/animalHomePageHandler": [
+                "src/modules/example/animalHomePageHandler/animalHomePageHandler.ts"
+            ],
+            "example/animalNamedPageHandler": [
+                "src/modules/example/animalNamedPageHandler/animalNamedPageHandler.ts"
+            ],
+            "example/animalPageHandler": [
+                "src/modules/example/animalPageHandler/animalPageHandler.ts"
+            ],
+            "lwr/router": [
+                "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
+            ],
+            "lwr/navigation": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+            ],
+            "lwr/navigationContext": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+            ],
+            "lwr/navigationService": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+            ]
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<template>
+    <lwr-router-container router={childRouter}>   
+        <h1>{title}</h1>
+        <lwr-outlet></lwr-outlet>
+        <ul>
+            <template for:each={animals} for:item="animal">
+                <li key={animal.title}>
+                    <example-link page-reference={animal.pageReference} label={animal.title}></example-link>
+                </li>
+            </template>
+        </ul>
+    </lwr-router-container>
+</template>
