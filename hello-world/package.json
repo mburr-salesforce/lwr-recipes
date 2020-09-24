@@ -10,8 +10,6 @@
     },
     "devDependencies": {
         "@lwrjs/core": "0.0.2-alpha16",
-        "@lwrjs/loader": "0.0.2-alpha16",
-        "@lwrjs/router": "0.0.2-alpha16",
         "lwc": "^1.7.1"
     }
 }
