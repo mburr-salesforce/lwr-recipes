@@ -9,7 +9,7 @@
         "start:prod": "MODE=prod node scripts/start-server.mjs"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha16",
+        "@lwrjs/core": "0.0.2-alpha18",
         "lwc": "^1.7.1"
     }
 }
