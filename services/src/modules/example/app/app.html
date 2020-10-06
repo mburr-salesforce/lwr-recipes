@@ -1,0 +1,24 @@
+<template>
+    <main>
+        <h1>LWR Services</h1>
+        <div class="buttons">
+            <button onclick={logMessage}>Log a message</button>
+            <button onclick={loadDynamic}>Load a module via dynamic import</button>
+        </div>
+        <h3>Demo:</h3>
+        <ol>
+            <li>See brower console and network tabs for output, as you do the following steps:</li>
+            <li>Click the "Log a message" button. This uses the "example/logger" module.</li>
+            <li>Click the "Load a module via dynamic import" button. Note the output from the "example/loaderHooks", and the request for the "example/dynamic" module in the network tab.</li>
+            <li><a href="javascript: window.location.reload();">Reload</a> this page.</li>
+            <li>Edit <em>services/src/modules/example/logger/logger.js</em> by commented out line 2 and uncommenting line 3.</li>
+            <li>Click the "Load a module via dynamic import" button to trigger the "example/invalidationHook".</li>
+            <li>Click OK on the confirmation dialog to refresh the application.</li>
+        </ol>
+        <h3>Read more:</h3>
+        <ul>
+            <li><a  target="_blank" href="https://rfcs.lwc.dev/rfcs/lws/0000-lwr-loader-hooks">Loader Hooks</a></li>
+            <li><a  target="_blank" href="https://rfcs.lwc.dev/rfcs/lws/0000-lwr-module-invalidation-hooks">Module Invalidation Hooks</a></li>
+        </ul>
+    </main>
+</template>
