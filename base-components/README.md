@@ -2,8 +2,6 @@
 
 ## Features
 
-**WARNING**: This sample is a work in progress; it does not yet resolve all base component internal references correctly.
-
 ### Concepts
 
 - Use the [`lightning-base-components`](https://github.com/salesforce/lightning-base-components) package.
@@ -31,6 +29,7 @@ npm start
 ```
 ```bash
 # in prod mode
+# WARNING: This sample does not yet resolve all base component internal references correctly in PROD mode (AMD format).
 npm run start:prod
 ```
 Open the site at [http://localhost:3000](http://localhost:3000)
