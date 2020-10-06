@@ -1,0 +1,10 @@
+{
+    "modules": [
+        { "dir": "src/modules" }
+    ],
+    "application": {
+        "name": "init-override",
+        "root": "example/app",
+        "init": "example/init"
+    }
+}
