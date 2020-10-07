@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <img src={imgPath} alt={sectionTitle} />
+    </div>
+    <div class="list">
+        <h2>{sectionTitle}</h2>
+        <table>
+            <template for:each={priceList} for:item="item">
+                <tr key={item.label}>
+                    <td>{item.label}</td>
+                    <td>{item.price}</td>
+                </tr>
+            </template>
+        </table>
+    </div>
+</template>

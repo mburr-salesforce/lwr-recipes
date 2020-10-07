@@ -15,8 +15,14 @@ export default class RecordPageHandler {
         const { attributes } = routeInstance;
         let viewGetter;
         switch (attributes.pageName) {
+            case 'products':
+                viewGetter = (): Promise<Module> => import('example/products');
+                break;
             case 'recipes':
                 viewGetter = (): Promise<Module> => import('example/recipes');
+                break;
+            case 'contact':
+                viewGetter = (): Promise<Module> => import('example/contact');
                 break;
             default:
                 return;

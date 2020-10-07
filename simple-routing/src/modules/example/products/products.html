@@ -1,0 +1,12 @@
+<template>
+    <div>
+        <h1>Our Products</h1>
+        <template for:each={items} for:item="section">
+            <example-price
+                key={section.title}
+                section-title={section.title}
+                price-list={section.items}
+            ></example-price>
+        </template>
+    </div>
+</template>

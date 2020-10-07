@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+}
+h2 {
+    font-size: 1em;
+}
+.ingredients {
+    display: flex;
+    padding: 15px 0;
+    border: 1px dotted black;
+    border-left: 0;
+    border-right: 0;
+    width: 500px;
+}
+img {
+    margin-left: 25px;
+}
+.ingredients h2 {
+    margin-top: 0;
+}
+.ingredients ul {
+    margin: 0 0 0 10px;
+}
+.instructions {
+    align-self: flex-start;
+    width: 500px;
+}

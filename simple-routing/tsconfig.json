@@ -12,6 +12,12 @@
             "example/home": [
                 "src/modules/example/home/home.ts"
             ],
+            "example/contact": [
+                "src/modules/example/contact/contact.ts"
+            ],
+            "example/products": [
+                "src/modules/example/products/products.ts"
+            ],
             "example/homePageHandler": [
                 "src/modules/example/homePageHandler/homePageHandler.ts"
             ],

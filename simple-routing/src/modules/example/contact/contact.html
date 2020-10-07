@@ -1,0 +1,12 @@
+<template>
+    <div if:true={sent}>
+        <h1 role="alert">Thank you!</h1>
+    </div>
+    <div if:false={sent}>
+        <label for="contact_message">
+            <h1>Type your message below:</h1>
+            <textarea id="contact_message"></textarea>
+        </label>
+        <button onclick={sendIt}>Send</button>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+}
+img {
+    float: right;
+    margin: 0 0 30px 30px;
+    border: 2px solid #4f4e4c;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+        0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+ul {
+    padding-top: 3px;
+    text-align: right;
+    list-style: none;
+}
+li {
+    margin-bottom: 1em;
+}
+example-link {
+    padding: 10px;
+    cursor: pointer;
+}
