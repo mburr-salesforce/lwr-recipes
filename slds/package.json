@@ -1,0 +1,24 @@
+{
+    "name": "lwr-slds",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rm -rf build",
+        "build": "tsc -b && node ./scripts/copy-resources.js",
+        "start": "node build/index.js",
+        "start:prod": "MODE=prod node build/index.js"
+    },
+    "devDependencies": {
+        "@lwrjs/core": "0.0.2-alpha19",
+        "@salesforce-ux/design-system": "^2.11.6",
+        "cpx": "^1.5.0",
+        "lwc": "^1.7.1",
+        "typescript": "^3.8.3"
+    }
+}
