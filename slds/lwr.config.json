@@ -1,0 +1,29 @@
+{
+    "modules": [
+        { "dir": "src/modules" }
+    ],
+    "application": {
+        "name": "slds",
+        "root": "example/app"
+    },
+    "routes": [
+        {
+            "id": "cards",
+            "path": "/cards",
+            "source": "<contentDir>/cards.html",
+            "layout": "<layoutsDir>/main.html"
+        },
+        {
+            "id": "list",
+            "path": "/list",
+            "source": "<contentDir>/list.html",
+            "layout": "<layoutsDir>/main.html"
+        },
+        {
+            "id": "spinner",
+            "path": "/spinner",
+            "source": "<contentDir>/spinner.html",
+            "layout": "<layoutsDir>/main.html"
+        }
+    ]
+}

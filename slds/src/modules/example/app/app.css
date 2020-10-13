@@ -1,0 +1,14 @@
+main {
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #1798c1;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
