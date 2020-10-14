@@ -10,6 +10,10 @@ export default class RecipesItem extends LightningElement {
         this.ingredients = '';
     }
 
+    get imgSrc() {
+        return `/assets/${this.title}.jpg`;
+    }
+
     get foodStuffs(): string[] {
         return this.ingredients ? this.ingredients.split(';').filter((i: string) => i) : [];
     }

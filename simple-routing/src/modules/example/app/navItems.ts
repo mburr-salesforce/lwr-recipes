@@ -12,6 +12,17 @@ export const NAV_ITEMS: NavData[] = [
     },
     {
         id: '2',
+        label: 'Products',
+        pageReference: {
+            type: 'namedPage',
+            attributes: {
+                pageName: 'products',
+            },
+            state: {},
+        },
+    },
+    {
+        id: '3',
         label: 'Recipes',
         pageReference: {
             type: 'namedPage',
@@ -20,5 +31,16 @@ export const NAV_ITEMS: NavData[] = [
             },
             state: {},
         },
-    }
+    },
+    {
+        id: '4',
+        label: 'Contact',
+        pageReference: {
+            type: 'namedPage',
+            attributes: {
+                pageName: 'contact',
+            },
+            state: {},
+        },
+    },
 ];

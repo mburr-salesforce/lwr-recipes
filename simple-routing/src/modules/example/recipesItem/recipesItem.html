@@ -1,14 +1,17 @@
 <template>
     <h1>{title}</h1>
     <div class="ingredients">
-        <h2>{ingredientsLabel}</h2>
-        <ul>
-            <template for:each={foodStuffs} for:item="item">
-                <li key={item}>
-                    {item}
-                </li>
-            </template>
-        </ul>
+        <div>
+            <h2>{ingredientsLabel}</h2>
+            <ul>
+                <template for:each={foodStuffs} for:item="item">
+                    <li key={item}>
+                        {item}
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <img src={imgSrc} alt={title} />
     </div>
     <div class="instructions">
         <h2>{instructions}</h2>

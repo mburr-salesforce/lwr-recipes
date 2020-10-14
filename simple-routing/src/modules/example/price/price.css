@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+img {
+    border: 2px solid #4f4e4c;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.2),
+        0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    margin: 7px 15px 25px 15px;
+}
+div.list {
+    margin: 0 15px;
+}
+h2 {
+    font-size: 1em;
+    margin: 0 0 5px 0;
+    border-bottom: 1px dotted #4f4e4c;
+}
+table {
+    min-width: 200px;
+    margin-bottom: 25px;
+}
