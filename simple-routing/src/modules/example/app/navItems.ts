@@ -16,7 +16,7 @@ export const NAV_ITEMS: NavData[] = [
         pageReference: {
             type: 'namedPage',
             attributes: {
-                pageName: 'productsz',
+                pageName: 'products',
             },
             state: {},
         },

@@ -1,13 +1,6 @@
 <template>
     <lwr-router-container router={router}>
         <example-nav items={navItems}></example-nav>
-        <lwr-outlet>
-            <span slot="error">
-                <example-error></example-error>
-            </span>
-            <span slot="404">
-                <example-404></example-404>
-            </span>
-        </lwr-outlet>
+        <lwr-outlet></lwr-outlet>
     </lwr-router-container>
 </template>
