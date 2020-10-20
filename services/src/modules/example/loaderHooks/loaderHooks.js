@@ -3,7 +3,6 @@ import { log } from 'example/logger';
 export default function exampleHooks(serviceAPI) {
     // Add loader plugins
     serviceAPI.addLoaderPlugin({
-
         // Add a hook to resolve a module URL, given a module ID
         resolveModule: async (id, { parentUrl }) => {
             // If the component is named "example/dynamic/v/*",

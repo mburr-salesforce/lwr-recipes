@@ -14,7 +14,7 @@
         "start": "MODE=prod node build/index.js"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha18",
+        "@lwrjs/core": "0.0.2-alpha25",
         "lwc": "^1.7.1",
         "typescript": "^3.8.3"
     }

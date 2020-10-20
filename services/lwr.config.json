@@ -5,6 +5,6 @@
     "application": {
         "name": "services",
         "root": "example/app",
-        "loaderServices": ["example/loaderHooks", "lwr/moduleInvalidationHook"]
+        "services": ["example/loaderHooks", "example/invalidationHook"]
     }
 }
