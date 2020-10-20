@@ -4,9 +4,10 @@
 
 ### Concepts
 
-- Use the [LWR Loader Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-loader-hooks).
-    - **Note**: Loader Hooks are an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)-only feature.
-- Use the [LWR Module Invalidation Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-module-invalidation-hooks).
+- Configure and use LWR services to allow for:
+    - [LWR Loader Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-loader-hooks)
+        - **Note**: Loader Hooks are an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)-only feature
+    - [LWR Module Invalidation Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-module-invalidation-hooks)
 
 ### Files
 
@@ -32,6 +33,8 @@ npm start
 ```
 - Open the site at [http://localhost:3000](http://localhost:3000)
 - Follow the instructions to demo the services
+
+*Note: you can also try starting the app in dev mode which will show the module invalidation hook also working with ESM format*
 
 ### Clean
 
