@@ -1,9 +1,10 @@
 {
     "modules": [
-        { "dir": "src/modules" }
+        { "dir": "src/modules" },
+        { "npm": "lightning-base-components" }
     ],
     "application": {
-        "name": "slds",
+        "name": "slds-base",
         "root": "example/app"
     },
     "routes": [
@@ -23,6 +24,12 @@
             "id": "spinner",
             "path": "/spinner",
             "source": "<contentDir>/spinner.html",
+            "layout": "<layoutsDir>/main.html"
+        },
+        {
+            "id": "base",
+            "path": "/base",
+            "source": "<contentDir>/base.html",
             "layout": "<layoutsDir>/main.html"
         }
     ]
