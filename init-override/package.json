@@ -18,5 +18,8 @@
         "@lwrjs/core": "0.0.2-alpha19",
         "lwc": "^1.7.1",
         "typescript": "^3.8.3"
+    },
+    "engines": {
+        "node": ">=12.18.0 <15"
     }
 }

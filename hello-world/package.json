@@ -11,5 +11,8 @@
     "devDependencies": {
         "@lwrjs/core": "0.0.2-alpha18",
         "lwc": "^1.7.1"
+    },
+    "engines": {
+        "node": ">=12.18.0 <15"
     }
 }
