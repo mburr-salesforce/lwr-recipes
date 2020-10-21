@@ -1,0 +1,32 @@
+main {
+    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    font: Ariel;
+}
+
+h1, h3 {
+    color: #1798c1;
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
+ol, ul {
+    max-width: 40em;
+    line-height: 1.5em;
+}
+
+div.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    padding: 8px;
+    margin: 10px 10px 10px 0;
+    border: none;
+    background-color: #1798c1;
+    font-size: 1.25em;
+}

@@ -1,0 +1,10 @@
+{
+    "modules": [
+        { "dir": "src/modules" }
+    ],
+    "application": {
+        "name": "services",
+        "root": "example/app",
+        "services": ["example/loaderHooks", "example/invalidationHook"]
+    }
+}
