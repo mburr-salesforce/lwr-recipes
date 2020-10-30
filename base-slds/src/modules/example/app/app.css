@@ -1,14 +1,6 @@
 main {
-    margin: 0 30px;
-    display: flex;
-    flex-direction: column;
+    margin: 30px;
 }
-
-h1 {
-    color: #1798c1;
-}
-
-a {
-    color: black;
-    text-decoration: underline;
+lightning-tab {
+    margin: 0 10px;
 }

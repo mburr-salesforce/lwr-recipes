@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    
+}
+lightning-card {
+    width: 300px;
+    margin: 5px;
+}
+lightning-combobox {
+    top: -20px;
+}
+lightning-tile {
+    padding: 10px;
+    background-color: rgb(242, 242, 242);
+}

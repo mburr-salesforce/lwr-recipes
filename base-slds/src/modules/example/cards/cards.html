@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="First Card">
+        <lightning-button label="One" slot="actions" onclick={handleClick}></lightning-button>
+        <p class="slds-p-horizontal_small">Leo in vitae turpis massa sed elementum tempus egestas sed.</p>
+        <p slot="footer">
+            <lightning-tile label="LWR" href="https://github.com/salesforce/lwr">
+                <span class="slds-truncate" title="7 Members">since 2019</span>
+            </lightning-tile>
+        </p>
+    </lightning-card>
+    <lightning-card title="Second Card">
+            <lightning-button label="Two" slot="actions" onclick={handleClick}></lightning-button>
+        <p class="slds-p-horizontal_small">Sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus.</p>
+        <p slot="footer">
+            <lightning-combobox
+                name="select"
+                placeholder="Select an option"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+            <span>Selected value is: <strong>{value}</strong></span>
+        </p>
+    </lightning-card>
+    <lightning-card title="Third Card">
+        <lightning-button label="Three" slot="actions" onclick={handleClick}></lightning-button>
+        <p class="slds-p-horizontal_small">Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc.</p>
+        <p slot="footer">
+            <lightning-badge label="Alpha"></lightning-badge>
+            <lightning-badge label="Beta"></lightning-badge>
+            <lightning-badge label="Gamma"></lightning-badge>
+        </p>
+    </lightning-card>
+    <lightning-card title="Loading Card">
+        <lightning-avatar slot="actions" src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"></lightning-avatar>
+        <p class="slds-p-horizontal_small">This card never stops loading.</p>
+        <p slot="footer">
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </p>
+    </lightning-card>
+</template>

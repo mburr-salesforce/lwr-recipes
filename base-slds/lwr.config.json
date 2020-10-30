@@ -5,31 +5,14 @@
     ],
     "application": {
         "name": "slds-base",
-        "root": "example/app"
+        "root": "example/app",
+        "syntheticShadow": true
     },
     "routes": [
         {
-            "id": "cards",
-            "path": "/cards",
-            "source": "<contentDir>/cards.html",
-            "layout": "<layoutsDir>/main.html"
-        },
-        {
-            "id": "list",
-            "path": "/list",
-            "source": "<contentDir>/list.html",
-            "layout": "<layoutsDir>/main.html"
-        },
-        {
-            "id": "spinner",
-            "path": "/spinner",
-            "source": "<contentDir>/spinner.html",
-            "layout": "<layoutsDir>/main.html"
-        },
-        {
-            "id": "base",
-            "path": "/base",
-            "source": "<contentDir>/base.html",
+            "id": "app",
+            "path": "/",
+            "component": "example/app",
             "layout": "<layoutsDir>/main.html"
         }
     ]

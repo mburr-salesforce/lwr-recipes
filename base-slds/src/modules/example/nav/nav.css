@@ -1,0 +1,13 @@
+lightning-breadcrumbs {
+    margin: 0 10px;
+}
+.menu {
+    margin-bottom: 30px;
+}
+.buttons {
+    padding: 0 25px;
+}
+.tree, .buttons {
+    padding: 15px;
+    background-color: rgb(242, 242, 242);
+}

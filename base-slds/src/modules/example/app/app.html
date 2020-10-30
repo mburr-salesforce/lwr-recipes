@@ -1,11 +1,19 @@
 <template>
     <main>
-        <h1>Static Site Pages with SLDS and Base Components</h1>
-        <ul>
-            <li><a href="/cards">SLDS - Cards</a></li>
-            <li><a href="/list">SLDS - List</a></li>
-            <li><a href="/spinner">SLDS - Spinner</a></li>
-            <li><a href="/base">Base Components</a></li>
-        </ul>
+        <h1 class="slds-text-heading_medium slds-m-bottom_medium">SLDS and Base Components</h1>
+        <lightning-tabset active-tab-value="cards">
+            <lightning-tab label="Buttons" value="buttons">  
+                <example-buttons></example-buttons>
+            </lightning-tab>
+            <lightning-tab label="Navigation" value="nav">
+                <example-nav></example-nav>
+            </lightning-tab>
+            <lightning-tab label="Cards" value="cards">
+                <example-cards></example-cards>
+            </lightning-tab>
+            <!--lightning-tab label="Data" value="data">
+                <example-data></example-data>
+            </lightning-tab-->
+        </lightning-tabset>
     </main>
 </template>
