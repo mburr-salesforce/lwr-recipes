@@ -5,7 +5,7 @@ div.header {
 }
 div.header:before {
     content: '';
-    background-image: url(/assets/wheat.jpg);
+    background-image: url(/public/assets/wheat.jpg);
     background-size: cover;
     background-position: bottom;
     opacity: 0.4;
