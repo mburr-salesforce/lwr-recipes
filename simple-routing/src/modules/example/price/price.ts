@@ -5,6 +5,6 @@ export default class Price extends LightningElement {
     @api priceList;
 
     get imgPath() {
-        return `/assets/${this.sectionTitle}.jpg`;
+        return `/public/assets/${this.sectionTitle}.jpg`;
     }
 }

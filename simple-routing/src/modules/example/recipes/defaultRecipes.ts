@@ -2,7 +2,7 @@ export const RECIPES = [
     {
         title: 'Caprese salad',
         pageReference: {
-            type: 'recipes',
+            type: 'recipes2',
             attributes: {
                 title: 'Caprese salad',
                 ingredients: 'tomatoes;mozzarella;balsamic vinegar;basil',
