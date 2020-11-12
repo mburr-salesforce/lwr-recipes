@@ -11,7 +11,7 @@ export default class RecipesItem extends LightningElement {
     }
 
     get imgSrc() {
-        return `/assets/${this.title}.jpg`;
+        return `/public/assets/${this.title}.jpg`;
     }
 
     get foodStuffs(): string[] {
