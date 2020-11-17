@@ -1,0 +1,78 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "noUnusedLocals": true,
+        "declaration": true,
+        "sourceMap": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "composite": true,
+        "target": "es2020",
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "example/home": [
+                "simple-routing/src/modules/example/home/home.ts"
+            ],
+            "example/contact": [
+                "simple-routing/src/modules/example/contact/contact.ts"
+            ],
+            "example/products": [
+                "simple-routing/src/modules/example/products/products.ts"
+            ],
+            "example/homePageHandler": [
+                "simple-routing/src/modules/example/homePageHandler/homePageHandler.ts"
+            ],
+            "example/link": [
+                "simple-routing/src/modules/example/link/link.ts"
+            ],
+            "example/namedPageHandler": [
+                "simple-routing/src/modules/example/namedPageHandler/namedPageHandler.ts"
+            ],
+            "example/nav": [
+                "simple-routing/src/modules/example/nav/nav.ts"
+            ],
+            "example/navItem": [
+                "simple-routing/src/modules/example/navItem/navItem.ts"
+            ],
+            "example/recipes": [
+                "simple-routing/src/modules/example/recipes/recipes.ts"
+            ],
+            "example/recipesItem": [
+                "simple-routing/src/modules/example/recipesItem/recipesItem.ts"
+            ],
+            "example/recipesPageAttributeApplier": [
+                "simple-routing/src/modules/example/recipesPageAttributeApplier/recipesPageAttributeApplier.ts"
+            ],
+            "example/recipesPageHandler": [
+                "simple-routing/src/modules/example/recipesPageHandler/recipesPageHandler.ts"
+            ],
+            "example/rootRouter": [
+                "simple-routing/src/modules/example/rootRouter/rootRouter.ts"
+            ],
+            "lwr/router": [
+                "node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
+            ],
+            "lwr/navigation": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+            ],
+            "lwr/navigationContext": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+            ],
+            "lwr/navigationService": [
+                "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+            ]
+        },
+    },
+    "exclude": [
+        "node_modules/**",
+        "**/__tests__/**",
+        "**/__benchmarks__/**",
+        "**/build/**",
+        "**/cjs/**"
+    ],
+}

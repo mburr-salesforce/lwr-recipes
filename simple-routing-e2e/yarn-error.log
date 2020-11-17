@@ -1,0 +1,67 @@
+Arguments: 
+  /home/matt.buland/.nvm/versions/node/v14.15.0/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/matt.buland/.nvm/versions/node/v14.15.0/bin:/home/matt.buland/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/matt.buland/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/matt.buland/repos/lwr-recipes/simple-routing-e2e/package.json: Unexpected token / in JSON at position 309
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+      "name": "lwr-simple-routing-e2e",
+      "version": "0.0.2-alpha15",
+      "license": "MIT",
+      "private": true,
+      "types": "build/index.d.ts",
+      "main": "build/index.js",
+      "files": [
+          "build/**/*.js"
+      ],
+      "scripts": {
+          "clean": "rm -rf build",
+          "build": "tsc -b",
+          // "start": "node build/index.js",
+          // "start:prod": "MODE=prod node build/index.js",
+          // "utam:compile": "utam -c utam.config.js",
+          "test:e2e": "wdio"
+      },
+      "devDependencies": {
+          "@babel/core": "^7.9.0",
+          "@babel/preset-typescript": "^7.9.0",
+          "@types/jest": "^25.2.1",
+          "@wdio/cli": "^6.6.2",
+          "@wdio/jasmine-framework": "^6.6.0",
+          "@wdio/local-runner": "^6.6.2",
+          "@wdio/selenium-standalone-service": "^6.6.2",
+          "chromedriver": "^86.0.0",
+          "lwr-simple-routing": "0.0.2-alpha15",
+          "ts-node": "^9.0.0",
+          "typescript": "^3.8.3",
+          "utam": "0.0.1-alpha8",
+          "wdio-utam-service": "0.0.1-alpha8"
+      },
+      "engines": {
+          "node": ">=12.18.0 <15"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

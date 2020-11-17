@@ -1,0 +1,13 @@
+{
+    "files": [
+        /* only process references */
+    ],
+    "references": [
+        { "path": "./simple-routing" },
+        { "path": "./simple-routing-e2e" }
+    ],
+    "exclude": [
+        "node_modules/**",
+        "**/__tests__/**"
+    ]
+}

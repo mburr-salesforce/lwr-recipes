@@ -1,0 +1,20 @@
+{
+    "root": true,
+    "selector": {
+        "css": "example-home"
+    },
+    "elements": [{
+        "name": "heading",
+        "public": true,
+        "type": "actionable",
+        "selector": {
+            "css": "h1"
+        }
+    }, {
+        "name": "description",
+        "public": true,
+        "selector": {
+            "css": ".text"
+        }
+    }]
+}
