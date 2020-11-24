@@ -1,13 +1,12 @@
 import * as path from 'path';
 import { 
+    AbstractModuleId,
     Compiler,
-    CompiledModule,
+    ModuleCompiled,
     ModuleEntry,
-    ModuleIdentifier,
     ModuleProvider,
     ModuleSource,
     ProviderContext,
-    ResolverConfig,
 } from '@lwrjs/types';
 import { getSpecifier, hashContent } from '@lwrjs/shared-utils';
 
@@ -66,10 +65,11 @@ export default class ColorProvider implements ModuleProvider {
         this.compiler = compiler;
     }
 
-    async getModuleEntry({ specifier }: ResolverConfig): Promise<ModuleEntry | undefined> {
+    async getModuleEntry({ specifier }: AbstractModuleId): Promise<ModuleEntry | undefined> {
         // Modules handled by this provider have specifiers in this form: "color/{colorName}"
         if (specifier.startsWith(this.namespace)) {
             return {
+                id: `${specifier}|${this.version}`, // used as part of the cache key for this module by the LWR Module Registry
                 virtual: true, // ...because this is a server-generated module
                 entry: `<virtual>/${specifier}${path.extname(specifier) ? '' : '.js'}`,
                 specifier,
@@ -78,9 +78,8 @@ export default class ColorProvider implements ModuleProvider {
         }
     }
 
-    async getModuleSource({ namespace, name, version }: ModuleIdentifier): Promise<ModuleSource | undefined> {
+    async getModuleSource({ specifier, namespace, name }: AbstractModuleId): Promise<ModuleSource | undefined> {
         // Retrieve the Module Entry
-        const specifier = getSpecifier({ namespace, name });
         const moduleEntry = await this.getModuleEntry({ specifier });
         if (!moduleEntry) {
             return;
@@ -91,17 +90,18 @@ export default class ColorProvider implements ModuleProvider {
 
         // Construct a Module Source object
         return {
+            id: moduleEntry.id,
             specifier,
             namespace,
             name,
-            version,
+            version: this.version,
             originalSource,
             moduleEntry,
             ownHash: hashContent(originalSource),
         };
     }
 
-    async getModule(moduleId: ModuleIdentifier): Promise<CompiledModule | undefined> {
+    async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
         // Get the Module Source
         const moduleSource = await this.getModuleSource(moduleId);
         if (!moduleSource) {
@@ -110,7 +110,7 @@ export default class ColorProvider implements ModuleProvider {
 
         // Compile the module
         const { namespace, name } = moduleId;
-        const compiledModule = await this.compiler.compileFile(moduleSource.originalSource, {
+        const { code: compiledSource, metadata: compiledMetadata } = await this.compiler.compileFile(moduleSource.originalSource, {
             // Remove #'s to avoid lwc syntax errors
             namespace,
             name: name.replace(/#/g, '_'),
@@ -122,7 +122,8 @@ export default class ColorProvider implements ModuleProvider {
         print(`Color Module Provider returning ${fileType} code for color "${color}": ${moduleSource.originalSource}`);
         return {
             ...moduleSource,
-            compiledModule,
+            compiledSource,
+            compiledMetadata,
         };
     }
 }

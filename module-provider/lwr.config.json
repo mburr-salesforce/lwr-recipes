@@ -1,14 +1,14 @@
 {
-    "modules": [
-        { "dir": "src/modules" }
-    ],
-    "application": {
-        "name": "module-provider",
-        "root": "example/app"
-    },
+    "modules": [{ "dir": "src/modules" }],
+    "routes": [{
+        "id": "module-provider",
+        "path": "/",
+        "rootComponent": "example/app"
+    }],
     "moduleProviders": [
         "<rootDir>/build/services/color-provider.js",
         "@lwrjs/app-service/cjs/moduleProvider",
-        "@lwrjs/fs-service"
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
     ]
 }

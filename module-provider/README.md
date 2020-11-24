@@ -38,5 +38,6 @@ npm run start:prod
 ### Clean
 
 ```bash
+# remove the build directory and file cache
 npm run clean
 ```
