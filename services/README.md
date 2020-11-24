@@ -34,10 +34,11 @@ npm start
 - Open the site at [http://localhost:3000](http://localhost:3000)
 - Follow the instructions to demo the services
 
-*Note: you can also try starting the app in dev mode which will show the module invalidation hook also working with ESM format*
+*Note: you can also try starting the app with `MODE=dev` which will show the module invalidation hook working with ESM format*
 
 ### Clean
 
 ```bash
+# remove the build directory and file cache
 npm run clean
 ```
