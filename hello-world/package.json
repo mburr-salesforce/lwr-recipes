@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "@lwrjs/core": "0.0.2-alpha32",
-        "lwc": "1.9.0"
+        "lwc": "~1.9.0"
     },
     "engines": {
         "node": ">=12.18.0 <15"
