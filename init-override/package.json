@@ -9,14 +9,14 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rm -rf build",
+        "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
         "start": "node build/index.js",
         "start:prod": "MODE=prod node build/index.js"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha19",
-        "lwc": "^1.7.1",
+        "@lwrjs/core": "0.0.2-alpha32",
+        "lwc": "1.9.0",
         "typescript": "^3.8.3"
     },
     "engines": {

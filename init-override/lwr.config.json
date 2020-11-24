@@ -1,10 +1,11 @@
 {
-    "modules": [
-        { "dir": "src/modules" }
-    ],
-    "application": {
-        "name": "init-override",
-        "root": "example/app",
-        "init": "example/init"
-    }
+    "modules": [{ "dir": "src/modules" }],
+    "routes": [{
+        "id": "init-override",
+        "path": "/",
+        "rootComponent": "example/app",
+        "bootstrap": {
+            "init": "example/init"
+        }
+    }]
 }
