@@ -28,7 +28,7 @@ npm run build
 ### Run
 
 ```bash
-# in dev mode
+# in prod mode and ESM format
 npm start
 ```
 Open the sample: [http://localhost:3000](http://localhost:3000)

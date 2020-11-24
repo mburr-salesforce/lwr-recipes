@@ -6,7 +6,7 @@
     "scripts": {
         "clean": "rm -rf __lwr_cache__",
         "start": "node scripts/start-server.mjs",
-        "start:prod": "MODE=prod node scripts/start-server.mjs"
+        "start:amd": "MODE=compat node scripts/start-server.mjs"
     },
     "devDependencies": {
         "@lwrjs/core": "0.0.2-alpha32",
