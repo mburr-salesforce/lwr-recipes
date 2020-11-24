@@ -9,18 +9,18 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rm -rf build",
+        "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
         "start": "node build/index.js",
         "start:prod": "MODE=prod node build/index.js"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha15",
-        "@lwrjs/loader": "0.0.2-alpha15",
-        "@lwrjs/router": "0.0.2-alpha15",
+        "@lwrjs/core": "0.0.2-alpha32",
+        "@lwrjs/loader": "0.0.2-alpha32",
+        "@lwrjs/router": "0.0.2-alpha32",
         "@babel/core": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
-        "lwc": "^1.7.1",
+        "lwc": "~1.9.0",
         "typescript": "^3.8.3"
     },
     "engines": {
