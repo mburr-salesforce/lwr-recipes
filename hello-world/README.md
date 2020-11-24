@@ -36,5 +36,6 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 ### Clean
 
 ```bash
+# remove the file cache
 npm run clean
 ```

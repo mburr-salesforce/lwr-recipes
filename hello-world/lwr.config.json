@@ -1,7 +1,8 @@
 {
     "modules": [{ "dir": "src/modules" }],
-    "application": {
-        "name": "example",
-        "root": "example/app"
-    }
+    "routes": [{
+        "id": "example",
+        "path": "/",
+        "rootComponent": "example/app"
+    }]
 }
