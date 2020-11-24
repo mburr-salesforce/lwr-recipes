@@ -36,5 +36,6 @@ Open the sample: [http://localhost:3000](http://localhost:3000)
 ### Clean
 
 ```bash
+# remove the build directory and file cache
 npm run clean
 ```
