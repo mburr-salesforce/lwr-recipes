@@ -3,17 +3,13 @@
         { "dir": "src/modules" },
         { "npm": "lightning-base-components" }
     ],
-    "application": {
-        "name": "slds-base",
-        "root": "example/app",
-        "syntheticShadow": true
-    },
-    "routes": [
-        {
-            "id": "app",
-            "path": "/",
-            "component": "example/app",
-            "layout": "<layoutsDir>/main.html"
+    "routes": [{
+        "id": "slds-base",
+        "path": "/",
+        "rootComponent": "example/app",
+        "layoutTemplate": "<layoutsDir>/main.html",
+        "bootstrap": {
+            "syntheticShadow": true
         }
-    ]
+    }]
 }

@@ -23,17 +23,18 @@ npm run build
 ### Run
 
 ```bash
-# in dev mode
+# in prod mode and ESM format
 npm start
 ```
 ```bash
-# in prod mode
-npm run start:prod
+# in compat mode and AMD format
+npm run start:amd
 ```
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 ### Clean
 
 ```bash
+# remove the build directory and file cache
 npm run clean
 ```
