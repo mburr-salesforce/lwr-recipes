@@ -9,12 +9,13 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rm -rf build",
+        "clean": "rimraf build/ node_modules/",
         "build": "tsc -b",
         "test:e2e": "wdio"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
         "@babel/register": "^7.9.0",
         "@types/jest": "^25.2.1",
@@ -26,7 +27,7 @@
         "lwr-simple-routing": "0.0.2-alpha15",
         "ts-node": "^9.0.0",
         "typescript": "^3.8.3",
-        "utam": "0.0.1-alpha8",
+        "utam": "0.0.1-alpha9",
         "wdio-chromedriver-service": "^6.0.0",
         "wdio-utam-service": "0.0.1-alpha8"
     },

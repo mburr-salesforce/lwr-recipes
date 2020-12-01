@@ -3,6 +3,7 @@
     "compilerOptions": {
         "rootDir": "src",
         "outDir": "build",
-        "module": "ES2020",
+        "module": "commonjs",
+        "types": ["node", "@types/jest", "webdriverio", "@utam/loader", "wdio-utam-service"],
     }
 }

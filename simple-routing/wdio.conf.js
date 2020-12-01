@@ -28,7 +28,9 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     automationProtocol: 'devtools',
-    services: [[UtamWdioService, {}]],
+    services: [
+        ['chromedriver', { port: 8015}],
+        [UtamWdioService, {}]],
     framework: 'jasmine',
     jasmineNodeOpts: {
         // defaultTimeoutInterval: 1000 * 60 * 30,
@@ -40,9 +42,11 @@ exports.config = {
         defaultTimeoutInterval: DEFAULT_TIMEOUT,
     },
 
+    /*
     onPrepare() {
         // VanillaJs.createApp().listen(8080);
     },
+    */
 
     before: function () {
         require('ts-node').register({ files: true });

@@ -5,14 +5,13 @@
     "private": true,
     "types": "build/index.d.ts",
     "main": "build/index.js",
-    "type": "module",
     "files": [
         "build/**/*.js",
         "pageObjects"
     ],
     "scripts": {
-        "clean": "rm -rf build && rm -rf __lwr_cache__",
-        "build": "tsc -b",
+        "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
+        "build": "tsc -b && yarn utam:compile",
         "start": "node build/index.js",
         "start:amd": "MODE=compat node build/index.js",
         "start:prod": "MODE=prod node build/index.js",
@@ -22,6 +21,7 @@
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
+        "@babel/register": "^7.9.0",
         "@lwrjs/core": "0.0.2-alpha32",
         "@lwrjs/loader": "0.0.2-alpha32",
         "@lwrjs/router": "0.0.2-alpha32",
@@ -36,8 +36,9 @@
         "rimraf": "^3.0.2",
         "ts-node": "^9.0.0",
         "typescript": "^3.8.3",
-        "utam": "0.0.1-alpha8",
-        "wdio-utam-service": "0.0.1-alpha8"
+        "utam": "0.0.1-alpha9",
+        "wdio-chromedriver-service": "^6.0.0",
+        "wdio-utam-service": "0.0.1-alpha9"
     },
     "engines": {
         "node": ">=12.18.0 <15"
