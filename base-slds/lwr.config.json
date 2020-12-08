@@ -3,6 +3,21 @@
         { "dir": "src/modules" },
         { "npm": "lightning-base-components" }
     ],
+    "assetDirs": [
+        {
+            "alias": "assetsDir",
+            "dir": "<rootDir>/src/assets",
+            "path": "/assets"
+        },
+        {
+            "dir": "<rootDir>/src/assets/fonts",
+            "path": "/fonts"
+        },
+        {
+            "dir": "<rootDir>/src/assets/utilitySprite.svg",
+            "path": "/lightning.utilitySprite"
+        }
+    ],
     "routes": [{
         "id": "slds-base",
         "path": "/",
