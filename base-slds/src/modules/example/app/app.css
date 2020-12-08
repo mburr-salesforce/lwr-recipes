@@ -1,6 +1,14 @@
 main {
     margin: 30px;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.slds-global-header__logo {
+    background-position: right center;
+}
 lightning-tab {
     margin: 0 10px;
 }

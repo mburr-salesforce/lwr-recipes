@@ -9,3 +9,4 @@ node_modules/*
 __lwr_cache__/*
 build/*
 src/assets/*
+!src/assets/utilitySprite.svg
