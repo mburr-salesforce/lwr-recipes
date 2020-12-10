@@ -1,5 +1,5 @@
 {
-    "name": "lwr-monorepo",
+    "name": "lwr-recipes-monorepo",
     "private": true,
     "license": "MIT",
     "description": "LWR Javascript Implementation",
@@ -8,17 +8,16 @@
         "lwc-pack": "./bin/lwc-pack.js"
     },
     "scripts": {
-        "clean": "lerna exec -- rimraf build/ tsconfig.tsbuildinfo && lerna clean --yes && rimraf node_modules",
+        "clean": "lerna run clean --stream && lerna exec -- rimraf build/ tsconfig.tsbuildinfo __lwr_cache__ node_modules && lerna clean --yes && rimraf node_modules",
         "lint": "eslint '**/*.{js,ts}' --max-warnings 0",
         "format": "prettier --write '{packages,scripts}/**/*.{js,ts,json,md}'",
         "prettier": "prettier --check '{packages,scripts}/**/*.{js,ts,json,md}'",
-        "build": "lerna run build --stream && tsc -b && lerna run utam:compile --scope lwr-simple-routing",
-        "start": "lerna run start --scope lwr-simple-routing -- ",
-        "test:e2e": "lerna run test:e2e --scope lwr-simple-routing-e2e -- "
+        "build": "lerna run build --stream && tsc -b && lerna run utam:compile --scope simple-routing",
+        "start": "lerna run start --scope simple-routing -- ",
+        "test:e2e": "lerna run test:e2e --scope simple-routing-e2e"
     },
     "workspaces": [
-        "simple-routing",
-        "simple-routing-e2e"
+        "packages/*"
     ],
     "engines": {
         "node": ">=12.16.0 <15"
