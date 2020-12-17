@@ -1,0 +1,29 @@
+{
+    "name": "nested-routing",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rm -rf build && rm -rf __lwr_cache__",
+        "build": "tsc -b",
+        "start": "node build/index.js",
+        "start:amd": "MODE=compat node build/index.js"
+    },
+    "devDependencies": {
+        "@lwrjs/core": "0.0.2-alpha32",
+        "@lwrjs/loader": "0.0.2-alpha32",
+        "@lwrjs/router": "0.0.2-alpha32",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-typescript": "^7.9.0",
+        "lwc": "~1.9.0",
+        "typescript": "^3.8.3"
+    },
+    "engines": {
+        "node": ">=12.18.0 <15"
+    }
+}

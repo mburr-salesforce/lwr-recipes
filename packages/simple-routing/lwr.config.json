@@ -1,0 +1,10 @@
+{
+    "modules": [{
+        "dir": "<rootDir>/src/modules"
+    }],
+    "routes": [{
+        "id": "simple-routing",
+        "path": "/",
+        "rootComponent": "example/app"
+    }]
+}

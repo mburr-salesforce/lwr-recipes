@@ -1,8 +1,0 @@
-{
-    "modules": [{ "dir": "src/modules" }],
-    "routes": [{
-        "id": "simple-routing",
-        "path": "/",
-        "rootComponent": "example/app"
-    }]
-}

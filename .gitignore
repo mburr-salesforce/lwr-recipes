@@ -1,0 +1,25 @@
+# OS artifacts
+.DS_STORE
+
+# Tools artifacts
+node_modules
+*/node_modules
+coverage
+.eslintcache
+*.log
+*.pem
+tsconfig.tsbuildinfo
+dump.rdb
+logfile
+
+# Project artifacts
+__benchmarks_results__/
+*/__lwr_cache__/
+
+# Builds
+scripts/private/
+**/build
+packages/*/pageObjects
+
+# db volume
+db-data/

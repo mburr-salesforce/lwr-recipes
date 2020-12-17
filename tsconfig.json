@@ -1,0 +1,17 @@
+{
+    "files": [
+        /* only process references */
+    ],
+    "references": [
+        { "path": "./packages/base-slds" },
+        { "path": "./packages/init-override" },
+        { "path": "./packages/module-provider" },
+        { "path": "./packages/nested-routing" },
+        { "path": "./packages/simple-routing" },
+        { "path": "./packages/simple-routing-e2e" }
+    ],
+    "exclude": [
+        "node_modules/**",
+        "**/__tests__/**"
+    ]
+}
