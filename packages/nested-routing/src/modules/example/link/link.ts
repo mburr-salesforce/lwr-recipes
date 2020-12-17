@@ -14,7 +14,7 @@ export default class Link extends LightningElement {
 
     async connectedCallback(): Promise<void> {
         if (this.pageReference && this.navContext) {
-            this.path = generateUrl(this.navContext, this.pageReference);
+            this.path = generateUrl(this.navContext, this.pageReference) || undefined;
         }
     }
 

@@ -8,7 +8,7 @@ import {
     ModuleSource,
     ProviderContext,
 } from '@lwrjs/types';
-import { getSpecifier, hashContent } from '@lwrjs/shared-utils';
+import { hashContent } from '@lwrjs/shared-utils';
 
 function parseModuleName(name: string): { color: string; fileType: string; } {
     // colorName = 'purple' or 'purple#purple.html' or 'purple#purple.css'
@@ -85,6 +85,10 @@ export default class ColorProvider implements ModuleProvider {
             return;
         }
 
+        if (!name) {
+            return undefined;
+        }
+
         // Generate code for the requested module
         const originalSource = generateModule(name);
 
@@ -110,6 +114,9 @@ export default class ColorProvider implements ModuleProvider {
 
         // Compile the module
         const { namespace, name } = moduleId;
+        if (!name) {
+            return;
+        }
         const { code: compiledSource, metadata: compiledMetadata } = await this.compiler.compileFile(moduleSource.originalSource, {
             // Remove #'s to avoid lwc syntax errors
             namespace,

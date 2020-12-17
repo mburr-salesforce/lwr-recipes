@@ -18,7 +18,8 @@ __benchmarks_results__/
 
 # Builds
 scripts/private/
-*/build/
+**/build
+packages/*/pageObjects
 
 # db volume
 db-data/

@@ -15,8 +15,7 @@
         "start": "node build/autostart.js",
         "start:amd": "MODE=compat node build/index.js",
         "start:prod": "MODE=prod node build/autostart.js",
-        "utam:compile": "utam -c utam.config.js",
-        "test:e2e": "wdio"
+        "utam:compile": "utam -c utam.config.js"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
