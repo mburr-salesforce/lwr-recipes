@@ -1,0 +1,5 @@
+steps:
+  node-unit-tests:
+    description: Run WDIO/UTAM E2E Tests
+    run:
+      command: yarn test:e2e
