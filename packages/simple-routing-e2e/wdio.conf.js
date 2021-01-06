@@ -23,8 +23,8 @@ exports.config = {
             maxInstances: 1,
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['--headless', '--verbose']
-            }
+                args: ['--headless', '--verbose'],
+            },
         },
     ],
     logLevel: 'trace',
@@ -36,8 +36,8 @@ exports.config = {
     connectionRetryCount: 3,
     automationProtocol: 'devtools',
     services: [
-        ['chromedriver', { port: 8015}],
-        [UtamWdioService, {}]
+        ['chromedriver', { port: 8015 }],
+        [UtamWdioService, {}],
     ],
     framework: 'jasmine',
     jasmineNodeOpts: {
@@ -53,16 +53,17 @@ exports.config = {
         return new Promise((resolve) => {
             simpleRoutingApp({
                 port: PORT,
-                rootDir: "../simple-routing"
-            }).listen(({ port, serverMode }) => {
-                console.log(`SimpleRouting listening on port ${port} in ${serverMode} mode`);
-                resolve();
+                rootDir: '../simple-routing',
             })
-            .catch((err) => {
-                console.error(err);
-                reject(err);
-                // process.exit(1);
-            });
+                .listen(({ port, serverMode }) => {
+                    console.log(`SimpleRouting listening on port ${port} in ${serverMode} mode`);
+                    resolve();
+                })
+                .catch((err) => {
+                    console.error(err);
+                    reject(err);
+                    // process.exit(1);
+                });
         });
     },
 

@@ -26,6 +26,5 @@ export default function exampleHooks(serviceAPI) {
             // Defer back to loader
             return null;
         },
-
     });
 }

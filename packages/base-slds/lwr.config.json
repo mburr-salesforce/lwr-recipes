@@ -1,8 +1,5 @@
 {
-    "modules": [
-        { "dir": "src/modules" },
-        { "npm": "lightning-base-components" }
-    ],
+    "modules": [{ "dir": "src/modules" }, { "npm": "lightning-base-components" }],
     "assetDirs": [
         {
             "alias": "assetsDir",
@@ -18,13 +15,15 @@
             "path": "/lightning.utilitySprite"
         }
     ],
-    "routes": [{
-        "id": "slds-base",
-        "path": "/",
-        "rootComponent": "example/app",
-        "layoutTemplate": "<layoutsDir>/main.html",
-        "bootstrap": {
-            "syntheticShadow": true
+    "routes": [
+        {
+            "id": "slds-base",
+            "path": "/",
+            "rootComponent": "example/app",
+            "layoutTemplate": "<layoutsDir>/main.html",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
         }
-    }]
+    ]
 }
