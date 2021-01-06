@@ -47,7 +47,7 @@ yarn build
 
 ### 2) Running a LWR recipe
 
-Navigate to your chosen recipe and run it. Using `hello-world` for example:
+Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
 
 ```bash
 # in prod mode and ESM format
