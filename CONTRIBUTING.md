@@ -35,7 +35,7 @@ cd lwr-recipes
 yarn install
 ```
 
-If this fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then re-verify that step 2 was successful.
+If this fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then re-verify that the yarn installation was successful.
 
 ## Startup
 
