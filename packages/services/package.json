@@ -11,7 +11,8 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
-        "start": "MODE=compat node build/index.js"
+        "start": "node build/index.js",
+        "start:amd": "MODE=compat node build/index.js"
     },
     "devDependencies": {
         "@lwrjs/core": "0.0.2-alpha32",
