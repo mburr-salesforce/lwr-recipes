@@ -2,8 +2,8 @@ import { LightningElement } from 'lwc';
 
 export default class CustomApp extends LightningElement {
     showPurple = false; // "purple"
-    showBlue = false;   // "navy"
-    showRed = false;    // "maroon"
+    showBlue = false; // "navy"
+    showRed = false; // "maroon"
 
     pickPurple() {
         this.showPurple = true;

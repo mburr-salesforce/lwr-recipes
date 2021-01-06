@@ -1,8 +1,10 @@
 {
     "modules": [{ "dir": "src/modules" }],
-    "routes": [{
-        "id": "nested-routing",
-        "path": "/",
-        "rootComponent": "example/app"
-    }]
+    "routes": [
+        {
+            "id": "nested-routing",
+            "path": "/",
+            "rootComponent": "example/app"
+        }
+    ]
 }

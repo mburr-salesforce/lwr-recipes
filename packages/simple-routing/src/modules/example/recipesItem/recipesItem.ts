@@ -10,7 +10,7 @@ export default class RecipesItem extends LightningElement {
         this.ingredients = '';
     }
 
-    get imgSrc() {
+    get imgSrc(): string {
         return `/public/assets/${this.title}.jpg`;
     }
 

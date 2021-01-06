@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { 
+import {
     AbstractModuleId,
     Compiler,
     ModuleCompiled,
@@ -10,7 +10,7 @@ import {
 } from '@lwrjs/types';
 import { hashContent } from '@lwrjs/shared-utils';
 
-function parseModuleName(name: string): { color: string; fileType: string; } {
+function parseModuleName(name: string): { color: string; fileType: string } {
     // colorName = 'purple' or 'purple#purple.html' or 'purple#purple.css'
     const [color] = name.split('#');
     const fileType = (path.extname(name) || '.js').substr(1);
@@ -19,8 +19,8 @@ function parseModuleName(name: string): { color: string; fileType: string; } {
 }
 
 function generateModule(colorName: string): string {
-    const {color, fileType } = parseModuleName(colorName);
-    switch(fileType) {
+    const { color, fileType } = parseModuleName(colorName);
+    switch (fileType) {
         case 'html':
             return `
 <template>
@@ -42,12 +42,13 @@ div {
     border-radius: 150px;
     background-color: ${color};
 }`;
-        default: // 'js'
+        default:
+            // 'js'
             return `
 /* Generated Color Module for "${color}" */
 import { LightningElement } from 'lwc';
 export default class ${color.charAt(0).toUpperCase()}${color.slice(1)}Color extends LightningElement { }`;
-      }
+    }
 }
 
 function print(message: string): void {
@@ -78,7 +79,11 @@ export default class ColorProvider implements ModuleProvider {
         }
     }
 
-    async getModuleSource({ specifier, namespace, name }: AbstractModuleId): Promise<ModuleSource | undefined> {
+    async getModuleSource({
+        specifier,
+        namespace,
+        name,
+    }: AbstractModuleId): Promise<ModuleSource | undefined> {
         // Retrieve the Module Entry
         const moduleEntry = await this.getModuleEntry({ specifier });
         if (!moduleEntry) {
@@ -117,16 +122,21 @@ export default class ColorProvider implements ModuleProvider {
         if (!name) {
             return;
         }
-        const { code: compiledSource, metadata: compiledMetadata } = await this.compiler.compileFile(moduleSource.originalSource, {
-            // Remove #'s to avoid lwc syntax errors
-            namespace,
-            name: name.replace(/#/g, '_'),
-            filename: moduleSource.moduleEntry.entry.replace(/#/g, '_'),
-        });
+        const { code: compiledSource, metadata: compiledMetadata } = await this.compiler.compileFile(
+            moduleSource.originalSource,
+            {
+                // Remove #'s to avoid lwc syntax errors
+                namespace,
+                name: name.replace(/#/g, '_'),
+                filename: moduleSource.moduleEntry.entry.replace(/#/g, '_'),
+            },
+        );
 
         // Construct a Compiled Module
         const { color, fileType } = parseModuleName(name);
-        print(`Color Module Provider returning ${fileType} code for color "${color}": ${moduleSource.originalSource}`);
+        print(
+            `Color Module Provider returning ${fileType} code for color "${color}": ${moduleSource.originalSource}`,
+        );
         return {
             ...moduleSource,
             compiledSource,

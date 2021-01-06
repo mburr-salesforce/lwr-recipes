@@ -6,48 +6,22 @@
         "outDir": "build",
         "module": "commonjs",
         "paths": {
-            "example/home": [
-                "modules/example/home/home.ts"
-            ],
-            "example/contact": [
-                "modules/example/contact/contact.ts"
-            ],
-            "example/products": [
-                "modules/example/products/products.ts"
-            ],
-            "example/homePageHandler": [
-                "modules/example/homePageHandler/homePageHandler.ts"
-            ],
-            "example/link": [
-                "modules/example/link/link.ts"
-            ],
-            "example/namedPageHandler": [
-                "modules/example/namedPageHandler/namedPageHandler.ts"
-            ],
-            "example/nav": [
-                "modules/example/nav/nav.ts"
-            ],
-            "example/navItem": [
-                "modules/example/navItem/navItem.ts"
-            ],
-            "example/recipes": [
-                "modules/example/recipes/recipes.ts"
-            ],
-            "example/recipesItem": [
-                "modules/example/recipesItem/recipesItem.ts"
-            ],
+            "example/home": ["modules/example/home/home.ts"],
+            "example/contact": ["modules/example/contact/contact.ts"],
+            "example/products": ["modules/example/products/products.ts"],
+            "example/homePageHandler": ["modules/example/homePageHandler/homePageHandler.ts"],
+            "example/link": ["modules/example/link/link.ts"],
+            "example/namedPageHandler": ["modules/example/namedPageHandler/namedPageHandler.ts"],
+            "example/nav": ["modules/example/nav/nav.ts"],
+            "example/navItem": ["modules/example/navItem/navItem.ts"],
+            "example/recipes": ["modules/example/recipes/recipes.ts"],
+            "example/recipesItem": ["modules/example/recipesItem/recipesItem.ts"],
             "example/recipesPageAttributeApplier": [
                 "modules/example/recipesPageAttributeApplier/recipesPageAttributeApplier.ts"
             ],
-            "example/recipesPageHandler": [
-                "modules/example/recipesPageHandler/recipesPageHandler.ts"
-            ],
-            "example/rootRouter": [
-                "modules/example/rootRouter/rootRouter.ts"
-            ],
-            "lwr/router": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
-            ],
+            "example/recipesPageHandler": ["modules/example/recipesPageHandler/recipesPageHandler.ts"],
+            "example/rootRouter": ["modules/example/rootRouter/rootRouter.ts"],
+            "lwr/router": ["../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"],
             "lwr/navigation": [
                 "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
             ],

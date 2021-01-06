@@ -1,11 +1,13 @@
 {
     "modules": [{ "dir": "src/modules" }],
-    "routes": [{
-        "id": "services",
-        "path": "/",
-        "rootComponent": "example/app",
-        "bootstrap": {
-            "services": ["example/loaderHooks", "example/invalidationHook"]
+    "routes": [
+        {
+            "id": "services",
+            "path": "/",
+            "rootComponent": "example/app",
+            "bootstrap": {
+                "services": ["example/loaderHooks", "example/invalidationHook"]
+            }
         }
-    }]
+    ]
 }

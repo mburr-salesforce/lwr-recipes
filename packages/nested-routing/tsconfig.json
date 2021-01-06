@@ -6,72 +6,34 @@
         "outDir": "build",
         "module": "commonjs",
         "paths": {
-            "example/animal": [
-                "modules/example/animal/animal.ts"
-            ],
-            "example/animalCat": [
-                "modules/example/animalCat/animalCat.ts"
-            ],
-            "example/animalDog": [
-                "modules/example/animalDog/animalDog.ts"
-            ],
-            "example/animalHome": [
-                "modules/example/animalHome/animalHome.ts"
-            ],
+            "example/animal": ["modules/example/animal/animal.ts"],
+            "example/animalCat": ["modules/example/animalCat/animalCat.ts"],
+            "example/animalDog": ["modules/example/animalDog/animalDog.ts"],
+            "example/animalHome": ["modules/example/animalHome/animalHome.ts"],
             "example/animalHomePageHandler": [
                 "modules/example/animalHomePageHandler/animalHomePageHandler.ts"
             ],
             "example/animalNamedPageHandler": [
                 "modules/example/animalNamedPageHandler/animalNamedPageHandler.ts"
             ],
-            "example/animalPageHandler": [
-                "modules/example/animalPageHandler/animalPageHandler.ts"
-            ],
-            "example/contact": [
-                "modules/example/contact/contact.ts"
-            ],
-            "example/childRouter": [
-                "modules/example/childRouter/childRouter.ts"
-            ],
-            "example/home": [
-                "modules/example/home/home.ts"
-            ],
-            "example/products": [
-                "modules/example/products/products.ts"
-            ],
-            "example/homePageHandler": [
-                "modules/example/homePageHandler/homePageHandler.ts"
-            ],
-            "example/link": [
-                "modules/example/link/link.ts"
-            ],
-            "example/namedPageHandler": [
-                "modules/example/namedPageHandler/namedPageHandler.ts"
-            ],
-            "example/nav": [
-                "modules/example/nav/nav.ts"
-            ],
-            "example/navItem": [
-                "modules/example/navItem/navItem.ts"
-            ],
-            "example/recipes": [
-                "modules/example/recipes/recipes.ts"
-            ],
-            "example/recipesItem": [
-                "modules/example/recipesItem/recipesItem.ts"
-            ],
+            "example/animalPageHandler": ["modules/example/animalPageHandler/animalPageHandler.ts"],
+            "example/contact": ["modules/example/contact/contact.ts"],
+            "example/childRouter": ["modules/example/childRouter/childRouter.ts"],
+            "example/home": ["modules/example/home/home.ts"],
+            "example/products": ["modules/example/products/products.ts"],
+            "example/homePageHandler": ["modules/example/homePageHandler/homePageHandler.ts"],
+            "example/link": ["modules/example/link/link.ts"],
+            "example/namedPageHandler": ["modules/example/namedPageHandler/namedPageHandler.ts"],
+            "example/nav": ["modules/example/nav/nav.ts"],
+            "example/navItem": ["modules/example/navItem/navItem.ts"],
+            "example/recipes": ["modules/example/recipes/recipes.ts"],
+            "example/recipesItem": ["modules/example/recipesItem/recipesItem.ts"],
             "example/recipesPageAttributeApplier": [
                 "modules/example/recipesPageAttributeApplier/recipesPageAttributeApplier.ts"
             ],
-            "example/recipesPageHandler": [
-                "modules/example/recipesPageHandler/recipesPageHandler.ts"
-            ],
-            "example/rootRouter": [
-                "modules/example/rootRouter/rootRouter.ts"
-            ],
-            "lwr/router": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"
-            ],
+            "example/recipesPageHandler": ["modules/example/recipesPageHandler/recipesPageHandler.ts"],
+            "example/rootRouter": ["modules/example/rootRouter/rootRouter.ts"],
+            "lwr/router": ["../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"],
             "lwr/navigation": [
                 "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
             ],

@@ -3,18 +3,21 @@
     "selector": {
         "css": "example-home"
     },
-    "elements": [{
-        "name": "heading",
-        "public": true,
-        "type": "actionable",
-        "selector": {
-            "css": "h1"
+    "elements": [
+        {
+            "name": "heading",
+            "public": true,
+            "type": "actionable",
+            "selector": {
+                "css": "h1"
+            }
+        },
+        {
+            "name": "description",
+            "public": true,
+            "selector": {
+                "css": ".text"
+            }
         }
-    }, {
-        "name": "description",
-        "public": true,
-        "selector": {
-            "css": ".text"
-        }
-    }]
+    ]
 }

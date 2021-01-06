@@ -22,7 +22,7 @@ export default class NavItem extends LightningElement {
     get selected(): boolean {
         return this._selected;
     }
-    set selected(newValue) {
+    set selected(newValue: boolean) {
         this._selected = newValue;
         const li = (this.template as any).querySelector('li');
         if (li) {
