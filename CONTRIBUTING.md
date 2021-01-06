@@ -4,8 +4,7 @@ We want to encourage the developer community to contribute Lightning Web Runtime
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Building LWR](#building-lwr)
-- [Running LWR](#running-lwr)
+- [Startup](#startup)
 - [Testing](#testing)
 - [Git Workflow](#git-workflow)
 
