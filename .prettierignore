@@ -1,0 +1,4 @@
+node_modules/
+build/
+__lwr_cache__
+packages/base-slds/src/assets/
