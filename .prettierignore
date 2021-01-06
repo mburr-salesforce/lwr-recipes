@@ -1,4 +1,5 @@
 node_modules/
 build/
 __lwr_cache__
+**/pageObjects/*
 packages/base-slds/src/assets/
