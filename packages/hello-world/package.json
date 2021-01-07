@@ -3,14 +3,15 @@
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
+    "type": "module",
     "scripts": {
         "clean": "rm -rf __lwr_cache__",
         "start": "node scripts/start-server.mjs",
         "start:amd": "MODE=compat node scripts/start-server.mjs"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha32",
-        "lwc": "~1.9.0"
+        "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha37"
     },
     "engines": {
         "node": ">=12.18.0 <15"

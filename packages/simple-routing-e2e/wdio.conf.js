@@ -55,9 +55,11 @@ exports.config = {
                 port: PORT,
                 rootDir: '../simple-routing',
             })
-                .listen(({ port, serverMode }) => {
-                    console.log(`SimpleRouting listening on port ${port} in ${serverMode} mode`);
-                    resolve();
+                .then((app) => {
+                    app.listen(({ port, serverMode }) => {
+                        console.log(`SimpleRouting listening on port ${port} in ${serverMode} mode`);
+                        resolve();
+                    });
                 })
                 .catch((err) => {
                     console.error(err);

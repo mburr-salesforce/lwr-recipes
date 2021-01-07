@@ -1,9 +1,8 @@
-import LWR from '@lwrjs/core';
+import { createServer } from 'lwr';
 
-const lwrApp = LWR();
-lwrApp
-    .listen(({ port, serverMode }) => {
-        console.log(`SimpleRouting listening on port ${port} in ${serverMode} mode`);
+createServer()
+    .listen(({ port, serverMode }: { port: number; serverMode: string }) => {
+        console.log(`App listening on port ${port} in ${serverMode} mode\n`);
     })
     .catch((err: Error) => {
         console.error(err);

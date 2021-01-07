@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
+    "type": "module",
     "types": "build/index.d.ts",
     "main": "build/index.js",
     "files": [
@@ -15,12 +16,12 @@
         "start:amd": "MODE=compat node build/index.js"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha32",
-        "@lwrjs/loader": "0.0.2-alpha32",
-        "@lwrjs/router": "0.0.2-alpha32",
+        "@lwrjs/loader": "0.0.2-alpha37",
+        "@lwrjs/router": "0.0.2-alpha37",
         "@babel/core": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
         "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha37",
         "typescript": "^3.8.3"
     },
     "engines": {

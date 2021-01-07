@@ -4,7 +4,6 @@
         "baseUrl": "src",
         "rootDir": "src",
         "outDir": "build",
-        "module": "commonjs",
         "paths": {
             "example/animal": ["modules/example/animal/animal.ts"],
             "example/animalCat": ["modules/example/animalCat/animalCat.ts"],
