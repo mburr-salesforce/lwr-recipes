@@ -1,6 +1,6 @@
-import LWR from '@lwrjs/core';
+import { createServer } from 'lwr';
 
-LWR.default()
+createServer()
     .listen(({ port, serverMode }) => {
         console.log(`App listening on port ${port} in ${serverMode} mode\n`);
     })

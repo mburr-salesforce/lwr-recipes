@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
+    "type": "module",
     "types": "build/index.d.ts",
     "main": "build/index.js",
     "files": [
@@ -10,16 +11,16 @@
     ],
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
-        "build": "tsc -b && node ./scripts/copy-resources.js",
+        "build": "tsc -b && node ./scripts/copy-resources.mjs",
         "start": "node build/index.js",
         "start:amd": "MODE=compat node build/index.js"
     },
     "devDependencies": {
-        "@lwrjs/core": "0.0.2-alpha32",
         "@salesforce-ux/design-system": "^2.11.6",
         "cpx": "^1.5.0",
         "lightning-base-components": "^1.9.0-alpha",
         "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha37",
         "typescript": "^3.8.3"
     },
     "engines": {
