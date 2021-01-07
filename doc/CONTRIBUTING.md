@@ -56,7 +56,7 @@ yarn start
 ```bash
 # in compat mode and AMD format
 cd packages/hello-world
-npm run start:amd
+yarn start:amd
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
@@ -65,7 +65,7 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 ```bash
 # remove the build directory and file cache
-npm run clean
+yarn clean
 ```
 
 ## Testing
