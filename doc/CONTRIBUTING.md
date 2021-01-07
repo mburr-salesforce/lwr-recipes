@@ -126,7 +126,9 @@ git checkout -b <name-of-the-feature>
 
 ### Make your changes
 
-Modify the files, build, test, lint and eventually commit your code using the following command:
+Modify the files, build, test, lint, and be sure to add a README to your recipe using this [template](./README_TEMPLATE.md).
+
+Commit your code using the following command:
 
 ```bash
 git add <path/to/file/to/commit>
