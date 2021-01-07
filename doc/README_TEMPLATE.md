@@ -12,13 +12,11 @@
 
 ## Introduction
 
-*Summary of the feature.*
+*Short summary of the feature.*
 
 ## Details
 
-*Add sub-headings below to explain each concept of the feature. Be sure to include examples and code snippets whenever possible.*
-
-*For most features, this section will include step by step instructions on how to set up the feature.*
+*Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance*
 
 ### Topic 1
 
