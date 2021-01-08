@@ -56,7 +56,7 @@ yarn start
 ```bash
 # in compat mode and AMD format
 cd packages/hello-world
-npm run start:amd
+yarn start:amd
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
@@ -65,7 +65,7 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 ```bash
 # remove the build directory and file cache
-npm run clean
+yarn clean
 ```
 
 ## Testing
@@ -126,7 +126,9 @@ git checkout -b <name-of-the-feature>
 
 ### Make your changes
 
-Modify the files, build, test, lint and eventually commit your code using the following command:
+Modify the files, build, test, lint, and be sure to add a README to your recipe using this [template](./README_TEMPLATE.md).
+
+Commit your code using the following command:
 
 ```bash
 git add <path/to/file/to/commit>
