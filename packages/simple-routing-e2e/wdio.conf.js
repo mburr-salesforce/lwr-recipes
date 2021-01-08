@@ -1,4 +1,5 @@
 /* eslint no-unused-vars: 0 */
+const fs = require('fs');
 const path = require('path');
 const simpleRoutingApp = require('simple-routing');
 
@@ -13,6 +14,10 @@ const DEFAULT_TIMEOUT = 20000; // 1000 * 60 * 30;
 
 // Use the same environment variable(s) as LWR does to initialize
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
+const CHROME_ARGS = ['--headless', '--verbose'];
+if (fs.existsSync('/.dockerenv')) {
+    CHROME_ARGS.push('--no-sandbox');
+}
 
 exports.config = {
     runner: 'local',
@@ -23,7 +28,7 @@ exports.config = {
             maxInstances: 1,
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['--headless', '--verbose'],
+                args: CHROME_ARGS,
             },
         },
     ],
