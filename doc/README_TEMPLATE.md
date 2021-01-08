@@ -16,7 +16,7 @@
 
 ## Details
 
-*Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance*
+*Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance.*
 
 ### Topic 1
 
@@ -83,4 +83,3 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 -   layout templates: [src/layouts/](./src/layouts)
 -   custom *module/view* provider: [src/services/feature-provider.ts](./src/services/feature-provider.ts)
 -   *remove irrelevant links above, and add any additional ones below*
-
