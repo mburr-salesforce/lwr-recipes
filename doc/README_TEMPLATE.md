@@ -12,7 +12,7 @@
 
 ## Introduction
 
-*Short summary of the feature.*
+*Short summary of the feature. What can a developer accomplish with this recipe? Can it stand alone? Or is it intended to be used with other recipes? *
 
 ## Details
 
