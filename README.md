@@ -14,9 +14,9 @@ A collection of sample projects for Lightning Web Runtime (LWR) ([source](https:
 ## Sample projects
 
 Go to a sample to see how to install, run and learn:
-- Barebones [Hello World](./hello-world)
-- Single Page Application (SPA) with [Simple Routing](./simple-routing)
-- Including [SLDS and Base Components](./base-slds)
-- SPA with [Nested Routing](./nested-routing)
-- Creating a [Custom Module Provider](./module-provider)
-- Configuring a [Bootstrap Init Override](./init-override)
+- Barebones [Hello World](./packages/hello-world)
+- Single Page Application (SPA) with [Simple Routing](./packages/simple-routing)
+- Including [SLDS and Base Components](./packages/base-slds)
+- SPA with [Nested Routing](./packages/nested-routing)
+- Creating a [Custom Module Provider](./packages/module-provider)
+- Configuring a [Bootstrap Init Override](./packages/init-override)
