@@ -1,5 +1,5 @@
 {
-    "lwc": { "modules": [{ "dir": "src/modules" }] },
+    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
     "routes": [
         {
             "id": "module-provider",
