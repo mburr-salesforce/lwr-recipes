@@ -13,17 +13,16 @@
         "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
         "build": "tsc -b && yarn utam:compile",
         "start": "node build/autostart.js",
-        "start:amd": "MODE=compat node build/index.js",
-        "start:prod": "MODE=prod node build/autostart.js",
+        "start:amd": "MODE=compat node build/autostart.js",
         "utam:compile": "utam -c utam.config.js"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
         "@babel/register": "^7.9.0",
-        "@lwrjs/core": "0.0.2-alpha37",
-        "@lwrjs/loader": "0.0.2-alpha37",
-        "@lwrjs/router": "0.0.2-alpha37",
+        "@lwrjs/core": "0.0.2-alpha43",
+        "@lwrjs/loader": "0.0.2-alpha43",
+        "@lwrjs/router": "0.0.2-alpha43",
         "@types/jest": "^25.2.1",
         "@wdio/cli": "^6.6.2",
         "@wdio/jasmine-framework": "^6.6.0",
@@ -32,7 +31,7 @@
         "chromedriver": "^86.0.0",
         "lerna": "^3.20.2",
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha37",
+        "lwr": "0.0.2-alpha43",
         "rimraf": "^3.0.2",
         "ts-node": "^9.0.0",
         "typescript": "^3.8.3",
@@ -41,6 +40,6 @@
         "wdio-utam-service": "0.0.1-alpha9"
     },
     "engines": {
-        "node": ">=12.18.0 <15"
+        "node": ">=14.15.1 <15"
     }
 }

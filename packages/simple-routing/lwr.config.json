@@ -1,9 +1,5 @@
 {
-    "modules": [
-        {
-            "dir": "<rootDir>/src/modules"
-        }
-    ],
+    "lwc": { "modules": [{ "dir": "src/modules" }] },
     "routes": [
         {
             "id": "simple-routing",

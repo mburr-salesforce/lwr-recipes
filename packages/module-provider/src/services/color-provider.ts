@@ -1,13 +1,5 @@
 import * as path from 'path';
-import {
-    AbstractModuleId,
-    Compiler,
-    ModuleCompiled,
-    ModuleEntry,
-    ModuleProvider,
-    ModuleSource,
-    ProviderContext,
-} from '@lwrjs/types';
+import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from '@lwrjs/types';
 import { hashContent } from '@lwrjs/shared-utils';
 
 function parseModuleName(name: string): { color: string; fileType: string } {
@@ -59,11 +51,9 @@ export default class ColorProvider implements ModuleProvider {
     name = 'color-provider';
     namespace = 'color/';
     version = '1';
-    private compiler: Compiler;
 
-    constructor({ compiler }: ProviderContext) {
+    constructor() {
         print('Custom Module Provider has started!');
-        this.compiler = compiler;
     }
 
     async getModuleEntry({ specifier }: AbstractModuleId): Promise<ModuleEntry | undefined> {
@@ -79,23 +69,17 @@ export default class ColorProvider implements ModuleProvider {
         }
     }
 
-    async getModuleSource({
-        specifier,
-        namespace,
-        name,
-    }: AbstractModuleId): Promise<ModuleSource | undefined> {
+    async getModule({ specifier, namespace, name }: AbstractModuleId): Promise<ModuleCompiled | undefined> {
         // Retrieve the Module Entry
         const moduleEntry = await this.getModuleEntry({ specifier });
-        if (!moduleEntry) {
+        if (!moduleEntry || !name) {
             return;
-        }
-
-        if (!name) {
-            return undefined;
         }
 
         // Generate code for the requested module
         const originalSource = generateModule(name);
+        const { color, fileType } = parseModuleName(name);
+        print(`Color Module Provider returning ${fileType} code for color "${color}": ${originalSource}`);
 
         // Construct a Module Source object
         return {
@@ -107,40 +91,7 @@ export default class ColorProvider implements ModuleProvider {
             originalSource,
             moduleEntry,
             ownHash: hashContent(originalSource),
-        };
-    }
-
-    async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
-        // Get the Module Source
-        const moduleSource = await this.getModuleSource(moduleId);
-        if (!moduleSource) {
-            return;
-        }
-
-        // Compile the module
-        const { namespace, name } = moduleId;
-        if (!name) {
-            return;
-        }
-        const { code: compiledSource, metadata: compiledMetadata } = await this.compiler.compileFile(
-            moduleSource.originalSource,
-            {
-                // Remove #'s to avoid lwc syntax errors
-                namespace,
-                name: name.replace(/#/g, '_'),
-                filename: moduleSource.moduleEntry.entry.replace(/#/g, '_'),
-            },
-        );
-
-        // Construct a Compiled Module
-        const { color, fileType } = parseModuleName(name);
-        print(
-            `Color Module Provider returning ${fileType} code for color "${color}": ${moduleSource.originalSource}`,
-        );
-        return {
-            ...moduleSource,
-            compiledSource,
-            compiledMetadata,
+            compiledSource: originalSource,
         };
     }
 }
