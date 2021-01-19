@@ -46,7 +46,7 @@ This project uses [Volta](https://volta.sh/) to ensure that all the contributors
 git clone git@github.com:salesforce/lwr-recipes.git
 cd lwr-recipes
 ```
-### Install Yarn dependencies
+### Install project dependencies
 
 ```bash
 yarn install
