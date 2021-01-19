@@ -5,6 +5,11 @@
             "id": "nested-routing",
             "path": "/",
             "rootComponent": "example/app"
+        },
+        {
+            "id": "nested-routing",
+            "path": "/animal",
+            "rootComponent": "example/app"
         }
     ]
 }

@@ -5,6 +5,16 @@
             "id": "simple-routing",
             "path": "/",
             "rootComponent": "example/app"
+        },
+        {
+            "id": "simple-routing",
+            "path": "/:namedPage",
+            "rootComponent": "example/app"
+        },
+        {
+            "id": "simple-routing",
+            "path": "/:recipes/:title/:ingredients",
+            "rootComponent": "example/app"
         }
     ]
 }
