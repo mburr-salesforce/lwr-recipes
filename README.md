@@ -40,18 +40,19 @@ This project uses [Volta](https://volta.sh/) to ensure that all the contributors
 
  *We use [yarn](https://yarnpkg.com/) because it is significantly faster than npm for our use case. See this command [cheatsheet](https://yarnpkg.com/lang/en/docs/migrating-from-npm/).*
 
-```bash
-yarn install
-```
-
-If this fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then verify that the yarn installation was successful.
-
 ### Clone the repository
 
 ```bash
 git clone git@github.com:salesforce/lwr-recipes.git
 cd lwr-recipes
 ```
+### Install Yarn dependencies
+
+```bash
+yarn install
+```
+
+If this command fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then verify that the yarn installation was successful.
 
 ### Build all LWR recipes
 
