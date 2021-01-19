@@ -13,8 +13,8 @@ function generateModule(message: string): string {
 
 export default class EchoProvider implements ModuleProvider {
     name = 'echo-provider';
-    namespace = 'echo/';
-    version = '1';
+    private namespace = 'echo/';
+    private version = '1';
 
     // Return a ModuleEntry, if this provider can handle the incoming module specifier
     async getModuleEntry({ specifier }: AbstractModuleId): Promise<ModuleEntry | undefined> {
