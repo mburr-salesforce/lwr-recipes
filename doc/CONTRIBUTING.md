@@ -10,7 +10,7 @@ We want to encourage the developer community to contribute Lightning Web Runtime
 
 ## Requirements
 
- * [Node](https://nodejs.org/) >= 14.15.1
+ * [Node](https://nodejs.org/) >=14.15.1 <15
  * [Yarn](https://yarnpkg.com/) >= 1.22.5
 
 This project uses [Volta](https://volta.sh/) to ensure that all the contributors share the same version of `Node` and `Yarn` for development. If you are considering making frequent contributions to this project, we recommend installing this tool as well.
@@ -126,17 +126,16 @@ git checkout -b <name-of-the-feature>
 
 ### Make your changes
 
-Modify the files, build, test, lint, and be sure to add a README to your recipe using this [template](./README_TEMPLATE.md).
-
-Commit your code using the following command:
+1. Modify the files
+1. Build, test, and lint by running `yarn ready` from the root directory. 
+1. Add a README to your recipe using this [template](./README_TEMPLATE.md).
+1. Commit your code using the following command, using a descriptive commit message that follows our [Commit Message Guidelines](#commit):
 
 ```bash
 git add <path/to/file/to/commit>
 git commit
 git push origin <name-of-the-feature>
 ```
-
-Commit your changes using a descriptive commit message that follows our [Commit Message Guidelines](#commit). 
 
 The above commands will commit the files into your feature branch. You can keep
 pushing new changes into the same branch until you are ready to create a pull

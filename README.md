@@ -2,6 +2,8 @@
 
 A collection of sample projects for Lightning Web Runtime (LWR) ([source](https://github.com/salesforce/lwr)). Each recipe demonstrates how to code a specific use case. From Hello World to Single Page Applications to resource bundling and chunking, there is a recipe for that!
 
+If you'd like to contribute to this project, see our guide [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/CONTRIBUTING.md).
+
 ## Installation
 
 1. Clone the lwc-recipes repository:
