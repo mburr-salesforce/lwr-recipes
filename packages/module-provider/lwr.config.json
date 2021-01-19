@@ -8,6 +8,7 @@
         }
     ],
     "moduleProviders": [
+        "<rootDir>/build/services/echo-provider.js",
         "<rootDir>/build/services/color-provider.js",
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
