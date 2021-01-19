@@ -2,6 +2,7 @@
 
 ## Features
 
+-   Enables Lightning Locker to run modules in a secure sandbox. Locker is only enabled when running in AMD `yarn start:amd`
 
 ### Concepts
 

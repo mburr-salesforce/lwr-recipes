@@ -1,4 +1,4 @@
-import {LightningElement} from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class TrustedCookieMonster extends LightningElement {
     get myCookies() {
