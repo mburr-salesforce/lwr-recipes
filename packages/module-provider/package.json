@@ -16,6 +16,7 @@
         "start:amd": "MODE=compat node build/index.js"
     },
     "devDependencies": {
+        "@lwrjs/lwc-module-provider": "0.0.2-alpha43",
         "lwc": "~1.9.0",
         "lwr": "0.0.2-alpha43",
         "typescript": "^3.8.3"
