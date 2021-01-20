@@ -1,16 +1,16 @@
 # Contributing to Lightning Web Runtime Recipes
 
-We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide assumes that you have already met the requirements and installation instructions in the [README](../README.md). 
+We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide assumes that you have already met the requirements and installation instructions in the [README](../README.md).
 
-- [Prerequisites](#prerequisites)
-- [Testing](#testing)
-- [Git Workflow](#git-workflow)
+-   [Prerequisites](#prerequisites)
+-   [Testing](#testing)
+-   [Git Workflow](#git-workflow)
 
 ## Prerequisites
 
-- [Set up SSH access to Github][setup-github-ssh].
-- Make sure your editor supports [typescript](https://www.typescriptlang.org/).
-- [Configure your editor][eslint-integrations] to use our eslint configurations.
+-   [Set up SSH access to Github][setup-github-ssh].
+-   Make sure your editor supports [typescript](https://www.typescriptlang.org/).
+-   [Configure your editor][eslint-integrations] to use our eslint configurations.
 
 ## Testing
 
@@ -54,7 +54,7 @@ git checkout -b <name-of-the-feature>
 ### Make your changes
 
 1. Modify the files
-1. Build, test, and lint by running `yarn ready` from the root directory. 
+1. Build, test, and lint by running `yarn ready` from the root directory.
 1. Add a README to your recipe using this [template](./README_TEMPLATE.md).
 1. Commit your code using the following command, using a descriptive commit message that follows our [Commit Message Guidelines](#commit):
 
@@ -147,7 +147,7 @@ readable messages** that are easy to follow when looking through the **project h
 
 #### Commit Message Format
 
-Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
+Each commit message consists of a **header**, a **body** and a **footer**. The header has a special
 format that includes a **type**, a **scope** and a **subject**:
 
 ```
@@ -170,6 +170,7 @@ Samples: (even more [samples](https://github.com/salesforce/lwr/pulls))
 ```
 docs(changelog): update change log to beta.
 ```
+
 ```
 fix(release): need to depend on latest rxjs and zone.js
 
@@ -177,22 +178,24 @@ The version in our package.json gets copied to the one we publish, and users nee
 ```
 
 #### Reverting a commit
+
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
 #### Commit Type
+
 Must be one of the following:
 
-* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-* **chore**: Other changes that don't modify src or test files
-* **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-* **docs**: Documentation only changes
-* **feat**: A new feature
-* **fix**: A bug fix
-* **perf**: A code change that improves performance
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **revert**: Reverts a previous commit
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **test**: Adding missing tests or correcting existing tests
+-   **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+-   **chore**: Other changes that don't modify src or test files
+-   **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+-   **docs**: Documentation only changes
+-   **feat**: A new feature
+-   **fix**: A bug fix
+-   **perf**: A code change that improves performance
+-   **refactor**: A code change that neither fixes a bug nor adds a feature
+-   **revert**: Reverts a previous commit
+-   **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+-   **test**: Adding missing tests or correcting existing tests
 
 #### Commit Scope
 
@@ -200,23 +203,25 @@ The scope should be the name of the npm package affected, as perceived by the pe
 
 There are currently a few exceptions to the "use package name" rule:
 
-* **packaging**: used for changes that change the npm package layout in all of our packages, e.g. public path changes, package.json changes done to all packages, d.ts file/format changes, changes to bundles, etc.
-* **changelog**: used for updating the release notes in CHANGELOG.md
-* **lwr docs**: used for docs related changes within the lwr/docs directory of the repo
-* none/empty string: useful for `style`, `test` and `refactor` changes that are done across all packages (e.g. `style: add missing semicolons`)
+-   **packaging**: used for changes that change the npm package layout in all of our packages, e.g. public path changes, package.json changes done to all packages, d.ts file/format changes, changes to bundles, etc.
+-   **changelog**: used for updating the release notes in CHANGELOG.md
+-   **lwr docs**: used for docs related changes within the lwr/docs directory of the repo
+-   none/empty string: useful for `style`, `test` and `refactor` changes that are done across all packages (e.g. `style: add missing semicolons`)
 
 #### Commit Subject
 
 The subject contains a succinct description of the change:
 
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* don't capitalize first letter
-* no dot (.) at the end
+-   use the imperative, present tense: "change" not "changed" nor "changes"
+-   don't capitalize first letter
+-   no dot (.) at the end
 
 #### Commit Body
+
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
 
 #### Commit Footer
+
 The footer should contain any information about **Breaking Changes** and is also the place to reference GitHub issues that this commit **closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.

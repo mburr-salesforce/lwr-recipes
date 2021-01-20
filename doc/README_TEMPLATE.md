@@ -12,15 +12,15 @@
 
 ## Introduction
 
-*Short summary of the feature. What can a developer accomplish with this recipe? Can it stand alone? Or is it intended to be used with other recipes?*
+_Short summary of the feature. What can a developer accomplish with this recipe? Can it stand alone? Or is it intended to be used with other recipes?_
 
 ## Details
 
-*Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance.*
+_Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance._
 
 ### Topic 1
 
-*Lorem ipsum dolor sit amet.*
+_Lorem ipsum dolor sit amet._
 
 ```
 src/
@@ -37,7 +37,7 @@ src/
 
 ### Topic 2
 
-*Nulla ut eros suscipit, vestibulum.*
+_Nulla ut eros suscipit, vestibulum._
 
 1. provide
 1. step
@@ -47,7 +47,7 @@ src/
 
 ### Topic n
 
-*Interdum et malesuada fames ac.*
+_Interdum et malesuada fames ac._
 
 ```ts
 // use plenty of code snippets
@@ -57,7 +57,7 @@ src/
 
 ### Setup
 
-*Describe any setup steps specific to this recipe.*
+_Describe any setup steps specific to this recipe._
 
 ```bash
 # from the lwr-recipes root
@@ -81,5 +81,5 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 -   static resources: [src/assets/](./src/assets)
 -   content templates: [src/content/](./src/content)
 -   layout templates: [src/layouts/](./src/layouts)
--   custom *module/view* provider: [src/services/feature-provider.ts](./src/services/feature-provider.ts)
--   *remove irrelevant links above, and add any additional ones below*
+-   custom _module/view_ provider: [src/services/feature-provider.ts](./src/services/feature-provider.ts)
+-   _remove irrelevant links above, and add any additional ones below_

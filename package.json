@@ -9,13 +9,13 @@
     },
     "scripts": {
         "clean": "lerna run clean --stream && lerna exec -- rimraf build/ tsconfig.tsbuildinfo __lwr_cache__ node_modules && lerna clean --yes && rimraf node_modules",
-        "lint": "eslint '**/*.{js,ts}' --max-warnings 0",
-        "format": "prettier --write '{packages,scripts}/**/*.{js,ts,json,md}'",
-        "prettier": "prettier --check '{packages,scripts}/**/*.{js,ts,json,md}'",
+        "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
+        "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
+        "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
         "build": "lerna run build --stream && tsc -b",
         "start": "lerna run start --scope simple-routing -- ",
         "test:e2e": "lerna run test:e2e --scope simple-routing-e2e",
-        "ready": "yarn && yarn build && yarn lint && yarn prettier && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\""
+        "ready": "yarn && yarn lint && yarn prettier && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\""
     },
     "workspaces": [
         "packages/*"
@@ -41,8 +41,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -e $GIT_PARAMS"
+            "pre-commit": "lint-staged --config ./config/lint-staged.config.js",
+            "commit-msg": "commitlint -e $GIT_PARAMS --config ./config/commitlint.config.js"
         }
     }
 }

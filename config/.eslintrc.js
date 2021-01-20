@@ -2,23 +2,20 @@ module.exports = {
     root: true,
     parserOptions: {
         ecmaVersion: 2020,
-        sourceType: 'module'
+        sourceType: 'module',
     },
-    plugins: [
-        'prettier',
-        '@typescript-eslint'
-    ],
+    plugins: ['prettier', '@typescript-eslint'],
     parser: '@typescript-eslint/parser',
 
     overrides: [
         {
-            files: ["*.ts"],
+            files: ['*.ts'],
             extends: [
                 'eslint:recommended',
                 'plugin:@typescript-eslint/eslint-recommended',
                 'plugin:@typescript-eslint/recommended',
                 'prettier',
-                'prettier/@typescript-eslint'
+                'prettier/@typescript-eslint',
             ],
             rules: {
                 'prettier/prettier': 0,
@@ -36,9 +33,7 @@ module.exports = {
                 es6: true,
                 jest: true,
             },
-            extends: [
-                'eslint:recommended',
-            ]
+            extends: ['eslint:recommended'],
         },
-    ]
-}
+    ],
+};
