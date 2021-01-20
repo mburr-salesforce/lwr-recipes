@@ -1,8 +1,26 @@
 import * as path from 'path';
-import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from '@lwrjs/types';
+import {
+    AbstractModuleId,
+    FsModuleEntry,
+    ModuleCompiled,
+    ModuleEntry,
+    ModuleProvider,
+    ModuleSource,
+} from '@lwrjs/types';
+import LwcModuleProvider from '@lwrjs/lwc-module-provider';
 import { hashContent } from '@lwrjs/shared-utils';
 
-function parseModuleName(name: string): { color: string; fileType: string } {
+// This Module Provider returns generated LWC modules.
+// The LWC displays a circle filled with the color parsed from the module specifier.
+// The module specifiers handled in this provider take the form: "color/{colorName}"
+
+interface ColorModule {
+    color: string; // eg: red, blue, green
+    fileType: string; // LWC file types: html, css or js
+}
+
+// Pull the color and file extension/type from the module specifier
+function parseModuleName(name: string): ColorModule {
     // colorName = 'purple' or 'purple#purple.html' or 'purple#purple.css'
     const [color] = name.split('#');
     const fileType = (path.extname(name) || '.js').substr(1);
@@ -10,8 +28,8 @@ function parseModuleName(name: string): { color: string; fileType: string } {
     return { color, fileType };
 }
 
-function generateModule(colorName: string): string {
-    const { color, fileType } = parseModuleName(colorName);
+// Return generated LWC code strings by file type: js, css or html
+function generateModule({ color, fileType }: ColorModule): string {
     switch (fileType) {
         case 'html':
             return `
@@ -43,25 +61,23 @@ export default class ${color.charAt(0).toUpperCase()}${color.slice(1)}Color exte
     }
 }
 
+// Helper for printing messages from this provider
 function print(message: string): void {
     console.log(`\n***********************\n${message}\n***********************\n`);
 }
 
-export default class ColorProvider implements ModuleProvider {
+// When generating LWCs, extend the LwcModuleProvider in order to handle LWC compilation
+export default class ColorProvider extends LwcModuleProvider implements ModuleProvider {
     name = 'color-provider';
-    namespace = 'color/';
-    version = '1';
+    private namespace = 'color/';
+    private version = '1';
 
-    constructor() {
-        print('Custom Module Provider has started!');
-    }
-
-    async getModuleEntry({ specifier }: AbstractModuleId): Promise<ModuleEntry | undefined> {
+    // Return a ModuleEntry, if this provider can handle the incoming module specifier
+    async getModuleEntry({ specifier }: AbstractModuleId): Promise<FsModuleEntry | undefined> {
         // Modules handled by this provider have specifiers in this form: "color/{colorName}"
         if (specifier.startsWith(this.namespace)) {
             return {
                 id: `${specifier}|${this.version}`, // used as part of the cache key for this module by the LWR Module Registry
-                virtual: true, // ...because this is a server-generated module
                 entry: `<virtual>/${specifier}${path.extname(specifier) ? '' : '.js'}`,
                 specifier,
                 version: this.version,
@@ -69,29 +85,34 @@ export default class ColorProvider implements ModuleProvider {
         }
     }
 
-    async getModule({ specifier, namespace, name }: AbstractModuleId): Promise<ModuleCompiled | undefined> {
-        // Retrieve the Module Entry
-        const moduleEntry = await this.getModuleEntry({ specifier });
-        if (!moduleEntry || !name) {
-            return;
-        }
-
+    // Return a ModuleSource object, which includes the generated code as `originalSource`
+    getModuleSource(
+        { name, namespace, specifier }: AbstractModuleId,
+        moduleEntry: ModuleEntry,
+    ): ModuleSource {
         // Generate code for the requested module
-        const originalSource = generateModule(name);
-        const { color, fileType } = parseModuleName(name);
+        const colorName = specifier.replace(this.namespace, '');
+        const { color, fileType } = parseModuleName(colorName);
+        const originalSource = generateModule({ color, fileType });
         print(`Color Module Provider returning ${fileType} code for color "${color}": ${originalSource}`);
 
-        // Construct a Module Source object
+        // Create an return a ModuleSource object
+        const { version, id } = moduleEntry;
         return {
-            id: moduleEntry.id,
+            id,
             specifier,
             namespace,
-            name,
-            version: this.version,
-            originalSource,
+            name: name || specifier,
+            version,
             moduleEntry,
             ownHash: hashContent(originalSource),
-            compiledSource: originalSource,
+            originalSource,
         };
+    }
+
+    // This method handles LWC compilation => let the super class handle this processing
+    // It calls `getModuleSource` under the covers
+    async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
+        return super.getModule(moduleId);
     }
 }

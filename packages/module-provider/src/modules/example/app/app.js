@@ -1,9 +1,21 @@
 import { LightningElement } from 'lwc';
+// Generated ES echo modules
+import lwrMessage from 'echo/LWR';
+import helloMessage from 'echo/Hello World!';
 
 export default class CustomApp extends LightningElement {
+    message = '-';
     showPurple = false; // "purple"
     showBlue = false; // "navy"
     showRed = false; // "maroon"
+
+    pickLwr() {
+        this.message = lwrMessage;
+    }
+
+    pickHello() {
+        this.message = helloMessage;
+    }
 
     pickPurple() {
         this.showPurple = true;
