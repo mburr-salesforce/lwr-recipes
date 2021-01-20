@@ -1,114 +1,41 @@
 # Contributing to Lightning Web Runtime Recipes
 
-We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide has instructions to install, build, test and contribute.
+We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide assumes that you have already met the requirements and installation instructions in the [README](../README.md). 
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Startup](#startup)
+- [Prerequisites](#prerequisites)
 - [Testing](#testing)
 - [Git Workflow](#git-workflow)
 
-## Requirements
+## Prerequisites
 
- * [Node](https://nodejs.org/) >=14.15.1 <15
- * [Yarn](https://yarnpkg.com/) >= 1.22.5
-
-This project uses [Volta](https://volta.sh/) to ensure that all the contributors share the same version of `Node` and `Yarn` for development. If you are considering making frequent contributions to this project, we recommend installing this tool as well.
-
-## Installation
-
-[Set up SSH access to Github][setup-github-ssh] if you haven't done so already.
-
-### 1) Download the repository
-
-```bash
-git clone git@github.com:salesforce/lwr-recipes.git
-cd lwr-recipes
-```
-
-### 2) Install dependencies
-
-*We use [yarn](https://yarnpkg.com/) because it is significantly faster than npm for our use case. See this command [cheatsheet](https://yarnpkg.com/lang/en/docs/migrating-from-npm/).*
-
-```bash
-yarn install
-```
-
-If this fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then re-verify that the yarn installation was successful.
-
-## Startup
-
-### 1) Build all LWR recipes
-
-```bash
-yarn build
-```
-
-### 2) Running a LWR recipe
-
-Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
-
-```bash
-# in prod mode and ESM format
-cd packages/hello-world
-yarn start
-```
-```bash
-# in compat mode and AMD format
-cd packages/hello-world
-yarn start:amd
-```
-
-Open the site at [http://localhost:3000](http://localhost:3000)
-
-### Clean a LWR recipe
-
-```bash
-# remove the build directory and file cache
-yarn clean
-```
+- [Set up SSH access to Github][setup-github-ssh].
+- Make sure your editor supports [typescript](https://www.typescriptlang.org/).
+- [Configure your editor][eslint-integrations] to use our eslint configurations.
 
 ## Testing
 
-### UTAM
-
-Run [UTAM](https://rfcs.lwc.dev/rfcs/utam) tests:
+The LWR recipes use the UI Testing Automation Model (UTAM) to validate your code. Before committing any changes, run [UTAM](https://rfcs.lwc.dev/rfcs/utam) tests.
 
 ```bash
 yarn test:e2e
 ```
 
-## Editor Configurations
-
-Configuring your editor to use our lint and code style rules will make the code review process delightful!
-
-### Types
-
-LWR relies on type annotations.
-
-* Make sure your editor supports [typescript](https://www.typescriptlang.org/).
-
-### ESLint
-
-[Configure your editor][eslint-integrations] to use our eslint configurations.
-
 ## Git Workflow
 
-The process of submitting a pull request is fairly straightforward and
-generally follows the same pattern each time:
+The process of submitting a pull request is fairly straightforward and generally follows the same pattern each time:
 
 1. [Fork the lwr-recipes repo](#fork-the-lwr-repo)
-1. [Create a feature branch](#create-a-feature-branch)
-1. [Make your changes](#make-your-changes)
-1. [Rebase](#rebase)
-1. [Check your submission](#check-your-submission)
-1. [Create a pull request](#create-a-pull-request)
-1. [Update the pull request](#update-the-pull-request)
-1. [Commit Message Guidelines](#commit)
+2. [Create a feature branch](#create-a-feature-branch)
+3. [Make your changes](#make-your-changes)
+4. [Rebase](#rebase)
+5. [Check your submission](#check-your-submission)
+6. [Create a pull request](#create-a-pull-request)
+7. [Update the pull request](#update-the-pull-request)
+8. [Commit Message Guidelines](#commit)
 
 ### Fork the LWR repo
 
-[Fork][fork-a-repo] the [salesforce/lwr-recipes](https://github.com/salesforce/lwr-recipes) repo. Clone your fork in your local workspace and [configure][configuring-a-remote-for-a-fork] your remote repository settings.
+[Fork][fork-a-repo] the salesforce/lwr-recipes repo. Clone your fork in your local workspace and [configure][configuring-a-remote-for-a-fork] your remote repository settings.
 
 ```bash
 git clone git@github.com:<YOUR-USERNAME>/lwr-recipes.git

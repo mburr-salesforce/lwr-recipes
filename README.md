@@ -1,24 +1,94 @@
 # Lightning Web Runtime Recipes
 
-A collection of sample projects for Lightning Web Runtime (LWR) ([source](https://github.com/salesforce/lwr)). Each recipe demonstrates how to code a specific use case. From Hello World to Single Page Applications to resource bundling and chunking, there is a recipe for that!
+Lightning Web Runtime (LWR) is a flexible platform that supports a wide range of different web applications. Its features are composable and pluggable. LWR at its simplest is a non-opinionated way to load the modules you need for your use case. Some benefits of LWR out of the box are:
 
-If you'd like to contribute to this project, see our guide [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/CONTRIBUTING.md).
+- Performance. Our bar is set at sub-second full page loads.
+- Enjoyable local development experience.
+- All the power of LWC and the Salesforce platform at your disposal.
 
-## Installation
+This repo consists of a collection of sample projects, called recipes, for LWR ([source](https://github.com/salesforce/lwr)). Each recipe demonstrates how to code a specific use case. From Hello World to Single Page Applications to resource bundling and chunking, there is a recipe for that!
 
-1. Clone the lwc-recipes repository:
-
-    ```
-    git clone https://github.com/salesforce/lwr-recipes.git
-    cd lwr-recipes
-    ```
+If you'd like to contribute to this project, see our [contributing guide](./doc/CONTRIBUTING.md).
 
 ## Sample projects
 
-Go to a sample to see how to install, run and learn:
+All sample projects are installed when you clone this repo. Go to a recipe to learn more about how to run and configure that particular sample project:
 - Barebones [Hello World](./packages/hello-world)
 - Single Page Application (SPA) with [Simple Routing](./packages/simple-routing)
 - Including [SLDS and Base Components](./packages/base-slds)
 - SPA with [Nested Routing](./packages/nested-routing)
 - Creating a [Custom Module Provider](./packages/module-provider)
 - Configuring a [Bootstrap Init Override](./packages/init-override)
+
+## Documentation
+
+Additional LWR documentation is split between this repo and the [LWR code repo](https://github.com/salesforce/lwr), depending on the audience.
+
+- [Contributing Guide](./doc/CONTRIBUTING.md)
+- [Business Overview](./doc/business_overview.md)
+
+## Getting started
+
+Load and run a recipe in your local environment by following these getting started steps.
+
+### Requirements
+
+This project uses [Volta](https://volta.sh/) to ensure that all the contributors share the same version of `Node` and `Yarn` for development. Even if you aren't contributing to this project and are running and configuring recipes for your own use only, we recommend installing `Volta` before you install `Node` and `Yarn`.
+
+ * [Node](https://nodejs.org/) >=14.15.1 <15
+ * [Yarn](https://yarnpkg.com/) >= 1.22.5
+
+ *We use [yarn](https://yarnpkg.com/) because it is significantly faster than npm for our use case. See this command [cheatsheet](https://yarnpkg.com/lang/en/docs/migrating-from-npm/).*
+
+### Clone the repository
+
+```bash
+git clone git@github.com:salesforce/lwr-recipes.git
+cd lwr-recipes
+```
+### Install project dependencies
+
+```bash
+yarn install
+```
+
+If this command fails with an error about *UNABLE_TO_GET_ISSUER_CERT_LOCALLY*, *Error: unable to get local issuer certificate*, or a registry communication issue then verify that the yarn installation was successful.
+
+### Build all LWR recipes
+
+```bash
+yarn build
+```
+
+### Run a LWR recipe
+
+Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
+
+```bash
+# in prod mode and ESM format
+cd packages/hello-world
+yarn start
+```
+```bash
+# in compat mode and AMD format
+cd packages/hello-world
+yarn start:amd
+```
+
+Open the site at [http://localhost:3000](http://localhost:3000)
+
+### Clean a LWR recipe
+
+Cleaning a recipe removes the build directory and file cache. This command is useful if you run into errors or have a stale project.
+
+```bash
+yarn clean
+```
+
+## Contact Us
+
+Post in the `#lwr-js-help` Slack channel.
+
+## License
+
+The [license](/PLACEHOLDER) governs your use of LWR.
