@@ -14,7 +14,7 @@ logfile
 
 # Project artifacts
 __benchmarks_results__/
-*/__lwr_cache__/
+**/__lwr_cache__/
 
 # Builds
 scripts/private/

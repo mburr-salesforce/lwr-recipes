@@ -17,7 +17,7 @@ Shows you how to enable and configure Lightning Locker for an LWR App.
 
 ### Lightning Locker Configuration
 
-To enable Lightning Locker add the locker config to a bootstrap configuration for a route.  Any components or namespaces you want to run outside of locker, list in the trustednamespaces property.
+To enable Lightning Locker add the locker config to a bootstrap configuration for a route. Any components or namespaces you want to run outside of locker, list in the trustednamespaces property.
 
 ```ts
 {
@@ -65,4 +65,3 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 -   application configuration: [lwr.config.json](./lwr.config.json)
 -   lwc module directory: [src/modules/](./src/modules)
 -   layout templates: [src/layouts/](./src/layouts)
-
