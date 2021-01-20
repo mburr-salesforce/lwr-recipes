@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.settings.json",
+    "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": ".",
         "rootDir": ".",
@@ -31,5 +31,6 @@
                 "node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
             ]
         }
-    }
+    },
+    "exclude": ["build"]
 }

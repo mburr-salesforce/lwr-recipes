@@ -13,13 +13,7 @@
         "composite": true,
         "target": "ES2020",
         "skipLibCheck": true,
-        "baseUrl": ".",
+        "baseUrl": "."
     },
-    "exclude": [
-        "node_modules/**",
-        "**/__tests__/**",
-        "**/__benchmarks__/**",
-        "**/build/**",
-        "**/cjs/**"
-    ],
+    "exclude": ["node_modules/**", "**/__tests__/**", "**/__benchmarks__/**", "**/build/**", "**/cjs/**"]
 }
