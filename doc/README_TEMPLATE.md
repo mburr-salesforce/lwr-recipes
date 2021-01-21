@@ -63,7 +63,7 @@ _Describe any setup steps specific to this recipe._
 # from the lwr-recipes root
 yarn install
 yarn build
-cd recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
+cd packages/recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
 yarn start # dev mode and ESM format
 ```
 
