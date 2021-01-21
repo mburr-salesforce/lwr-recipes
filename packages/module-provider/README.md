@@ -29,7 +29,7 @@ For detailed design information, read the LWR Module Registry RFC and spec [here
 An LWR Application is automatically set up with several default module providers:
 
 -   LWC module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
--   npm module provider ([source](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution)): locates and serves modules from packages in the project's `node_modules` directories
+-   npm module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/npm-module-provider/src)): locates and serves modules from packages in the project's `node_modules` directories
 -   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources)
 -   Label module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/label-module-provider/src)): pulls labels from JSON files and returns them as ES modules (turned off by default)
 
@@ -301,7 +301,7 @@ export default class MyProvider implements ModuleProvider {
 # from the lwr-recipes root
 yarn install
 yarn build
-cd module-provider
+cd packages/module-provider
 yarn start # dev mode and ESM format
 ```
 
