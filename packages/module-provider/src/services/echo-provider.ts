@@ -1,4 +1,4 @@
-import * as path from 'path';
+import path from 'path';
 import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from '@lwrjs/types';
 import { hashContent } from '@lwrjs/shared-utils';
 
