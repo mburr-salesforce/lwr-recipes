@@ -74,14 +74,14 @@ _Note_: Add `"@lwrjs/types"` and `"@lwrjs/shared-utils"` (used later) as depende
 A LWR server contains a [module registry](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#registry), which is in charge of fulfilling module requests. The module registry maintains a list of the available module providers. When a module request comes in, the module registry delegates to its module providers by calling `getModuleEntry()` on each one. This function receives two arguments:
 
 -   a module ID, which contains the module `specifier`
--   Runtime Parameters, a `Record<string, string | number | boolean | null | undefined>` map of information specific to the request (eg: `locale`)
+-   `RuntimeParams`, a `Record<string, string | number | boolean | null | undefined>` map of information specific to the request (eg: `locale`)
 
 If a module provider can handle the request, it returns a `ModuleEntry` object, which contains:
 
 -   `id`: The module registry uses this as part of the cache key for the module, so include all information which makes this module unique. At a minimum, include the `specifer` and module provider `version`. If the module is locale-specific, add the `locale` value from the `RuntimeParams`.
--   `virtual`: Set to `true` if the code for modules from this provider is generated (ie: not read off a file system, database, etc)
+-   `virtual`: Set to `true` if module code from this provider is generated (ie: not read off a file system, database, etc)
 -   `entry`: The file path to the module. If the module is virtual, create a path based on the `specifier`.
--   `specifier`: Use the argument which was passed into `getModuleEntry()`
+-   `specifier`: Reuse the argument which was passed into `getModuleEntry()`
 -   `version`: The version of the module provider
 
 ```ts
@@ -113,7 +113,7 @@ export default class MyProvider implements ModuleProvider {
 
 #### getModule()
 
-If the module registry determines that a module provider can fulfill a request, it will call `getModule()`, which receives the same arguments as `[getModuleEntry()](#getmoduleentry)`. Though this function returns a `ModuleCompiled`, the module provider does **not** need to compile ES modules.
+If the module registry determines that a module provider can fulfill a request, it will call `getModule()`, which receives the same arguments as [`getModuleEntry()`](#getmoduleentry). Though this function returns a `ModuleCompiled`, the module provider does **not** need to compile ES modules.
 
 ```ts
 import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from '@lwrjs/types';
@@ -138,7 +138,7 @@ export default class MyProvider implements ModuleProvider {
         // Generate code for the requested ES module
         const originalSource = generateModule(message);
 
-        // Construct a Module Source object
+        // Construct a Module object
         return {
             id: moduleEntry.id,
             specifier,
@@ -149,7 +149,7 @@ export default class MyProvider implements ModuleProvider {
             moduleEntry,
             ownHash: hashContent(originalSource),
             // Note: there is no need to compile this module
-            // The Module Registry will compile the code from ES, if needed
+            // The module registry will compile ES code, if needed
             compiledSource: originalSource,
         };
     }
@@ -158,7 +158,7 @@ export default class MyProvider implements ModuleProvider {
 
 #### LWC module providers
 
-[LWCs](https://lwc.dev/guide/es_modules) are special instances of ES modules which extend the `LightningElement` class. They must be processed by the LWC compiler before being served by a module provider. It is recommended that custom LWC module providers are created by extending the existing `LwcModuleProvider` class from `@lwrjs/lwc-module-provider.
+[LWCs](https://lwc.dev/guide/es_modules) are special instances of ES modules which extend the `LightningElement` class. They must be processed by the LWC compiler before being served by a module provider. It is recommended that custom LWC module providers are created by extending the existing `LwcModuleProvider` class from `@lwrjs/lwc-module-provider`.
 
 The key is to override the `getModuleEntry()` and `getModuleSource()` functions, while deferring to the `getModule()` function of the superclass, which will take care of the LWC compilation:
 
@@ -226,7 +226,7 @@ export default class MyLwcProvider extends LwcModuleProvider implements ModulePr
         };
     }
 
-    // This method handles LWC compilation => let the super class handle this processing
+    // This method handles LWC compilation => let the superclass handle this processing
     // It calls `getModuleSource` under the covers
     async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
         return super.getModule(moduleId);
@@ -255,7 +255,7 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
 }
 ```
 
-_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed.
+_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR.
 
 #### Module provider configuration
 
@@ -276,7 +276,7 @@ Configuration can be passed from _lwr.config.json_ to a module provider construc
 }
 ```
 
-The configuration is passed into the module provider constructor, along with `[ProviderContext](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/types/src/index.ts#L327)` from the LWR server.
+The configuration is passed into the module provider constructor, along with [`ProviderContext`](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/types/src/index.ts#L327) from the LWR server.
 
 ```ts
 // src/services/provider-with-config.ts
@@ -286,7 +286,7 @@ interface MyProviderOptions {
 }
 export default class MyProvider implements ModuleProvider {
     constructor(context: ProviderContext, { cache = true, locales = [] }: MyProviderOptions) {
-        // setup
+        // initialization
     }
 }
 ```
@@ -313,7 +313,6 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 
 -   custom ES module provider: [src/services/echo-provider.ts](./src/services/echo-provider.ts)
 -   custom LWC module provider: [src/services/color-provider.ts](./src/services/color-provider.ts)
-    -   **Note**: extends from `@lwrjs/lwc-module-provider` to handle LWC compilation
 -   application configuration: [lwr.config.json](./lwr.config.json)
 -   server creation: [src/index.ts](./src/index.ts)
 -   lwc module directory: [src/modules/](./src/modules)
