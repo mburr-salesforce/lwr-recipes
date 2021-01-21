@@ -257,7 +257,7 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
 }
 ```
 
-_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR.
+_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50).
 
 #### Module provider configuration
 
