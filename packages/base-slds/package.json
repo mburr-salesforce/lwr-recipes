@@ -13,7 +13,8 @@
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b && node ./scripts/copy-resources.mjs",
         "start": "node build/index.js",
-        "start:amd": "MODE=compat node build/index.js"
+        "start:prod": "MODE=prod yarn start",
+        "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
         "@salesforce-ux/design-system": "^2.11.6",

@@ -64,14 +64,12 @@ _Describe any setup steps specific to this recipe._
 yarn install
 yarn build
 cd recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
-yarn start # prod mode and ESM format
+yarn start # dev mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-**Note**: Use `yarn start:amd` to run in compatibility mode and AMD format.
-
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/CONTRIBUTING.md#startup).
+See documentation for all commands [here](../README.md#getting-started).
 
 ### Crucial files
 

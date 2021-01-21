@@ -13,7 +13,8 @@
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
         "start": "node build/index.js",
-        "start:amd": "MODE=compat node build/index.js"
+        "start:prod": "MODE=prod yarn start",
+        "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
         "@lwrjs/lwc-module-provider": "0.0.2-alpha43",

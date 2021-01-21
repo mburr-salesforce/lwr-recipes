@@ -65,17 +65,19 @@ yarn build
 Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
 
 ```bash
-# in prod mode and ESM format
 cd packages/hello-world
 yarn start
 ```
-```bash
-# in compat mode and AMD format
-cd packages/hello-world
-yarn start:amd
-```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
+
+**Note**: Recipes can be started in three different modes:
+
+| Mode        | Start Command     | Format | File Watch         | Bundling            | Minify              |
+| ----------- | ----------------- |:------:|:------------------:|:-------------------:|:-------------------:|
+| dev         | `yarn start`      | ESM    | :white_check_mark: | :no_entry_sign:     | :no_entry_sign:     |
+| prod        | `yarn start:prod` | ESM    | :no_entry_sign:    | :white_check_mark:  | :white_check_mark:* |
+| compat      | `yarn start:amd`  | AMD    | :white_check_mark: | :no_entry_sign:     | :no_entry_sign:     |
 
 ### Clean a LWR recipe
 
