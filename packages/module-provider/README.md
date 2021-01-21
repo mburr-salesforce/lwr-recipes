@@ -52,11 +52,11 @@ package.json
 
 ### Module provider API
 
-The following sections go over each part of a module provider. See a full ES module provider example [here](./src/services/echo-provider.ts).
+The following sections go over each part of a module provider.
 
 #### `ModuleProvider` class
 
-Create a module provider by implementing the `ModuleProvider` interface provided by LWR. Give the module provider a `name`.
+Create an ES module provider by implementing the `ModuleProvider` interface provided by LWR. Give the module provider a `name`.
 
 ```ts
 // src/services/es-custom-provider.ts
@@ -67,9 +67,11 @@ export default class MyProvider implements ModuleProvider {
 }
 ```
 
+See a full ES module provider example [here](./src/services/echo-provider.ts).
+
 _Note_: Add `"@lwrjs/types"` and `"@lwrjs/shared-utils"` (used later) as dependencies in _package.json_.
 
-#### getModuleEntry()
+##### getModuleEntry()
 
 A LWR server contains a [module registry](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#registry), which is in charge of fulfilling module requests. The module registry maintains a list of the available module providers. When a module request comes in, the module registry delegates to its module providers by calling `getModuleEntry()` on each one. This function receives two arguments:
 
@@ -111,7 +113,7 @@ export default class MyProvider implements ModuleProvider {
 }
 ```
 
-#### getModule()
+##### getModule()
 
 If the module registry determines that a module provider can fulfill a request, it will call `getModule()`, which receives the same arguments as [`getModuleEntry()`](#getmoduleentry). Though this function returns a `ModuleCompiled`, the module provider does **not** need to compile ES modules.
 
