@@ -13,7 +13,8 @@
         "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
         "build": "tsc -b && yarn utam:compile",
         "start": "node build/autostart.js",
-        "start:amd": "MODE=compat node build/autostart.js",
+        "start:prod": "MODE=prod yarn start",
+        "start:amd": "MODE=compat yarn start",
         "utam:compile": "utam -c utam.config.js"
     },
     "devDependencies": {
