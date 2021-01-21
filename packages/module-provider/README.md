@@ -309,9 +309,7 @@ yarn start # dev mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-**Note**: Use `yarn start:amd` to run in compatibility mode and AMD format.
-
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes#getting-started).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/README.md#getting-started).
 
 ### Crucial files
 
