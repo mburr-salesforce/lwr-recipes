@@ -6,8 +6,8 @@
     -   [Create a module provider](#create-a-module-provider)
     -   [Module provider API](#module-provider-api)
         -   [ModuleProvider class](#moduleprovider-class)
-        -   [getModuleEntry()](#getmoduleentry)
-        -   [getModule()](#getmodule)
+        -   `[getModuleEntry()](#getmoduleentry)`
+        -   `[getModule()](#getmodule)`
         -   [LWC module providers](#lwc-module-providers)
     -   [Configuration](#configuration)
         -   [Application configuration](#application-configuration)
@@ -51,26 +51,107 @@ package.json
 
 ### Module provider API
 
-Create a module provider by implementing the `ModuleProvider` interface provided by LWR.
+The following sections go over each part of a module provider. See a full LWC module provider example [here](./src/services/echo-provider.ts).
 
 #### ModuleProvider class
 
-```ts
+Create a module provider by implementing the `ModuleProvider` interface provided by LWR. Give the module provider a `name`.
 
+```ts
+import { ModuleProvider } from '@lwrjs/types';
+export default class MyProvider implements ModuleProvider {
+    name = 'echo-provider';
+    private version = '1'; // not required, but useful
+}
 ```
 
-See a full LWC module provider example [here](./src/services/echo-provider.ts).
+_Note_: Add `"@lwrjs/types"` and `@lwrjs/shared-utils` (used later) as dependencies in _package.json_.
 
 #### getModuleEntry()
 
-```ts
+A LWR server contains a [module registry](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#registry), which is in charge of fulfilling module requests. The module registry maintains a list of the available module providers. When a module request comes in, the module registry delegates to its module providers by calling `getModuleEntry()` on each one. This function receives two arguments:
 
+-   a module ID, which contains the module `specifier`
+-   Runtime Parameters, a `Record<string, string | number | boolean | null | undefined>` map of information specific to the request (eg: `locale`)
+
+If a module provider can handle the request, it returns a `ModuleEntry` object, which contains:
+
+-   `id`: The module registry uses this as part of the cache key for the module, so include all information which makes this module unique. At a minimum, include the `specifer` and module provider `version`. If the module is locale-specific, add the `locale` value from the `RuntimeParams`.
+-   `virtual`: Set to `true` if the code for modules from this provider is generated (ie: not read off a file system, database, etc)
+-   `entry`: The file path to the module. If the module is virtual, create a path based on the `specifier`.
+-   `specifier`: Use the argument which was passed into `getModuleEntry()`
+-   `version`: The version of the module provider
+
+```ts
+import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from '@lwrjs/types';
+
+// Return true if the given specifier is handled by this module provider
+function canHandle(specifier: string): boolean {
+    // For example: this module provider checks for a namespace of "@my"
+    return specifier.startsWith('@my/');
+}
+
+export default class MyProvider implements ModuleProvider {
+    async getModuleEntry(
+        { specifier }: AbstractModuleId,
+        runtimeParams: RuntimeParams = {},
+    ): Promise<ModuleEntry | undefined> {
+        if (canHandle(specifier)) {
+            return {
+                id: `${specifier}|${this.version}`,
+                virtual: true,
+                entry: `<virtual>/${specifier}.js`,
+                specifier,
+                version: this.version,
+            };
+        }
+    }
+}
 ```
 
 #### getModule()
 
-```ts
+If the module registry determines that a module provider can fulfill a request, it will call `getModule()`, which receives the same arguments as `[getModuleEntry()](#getmoduleentry)`. Though this function returns a `ModuleCompiled`, the module provider does **not** need to compile ES modules.
 
+```ts
+import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from '@lwrjs/types';
+import { hashContent } from '@lwrjs/shared-utils';
+
+// Return a generated ES code string
+function generateModule(specifier: string): string {
+    return `...`;
+}
+
+export default class MyProvider implements ModuleProvider {
+    async getModule(
+        { specifier, namespace, name }: AbstractModuleId,
+        runtimeParams: RuntimeParams = {},
+    ): Promise<ModuleCompiled | undefined> {
+        // Retrieve the Module Entry
+        const moduleEntry = await this.getModuleEntry({ specifier });
+        if (!moduleEntry) {
+            return;
+        }
+
+        // Generate code for the requested ES module
+        const originalSource = generateModule(message);
+
+        // Construct a Module Source object
+        return {
+            id: moduleEntry.id,
+            specifier,
+            namespace,
+            name,
+            version: this.version,
+            originalSource,
+            moduleEntry,
+            ownHash: hashContent(originalSource),
+            // Note: there is no need to compile this module
+            // The Module Registry will compile the code from ES, if needed
+            compiledSource: originalSource,
+        };
+    }
+}
 ```
 
 #### LWC module providers
@@ -80,7 +161,74 @@ See a full LWC module provider example [here](./src/services/echo-provider.ts).
 The key is to override the `getModuleEntry()` and `getModuleSource()` functions, while deferring to the `getModule()` function of the superclass, which will take care of the LWC compilation:
 
 ```ts
+import path from 'path';
+import LwcModuleProvider from '@lwrjs/lwc-module-provider'; // add to package.json dependencies
+import {
+    AbstractModuleId,
+    FsModuleEntry,
+    ModuleCompiled,
+    ModuleEntry,
+    ModuleProvider,
+    ModuleSource,
+} from '@lwrjs/types';
+import { hashContent } from '@lwrjs/shared-utils';
 
+// Return generated LWC code strings by file type: html, css or default js
+function generateModule(specifier: string): string {
+    const fileType = path.extname(specifier).substr(1);
+    switch (fileType) {
+        case 'html':
+            return `<template><!-- HTML code --></template>`;
+        case 'css':
+            return `/* CSS code */`;
+        default:
+            // 'js'
+            return `
+import { LightningElement } from 'lwc';
+export default class MyLwc extends LightningElement { /* LWC code */ }`;
+    }
+}
+
+export default class MyLwcProvider extends LwcModuleProvider implements ModuleProvider {
+    name = 'lwc-provider';
+    private version = '1';
+
+    async getModuleEntry({ specifier }: AbstractModuleId): Promise<FsModuleEntry | undefined> {
+        if (canHandle(specifier)) {
+            return {
+                id: `${specifier}|${this.version}`,
+                // Incoming specifiers may be html or css code
+                // Ensure the entry file extension matches:
+                entry: `<virtual>/${specifier}${path.extname(specifier) ? '' : '.js'}`,
+                specifier,
+                version: this.version,
+            };
+        }
+    }
+
+    getModuleSource(
+        { name, namespace, specifier }: AbstractModuleId,
+        moduleEntry: ModuleEntry,
+    ): ModuleSource {
+        const originalSource = generateModule(specifier);
+        return {
+            id: moduleEntry.id,
+            specifier,
+            namespace,
+            name: name || specifier,
+            version: moduleEntry.version,
+            moduleEntry,
+            ownHash: hashContent(originalSource),
+            originalSource,
+        };
+    }
+
+    // This method handles LWC compilation => let the super class handle this processing
+    // It calls `getModuleSource` under the covers
+    async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
+        return super.getModule(moduleId);
+    }
+}
 ```
 
 See a full LWC module provider example [here](./src/services/color-provider.ts).
@@ -88,6 +236,8 @@ See a full LWC module provider example [here](./src/services/color-provider.ts).
 ### Configuration
 
 #### Application configuration
+
+register
 
 #### Module provider configuration
 
