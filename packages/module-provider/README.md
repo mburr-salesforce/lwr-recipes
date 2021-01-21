@@ -5,9 +5,9 @@
     -   [Default module providers](#default-module-providers)
     -   [Create a module provider](#create-a-module-provider)
     -   [Module provider API](#module-provider-api)
-        -   [ModuleProvider class](#moduleprovider-class)
-        -   `[getModuleEntry()](#getmoduleentry)`
-        -   `[getModule()](#getmodule)`
+        -   [`ModuleProvider` class](#moduleprovider-class)
+        -   [`getModuleEntry()`](#getmoduleentry)
+        -   [`getModule()`](#getmodule)
         -   [LWC module providers](#lwc-module-providers)
     -   [Configuration](#configuration)
         -   [Application configuration](#application-configuration)
@@ -31,19 +31,20 @@ An LWR Application is automatically set up with several default module providers
 -   LWC module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
 -   npm module provider ([source](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution)): locates and serves modules from packages in the project's `node_modules` directories
 -   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources)
--   Label module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/label-module-provider/src)): pulls labels from JSON files and returns them as ES modules
+-   Label module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/label-module-provider/src)): pulls labels from JSON files and returns them as ES modules (turned off by default)
 
 ### Create a module provider
 
-Custom module providers can be stored in the LWR Application source. Here, they are stored in _/src/services/_:
+Custom module providers can be stored in a LWR Application's source. Here, they are stored in _/src/services/_:
 
-```
+```bash
+build/ # holds ts -> js transpiled files
 node_modules/
 src/
   ├── modules/
   ├── services/
-  │   ├── custom-provider.ts
-  │   └── another-custom-provider.ts
+  │   ├── es-custom-provider.ts
+  │   └── lwc-custom-provider.ts
   └── index.ts
 lwr.config.json
 package.json
@@ -51,13 +52,14 @@ package.json
 
 ### Module provider API
 
-The following sections go over each part of a module provider. See a full LWC module provider example [here](./src/services/echo-provider.ts).
+The following sections go over each part of a module provider. See a full ES module provider example [here](./src/services/echo-provider.ts).
 
-#### ModuleProvider class
+#### `ModuleProvider` class
 
 Create a module provider by implementing the `ModuleProvider` interface provided by LWR. Give the module provider a `name`.
 
 ```ts
+// src/services/es-custom-provider.ts
 import { ModuleProvider } from '@lwrjs/types';
 export default class MyProvider implements ModuleProvider {
     name = 'echo-provider';
@@ -65,7 +67,7 @@ export default class MyProvider implements ModuleProvider {
 }
 ```
 
-_Note_: Add `"@lwrjs/types"` and `@lwrjs/shared-utils` (used later) as dependencies in _package.json_.
+_Note_: Add `"@lwrjs/types"` and `"@lwrjs/shared-utils"` (used later) as dependencies in _package.json_.
 
 #### getModuleEntry()
 
@@ -161,6 +163,7 @@ export default class MyProvider implements ModuleProvider {
 The key is to override the `getModuleEntry()` and `getModuleSource()` functions, while deferring to the `getModule()` function of the superclass, which will take care of the LWC compilation:
 
 ```ts
+// src/services/lwc-custom-provider.ts
 import path from 'path';
 import LwcModuleProvider from '@lwrjs/lwc-module-provider'; // add to package.json dependencies
 import {
@@ -237,9 +240,56 @@ See a full LWC module provider example [here](./src/services/color-provider.ts).
 
 #### Application configuration
 
-register
+Register a custom module provider by adding it to _lwr.config.json_. Make sure Typescript has been transpiled into JavaScript.
+
+```json
+// lwr.config.json
+{
+    "moduleProviders": [
+        "<rootDir>/build/services/es-custom-provider.js",
+        "<rootDir>/build/services/lwc-custom-provider.js",
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}
+```
+
+_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed.
 
 #### Module provider configuration
+
+Configuration can be passed from _lwr.config.json_ to a module provider constructor. The configuration can be any JSON object or primitive type. For example:
+
+```json
+// lwr.config.json
+{
+    "moduleProviders": [
+        [
+            "<rootDir>/build/services/provider-with-config.js",
+            {
+                "cache": true,
+                "locales": ["en", "es", "de"]
+            }
+        ]
+    ]
+}
+```
+
+The configuration is passed into the module provider constructor, along with `[ProviderContext](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/types/src/index.ts#L327)` from the LWR server.
+
+```ts
+// src/services/provider-with-config.ts
+interface MyProviderOptions {
+    cache?: boolean;
+    locales?: string[];
+}
+export default class MyProvider implements ModuleProvider {
+    constructor(context: ProviderContext, { cache = true, locales = [] }: MyProviderOptions) {
+        // setup
+    }
+}
+```
 
 ## Recipe
 
