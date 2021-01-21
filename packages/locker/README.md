@@ -51,7 +51,7 @@ Use the following command to build this recipe.
 # from the lwr-recipes root
 yarn install
 yarn build
-cd /packages/locker
+cd packages/locker
 yarn start:amd # locker is currently not supported in ESM
 ```
 
