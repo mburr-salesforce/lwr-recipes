@@ -18,7 +18,9 @@
 
 ## Introduction
 
-A large part of what LWR offers is resolving and serving modules for LWR Applications. LWR comes with several module providers out of the box, and a developer can also create their own _custom_ module providers. This documentation walks through the creation of two different types of module providers: [ECMAScript (ES)](https://nodejs.org/api/esm.html) modules and [LWC](https://lwc.dev/guide/introduction) modules.
+A large part of what LWR offers is resolving and serving modules for LWR Applications. LWR can serve both [ECMAScript (ES)](https://nodejs.org/api/esm.html) modules and [LWC](https://lwc.dev/guide/introduction) modules. LWR comes with several module providers out of the box, and a developer can also create their own _custom_ module providers.
+
+This documentation walks through the creation of two different types of module providers: [ES](#moduleprovider-class) and [LWC](#lwc-module-providers).
 
 For detailed design information, read the LWR Module Registry RFC and spec [here](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#module-providers).
 
@@ -29,8 +31,8 @@ For detailed design information, read the LWR Module Registry RFC and spec [here
 An LWR Application is automatically set up with several default module providers:
 
 -   LWC module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
--   npm module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/npm-module-provider/src)): locates and serves modules from packages in the project's `node_modules` directories
--   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources)
+-   npm module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
+-   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources)
 -   Label module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/label-module-provider/src)): pulls labels from JSON files and returns them as ES modules (turned off by default)
 
 ### Create a module provider
