@@ -2,12 +2,12 @@
     "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
     "routes": [
         {
-            "id": "nested-routing",
+            "id": "app",
             "path": "/",
             "rootComponent": "example/app"
         },
         {
-            "id": "nested-routing",
+            "id": "animal",
             "path": "/animal",
             "rootComponent": "example/app"
         }
