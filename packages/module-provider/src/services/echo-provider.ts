@@ -1,4 +1,4 @@
-import * as path from 'path';
+import path from 'path';
 import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from '@lwrjs/types';
 import { hashContent } from '@lwrjs/shared-utils';
 
@@ -44,7 +44,7 @@ export default class EchoProvider implements ModuleProvider {
         // Generate code for the requested ES module
         const originalSource = generateModule(message);
 
-        // Construct a Module Source object
+        // Construct a ModuleCompiled object
         return {
             id: moduleEntry.id,
             specifier,

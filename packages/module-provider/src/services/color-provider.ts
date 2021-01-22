@@ -1,4 +1,4 @@
-import * as path from 'path';
+import path from 'path';
 import {
     AbstractModuleId,
     FsModuleEntry,
@@ -96,7 +96,7 @@ export default class ColorProvider extends LwcModuleProvider implements ModulePr
         const originalSource = generateModule({ color, fileType });
         print(`Color Module Provider returning ${fileType} code for color "${color}": ${originalSource}`);
 
-        // Create an return a ModuleSource object
+        // Create and return a ModuleSource object
         const { version, id } = moduleEntry;
         return {
             id,
@@ -110,7 +110,7 @@ export default class ColorProvider extends LwcModuleProvider implements ModulePr
         };
     }
 
-    // This method handles LWC compilation => let the super class handle this processing
+    // This method handles LWC compilation => let the superclass handle this processing
     // It calls `getModuleSource` under the covers
     async getModule(moduleId: AbstractModuleId): Promise<ModuleCompiled | undefined> {
         return super.getModule(moduleId);

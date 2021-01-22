@@ -63,13 +63,13 @@ _Describe any setup steps specific to this recipe._
 # from the lwr-recipes root
 yarn install
 yarn build
-cd recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
+cd packages/recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
 yarn start # dev mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](../README.md#getting-started).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/README.md#getting-started).
 
 ### Crucial files
 
