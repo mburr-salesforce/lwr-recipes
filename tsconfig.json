@@ -5,6 +5,7 @@
     "references": [
         { "path": "./packages/base-slds" },
         { "path": "./packages/init-override" },
+        { "path": "./packages/locker" },
         { "path": "./packages/module-provider" },
         { "path": "./packages/nested-routing" },
         { "path": "./packages/simple-routing" },

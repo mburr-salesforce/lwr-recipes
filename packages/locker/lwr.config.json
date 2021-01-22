@@ -1,0 +1,19 @@
+{
+    "lwc": {
+        "modules": [{ "dir": "<rootDir>/src/modules" }]
+    },
+    "routes": [
+        {
+            "id": "locker-base",
+            "path": "/",
+            "rootComponent": "example/app",
+            "layoutTemplate": "<layoutsDir>/main.html",
+            "bootstrap": {
+                "locker": {
+                    "enabled": true,
+                    "trustedNamespaces": ["example/app", "example/trustedCmp"]
+                }
+            }
+        }
+    ]
+}

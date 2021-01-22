@@ -1,0 +1,10 @@
+:host {
+    background-color: #f3cdd4;
+    text-align: center;
+}
+
+.card {
+    padding: 10px;
+    background-color: #f3f2f2;
+    border: 1px solid #1589ee;
+} 
