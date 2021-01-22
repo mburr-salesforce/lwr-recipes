@@ -2,17 +2,17 @@
     "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
     "routes": [
         {
-            "id": "simple-routing",
+            "id": "app",
             "path": "/",
             "rootComponent": "example/app"
         },
         {
-            "id": "simple-routing",
+            "id": "named-page",
             "path": "/:namedPage",
             "rootComponent": "example/app"
         },
         {
-            "id": "simple-routing",
+            "id": "recipes",
             "path": "/:recipes/:title/:ingredients",
             "rootComponent": "example/app"
         }
