@@ -1,11 +1,14 @@
 # Feature name
 
+_See /module-provider/README.md for an example of a complete readme file._
+
 -   [Introduction](#introduction)
 -   [Details](#details)
     -   [Topic 1](#topic-1)
     -   [Topic 2](#topic-2)
     -   ...
     -   [Topic n](#topic-n)
+    -   [Configuration](#configuration)
 -   [Recipe](#Recipe)
     -   [Setup](#setup)
     -   [Crucial files](#crucial-files)
@@ -16,7 +19,7 @@ _Short summary of the feature. What can a developer accomplish with this recipe?
 
 ## Details
 
-_Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance._
+_Add sub-headings to explain each concept of the feature. Use the sample sections below as guidance. One section should cover configuration of `lwr.config.json`._
 
 ### Topic 1
 
@@ -53,6 +56,14 @@ _Interdum et malesuada fames ac._
 // use plenty of code snippets
 ```
 
+### Configuration
+
+_Need details about what each of the sections of the config file are doing._
+
+```json
+//lwr.config.json
+```
+
 ## Recipe
 
 ### Setup
@@ -73,6 +84,8 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 
 ### Crucial files
 
+_Review list of links and add/remove as needed. Some of these represent critical setup steps and should be expanded into topic sections above._
+
 -   server creation: [src/index.ts](./src/index.ts)
 -   application configuration: [lwr.config.json](./lwr.config.json)
 -   lwc module directory: [src/modules/](./src/modules)
@@ -80,4 +93,3 @@ See documentation for all commands [here](https://github.com/salesforce/lwr-reci
 -   content templates: [src/content/](./src/content)
 -   layout templates: [src/layouts/](./src/layouts)
 -   custom _module/view_ provider: [src/services/feature-provider.ts](./src/services/feature-provider.ts)
--   _remove irrelevant links above, and add any additional ones below_
