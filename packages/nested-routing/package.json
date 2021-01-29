@@ -17,12 +17,11 @@
         "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
-        "@lwrjs/loader": "0.0.2-alpha47",
-        "@lwrjs/router": "0.0.2-alpha47",
+        "@lwrjs/router": "0.0.2-alpha51",
         "@babel/core": "^7.9.0",
         "@babel/preset-typescript": "^7.9.0",
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha47",
+        "lwr": "0.0.2-alpha51",
         "typescript": "^3.8.3"
     },
     "engines": {

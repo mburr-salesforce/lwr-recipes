@@ -17,9 +17,9 @@
         "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
-        "@lwrjs/lwc-module-provider": "0.0.2-alpha47",
+        "@lwrjs/lwc-module-provider": "0.0.2-alpha51",
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha47",
+        "lwr": "0.0.2-alpha51",
         "typescript": "^3.8.3"
     },
     "engines": {
