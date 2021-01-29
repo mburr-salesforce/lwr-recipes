@@ -1,18 +1,18 @@
 {
     "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }, { "npm": "lightning-base-components" }] },
-    "assetDirs": [
+    "assets": [
         {
             "alias": "assetsDir",
             "dir": "<rootDir>/src/assets",
-            "path": "/assets"
+            "urlPath": "/assets"
         },
         {
             "dir": "<rootDir>/src/assets/fonts",
-            "path": "/fonts"
+            "urlPath": "/fonts"
         },
         {
-            "dir": "<rootDir>/src/assets/utilitySprite.svg",
-            "path": "/lightning.utilitySprite"
+            "file": "<rootDir>/src/assets/utilitySprite.svg",
+            "urlPath": "/lightning.utilitySprite"
         }
     ],
     "routes": [
