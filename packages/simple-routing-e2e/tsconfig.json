@@ -5,7 +5,7 @@
         "rootDir": ".",
         "outDir": "build",
         "module": "commonjs",
-        "types": ["node", "@types/jasmine", "webdriverio", "@utam/loader", "wdio-utam-service"],
+        "types": ["node", "@types/jasmine", "webdriverio", "@utam/loader", "wdio-utam-service", "@utam/core"],
         "paths": {
             "example/home": ["src/modules/example/home/home.ts"],
             "example/contact": ["src/modules/example/contact/contact.ts"],

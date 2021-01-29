@@ -1,19 +1,21 @@
 import App from 'simple-routing/pageObjects/app';
+import Outlet from 'simple-routing/pageObjects/outlet';
+import { ActionableUtamElement } from '@utam/core';
 
 describe('app navbar navigation', () => {
     it('landing page', async () => {
         await browser.url('/');
         browser.debug();
 
-        const appPO = await utam.load(App);
+        const appPO: App = await utam.load(App);
         expect(appPO).toBeDefined();
 
-        const outlet = await appPO.getOutlet();
+        const outlet: Outlet = await appPO.getOutlet();
         expect(outlet).toBeDefined();
 
-        const homePage = await outlet.getContent();
+        const homePage: ActionableUtamElement = await outlet.getContent();
         expect(homePage).toBeDefined();
-        expect(await homePage.isDisplayed()).toBe(true);
+        expect(await homePage.isVisible()).toBe(true);
 
         // TODO: How to inspect generic page content?
         /*

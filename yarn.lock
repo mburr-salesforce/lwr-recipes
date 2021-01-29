@@ -3155,30 +3155,30 @@
     "@typescript-eslint/types" "4.14.0"
     eslint-visitor-keys "^2.0.0"
 
-"@utam/compiler@0.0.1-alpha9":
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/@utam/compiler/-/compiler-0.0.1-alpha9.tgz#dac25a2fcc7bc904298121933a6048f3afa7f3cd"
-  integrity sha512-i8Mvd44poCPJsBMrda/dV9SsRiDhezq0HkaXp911Zdh+KasRVU0SsqcQGj7OoYkj5QWZ/xSDJULGzXN6oZZUtQ==
+"@utam/compiler@0.0.1-alpha22":
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/@utam/compiler/-/compiler-0.0.1-alpha22.tgz#2c5fab2c29f3246b444b0bc733c933c1425f0853"
+  integrity sha512-5Tgm4F6LlQm1ROZBSO6pBzcqdWp4jdWA+UCS9mhE4ylVEO91hkSb4T07FLcehdby2Cv/cLCPqBILQ2Snyr5P+Q==
   dependencies:
-    "@utam/diagnostics" "0.0.1-alpha9"
-    jsonc-parser "^2.2.1"
+    "@utam/diagnostics" "0.0.1-alpha22"
+    jsonc-parser "^3.0.0"
 
-"@utam/core@0.0.1-alpha9":
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/@utam/core/-/core-0.0.1-alpha9.tgz#f09167762903701e37c44ce33e7172b8aadd8a8a"
-  integrity sha512-Z7uCLDPYiOG+1AvuRe4zWCi2mZ4JPFFBB1OvIDSdncG7T7yP7FYTyLZLbfXi1Wjhd+oOZE39tcABbJFBiMF8eA==
+"@utam/core@0.0.1-alpha22":
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/@utam/core/-/core-0.0.1-alpha22.tgz#3bcbb78ccf928f7951d3155341569834751c5897"
+  integrity sha512-aaaqokGtMInjlNvv+xXbD2ssTj4DXgN6o4RcCtjfUhfzhS97k9NbRUrn2FHrIByN0OLB7aduSvPZMyd+f45SXw==
 
-"@utam/diagnostics@0.0.1-alpha9":
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/@utam/diagnostics/-/diagnostics-0.0.1-alpha9.tgz#01418cd3e5390ed33830842e489d8aa173fe21bd"
-  integrity sha512-KMk4zG+eGGJ7+ve7ti79AaLVGcsWMIbRJuZBzn0XintDESf8ZTURMbqXr2+r03g8anKN90h0GvHeMXzLeenSbQ==
+"@utam/diagnostics@0.0.1-alpha22":
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/@utam/diagnostics/-/diagnostics-0.0.1-alpha22.tgz#a23e82e5171b232ef5e1f17a78a26fbea7b645d5"
+  integrity sha512-dyLTgbJqtjx4OKh+iDzM4NVUnESeeXy3oNkrCLN38CuXExLZI7038Gx+/MQo0QRrZZKkj6265Gte3EwNKRImng==
 
-"@utam/loader@0.0.1-alpha9":
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/@utam/loader/-/loader-0.0.1-alpha9.tgz#77567908ce4589a6d2c917f83341bb54cf350139"
-  integrity sha512-wkkN/VsGrAW+9T9rfakk0szUrGNuJABDZEJu4+LgjXK0LsUoutIUGwuR+YB/QSkMWbboDBGvlxDidHN9pE8l/w==
+"@utam/loader@0.0.1-alpha22":
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/@utam/loader/-/loader-0.0.1-alpha22.tgz#4b3da5c28b5b6b8db050c021580cffc7d2bcc276"
+  integrity sha512-wt/VIt2VTY0L2gIr4OT2CBF7fUq5hOGRcwVB5AZlz6MMIVMqxgylLvSjORoWAJBGS6ynys/S0KnaXAudEWHNBA==
   dependencies:
-    "@utam/core" "0.0.1-alpha9"
+    "@utam/core" "0.0.1-alpha22"
 
 "@wdio/cli@^6.6.2":
   version "6.12.0"
@@ -7651,11 +7651,6 @@ json5@^2.1.0, json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsonc-parser@^2.2.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-2.3.1.tgz#59549150b133f2efacca48fe9ce1ec0659af2342"
-  integrity sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==
-
 jsonc-parser@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.0.0.tgz#abdd785701c7e7eaca8a9ec8cf070ca51a745a22"
@@ -10517,6 +10512,13 @@ rollup@^2.28.1, rollup@^2.34.0:
   optionalDependencies:
     fsevents "~2.1.2"
 
+rollup@^2.38.0:
+  version "2.38.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.38.1.tgz#ecea0f7ce6ef2c1f023fdb79524eb7aeb670ea79"
+  integrity sha512-q07T6vU/V1kqM8rGRRyCgEvIQcIAXoKIE5CpkYAlHhfiWM1Iuh4dIPWpIbqFngCK6lwAB2aYHiUVhIbSWHQWhw==
+  optionalDependencies:
+    fsevents "~2.1.2"
+
 rollup@~2.34.0:
   version "2.34.2"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.34.2.tgz#fa73e05c64df587e9ed4dc80d7d4e7d4a43f8908"
@@ -11857,15 +11859,17 @@ use@^3.1.0:
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
 
-utam@0.0.1-alpha9:
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/utam/-/utam-0.0.1-alpha9.tgz#667ad8fd7bfd25d2871329c9ed8f1a8bd43a09fb"
-  integrity sha512-4VI5INZgKJbSW93E5n16o8xw5S13w6Y4xXKzZ4VGdLbiQz2FrDjeAv7Mht/aR8ik6aj7zIEyT0hCveQMK3VgiQ==
+utam@0.0.1-alpha22:
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/utam/-/utam-0.0.1-alpha22.tgz#dcbff80be5c407874877c12ef3fff657fd9747ac"
+  integrity sha512-WltibB0dutOYa4GHAFYXZxEcemRlJcx/wTqjls0NzIDtUQp3kLy/UmF+grtc+qhEBB7g1MPSEUoZIStfPAQfYg==
   dependencies:
-    "@utam/compiler" "0.0.1-alpha9"
-    "@utam/core" "0.0.1-alpha9"
-    "@utam/loader" "0.0.1-alpha9"
+    "@utam/compiler" "0.0.1-alpha22"
+    "@utam/core" "0.0.1-alpha22"
+    "@utam/loader" "0.0.1-alpha22"
     fast-glob "^3.2.2"
+    rollup "^2.38.0"
+    yargs "^16.2.0"
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
@@ -11996,12 +12000,12 @@ wdio-chromedriver-service@^6.0.0:
   dependencies:
     fs-extra "^9.0.0"
 
-wdio-utam-service@0.0.1-alpha9:
-  version "0.0.1-alpha9"
-  resolved "https://registry.yarnpkg.com/wdio-utam-service/-/wdio-utam-service-0.0.1-alpha9.tgz#ac2fbe73e84df5ce46dc95022ff6d082376bf4e9"
-  integrity sha512-E5nXJCB9U0NUMqyONjTbKHJ7Ato1vCzAuDbJWngHSm0EBPr7jepyLit7Z9FVBenshtUr/k5uj4WQEQnIN9O++Q==
+wdio-utam-service@0.0.1-alpha22:
+  version "0.0.1-alpha22"
+  resolved "https://registry.yarnpkg.com/wdio-utam-service/-/wdio-utam-service-0.0.1-alpha22.tgz#33fce5f31058b9476e9858fc836c13d6ae4055d2"
+  integrity sha512-xrDfc2o3BrYK3ATQdKl5dYG2TGjXssHCWc1g0zjpDYndy3tinL8i6OOUR9ffqf5XBdeRMWeTY4TRQgPj5blA3w==
   dependencies:
-    utam "0.0.1-alpha9"
+    utam "0.0.1-alpha22"
 
 web-namespaces@^1.0.0:
   version "1.1.4"
@@ -12279,7 +12283,7 @@ yargs@^15.1.0:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.0.3:
+yargs@^16.0.3, yargs@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
   integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==

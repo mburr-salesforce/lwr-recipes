@@ -47,7 +47,6 @@ exports.config = {
     framework: 'jasmine',
     jasmineNodeOpts: {
         helpers: [path.join(__dirname, 'helpers/jasmine.js')], // transpiles(es6 modules)
-        requires: ['ts-node/register'], // tranpile ts
         expectationResultHandler: function (passed, assertion) {
             // noop
         },
@@ -74,8 +73,16 @@ exports.config = {
         });
     },
 
+    onComplete(ec, config, capabilities, results) {
+        if (results.passed === 0 && results.failed === 0) {
+            throw new Error(
+                'No tests were ran because they were all skipped. This is likely a WDIO configuration issue. Results: ' +
+                    JSON.stringify(results),
+            );
+        }
+    },
+
     before: function () {
-        require('ts-node').register({ files: true });
         require('./helpers/jasmine')();
     },
 };
