@@ -2388,6 +2388,15 @@
     gray-matter "^4.0.2"
     parse5-sax-parser "^6.0.1"
 
+"@lwrjs/label-module-provider@0.0.2-alpha51":
+  version "0.0.2-alpha51"
+  resolved "https://registry.yarnpkg.com/@lwrjs/label-module-provider/-/label-module-provider-0.0.2-alpha51.tgz#eec3eeae5828931dea6f5a70fda11ee9a4cdc1c4"
+  integrity sha512-ZGxO+gDutDywejy5Avn69x+LY0Zo5QiRgiRhsFhqQbdMC7AHoGvQvkx0b6llE/Fro1TpuOa9Eq3GgpS3AmMBFQ==
+  dependencies:
+    "@lwrjs/diagnostics" "0.0.2-alpha51"
+    "@lwrjs/shared-utils" "0.0.2-alpha51"
+    ajv "6.12.6"
+
 "@lwrjs/loader@0.0.2-alpha51":
   version "0.0.2-alpha51"
   resolved "https://registry.yarnpkg.com/@lwrjs/loader/-/loader-0.0.2-alpha51.tgz#bac20dd95e8ba0e5260817de9a5b479df760cd8b"
@@ -3387,7 +3396,7 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
+ajv@6.12.6, ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==

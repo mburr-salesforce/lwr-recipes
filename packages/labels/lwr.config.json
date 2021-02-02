@@ -1,0 +1,27 @@
+{
+    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "routes": [
+        {
+            "id": "labels-base",
+            "path": "/",
+            "rootComponent": "example/app"
+        }
+    ],
+    "moduleProviders": [
+        "@lwrjs/app-service/moduleProvider",
+        [
+            "@lwrjs/label-module-provider",
+            {
+                "provideDefault": true,
+                "labelDirs": [
+                    {
+                        "dir": "<rootDir>/src/labels",
+                        "package": "@my/label"
+                    }
+                ]
+            }
+        ],
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}

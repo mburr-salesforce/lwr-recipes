@@ -1,0 +1,15 @@
+{
+    "extends": "../../config/tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "paths": {
+            "@my/label/*": ["src/labels/en.json"]
+        }
+    },
+    "exclude": ["build"],
+    "include": ["src/**/*", "src/**/*.json"]
+}

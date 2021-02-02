@@ -19,6 +19,8 @@ All sample projects are installed when you clone this repo. Go to a recipe to le
 - SPA with [Nested Routing](./packages/nested-routing)
 - Creating a [Custom Module Provider](./packages/module-provider)
 - Configuring a [Bootstrap Init Override](./packages/init-override)
+- Securing an App with [Locker](./packages/locker)
+- Localizing an App with [Labels](./packages/labels)
 
 ## Documentation
 

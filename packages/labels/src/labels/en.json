@@ -1,0 +1,9 @@
+{
+    "home": {
+        "greeting": "Welcome"
+    },
+    "animal": {
+        "cat": "Cat",
+        "dog": "Dog"
+    }
+}
