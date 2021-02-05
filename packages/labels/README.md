@@ -165,7 +165,7 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 Try changing the browser language to English, Spanish, French or Italian. Refresh the page and see the text change.
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/README.md#getting-started).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
 
 ### Crucial files
 

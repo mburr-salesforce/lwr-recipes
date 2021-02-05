@@ -1,6 +1,6 @@
 # Contributing to Lightning Web Runtime Recipes
 
-We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide assumes that you have already met the requirements and installation instructions in the [README](../README.md).
+We want to encourage the developer community to contribute Lightning Web Runtime (LWR) recipes. This guide assumes that you have already met the requirements and installation instructions in the [getting started](./getting_started.md) guide.
 
 -   [Prerequisites](#prerequisites)
 -   [Testing](#testing)
