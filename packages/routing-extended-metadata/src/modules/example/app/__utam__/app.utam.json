@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "selector": {
+        "css": "example-app"
+    },
+    "shadow": {
+        "elements": [
+            {
+                "name": "outlet",
+                "type": "simple-routing/pageObjects/outlet",
+                "public": true,
+                "selector": {
+                    "css": "lwr-outlet"
+                }
+            }
+        ]
+    }
+}

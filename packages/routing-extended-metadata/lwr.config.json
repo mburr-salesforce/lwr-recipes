@@ -1,0 +1,15 @@
+{
+    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "routes": [
+        {
+            "id": "routing-extended-metadata",
+            "path": "/",
+            "rootComponent": "example/app"
+        },
+        {
+            "id": "named-page",
+            "path": "/:namedPage",
+            "rootComponent": "example/app"
+        }
+    ]
+}

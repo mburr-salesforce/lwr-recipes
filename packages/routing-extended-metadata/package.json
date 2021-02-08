@@ -1,0 +1,39 @@
+{
+    "name": "routing-extended-metadata",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js",
+        "pageObjects"
+    ],
+    "scripts": {
+        "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
+        "build": "tsc -b && yarn utam:compile",
+        "start": "node build/autostart.js",
+        "start:prod": "MODE=prod yarn start",
+        "start:amd": "MODE=compat yarn start",
+        "utam:compile": "utam -c utam.config.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-typescript": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "@lwrjs/core": "0.0.2-alpha51",
+        "@lwrjs/router": "0.0.2-alpha51",
+        "@types/jest": "^25.2.1",
+        "chromedriver": "^86.0.0",
+        "lerna": "^3.20.2",
+        "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha51",
+        "rimraf": "^3.0.2",
+        "ts-node": "^9.0.0",
+        "typescript": "^3.8.3",
+        "utam": "0.0.1-alpha22"
+    },
+    "engines": {
+        "node": ">=14.15.1 <15"
+    }
+}

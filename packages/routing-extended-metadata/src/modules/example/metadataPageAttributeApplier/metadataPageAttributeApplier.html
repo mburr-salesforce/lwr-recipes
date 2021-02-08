@@ -1,0 +1,15 @@
+<template>
+    <template if:true={routeMetadata}>
+        <template for:each={routeMetadata} for:item="keyValue">
+            <example-metadata-item
+            key={keyValue.key}
+            name={keyValue.key}
+            value={keyValue.value}
+        ></example-metadata-item>
+        </template>
+
+    </template>
+    <template if:false={routeMetadata}>
+        <b>Route metadata not found</b>
+    </template>
+</template>

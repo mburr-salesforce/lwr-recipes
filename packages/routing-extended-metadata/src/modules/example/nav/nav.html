@@ -1,0 +1,16 @@
+<template>
+    <div class="header">
+        <nav role="navigation">
+            <ul>
+                <template for:each={navItems} for:item="item">
+                    <example-nav-item
+                        key={item.id}
+                        label={item.label}
+                        page-reference={item.pageReference}
+                        selected={item.selected}
+                    ></example-nav-item>
+                </template>
+            </ul>
+        </nav>
+    </div>
+</template>

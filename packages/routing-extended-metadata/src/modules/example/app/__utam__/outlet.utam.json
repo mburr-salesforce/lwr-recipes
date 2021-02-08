@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "selector": {
+        "css": "lwr-outlet"
+    },
+    "shadow": {
+        "elements": [
+            {
+                "name": "content",
+                "public": true,
+                "type": "actionable",
+                "selector": {
+                    "css": "lwr-dynamic"
+                }
+            }
+        ]
+    }
+}

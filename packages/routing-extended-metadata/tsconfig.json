@@ -1,0 +1,38 @@
+{
+    "extends": "../../config/tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "build",
+        "module": "commonjs",
+        "paths": {
+            "example/contextProvider": ["modules/example/contextProvider/contextProvider.ts"],
+            "example/contextUtils": ["modules/example/contextUtils/contextUtils.ts"],
+            "example/currentRouteMetadata": ["modules/example/currentRouteMetadata/currentRouteMetadata.ts"],
+            "example/metadataPageHandler": ["modules/example/metadataPageHandler/metadataPageHandler.ts"],
+            "example/link": ["modules/example/link/link.ts"],
+            "example/namedPageHandler": ["modules/example/namedPageHandler/namedPageHandler.ts"],
+            "example/nav": ["modules/example/nav/nav.ts"],
+            "example/navItem": ["modules/example/navItem/navItem.ts"],
+            "example/metadataItem": ["modules/example/metadataItem/metadataItem.ts"],
+            "example/metadataPageAttributeApplier": [
+                "modules/example/metadataPageAttributeApplier/metadataPageAttributeApplier.ts"
+            ],
+            "example/rootRouter": ["modules/example/rootRouter/rootRouter.ts"],
+            "lwr/router": ["../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"],
+            "lwr/routerUtils": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/routerUtils/routerUtils.d.ts"
+            ],
+            "lwr/navigation": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+            ],
+            "lwr/navigationContext": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+            ],
+            "lwr/navigationService": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+            ]
+        }
+    },
+    "exclude": ["build"]
+}
