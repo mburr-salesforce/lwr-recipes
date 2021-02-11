@@ -10,9 +10,7 @@
         -   [Error Routes](#error-routes)
         -   [Assets](#assets)
         -   [Other Configuration](#other-configuration)
--   [Recipe](#Recipe)
-    -   [Setup](#setup)
-    -   [Crucial files](#crucial-files)
+-   [Recipe Setup](#Recipe-setup)
 
 ## Introduction
 
@@ -205,9 +203,7 @@ LWR offers additional miscellaneous configuration, including:
 }
 ```
 
-## Recipe
-
-### Setup
+## Recipe Setup
 
 ```bash
 # from the lwr-recipes root
@@ -220,10 +216,3 @@ yarn start # dev mode and ESM format
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
-
-### Crucial files
-
--   server creation: [scripts/start-server.mjs](./scripts/start-server.mjs)
--   application configuration: [lwr.config.json](./lwr.config.json)
--   lwc module directory: [src/modules/](./src/modules)
--   static resources: [src/assets/](./src/assets)

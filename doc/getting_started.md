@@ -1,6 +1,6 @@
-# Getting started
+# Get Started
 
-Load and run a recipe in your local environment by following these steps.
+Run a recipe in your local environment by following these steps.
 
 ## Requirements
 
@@ -11,14 +11,14 @@ This project uses [Volta](https://volta.sh/) to ensure that all the contributors
 
 _We use [yarn](https://yarnpkg.com/) because it is significantly faster than npm for our use case. See this command [cheatsheet](https://yarnpkg.com/lang/en/docs/migrating-from-npm/)._
 
-## Clone the repository
+## Clone the Repository
 
 ```bash
 git clone git@github.com:salesforce/lwr-recipes.git
 cd lwr-recipes
 ```
 
-## Install project dependencies
+## Install Project Dependencies
 
 ```bash
 yarn install
@@ -26,13 +26,13 @@ yarn install
 
 If this command fails with an error about _UNABLE_TO_GET_ISSUER_CERT_LOCALLY_, _Error: unable to get local issuer certificate_, or a registry communication issue then verify that the yarn installation was successful.
 
-## Build all LWR recipes
+## Build All LWR Recipes
 
 ```bash
 yarn build
 ```
 
-## Run a LWR recipe
+## Run a LWR Recipe
 
 Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
 
@@ -45,13 +45,13 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 **Note**: Recipes can be started in three different modes:
 
-| Mode   | Start Command     | Format |     File Watch     |      Bundling      |        Minify        |
-| ------ | ----------------- | :----: | :----------------: | :----------------: | :------------------: |
-| dev    | `yarn start`      |  ESM   | :white_check_mark: |  :no_entry_sign:   |   :no_entry_sign:    |
-| prod   | `yarn start:prod` |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark:\* |
-| compat | `yarn start:amd`  |  AMD   | :white_check_mark: |  :no_entry_sign:   |   :no_entry_sign:    |
+| Mode   | Start Command     | Format |     File Watch     |      Bundling      |       Minify       |
+| ------ | ----------------- | :----: | :----------------: | :----------------: | :----------------: |
+| dev    | `yarn start`      |  ESM   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
+| prod   | `yarn start:prod` |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
+| compat | `yarn start:amd`  |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
 
-## Clean a LWR recipe
+## Clean a LWR Recipe
 
 Cleaning a recipe removes the build directory and file cache. This command is useful if you run into errors or have a stale project.
 

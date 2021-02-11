@@ -14,11 +14,13 @@ We want to encourage the developer community to contribute Lightning Web Runtime
 
 ## Testing
 
-The LWR recipes use the UI Testing Automation Model (UTAM) to validate your code. Before committing any changes, run [UTAM](https://rfcs.lwc.dev/rfcs/utam) tests.
+The LWR recipes use the UI Testing Automation Model (UTAM) to validate your code. Before committing any changes, run [UTAM](https://pilot.utam.dev/guide/introduction) tests.
 
 ```bash
 yarn test:e2e
 ```
+
+For unit testing, we recommend using [Jest](https://github.com/salesforce/sfdx-lwc-jest). For performance testing, we recommend using [BestJS](https://bestjs.dev).
 
 ## Git Workflow
 

@@ -5,9 +5,7 @@
     -   [Adding Label Files](#adding-label-files)
     -   [Configuration](#configuration)
     -   [Importing Labels into Your Component](#importing-labels-into-your-component)
--   [Recipe](#Recipe)
-    -   [Setup](#setup)
-    -   [Crucial files](#crucial-files)
+-   [Recipe Setup](#Recipe-setup)
 
 ## Introduction
 
@@ -25,12 +23,13 @@ A simple example is importing greeting text via `import greeting from '@my/label
 
 `home.greeting`: the label reference in the label files, in the format `namespace.name`
 
-### Adding Label Files
+### Project Setup
 
 Labels must be added as json files, with a file per supported locale. The filenames are expected to be the locale code to which those labels correspond. All the locale files for a set of labels must be in the same directory. For example,
 
 ```
 src/
+  ├── assets/
   ├── labels/
   │   ├── en.json       // English
   │   ├── es.json       // Spanish
@@ -38,6 +37,7 @@ src/
   │   └── fr-FR.json    // French (France)
   ├── modules/
   └── index.ts
+lwr.config.json
 ```
 
 _Note_: 2-letter locale files are always used as fallback if the label file for a specific country cannot be found. For example, if the label file for `en-US` cannot be found, it will fallback to `en`.
@@ -149,9 +149,7 @@ export default class LocalizedApp extends LightningElement {
 
 The Label Module Provider will return the label value from the file corresponding to the request locale.
 
-## Recipe
-
-### Setup
+## Recipe Setup
 
 ```bash
 # from the lwr-recipes root
@@ -166,11 +164,3 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 Try changing the browser language to English, Spanish, French or Italian. Refresh the page and see the text change.
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
-
-### Crucial files
-
--   server creation: [src/index.ts](./src/index.ts)
--   application configuration: [lwr.config.json](./lwr.config.json)
--   labels directory: [src/labels/](./src/labels)
--   lwc module directory: [src/modules/](./src/modules)
--   static resources: [src/assets/](./src/assets)

@@ -12,9 +12,7 @@
     -   [Configuration](#configuration)
         -   [Application configuration](#application-configuration)
         -   [Module provider configuration](#module-provider-configuration)
--   [Recipe](#Recipe)
-    -   [Setup](#setup)
-    -   [Crucial files](#crucial-files)
+-   [Recipe Setup](#Recipe-setup)
 
 ## Introduction
 
@@ -39,8 +37,8 @@ An LWR Application is automatically set up with several default module providers
 
 Custom module providers can be stored in a LWR Application's source. Here, they are stored in _/src/services/_:
 
-```bash
-build/ # holds ts -> js transpiled files
+```
+build/                              // holds ts -> js transpiled files
 node_modules/
 src/
   ├── modules/
@@ -295,9 +293,7 @@ export default class MyProvider implements ModuleProvider {
 }
 ```
 
-## Recipe
-
-### Setup
+## Recipe Setup
 
 ```bash
 # from the lwr-recipes root
@@ -310,11 +306,3 @@ yarn start # dev mode and ESM format
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
-
-### Crucial files
-
--   custom ES module provider: [src/services/echo-provider.ts](./src/services/echo-provider.ts)
--   custom LWC module provider: [src/services/color-provider.ts](./src/services/color-provider.ts)
--   application configuration: [lwr.config.json](./lwr.config.json)
--   server creation: [src/index.ts](./src/index.ts)
--   lwc module directory: [src/modules/](./src/modules)
