@@ -8,13 +8,13 @@ Lightning Web Runtime (LWR) is a flexible platform that supports a wide range of
 
 ## Sample Projects
 
-This repo consists of a collection of sample projects, called recipes. Each recipe demonstrates how to code a specific use case. From Hello World to Single Page Applications to resource bundling and chunking, there is a recipe for that!
+This repo consists of a collection of sample projects, called recipes. Each recipe demonstrates how to code a specific use case. From [Hello World](./packages/hello-world) to single page applications to resource bundling and chunking, there is a recipe for that!
 
-All recipes are installed when you clone this repo. Go to [packages](https://github.com/salesforce/lwr-recipes/tree/master/packages) to see all the recipes and learn how to run and configure them. 
+All recipes are installed when you clone this repo. Go to [packages](https://github.com/salesforce/lwr-recipes/tree/master/packages) to see all the recipes. Each recipe has its own README that walks you through how to configure and run it. 
 
 ## Get Started
 
-LWR doesn't yet have a `create` command, so the easiest way to start building your own project is to copy one of the recipes and modify the copy. Run a recipe in your local environment by following the [get started](./doc/getting_started.md) steps.
+LWR doesn't yet have a `create` command, so the easiest way to start building your own project is to copy one of the recipes and modify the copy. Run a recipe in your local environment by following the [get started](./doc/get_started.md) steps.
 
 If you'd like to contribute to this project, see our [contributing guide](./doc/CONTRIBUTING.md).
 
@@ -24,7 +24,8 @@ Additional LWR documentation is in the `/doc` folder.
 
 - [Contributing Guide](./doc/CONTRIBUTING.md)
 - [Business Overview](./doc/business_overview.md)
-- [Get Started](./doc/getting_started.md)
+- [Get Started](./doc/get_started.md)
+- [Configure a LWR Project](./doc/config.md)
 
 ## Contact Us
 

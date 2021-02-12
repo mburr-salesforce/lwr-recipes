@@ -57,7 +57,7 @@ yarn start:amd # locker is currently not supported in ESM
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
 
 ### Crucial files
 

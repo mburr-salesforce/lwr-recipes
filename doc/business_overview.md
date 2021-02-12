@@ -13,3 +13,5 @@ The LWR server is configured in `lwr.config.json`, at the root of your project.
 ## Client Runtime
 
 The client runtime provides all the resources you need to host a compiled app in the execution environment, typically a browser. The client runtime includes routing APIs for managing navigation and loader APIs for managing any special code that runs as modules are loaded into your app.
+
+Learn more in [Configure a LWR Project](./config.md).

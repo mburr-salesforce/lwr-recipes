@@ -51,7 +51,7 @@ In order to get the current route metadata into a component, a context wire is u
 
 ### Configuration
 
-The only configuration for this app is the location of the modules directory and the configuration of two server-side routes so the routes can be loaded by both the client and the server.
+The only configuration for this app is the location of the modules directory and the configuration of two server-side routes so the routes can be loaded by both the client and the server. Learn more in [Configure a LWR Project](../../doc/config.md).
 
 ```json
 {

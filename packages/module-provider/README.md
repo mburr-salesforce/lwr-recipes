@@ -240,6 +240,8 @@ See a full LWC module provider example [here](./src/services/color-provider.ts).
 
 ### Configuration
 
+Learn more in [Configure a LWR Project](../../doc/config.md).
+
 #### Application configuration
 
 Register a custom module provider by adding it to _lwr.config.json_. Make sure Typescript has been transpiled into JavaScript.
@@ -305,4 +307,4 @@ yarn start # dev mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).

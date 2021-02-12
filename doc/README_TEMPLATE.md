@@ -56,7 +56,8 @@ _Example topic could include details about the @lwrjs APIs that this recipe uses
 
 ### Configuration
 
-_Need details about what each of the sections of the config file are doing._
+_Need details about what each of the sections of the config file are doing. Add link to Configure a LWR Project at ../doc/config.md._
+\_
 
 ```json
 //lwr.config.json
@@ -76,4 +77,4 @@ yarn start # dev mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).

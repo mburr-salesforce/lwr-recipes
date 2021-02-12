@@ -54,7 +54,7 @@ The file contents are a JSON object containing the label references and values n
 
 ### Configuration
 
-Label Module Provider is not a default provider so it must be added as a dependency in _package.json_ and then registered and configured in _lwr.config.json_.
+Label Module Provider is not a default provider so it must be added as a dependency in _package.json_ and then registered and configured in _lwr.config.json_. Learn more in [Configure a LWR Project](../../doc/config.md).
 
 ```json
 // package.json
@@ -163,4 +163,4 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 Try changing the browser language to English, Spanish, French or Italian. Refresh the page and see the text change.
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/getting_started.md).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).

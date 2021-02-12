@@ -43,7 +43,7 @@ yarn start
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-**Note**: Recipes can be started in three different modes:
+Recipes can be started in three different modes:
 
 | Mode   | Start Command     | Format |     File Watch     |      Bundling      |       Minify       |
 | ------ | ----------------- | :----: | :----------------: | :----------------: | :----------------: |
