@@ -20,6 +20,8 @@ The LWR recipes use the UI Testing Automation Model (UTAM) to validate your code
 yarn test:e2e
 ```
 
+For an example of a simple UTAM test using a Chrome driver, see the [utam-js-wdio-boilerplate](https://github.com/salesforce/utam-js-wdio-boilerplate) repo. The repo includes a simple boilerplate UTAM page object and an end-to-end test file. You can configure it to point to your own app instance.
+
 For unit testing, we recommend using [Jest](https://github.com/salesforce/sfdx-lwc-jest). For performance testing, we recommend using [BestJS](https://bestjs.dev).
 
 ## Git Workflow
