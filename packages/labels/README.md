@@ -2,14 +2,14 @@
 
 -   [Introduction](#introduction)
 -   [Details](#details)
-    -   [Adding Label Files](#adding-label-files)
+    -   [Project Setup](#project-setup)
     -   [Configuration](#configuration)
     -   [Importing Labels into Your Component](#importing-labels-into-your-component)
 -   [Recipe Setup](#Recipe-setup)
 
 ## Introduction
 
-When building a web application, it is likely that localization will be an important part of that process. Part of localization is translating text into various languages. That can be achieved in your LWR app by leveraging the Label Module Provider. This provider will serve file-based labels in your app as ES modules based on the locale, allowing you to import translatable text into your components and avoid hardcoding. The locale is determined with the following precedence:
+Localization is an important requirement when building most web applications. This recipe uses the Label Module Provider to translate the greeting text on your LWR app's homepage into various languages. The Label Module Provider serves file-based labels in your app as ES modules based on the locale, allowing you to import translatable text into your components and avoid hardcoding. The locale is determined with the following precedence:
 
 1. `locale` path parameter in the request
 2. `Accept-Language` header in the request
@@ -17,15 +17,9 @@ When building a web application, it is likely that localization will be an impor
 
 ## Details
 
-A simple example is importing greeting text via `import greeting from '@my/label/home.greeting'` that will be displayed on the home page of the application.
-
-`@my/label`: the package specifier configured through the Label Module Provider
-
-`home.greeting`: the label reference in the label files, in the format `namespace.name`
-
 ### Project Setup
 
-Labels must be added as json files, with a file per supported locale. The filenames are expected to be the locale code to which those labels correspond. All the locale files for a set of labels must be in the same directory. For example,
+Add labels as json files, with a file per supported locale. The filenames are expected to be the locale code of the corresponding labels. If the Label Module Provider can't find a label file for a specific country, it uses the 2-letter locale files as fallback. For example, if the label file for `fr-FR` isn't found, it uses `fr`. All the locale files for a set of labels must be in the same directory. For example:
 
 ```
 src/
@@ -40,9 +34,7 @@ src/
 lwr.config.json
 ```
 
-_Note_: 2-letter locale files are always used as fallback if the label file for a specific country cannot be found. For example, if the label file for `en-US` cannot be found, it will fallback to `en`.
-
-The file contents are a JSON object containing the label references and values nested by namespace. For example, the label `@my/label/home.greeting` would be added to the file as
+Each file contains a JSON object with the label references and values nested by namespace. For example, the label `@my/label/home.greeting` is added to the file as:
 
 ```json
 {
@@ -54,7 +46,9 @@ The file contents are a JSON object containing the label references and values n
 
 ### Configuration
 
-Label Module Provider is not a default provider so it must be added as a dependency in _package.json_ and then registered and configured in _lwr.config.json_. Learn more in [Configure a LWR Project](../../doc/config.md).
+Label Module Provider is not a default provider, so you must add it to your project configuration. Learn more in [Configure a LWR Project](../../doc/config.md#module-providers).
+
+Add `"@lwrjs/label-module-provider": "0.0.2-alpha51"` as a dependency in `package.json`.
 
 ```json
 // package.json
@@ -67,7 +61,24 @@ Label Module Provider is not a default provider so it must be added as a depende
 }
 ```
 
-When registering the module provider, you can also optionally configure the package specifier that will be used when importing the labels and where on the file system the label files are located.
+Register the Label Module Provider in `lwr.config.json`.
+
+```json
+// lwr.config.json with the Label Module Provider and the LWR default module providers
+{
+    "moduleProviders": [
+        "@lwrjs/label-module-provider",
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}
+```
+
+When registering the module provider, you can optionally configure the package specifier that is used when importing the labels and specify the location of the label files.
+
+-   `provideDefault`: When true, if a label is not found, the provider returns the label reference as the value. When false, the provider returns undefined, allowing the subsequent module providers to attempt to resolve it.
+-   `labelDirs`: An array of one or more label package specifiers and their locations on the file system.
 
 ```json
 // lwr.config.json
@@ -92,25 +103,7 @@ When registering the module provider, you can also optionally configure the pack
 }
 ```
 
-_provideDefault:_ When true, if a label is not found, the provider returns the label reference as the value. When false, the provider returns undefined, allowing the subsequent module providers to attempt to resolve it.
-
-_labelDirs_: An array of label package specifiers and their locations on the file system. Note that you can have multiple label specifiers and directories.
-
-If no configuration is specified when registering Label Module Provider, i.e.
-
-```json
-// lwr.config.json
-{
-    "moduleProviders": [
-        "@lwrjs/label-module-provider",
-        "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-module-provider",
-        "@lwrjs/npm-module-provider"
-    ]
-}
-```
-
-then the default configuration will be used:
+If you don't specify configuration when registering Label Module Provider, it uses default configuration.
 
 ```json
 {
@@ -124,11 +117,13 @@ then the default configuration will be used:
 }
 ```
 
-_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50).
-
 ### Importing Labels into Your Component
 
 Once the label files are in place and the Label Module Provider is configured, you can import a label into your component.
+In this example, `import GREETING from '@my/label/home.greeting'` determines the language of the text that is displayed on the home page of the application.
+
+-   `@my/label` is the package specifier configured through the Label Module Provider.
+-   `home.greeting` is the label reference in the label files, in the format `namespace.name`.
 
 ```html
 <!-- app.html -->
@@ -147,7 +142,7 @@ export default class LocalizedApp extends LightningElement {
 }
 ```
 
-The Label Module Provider will return the label value from the file corresponding to the request locale.
+The Label Module Provider returns the label value from the file corresponding to the requested locale.
 
 ## Recipe Setup
 

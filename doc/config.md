@@ -9,6 +9,7 @@
         -   [Routes](#routes)
         -   [Error Routes](#error-routes)
         -   [Assets](#assets)
+        -   [Module Providers](#module-providers)
         -   [More Configuration](#more-configuration)
 
 ## Introduction
@@ -180,6 +181,22 @@ The static assets can then be referenced in LWC templates:
     <img src="/logo" alt="logo" />
     <img src="/images/home.png" alt="home" />
 </template>
+```
+
+#### Module Providers
+
+LWR automatically includes a set of default module providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional module providers. The `moduleProviders` array overwrites the default one provided by LWR, so you must list all module providers needed by the application, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50)
+
+```json
+// lwr.config.json with the Label Module Provider and the LWR default module providers
+{
+    "moduleProviders": [
+        "@lwrjs/label-module-provider",
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}
 ```
 
 #### More Configuration
