@@ -1,0 +1,12 @@
+{
+    "lwc": {
+        "modules": [{ "dir": "<rootDir>/src/modules" }]
+    },
+    "routes": [
+        {
+            "id": "security-base",
+            "path": "/",
+            "rootComponent": "example/app"
+        }
+    ]
+}

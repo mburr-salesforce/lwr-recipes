@@ -9,6 +9,7 @@
         { "path": "./packages/locker" },
         { "path": "./packages/module-provider" },
         { "path": "./packages/nested-routing" },
+        { "path": "./packages/security" },
         { "path": "./packages/simple-routing" },
         { "path": "./packages/simple-routing-e2e" }
     ],

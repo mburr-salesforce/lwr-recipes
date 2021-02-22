@@ -1,0 +1,28 @@
+{
+    "name": "security",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "scripts": {
+        "clean": "rm -rf build && rm -rf __lwr_cache__",
+        "build": "tsc -b",
+        "start": "node build/index.js",
+        "start:amd": "MODE=compat yarn start",
+        "start:prod": "MODE=prod yarn start"
+    },
+    "devDependencies": {
+        "@types/helmet": "^4.0.0",
+        "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha57",
+        "typescript": "^3.8.3"
+    },
+    "engines": {
+        "node": ">=12.18.0 <15"
+    },
+    "dependencies": {
+        "helmet": "^4.3.1"
+    }
+}
