@@ -51,7 +51,7 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 }
 ```
 
-Add any other project dependencies you need, such as client-side routing. See the [Simple Routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing) recipe for an example.
+Add any other project dependencies you need to `package.json`, such as client-side routing. See the [Simple Routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing) recipe for an example.
 
 Then write a script to create and start the LWR server.
 
@@ -79,18 +79,39 @@ The LWR server is configured in `lwr.config.json`, at the root of the project.
 
 #### LWC Modules
 
-To include LWC modules in your project, place LWC configuration inside `lwr.config.json`. See [Module Resolution](https://lwc.dev/guide/es_modules#module-resolution) for details.
+To include LWC modules in your project, install the LWC package using `npm` and place LWC configuration inside `lwr.config.json`. See the [Base SLDS](https://github.com/salesforce/lwr-recipes/tree/master/packages/base-slds) recipe for an example using base LWCs and the Salesforce Lightning Design System.
+
+```bash
+npm install lightning-base-components --save
+```
+
+The `package.json` now includes the `lightning-base-components` package.
+
+```json
+// package.json
+{
+    "devDependencies": {
+        "lightning-base-components": "^1.9.0-alpha",
+        "lwc": "~1.9.0",
+        "lwr": "0.0.2-alpha51"
+    }
+}
+```
+
+Add LWC configuration to `lwr.config.json`.
 
 ```json
 // lwr.config.json
 {
     "lwc": {
-        "modules": [{ "dir": "<rootDir>/src/modules" }, { "npm": "some-npm-package" }]
+        "modules": [{ "dir": "<rootDir>/src/modules" }, { "npm": "lightning-base-components" }]
     }
 }
 ```
 
-> LWR automatically replaces any instances of `<rootDir>` with the path to the root directory of the LWR project.
+LWR automatically replaces any instances of `<rootDir>` with the path to the root directory of the LWR project.
+
+> See the [LWC Dev Guide](https://lwc.dev/guide/es_modules#module-resolution) for details on how LWC module resolution works.
 
 #### Routes
 
@@ -185,7 +206,7 @@ The static assets can then be referenced in LWC templates:
 
 #### Module Providers
 
-LWR automatically includes a set of default module providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional module providers. The `moduleProviders` array overwrites the default one provided by LWR, so you must list all module providers needed by the application, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50)
+LWR automatically includes a set of default module providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional module providers. The `moduleProviders` array overwrites the default one provided by LWR, so you must list all module providers needed by the application, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50).
 
 ```json
 // lwr.config.json with the Label Module Provider and the LWR default module providers
