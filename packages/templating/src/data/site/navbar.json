@@ -1,0 +1,12 @@
+[
+    {
+        "id": "guide",
+        "name": "Guide",
+        "url": "/guide/introduction"
+    },
+    {
+        "id": "recipes",
+        "name": "Recipes",
+        "url": "/recipes"
+    }
+]

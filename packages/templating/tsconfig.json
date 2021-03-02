@@ -1,0 +1,10 @@
+{
+    "extends": "../../config/tsconfig.settings.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "skipLibCheck": true
+    },
+    "exclude": ["build"]
+}

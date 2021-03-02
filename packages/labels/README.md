@@ -90,7 +90,7 @@ When registering the module provider, you can optionally configure the package s
                 "provideDefault": true,
                 "labelDirs": [
                     {
-                        "dir": "<rootDir>/src/labels",
+                        "dir": "$rootDir/src/labels",
                         "package": "@my/label"
                     }
                 ]
@@ -110,7 +110,7 @@ If you don't specify configuration when registering Label Module Provider, it us
     "provideDefault": false,
     "labelDirs": [
         {
-            "dir": "<rootDir>/src/labels",
+            "dir": "$rootDir/src/labels",
             "package": "@salesforce/label"
         }
     ]

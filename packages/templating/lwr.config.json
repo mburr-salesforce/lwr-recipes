@@ -1,0 +1,39 @@
+{
+    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "bundleConfig": { "exclude": ["lwc"] },
+    "hooks": ["<rootDir>/src/hooks/docs-app-hooks.js"],
+    "routes": [
+        {
+            "id": "home",
+            "path": "/",
+            "layoutTemplate": "<layoutsDir>/main_layout.njk",
+            "contentTemplate": "<contentDir>/home.html",
+            "cache": { "ttl": "30m" }
+        },
+        {
+            "id": "recipes",
+            "path": "/recipes",
+            "contentTemplate": "<contentDir>/recipes.md"
+        },
+        {
+            "id": "custom_route_handler",
+            "path": "/echo/:message",
+            "routeHandler": "<rootDir>/src/routeHandlers/echo.js",
+            "metadata": {
+                "intro": "This component echoes the URL path parameter"
+            }
+        },
+        {
+            "id": "json_route_handler",
+            "path": "/json/:bar",
+            "routeHandler": "<rootDir>/src/routeHandlers/custom.js"
+        }
+    ],
+    "errorRoutes": [
+        {
+            "id": "not_found",
+            "status": 404,
+            "contentTemplate": "<contentDir>/not-found.html"
+        }
+    ]
+}

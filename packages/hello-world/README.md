@@ -29,7 +29,7 @@ The LWR server is configured in `lwr.config.json`, at the root of the project. T
 ```json
 // lwr.config.json
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
             "id": "example",

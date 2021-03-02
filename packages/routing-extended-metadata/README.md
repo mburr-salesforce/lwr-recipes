@@ -55,7 +55,7 @@ The only configuration for this app is the location of the modules directory and
 
 ```json
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
             "id": "routing-extended-metadata",

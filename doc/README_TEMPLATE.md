@@ -57,10 +57,9 @@ _Example topic could include details about the @lwrjs APIs that this recipe uses
 ### Configuration
 
 _Need details about what each of the sections of the config file are doing. Add link to Configure a LWR Project at ../doc/config.md._
-\_
 
 ```json
-//lwr.config.json
+// lwr.config.json
 ```
 
 ## Recipe Setup

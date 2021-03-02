@@ -75,7 +75,7 @@ createServer()
 
 The LWR server is configured in `lwr.config.json`, at the root of the project.
 
-> Alternatively, you can pass the JSON configuration into [`createServer()`](#the-lwr-server). If you include both configurations, they are shallowly merged and the passed object takes precedence.
+> Alternatively, you can pass the JSON configuration into [`createServer()`](#the-lwr-server). If you include both configurations, they are shallowly merged and the passed object takes precedence. You may also dynamically alter the configuration at server startup using a [hook](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating#hooks).
 
 #### LWC Modules
 
@@ -104,12 +104,12 @@ Add LWC configuration to `lwr.config.json`.
 // lwr.config.json
 {
     "lwc": {
-        "modules": [{ "dir": "<rootDir>/src/modules" }, { "npm": "lightning-base-components" }]
+        "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }]
     }
 }
 ```
 
-LWR automatically replaces any instances of `<rootDir>` with the path to the root directory of the LWR project.
+LWR automatically replaces any instances of `$rootDir` with the path to the root directory of the LWR project.
 
 > See the [LWC Dev Guide](https://lwc.dev/guide/es_modules#module-resolution) for details on how LWC module resolution works.
 
@@ -117,9 +117,15 @@ LWR automatically replaces any instances of `<rootDir>` with the path to the roo
 
 Each server-side route includes these properties:
 
--   `id`: a unique identifier for the route
--   `path`: a unique URI path from which the route is served
--   `rootComponent`: the top-level LWC that LWR bootstraps into the HTML output for the route
+-   `id` (**required**): unique identifier for the route
+-   `path` (**required**): unique URI path from which the route is served
+-   `rootComponent`: top-level LWC that LWR bootstraps into the HTML output for the route. Each route must have either a `rootComponent` or a `contentTemplate`, but not both.
+-   `contentTemplate`: path to a static template which renders page content
+-   `layoutTemplate`: path to a static template which renders a page layout
+-   `properties`: JSON object which gets passed to the templates as context
+-   `routeHandler`: path to a [route handler](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating#route-handler-params)
+-   `cache`: cache settings for the routing, including:
+    -   `ttl`: number, in seconds, or a [time string](https://github.com/vercel/ms#examples) to use as the `max-age` on the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header
 
 ```json
 // lwr.config.json
@@ -128,16 +134,23 @@ Each server-side route includes these properties:
         {
             "id": "example",
             "path": "/",
-            "rootComponent": "example/app"
+            "rootComponent": "example/app",
+            "layoutTemplate": "$layoutsDir/main.html",
+            "properties": { "staticParam": "This is the Home page" },
+            "cache": { "ttl": 60 }
         },
         {
             "id": "docs",
             "path": "/help",
-            "rootComponent": "example/docs"
+            "contentTemplate": "$contentDir/readme.md",
+            "routeHandler": "$rootDir/src/routeHandlers/docs.js",
+            "cache": { "ttl": "7d" }
         }
     ]
 }
 ```
+
+> To learn how to work with templates and route handlers, see the [Templating](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating) recipe.
 
 > To learn how to work with client-side routes, see the [Simple Routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing) recipe.
 
@@ -157,11 +170,13 @@ Optionally, set up routes that LWR serves if a `404` or `500` error is encounter
         {
             "id": "server_error",
             "status": 500,
-            "rootComponent": "example/error"
+            "contentTemplate": "$contentDir/not-found.html"
         }
     ]
 }
 ```
+
+> To see an error route example, see the [Templating](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating) recipe.
 
 #### Assets
 
@@ -169,13 +184,15 @@ By default, LWR uses this configuration for assets.
 
 ```json
 {
-    "dir": "<rootDir>/src/assets",
+    "alias": "assetsDir",
+    "dir": "$rootDir/src/assets",
     "urlPath": "/public/assets"
 }
 ```
 
 You can configure one or more files or directories to serve static assets in `lwr.config.json`. For each file or directory, include these properties:
 
+-   `alias`: a name for this path to use in content/layout templates
 -   `urlPath`: the URI path from which the asset(s) is served
 -   `dir` or `file`: the file system path containing the asset(s)
 
@@ -184,11 +201,12 @@ You can configure one or more files or directories to serve static assets in `lw
 {
     "assets": [
         {
-            "dir": "<rootDir>/src/images",
+            "alias": "imageDir",
+            "dir": "$rootDir/src/images",
             "urlPath": "/images"
         },
         {
-            "file": "<rootDir>/logo.png",
+            "file": "$rootDir/logo.png",
             "urlPath": "/logo"
         }
     ]
@@ -222,12 +240,15 @@ LWR automatically includes a set of default module providers, so you don't need 
 
 #### More Configuration
 
-LWR also offers the following configuration:
+LWR also offers the following optional configuration:
 
 -   `port`: the port from which to serve the LWR application. The default is `process.env.PORT || 3000`.
 -   `serverMode`: the mode in which the server should run. The default is `"dev"`. See available modes [here](./get_started.md#run-a-lwr-recipe). Typically, mode is set on the command line. See the `scripts` [package.json](./package.json).
 -   `rootDir`: the root directory of the LWR project. The default is the current working directory (ie: `.`).
--   `cacheDir`: LWR caches LWC modules that it has compiled and stores them in a cache directory. The default is `"<rootDir>/__lwr_cache__"`.
+-   `cacheDir`: LWR caches LWC modules that it has compiled and stores them in a cache directory. The default is `"$rootDir/__lwr_cache__"`.
+-   `contentDir`: the content templates directory. The default is `"$rootDir/src/content"`.
+-   `layoutsDir`: the layout templates directory. The default is `"$rootDir/src/layouts"`.
+-   `globalDataDir`: the directory of [global data](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating#global-data) for templating. The default is `"$rootDir/src/data"`.
 
 ```json
 // lwr.config.json
@@ -235,6 +256,9 @@ LWR also offers the following configuration:
     "port": 3333,
     "serverMode": "prod",
     "rootDir": "/Users/me/lwr/projects/awesome",
-    "cacheDir": "<rootDir>/build/cache"
+    "cacheDir": "$rootDir/build/cache",
+    "contentDir": "$rootDir/templates",
+    "layoutsDir": "$rootDir",
+    "globalDataDir": "$rootDir/src/templateContext"
 }
 ```

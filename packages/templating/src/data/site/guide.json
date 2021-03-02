@@ -1,0 +1,10 @@
+[
+    {
+        "label": "Installation",
+        "content": "guide/installation.md"
+    },
+    {
+        "label": "Introduction",
+        "content": "guide/introduction.md"
+    }
+]

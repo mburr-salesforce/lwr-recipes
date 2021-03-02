@@ -22,14 +22,14 @@ To enable Lightning Locker add the locker config to a bootstrap configuration fo
 ```ts
 {
     "lwc": {
-        "modules": [{ "dir": "<rootDir>/src/modules" }]
+        "modules": [{ "dir": "$rootDir/src/modules" }]
     },
     "routes": [
         {
             "id": "locker-base",
             "path": "/",
             "rootComponent": "example/app",
-            "layoutTemplate": "<layoutsDir>/main.html",
+            "layoutTemplate": "$layoutsDir/main.html",
             "bootstrap": {
                 "locker": {
                     "enabled": true,

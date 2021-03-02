@@ -250,8 +250,8 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
 // lwr.config.json
 {
     "moduleProviders": [
-        "<rootDir>/build/services/es-custom-provider.js",
-        "<rootDir>/build/services/lwc-custom-provider.js",
+        "$rootDir/build/services/es-custom-provider.js",
+        "$rootDir/build/services/lwc-custom-provider.js",
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
@@ -270,7 +270,7 @@ Configuration can be passed from _lwr.config.json_ to a module provider construc
 {
     "moduleProviders": [
         [
-            "<rootDir>/build/services/provider-with-config.js",
+            "$rootDir/build/services/provider-with-config.js",
             {
                 "cache": true,
                 "locales": ["en", "es", "de"]
