@@ -1,16 +1,16 @@
 # Configure a LWR Project
 
--   [Introduction](#introduction)
--   [Details](#details)
-    -   [Project Setup](#project-setup)
-    -   [The LWR Server](#the-lwr-server)
-    -   [Configuration](#configuration)
-        -   [LWC Modules](#lwc-modules)
-        -   [Routes](#routes)
-        -   [Error Routes](#error-routes)
-        -   [Assets](#assets)
-        -   [Module Providers](#module-providers)
-        -   [More Configuration](#more-configuration)
+    -   [Introduction](#introduction)
+    -   [Details](#details)
+        -   [Project Setup](#project-setup)
+        -   [The LWR Server](#the-lwr-server)
+        -   [Configuration](#configuration)
+            -   [LWC Modules](#lwc-modules)
+            -   [Routes](#routes)
+            -   [Error Routes](#error-routes)
+            -   [Assets](#assets)
+            -   [Module Providers](#module-providers)
+            -   [More Configuration](#more-configuration)
 
 ## Introduction
 
@@ -46,7 +46,7 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 {
     "devDependencies": {
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha51"
+        "lwr": "0.0.2-alpha62"
     }
 }
 ```
@@ -93,7 +93,7 @@ The `package.json` now includes the `lightning-base-components` package.
     "devDependencies": {
         "lightning-base-components": "^1.9.0-alpha",
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha51"
+        "lwr": "0.0.2-alpha62"
     }
 }
 ```
@@ -244,6 +244,7 @@ LWR also offers the following optional configuration:
 
 -   `port`: the port from which to serve the LWR application. The default is `process.env.PORT || 3000`.
 -   `serverMode`: the mode in which the server should run. The default is `"dev"`. See available modes [here](./get_started.md#run-a-lwr-recipe). Typically, mode is set on the command line. See the `scripts` [package.json](./package.json).
+-   `serverType`: the type of underlying web server LWR should utilize. Supported values are `"express"`(default) || `"koa"` but more server types may be supported in the future.
 -   `rootDir`: the root directory of the LWR project. The default is the current working directory (ie: `.`).
 -   `cacheDir`: LWR caches LWC modules that it has compiled and stores them in a cache directory. The default is `"$rootDir/__lwr_cache__"`.
 -   `contentDir`: the content templates directory. The default is `"$rootDir/src/content"`.
@@ -255,6 +256,7 @@ LWR also offers the following optional configuration:
 {
     "port": 3333,
     "serverMode": "prod",
+    "serverType": "express",
     "rootDir": "/Users/me/lwr/projects/awesome",
     "cacheDir": "$rootDir/build/cache",
     "contentDir": "$rootDir/templates",

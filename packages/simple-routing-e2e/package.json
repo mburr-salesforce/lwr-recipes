@@ -25,7 +25,7 @@
         "@wdio/selenium-standalone-service": "^6.6.2",
         "chromedriver": "^86.0.0",
         "simple-routing": "0.0.1",
-        "typescript": "^3.8.3",
+        "typescript": "^4.2.2",
         "utam": "0.0.1-alpha22",
         "wdio-chromedriver-service": "^6.0.0",
         "wdio-utam-service": "0.0.1-alpha22"

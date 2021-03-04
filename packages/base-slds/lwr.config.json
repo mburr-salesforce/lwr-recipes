@@ -1,17 +1,17 @@
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }, { "npm": "lightning-base-components" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }] },
     "assets": [
         {
             "alias": "assetsDir",
-            "dir": "<rootDir>/src/assets",
+            "dir": "$rootDir/src/assets",
             "urlPath": "/assets"
         },
         {
-            "dir": "<rootDir>/src/assets/fonts",
+            "dir": "$rootDir/src/assets/fonts",
             "urlPath": "/fonts"
         },
         {
-            "file": "<rootDir>/src/assets/utilitySprite.svg",
+            "file": "$rootDir/src/assets/utilitySprite.svg",
             "urlPath": "/lightning.utilitySprite"
         }
     ],
@@ -20,7 +20,7 @@
             "id": "slds-base",
             "path": "/",
             "rootComponent": "example/app",
-            "layoutTemplate": "<layoutsDir>/main.html",
+            "layoutTemplate": "$layoutsDir/main.html",
             "bootstrap": {
                 "syntheticShadow": true
             }

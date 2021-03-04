@@ -1,4 +1,10 @@
 steps:
+  npm-configure:
+    params:
+      registry-url: https://registry.yarnpkg.com
+  npm-configure-for-publish:
+    params:
+      registry-url: https://registry.npmjs.org
   node-unit-tests:
     description: Run WDIO/UTAM E2E Tests
     run:

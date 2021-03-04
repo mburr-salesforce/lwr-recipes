@@ -1,5 +1,5 @@
 ---
-layoutTemplate: <layoutsDir>/main_layout.njk
+layoutTemplate: $layoutsDir/main_layout.njk
 ---
 
 # Recipes

@@ -1,5 +1,5 @@
 {
-    "name": "init-override",
+    "name": "custom-middleware",
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
@@ -12,14 +12,16 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
-        "start": "node build/index.js",
+        "start": "node build/express.js",
+        "start:express": "node build/express.js",
+        "start:koa": "node build/koa.js",
         "start:prod": "MODE=prod yarn start",
         "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
         "lwc": "~1.9.0",
-        "lwr": "0.0.2-alpha51",
-        "typescript": "^3.8.3"
+        "lwr": "0.0.2-alpha62",
+        "typescript": "^4.2.2"
     },
     "engines": {
         "node": ">=14.15.1 <15"

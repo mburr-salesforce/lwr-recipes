@@ -1,5 +1,5 @@
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
             "id": "module-provider",
@@ -8,8 +8,8 @@
         }
     ],
     "moduleProviders": [
-        "<rootDir>/build/services/echo-provider.js",
-        "<rootDir>/build/services/color-provider.js",
+        "$rootDir/build/services/echo-provider.js",
+        "$rootDir/build/services/color-provider.js",
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"

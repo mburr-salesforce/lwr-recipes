@@ -5,7 +5,7 @@ import Helmet from 'helmet'; // https://helmetjs.github.io/
 const lwrServer = createServer();
 
 //Get the internal express app
-const expressApp = lwrServer.getInternalServer();
+const expressApp = lwrServer.getInternalServer<'express'>();
 
 //Use Helmet to enable several out of the box security headers
 expressApp.use(

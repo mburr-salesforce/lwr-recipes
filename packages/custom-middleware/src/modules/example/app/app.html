@@ -1,0 +1,23 @@
+<template>
+    <main>
+        <h1>Response Headers</h1>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Value</th>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="header">
+                    <tr key={header.name}>
+                        <td>
+                            {header.name}
+                        </td>
+                        <td>
+                            {header.value}
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </main>
+</template>

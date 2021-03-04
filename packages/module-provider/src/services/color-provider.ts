@@ -6,7 +6,7 @@ import {
     ModuleEntry,
     ModuleProvider,
     ModuleSource,
-} from '@lwrjs/types';
+} from 'lwr';
 import LwcModuleProvider from '@lwrjs/lwc-module-provider';
 import { hashContent } from '@lwrjs/shared-utils';
 

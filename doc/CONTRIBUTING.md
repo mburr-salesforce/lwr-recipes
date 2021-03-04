@@ -112,6 +112,32 @@ editor][eslint-integrations] to warn you in real time as you edit the file.
 Fixing all existing lint issues is a tedious task so please pitch in by fixing
 the ones related to the files you change!
 
+#### Testing out a new version of LWR with lwr-recipes
+
+You can link to a local version of LWR packages by running the following commands:
+
+From your local LWR directory run:
+
+```
+yarn link-lwr
+```
+
+From your local lwr-recipes directory run:
+
+```
+  // Link LWR packages
+  yarn link @lwrjs/diagnostics @lwrjs/label-module-provider @lwrjs/fs-asset-provider @lwrjs/app-service @lwrjs/asset-registry @lwrjs/client-modules @lwrjs/html-view-provider @lwrjs/markdown-view-provider @lwrjs/npm-module-provider @lwrjs/router @lwrjs/view-registry @lwrjs/base-template-engine @lwrjs/compiler @lwrjs/loader @lwrjs/module-bundler @lwrjs/nunjucks-view-provider @lwrjs/shared-utils @lwrjs/base-view-provider @lwrjs/core @lwrjs/lwc-module-provider @lwrjs/module-registry @lwrjs/resource-registry @lwrjs/server @lwrjs/types
+```
+
+If you are done testing with LWR from source, you can remove the links by running:
+
+```
+  // Unlink LWR packages
+  yarn unlink @lwrjs/diagnostics @lwrjs/label-module-provider @lwrjs/fs-asset-provider @lwrjs/app-service @lwrjs/asset-registry @lwrjs/client-modules @lwrjs/html-view-provider @lwrjs/markdown-view-provider @lwrjs/npm-module-provider @lwrjs/router @lwrjs/view-registry @lwrjs/base-template-engine @lwrjs/compiler @lwrjs/loader @lwrjs/module-bundler @lwrjs/nunjucks-view-provider @lwrjs/shared-utils @lwrjs/base-view-provider @lwrjs/core @lwrjs/lwc-module-provider @lwrjs/module-registry @lwrjs/resource-registry @lwrjs/server @lwrjs/types --no-bail
+
+  yarn install --force
+```
+
 ### Create a pull request
 
 If you've never created a pull request before, follow [these

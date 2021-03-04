@@ -60,7 +60,7 @@ Create an ES module provider by implementing the `ModuleProvider` interface prov
 
 ```ts
 // src/services/es-custom-provider.ts
-import { ModuleProvider } from '@lwrjs/types';
+import { ModuleProvider } from 'lwr';
 export default class MyProvider implements ModuleProvider {
     name = 'echo-provider';
     private version = '1'; // not required, but useful
@@ -68,8 +68,6 @@ export default class MyProvider implements ModuleProvider {
 ```
 
 See a full ES module provider example [here](./src/services/echo-provider.ts).
-
-_Note_: Add `"@lwrjs/types"` and `"@lwrjs/shared-utils"` (used later) as dependencies in _package.json_.
 
 ##### getModuleEntry()
 
@@ -87,7 +85,7 @@ If a module provider can handle the request, it returns a `ModuleEntry` object, 
 -   `version`: The version of the module provider
 
 ```ts
-import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from '@lwrjs/types';
+import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from 'lwr';
 
 // Return true if the given specifier is handled by this module provider
 function canHandle(specifier: string): boolean {
@@ -118,7 +116,7 @@ export default class MyProvider implements ModuleProvider {
 If the module registry determines that a module provider can fulfill a request, it will call `getModule()`, which receives the same arguments as [`getModuleEntry()`](#getmoduleentry). Though this function returns a `ModuleCompiled`, the module provider does **not** need to compile ES modules.
 
 ```ts
-import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from '@lwrjs/types';
+import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider, RuntimeParams } from 'lwr';
 import { hashContent } from '@lwrjs/shared-utils';
 
 // Return a generated ES code string
@@ -158,6 +156,8 @@ export default class MyProvider implements ModuleProvider {
 }
 ```
 
+_Note_: Add `"@lwrjs/shared-utils"` as a dependency in _package.json_.
+
 #### LWC module providers
 
 [LWCs](https://lwc.dev/guide/es_modules) are special instances of ES modules which extend the `LightningElement` class. They must be processed by the LWC compiler before being served by a module provider. It is recommended that custom LWC module providers are created by extending the existing `LwcModuleProvider` class from `@lwrjs/lwc-module-provider`.
@@ -175,7 +175,7 @@ import {
     ModuleEntry,
     ModuleProvider,
     ModuleSource,
-} from '@lwrjs/types';
+} from 'lwr';
 import { hashContent } from '@lwrjs/shared-utils';
 
 // Return generated LWC code strings by file type: html, css or default js

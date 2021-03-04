@@ -4,7 +4,7 @@
     },
     "routes": [
         {
-            "id": "security-base",
+            "id": "example",
             "path": "/",
             "rootComponent": "example/app"
         }

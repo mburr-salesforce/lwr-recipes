@@ -1,0 +1,162 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "base-slds",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/base-slds",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/base-slds/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "custom-middleware-express",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/custom-middleware",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/custom-middleware/build/express.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "custom-middleware-koa",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/custom-middleware",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/custom-middleware/build/koa.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "hello-world",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/hello-world",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/hello-world/scripts/start-server.mjs",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "labels",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/labels",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/labels/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "locker",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/locker",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/locker/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "module-provider",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/module-provider",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/module-provider/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "nested-routing",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/nested-routing",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/nested-routing/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "routing-extended-metadata",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/routing-extended-metadata",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/routing-extended-metadata/build/autostart.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "security",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/security",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/security/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "services",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/services",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/services/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "simple-routing",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/simple-routing",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/simple-routing/build/autostart.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "templating",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/packages/templating",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/packages/templating/build/index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
+        },
+       
+    ]
+}

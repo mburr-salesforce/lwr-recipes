@@ -1,5 +1,5 @@
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
             "id": "labels-base",
@@ -15,7 +15,7 @@
                 "provideDefault": true,
                 "labelDirs": [
                     {
-                        "dir": "<rootDir>/src/labels",
+                        "dir": "$rootDir/src/labels",
                         "package": "@my/label"
                     }
                 ]

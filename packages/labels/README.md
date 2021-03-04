@@ -1,11 +1,11 @@
 # Localizing an Application with Labels
 
--   [Introduction](#introduction)
--   [Details](#details)
-    -   [Project Setup](#project-setup)
-    -   [Configuration](#configuration)
-    -   [Importing Labels into Your Component](#importing-labels-into-your-component)
--   [Recipe Setup](#Recipe-setup)
+    -   [Introduction](#introduction)
+    -   [Details](#details)
+        -   [Project Setup](#project-setup)
+        -   [Configuration](#configuration)
+        -   [Importing Labels into Your Component](#importing-labels-into-your-component)
+    -   [Recipe Setup](#recipe-setup)
 
 ## Introduction
 
@@ -48,15 +48,15 @@ Each file contains a JSON object with the label references and values nested by 
 
 Label Module Provider is not a default provider, so you must add it to your project configuration. Learn more in [Configure a LWR Project](../../doc/config.md#module-providers).
 
-Add `"@lwrjs/label-module-provider": "0.0.2-alpha51"` as a dependency in `package.json`.
+Add `"@lwrjs/label-module-provider": "0.0.2-alpha62"` as a dependency in `package.json`.
 
 ```json
 // package.json
 {
     "dependencies": {
-        "@lwrjs/label-module-provider": "0.0.2-alpha51",
+        "@lwrjs/label-module-provider": "0.0.2-alpha62",
         "lwc": "1.11.4",
-        "lwr": "0.0.2-alpha51"
+        "lwr": "0.0.2-alpha62"
     }
 }
 ```

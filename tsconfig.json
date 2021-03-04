@@ -4,7 +4,6 @@
     ],
     "references": [
         { "path": "./packages/base-slds" },
-        { "path": "./packages/init-override" },
         { "path": "./packages/labels" },
         { "path": "./packages/locker" },
         { "path": "./packages/module-provider" },
