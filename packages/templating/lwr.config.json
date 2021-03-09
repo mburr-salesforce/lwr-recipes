@@ -1,7 +1,7 @@
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "bundleConfig": { "exclude": ["lwc"] },
-    "hooks": ["$rootDir/src/hooks/docs-app-hooks.js"],
+    "hooks": ["$rootDir/src/hooks/docs-app-hooks.ts"],
     "routes": [
         {
             "id": "home",
@@ -18,7 +18,7 @@
         {
             "id": "custom_route_handler",
             "path": "/echo/:message",
-            "routeHandler": "$rootDir/src/routeHandlers/echo.js",
+            "routeHandler": "$rootDir/build/routeHandlers/echo.js",
             "properties": {
                 "intro": "This component echoes the URL path parameter"
             }
@@ -26,7 +26,7 @@
         {
             "id": "json_route_handler",
             "path": "/json/:bar",
-            "routeHandler": "$rootDir/src/routeHandlers/custom.js"
+            "routeHandler": "$rootDir/build/routeHandlers/custom.js"
         }
     ],
     "errorRoutes": [

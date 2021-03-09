@@ -1,9 +1,11 @@
+import { ViewRequest, ViewResponse } from '@lwrjs/types';
+
 // Return a completely custom response
 // containing some JSON data, based on the current path and query parameters
 // viewRequest = { url, requestPath, params?, query? }
-export default function jsonRouteHandler(viewRequest) {
+export default function jsonRouteHandler(viewRequest: ViewRequest): ViewResponse {
     const barPathParam = viewRequest.params.bar;
-    const fooQueryParams = viewRequest.query.foo;
+    const fooQueryParams = viewRequest.query?.foo;
 
     // return a "ViewResponse": { status?, body, cache?, headers? }
     return {

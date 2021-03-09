@@ -1,7 +1,12 @@
+import { HandlerContext, RouteHandlerViewResponse, ViewRequest } from '@lwrjs/types';
+
 // Return customized input, from which the LWR server will construct a response
 // viewRequest = { url, requestPath, params?, query? }
 // handlerContext = { route, viewApi: { hasViewResponse, getViewResponse } }
-export default async function echoRouteHandler(viewRequest, handlerContext) {
+export default function echoRouteHandler(
+    viewRequest: ViewRequest,
+    handlerContext: HandlerContext,
+): RouteHandlerViewResponse {
     const routeProperties = handlerContext.route.properties || {};
     const message = viewRequest.params.message;
 
