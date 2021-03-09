@@ -1,17 +1,11 @@
 import { LightningElement, api } from 'lwc';
 
 export default class RecipesItem extends LightningElement {
-    @api title: string;
-    @api ingredients: string;
-
-    constructor() {
-        super();
-        this.title = '';
-        this.ingredients = '';
-    }
+    @api title = '';
+    @api ingredients = '';
 
     get imgSrc(): string {
-        return `/public/assets/${this.title}.jpg`;
+        return this.title ? `/public/assets/${this.title}.jpg` : '';
     }
 
     get foodStuffs(): string[] {

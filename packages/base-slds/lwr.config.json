@@ -1,5 +1,6 @@
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }] },
+    "bundleConfig": { "exclude": ["lwc"] },
     "assets": [
         {
             "alias": "assetsDir",

@@ -6,6 +6,7 @@
         -   [The LWR Server](#the-lwr-server)
         -   [Configuration](#configuration)
             -   [LWC Modules](#lwc-modules)
+            -   [Bundling](#bundling)
             -   [Routes](#routes)
             -   [Error Routes](#error-routes)
             -   [Assets](#assets)
@@ -112,6 +113,21 @@ Add LWC configuration to `lwr.config.json`.
 LWR automatically replaces any instances of `$rootDir` with the path to the root directory of the LWR project.
 
 > See the [LWC Dev Guide](https://lwc.dev/guide/es_modules#module-resolution) for details on how LWC module resolution works.
+
+#### Bundling
+
+If a recipe is running in [`prod` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons. Examples of such modules are `lwc` and `lwr/navigation`.
+
+The solution is to put these modules in their own, shareable bundles:
+
+```json
+// lwr.config.json
+{
+    "bundleConfig": {
+        "exclude": ["lwc", "lwr/navigation"]
+    }
+}
+```
 
 #### Routes
 
