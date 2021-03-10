@@ -1,17 +1,16 @@
 # Configure a LWR Project
 
-    -   [Introduction](#introduction)
-    -   [Details](#details)
-        -   [Project Setup](#project-setup)
-        -   [The LWR Server](#the-lwr-server)
-        -   [Configuration](#configuration)
-            -   [LWC Modules](#lwc-modules)
-            -   [Bundling](#bundling)
-            -   [Routes](#routes)
-            -   [Error Routes](#error-routes)
-            -   [Assets](#assets)
-            -   [Module Providers](#module-providers)
-            -   [More Configuration](#more-configuration)
+-   [Introduction](#introduction)
+-   [Details](#details)
+    -   [Project Setup](#project-setup)
+    -   [The LWR Server](#the-lwr-server)
+    -   [Configuration](#configuration)
+        -   [LWC Modules](#lwc-modules)
+        -   [Routes](#routes)
+        -   [Error Routes](#error-routes)
+        -   [Assets](#assets)
+        -   [Module Providers](#module-providers)
+        -   [More Configuration](#more-configuration)
 
 ## Introduction
 
@@ -99,20 +98,35 @@ The `package.json` now includes the `lightning-base-components` package.
 }
 ```
 
-Add LWC configuration to `lwr.config.json`.
+The `lwc.modules` key in `lwr.config.json` accepts an array of module records from these sources:
+
+-   **Alias module record:** A file path where a module can be resolved.
+-   **Directory module record:** A folder path where modules can be resolved.
+-   **NPM package module record:** An NPM package that exposes one or more modules.
 
 ```json
 // lwr.config.json
 {
     "lwc": {
-        "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }]
+        "modules": [
+            {
+                "name": "ui/button",
+                "path": "src/modules/ui/button/button.js"
+            },
+            {
+                "dir": "$rootDir/src/modules"
+            },
+            {
+                "npm": "lightning-base-components"
+            }
+        ]
     }
 }
 ```
 
-LWR automatically replaces any instances of `$rootDir` with the path to the root directory of the LWR project.
+The resolver iterates through the modules array and returns the first module that matches the requested module specifier. LWR automatically replaces any instances of `$rootDir` with the path to the root directory of the LWR project.
 
-> See the [LWC Dev Guide](https://lwc.dev/guide/es_modules#module-resolution) for details on how LWC module resolution works.
+See the [LWC documentation](https://github.com/salesforce/lwc/tree/master/packages/%40lwc/module-resolver#module-resolution) for more details on how LWC module resolution works.
 
 #### Bundling
 
@@ -166,9 +180,7 @@ Each server-side route includes these properties:
 }
 ```
 
-> To learn how to work with templates and route handlers, see the [Templating](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating) recipe.
-
-> To learn how to work with client-side routes, see the [Simple Routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing) recipe.
+> To learn how to work with templates and route handlers, see the [Templating](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating) recipe. To learn how to work with client-side routes, see the [Simple Routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing) recipe.
 
 #### Error Routes
 
@@ -253,6 +265,8 @@ LWR automatically includes a set of default module providers, so you don't need 
     ]
 }
 ```
+
+To see a list of module providers not included by default, see [Available Packages](./business_overview.md#available-packages) in the LWR business overview.
 
 #### More Configuration
 

@@ -1,11 +1,11 @@
 # Localizing an Application with Labels
 
-    -   [Introduction](#introduction)
-    -   [Details](#details)
-        -   [Project Setup](#project-setup)
-        -   [Configuration](#configuration)
-        -   [Importing Labels into Your Component](#importing-labels-into-your-component)
-    -   [Recipe Setup](#recipe-setup)
+-   [Introduction](#introduction)
+-   [Details](#details)
+    -   [Project Setup](#project-setup)
+    -   [Configuration](#configuration)
+    -   [Importing Labels into Your Component](#importing-labels-into-your-component)
+-   [Recipe Setup](#recipe-setup)
 
 ## Introduction
 
