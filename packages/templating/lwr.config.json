@@ -18,7 +18,7 @@
         {
             "id": "custom_route_handler",
             "path": "/echo/:message",
-            "routeHandler": "$rootDir/build/routeHandlers/echo.js",
+            "routeHandler": "$rootDir/src/routeHandlers/echo.ts",
             "properties": {
                 "intro": "This component echoes the URL path parameter"
             }
@@ -26,7 +26,7 @@
         {
             "id": "json_route_handler",
             "path": "/json/:bar",
-            "routeHandler": "$rootDir/build/routeHandlers/custom.js"
+            "routeHandler": "$rootDir/src/routeHandlers/custom.ts"
         }
     ],
     "errorRoutes": [

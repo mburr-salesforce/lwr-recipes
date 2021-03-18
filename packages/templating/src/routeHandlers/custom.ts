@@ -1,4 +1,4 @@
-import { ViewRequest, ViewResponse } from '@lwrjs/types';
+import { ViewRequest, ViewResponse } from 'lwr';
 
 // Return a completely custom response
 // containing some JSON data, based on the current path and query parameters

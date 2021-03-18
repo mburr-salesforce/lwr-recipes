@@ -394,7 +394,7 @@ You can customize the page response using a route handler. A route handler is a 
 {
     "id": "custom_route_handler",
     "path": "/custom/:param",
-    "routeHandler": "$rootDir/src/routeHandlers/custom.js"
+    "routeHandler": "$rootDir/src/routeHandlers/custom.ts"
 }
 ```
 
@@ -465,9 +465,9 @@ Things to note:
 -   The `CacheResponse.ttl` is a number, in seconds, or a [time string](https://github.com/vercel/ms#examples) to use as the `max-age` on the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header.
 -   The `ViewDefinitionResponse.view` is merged with `{ id, bootstrap }` from the current route.
 
-> See an example of customizing a page response [here](./src/routeHandlers/echo.js). The LWR server then constructs the response.
+> See an example of customizing a page response [here](./src/routeHandlers/echo.ts). The LWR server then constructs the response.
 
-> See an example of overriding a page response [here](./src/routeHandlers/custom.js).
+> See an example of overriding a page response [here](./src/routeHandlers/custom.ts).
 
 ### Configuration
 
@@ -509,7 +509,7 @@ You can write code that dynamically updates the [configuration](https://github.c
 }
 ```
 
-> See an example of a configuration hook [here](./src/hooks/docs-app-hooks.js).
+> See an example of a configuration hook [here](./src/hooks/docs-app-hooks.ts).
 
 ## Recipe Setup
 

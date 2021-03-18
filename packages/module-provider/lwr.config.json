@@ -9,8 +9,8 @@
         }
     ],
     "moduleProviders": [
-        "$rootDir/build/services/echo-provider.js",
-        "$rootDir/build/services/color-provider.js",
+        "$rootDir/src/services/echo-provider.ts",
+        "$rootDir/src/services/color-provider.ts",
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"

@@ -250,7 +250,7 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
 {
     "moduleProviders": [
         "$rootDir/build/services/es-custom-provider.js",
-        "$rootDir/build/services/lwc-custom-provider.js",
+        "$rootDir/build/services/lwc-custom-provider.ts",
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
