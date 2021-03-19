@@ -6,6 +6,7 @@
     -   [The LWR Server](#the-lwr-server)
     -   [Configuration](#configuration)
         -   [LWC Modules](#lwc-modules)
+        -   [Bundling](#bundling)
         -   [Routes](#routes)
         -   [Error Routes](#error-routes)
         -   [Assets](#assets)
@@ -130,7 +131,7 @@ See the [LWC documentation](https://github.com/salesforce/lwc/tree/master/packag
 
 #### Bundling
 
-If a recipe is running in [`prod` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons. Examples of such modules are `lwc` and `lwr/navigation`.
+If a recipe is running in [`prod` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons. Examples of such modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-shadow`.
 
 The solution is to put these modules in their own, shareable bundles:
 
