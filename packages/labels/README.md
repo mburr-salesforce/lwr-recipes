@@ -56,7 +56,7 @@ Add `"@lwrjs/label-module-provider": "0.1.3"` as a dependency in `package.json`.
     "dependencies": {
         "@lwrjs/label-module-provider": "0.1.3",
         "lwc": "1.11.4",
-        "lwr": "0.1.3"
+        "lwr": "0.1.7"
     }
 }
 ```

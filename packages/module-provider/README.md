@@ -288,7 +288,7 @@ interface MyProviderOptions {
     locales?: string[];
 }
 export default class MyProvider implements ModuleProvider {
-    constructor(context: ProviderContext, { cache = true, locales = [] }: MyProviderOptions) {
+    constructor({ cache = true, locales = [] }: MyProviderOptions, context: ProviderContext) {
         // initialization
     }
 }
