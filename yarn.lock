@@ -2544,11 +2544,6 @@
   resolved "https://registry.yarnpkg.com/@lwrjs/diagnostics/-/diagnostics-0.0.2-alpha60.tgz#3ffd6a913a7bd9fb38af2bff52c21025c78dec63"
   integrity sha512-Bz8ld61V35yerXiKQdvWlF4lJSvFm28apAJwWEe73+hajzt8LeIYoz7lOHuPe7gvsQYDaHXmn8ExPr52UOuCtA==
 
-"@lwrjs/diagnostics@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@lwrjs/diagnostics/-/diagnostics-0.1.3.tgz#40b49536f5aba95c5e51cfb57dfa792a01807a90"
-  integrity sha512-5O9GKAbjKN5247S+JYWN7LYpDYAOj6FckZ25yyj4dV9XJA1NGg9sv8GyLeATL63OTtK2EygcDXcNldM5K4iLGw==
-
 "@lwrjs/diagnostics@0.1.7":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@lwrjs/diagnostics/-/diagnostics-0.1.7.tgz#231e713ac1cab3305b22cd505dfe5ac991dee5c0"
@@ -2590,13 +2585,13 @@
     gray-matter "^4.0.2"
     parse5-sax-parser "^6.0.1"
 
-"@lwrjs/label-module-provider@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@lwrjs/label-module-provider/-/label-module-provider-0.1.3.tgz#7fc2bf495d0e9c3823442f05ebb7135136f777ac"
-  integrity sha512-+1hbqldS6IiltlUPTE7m6cJvv26C8hiAo9Cf8BD34HNFeBkyJY0q3afVLmOJmy8qlwbsY/UkCjWSwTiOJWAxzQ==
+"@lwrjs/label-module-provider@0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@lwrjs/label-module-provider/-/label-module-provider-0.1.7.tgz#a01053897ccfd5b754637de15a30c72002269d9d"
+  integrity sha512-udCFtxbnMJsla4Ne+noRoVdJQz98BfuYj4cOhF0MsRlKh/QAR06R+pYYdgSsk9FJoeqJkChIusR26fOtPcJPIA==
   dependencies:
-    "@lwrjs/diagnostics" "0.1.3"
-    "@lwrjs/shared-utils" "0.1.3"
+    "@lwrjs/diagnostics" "0.1.7"
+    "@lwrjs/shared-utils" "0.1.7"
     ajv "6.12.6"
 
 "@lwrjs/loader@0.0.2-alpha60":
@@ -2826,18 +2821,6 @@
     parse5-sax-parser "^6.0.1"
     slugify "^1.4.5"
     typescript "^4.1.2"
-
-"@lwrjs/shared-utils@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@lwrjs/shared-utils/-/shared-utils-0.1.3.tgz#c1a569d1c4292caa0fd0bc384a89c3c5e7793cdc"
-  integrity sha512-4qR+DLfwrMBjTUtxHiKGFCuWUAvBjA/5TiP2+LBD85FA6PnpC/MixANpOG/lTsI43+pEDGM8uauYZTiaaNlffQ==
-  dependencies:
-    chokidar "^3.4.0"
-    es-module-lexer "^0.3.18"
-    esbuild "^0.8.42"
-    fast-json-stable-stringify "^2.1.0"
-    parse5-sax-parser "^6.0.1"
-    slugify "^1.4.5"
 
 "@lwrjs/shared-utils@0.1.7":
   version "0.1.7"

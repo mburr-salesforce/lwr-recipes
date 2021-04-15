@@ -17,7 +17,7 @@
         "start:amd": "MODE=compat yarn start"
     },
     "devDependencies": {
-        "@lwrjs/label-module-provider": "0.1.3",
+        "@lwrjs/label-module-provider": "0.1.7",
         "lwc": "~1.9.0",
         "lwr": "0.1.7",
         "typescript": "^4.2.2"
