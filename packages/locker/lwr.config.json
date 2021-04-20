@@ -5,18 +5,16 @@
     "bundleConfig": {
         "exclude": ["lwc"]
     },
+    "locker": {
+        "enabled": true,
+        "trustedComponents": ["example/app", "example/trustedCmp"]
+    },
     "routes": [
         {
             "id": "locker-base",
             "path": "/",
             "rootComponent": "example/app",
-            "layoutTemplate": "$layoutsDir/main.html",
-            "bootstrap": {
-                "locker": {
-                    "enabled": true,
-                    "trustedNamespaces": ["example/app", "example/trustedCmp"]
-                }
-            }
+            "layoutTemplate": "$layoutsDir/main.html"
         }
     ]
 }

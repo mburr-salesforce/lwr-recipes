@@ -17,25 +17,23 @@ Shows you how to enable and configure Lightning Locker for an LWR App.
 
 ### Lightning Locker Configuration
 
-To enable Lightning Locker add the locker config to a bootstrap configuration for a route. Any components or namespaces you want to run outside of locker, list in the `trustednamespaces` property.
+To enable Lightning Locker add the locker config to a bootstrap configuration for a route. Any components or namespaces you want to run outside of locker, list in the `trustedComponents` property.
 
 ```ts
 {
     "lwc": {
         "modules": [{ "dir": "$rootDir/src/modules" }]
     },
+    "locker": {
+        "enabled": true,
+        "trustedComponents": ["lightning/*", "example/app", "example/trustedCmp"]
+    },
     "routes": [
         {
             "id": "locker-base",
             "path": "/",
             "rootComponent": "example/app",
-            "layoutTemplate": "$layoutsDir/main.html",
-            "bootstrap": {
-                "locker": {
-                    "enabled": true,
-                    "trustedNamespaces": ["lightning", "example/app", "example/trustedCmp"]
-                }
-            }
+            "layoutTemplate": "$layoutsDir/main.html"
         }
     ]
 }
@@ -52,7 +50,7 @@ Use the following command to build this recipe.
 yarn install
 yarn build
 cd packages/locker
-yarn start:amd # locker is currently not supported in ESM
+yarn start # dev mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
