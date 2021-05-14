@@ -146,6 +146,19 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "simple-routing-e2e",
+            "type": "node",
+            "request": "launch",
+            "args": ["wdio.conf.js"],
+            "cwd": "${workspaceFolder}/packages/simple-routing-e2e",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ]
+        },
+        {
             "name": "templating",
             "type": "node",
             "request": "launch",

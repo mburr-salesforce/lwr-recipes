@@ -1,8 +1,8 @@
 <template>
-    <template if:true={route}>
+    <template if:true={pageReference}>
         <example-recipes-item
-            title={route.attributes.title}
-            ingredients={route.attributes.ingredients}
+            title={pageReference.attributes.title}
+            ingredients={pageReference.attributes.ingredients}
         ></example-recipes-item>
     </template>
 </template>

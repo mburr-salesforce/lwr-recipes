@@ -33,6 +33,9 @@
             "example/recipesPageHandler": ["modules/example/recipesPageHandler/recipesPageHandler.ts"],
             "example/rootRouter": ["modules/example/rootRouter/rootRouter.ts"],
             "lwr/router": ["../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"],
+            "lwr/routerUtils": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/routerUtils/routerUtils.d.ts"
+            ],
             "lwr/navigation": [
                 "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
             ],

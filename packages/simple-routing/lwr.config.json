@@ -1,5 +1,5 @@
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "bundleConfig": { "exclude": ["lwc", "lwr/navigation"] },
     "routes": [
         {
@@ -14,7 +14,7 @@
         },
         {
             "id": "recipes",
-            "path": "/:recipes/:title/:ingredients",
+            "path": "/recipes/:title",
             "rootComponent": "example/app"
         }
     ]

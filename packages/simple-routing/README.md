@@ -66,7 +66,7 @@ Define route definitions in this type:
 ```ts
 interface RouteDefinition<TMetadata = Record<string, any>> {
     id: string;
-    path: string;
+    uri: string;
     exact?: boolean;
     page?: Partial<PageReference>;
     handler: () => Promise<RouteHandlerModule>;
@@ -85,7 +85,7 @@ import type { RouteDefinition, RouteHandlerModule, Router, PageReference } from 
 const routes: RouteDefinition[] = [
     {
         id: 'home',
-        path: '/',
+        uri: '/',
         handler: (): Promise<RouteHandlerModule> => import('example/homePageHandler'),
         page: {
             type: 'home',
@@ -180,7 +180,7 @@ Please note the routes defined in `lwr.config.json` are server-side; they are di
 ```json
 //lwr.config.json
 {
-    "lwc": { "modules": [{ "dir": "<rootDir>/src/modules" }] },
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "bundleConfig": { "exclude": ["lwc", "lwr/navigation"] },
     "routes": [
         {

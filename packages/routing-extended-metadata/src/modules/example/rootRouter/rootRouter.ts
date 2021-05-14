@@ -5,7 +5,7 @@ import type { ExtendedRouteDefinition } from 'example/currentRouteMetadata';
 const routes: ExtendedRouteDefinition[] = [
     {
         id: 'home',
-        path: '/',
+        uri: '/',
         handler: (): Promise<RouteHandlerModule> => import('example/metadataPageHandler'),
         page: {
             type: 'home',
@@ -18,10 +18,13 @@ const routes: ExtendedRouteDefinition[] = [
     },
     {
         id: 'namedPage',
-        path: '/:pageName',
+        uri: '/:pageName',
         handler: (): Promise<RouteHandlerModule> => import('example/metadataPageHandler'),
         page: {
             type: 'namedPage',
+            attributes: {
+                pageName: ':pageName',
+            },
         },
         metadata: {
             isPublic: true,

@@ -4,7 +4,7 @@ import type { RouteDefinition, RouteHandlerModule, Router, PageReference } from 
 const routes: RouteDefinition[] = [
     {
         id: 'home',
-        path: '/',
+        uri: '/',
         handler: (): Promise<RouteHandlerModule> => import('example/homePageHandler'),
         page: {
             type: 'home',
@@ -12,18 +12,25 @@ const routes: RouteDefinition[] = [
     },
     {
         id: 'namedPage',
-        path: '/:pageName',
+        uri: '/:pageName',
         handler: (): Promise<RouteHandlerModule> => import('example/namedPageHandler'),
         page: {
             type: 'namedPage',
+            attributes: {
+                pageName: ':pageName',
+            },
         },
     },
     {
         id: 'recipes',
-        path: '/recipes/:title/:ingredients',
+        uri: '/recipes/:title?:ingredients',
         handler: (): Promise<RouteHandlerModule> => import('example/recipesPageHandler'),
         page: {
             type: 'recipes',
+            attributes: {
+                title: ':title',
+                ingredients: ':ingredients',
+            },
         },
     },
 ];

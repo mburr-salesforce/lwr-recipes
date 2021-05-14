@@ -4,7 +4,7 @@ import type { RouteDefinition, RouteHandlerModule, Router, PageReference } from 
 const routes: RouteDefinition[] = [
     {
         id: 'home',
-        path: '/',
+        uri: '/',
         handler: (): Promise<RouteHandlerModule> => import('example/homePageHandler'),
         page: {
             type: 'home',
@@ -12,7 +12,7 @@ const routes: RouteDefinition[] = [
     },
     {
         id: 'animal',
-        path: '/animal',
+        uri: '/animal',
         handler: (): Promise<RouteHandlerModule> => import('example/animalPageHandler'),
         page: {
             type: 'animal',

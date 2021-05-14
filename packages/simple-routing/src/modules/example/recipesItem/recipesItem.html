@@ -1,28 +1,30 @@
 <template>
-    <h1>{title}</h1>
-    <div class="ingredients">
-        <div>
-            <h2>{ingredientsLabel}</h2>
-            <ul>
-                <template for:each={foodStuffs} for:item="item">
-                    <li key={item}>
-                        {item}
-                    </li>
-                </template>
-            </ul>
+    <template if:true={title}>
+        <h1>{title}</h1>
+        <div class="ingredients">
+            <div>
+                <h2>{ingredientsLabel}</h2>
+                <ul>
+                    <template for:each={foodStuffs} for:item="item">
+                        <li key={item}>
+                            {item}
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <img src={imgSrc} alt={title} />
         </div>
-        <img src={imgSrc} alt={title} />
-    </div>
-    <div class="instructions">
-        <h2>{instructions}</h2>
-        <ol>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Duis aute irure</li>
-            <li>Sed do eiusmod temporss</li>
-            <li>Fugiat nulla pariatur</li>
-            <li>Aliquip ex ea commodo consequat</li>
-            <li>Ut enim ad minim</li>
-            <li>Cillum dolore eu fugiat</li>
-        </ol>
-    </div>
+        <div class="instructions">
+            <h2>{instructions}</h2>
+            <ol>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Duis aute irure</li>
+                <li>Sed do eiusmod temporss</li>
+                <li>Fugiat nulla pariatur</li>
+                <li>Aliquip ex ea commodo consequat</li>
+                <li>Ut enim ad minim</li>
+                <li>Cillum dolore eu fugiat</li>
+            </ol>
+        </div>
+    </template>
 </template>

@@ -8,6 +8,7 @@ export default class Home extends LightningElement {
             attributes: {
                 pageName: 'products',
             },
+            state: {},
         };
     }
 }

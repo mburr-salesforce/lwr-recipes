@@ -5,7 +5,12 @@ import { ActionableUtamElement } from '@utam/core';
 describe('app navbar navigation', () => {
     it('landing page', async () => {
         await browser.url('/');
-        browser.debug();
+        // utam tests don't properly wait for this browser.debug
+        // browser.debug();
+
+        // TODO Dumb workaround but wdio doesn't wait in our test cases for the app to load
+        // Need to talk with utam folks about this / figure out the proper configuration
+        await browser.pause(3000);
 
         const appPO: App = await utam.load(App);
         expect(appPO).toBeDefined();
