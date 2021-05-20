@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "lwc": "~1.9.0",
-        "lwr": "0.2.3"
+        "lwr": "0.2.5"
     },
     "engines": {
         "node": ">=14.15.4 <15"

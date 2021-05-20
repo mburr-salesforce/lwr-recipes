@@ -86,10 +86,10 @@ export default class ColorProvider extends LwcModuleProvider implements ModulePr
     }
 
     // Return a ModuleSource object, which includes the generated code as `originalSource`
-    getModuleSource(
+    async getModuleSource(
         { name, namespace, specifier }: AbstractModuleId,
         moduleEntry: ModuleEntry,
-    ): ModuleSource {
+    ): Promise<ModuleSource> {
         // Generate code for the requested module
         const colorName = specifier.replace(this.namespace, '');
         const { color, fileType } = parseModuleName(colorName);
