@@ -3,21 +3,41 @@
     "selector": {
         "css": "example-home"
     },
-    "elements": [
+    "methods": [
         {
-            "name": "heading",
-            "public": true,
-            "type": "actionable",
-            "selector": {
-                "css": "h1"
-            }
-        },
-        {
-            "name": "description",
-            "public": true,
-            "selector": {
-                "css": ".text"
-            }
+            "name": "linkToProducts",
+            "compose": [
+                {
+                    "element": "productLink",
+                    "apply": "click"
+                }
+            ]
         }
-    ]
+    ],
+    "shadow": {
+        "elements": [
+            {
+                "name": "heading",
+                "public": true,
+                "type": "actionable",
+                "selector": {
+                    "css": "h1"
+                }
+            },
+            {
+                "name": "description",
+                "public": true,
+                "selector": {
+                    "css": ".text"
+                }
+            },
+            {
+                "name": "productLink",
+                "type": "simple-routing/pageObjects/link",
+                "selector": {
+                    "css": "example-link"
+                }
+            }
+        ]
+    }
 }

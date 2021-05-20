@@ -5,16 +5,15 @@ const simpleRoutingApp = require('simple-routing');
 
 const { UtamWdioService } = require('wdio-utam-service');
 const { reject } = require('any-promise');
-// const HEADLESS = process.env.HEADLESS;
-// const DEBUG = process.env.DEBUG;
+const NOHEADLESS = process.env.NOHEADLESS;
 
-// const ChromeOptions = HEADLESS ? { args: ['--headless'] } : {};
 // override default timeout for debug mode
 const DEFAULT_TIMEOUT = 20000; // 1000 * 60 * 30;
 
 // Use the same environment variable(s) as LWR does to initialize
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
-const CHROME_ARGS = ['--headless', '--verbose'];
+// default to running headless, but allow an override to be headed
+const CHROME_ARGS = ['--verbose'].concat(NOHEADLESS ? [] : ['--headless']);
 if (fs.existsSync('/.dockerenv')) {
     CHROME_ARGS.push('--no-sandbox');
 }

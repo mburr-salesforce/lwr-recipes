@@ -7,7 +7,7 @@
         "elements": [
             {
                 "name": "outlet",
-                "type": "simple-routing/pageObjects/outlet",
+                "type": "@lwrjs/router/pageObjects/outlet",
                 "public": true,
                 "selector": {
                     "css": "lwr-outlet"

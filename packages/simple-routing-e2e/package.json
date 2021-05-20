@@ -11,7 +11,8 @@
     "scripts": {
         "clean": "rimraf build/ node_modules/ __lwr_cache__",
         "build": "tsc -b",
-        "test:e2e": "wdio"
+        "test:e2e": "wdio",
+        "test:e2e:local": "UTAM_TIMEOUT=1000 wdio"
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",

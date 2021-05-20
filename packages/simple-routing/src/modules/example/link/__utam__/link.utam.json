@@ -1,0 +1,28 @@
+{
+    "root": true,
+    "selector": {
+        "css": "example-link"
+    },
+    "methods": [
+        {
+            "name": "click",
+            "compose": [
+                {
+                    "element": "anchor",
+                    "apply": "click"
+                }
+            ]
+        }
+    ],
+    "shadow": {
+        "elements": [
+            {
+                "name": "anchor",
+                "type": "clickable",
+                "selector": {
+                    "css": "a"
+                }
+            }
+        ]
+    }
+}

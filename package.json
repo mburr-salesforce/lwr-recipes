@@ -13,7 +13,7 @@
         "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
         "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
         "build": "lerna run build --stream && tsc -b",
-        "start": "lerna run start --scope simple-routing -- ",
+        "start": "lerna run start --scope simple-routing --stream",
         "test:e2e": "lerna run test:e2e --scope simple-routing-e2e --stream",
         "ready": "yarn && yarn lint && yarn prettier && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\""
     },
