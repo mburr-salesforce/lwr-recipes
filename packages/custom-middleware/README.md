@@ -8,7 +8,7 @@
 
 ## Introduction
 
-In this recipe we will show you how to configure your serverType and add custom middleware to LWR.
+LWR gives you the flexibility to add custom middleware to your application. LWR can be configured to use different web frameworks like [ExpressJS](https://expressjs.com/en/guide/using-middleware.html) or [KoaJS](https://koajs.com/#application), via the _serverType_ property. For each of these supported frameworks, you can add middleware directly using that framework's middleware API. This recipe shows you how to configure LWR with each serverType, how to get access to the underlying Express or Koa server, and how to add your middleware.
 
 ## Details
 
@@ -22,24 +22,34 @@ src/
   │           ├── app.css
   │           ├── app.html
   │           └── app.js
-  └── index.ts
+  └── express.ts // Using custom middleware for ExpressJS
+  └── koa.ts // Using custom middleware for KoaJS
 ```
-
-We have added our own middleware in index.ts. In the app.js we are doing a client side request back to the app server to capture and display the HTTP headers coming from the server.
 
 ### Middleware Configuration
 
+In express.ts, create and start the Express server.
+
+Set a custom server type for your LWR app server to `express`.
+
 ```js
-// Use express middleware directly
-expressApp.use(async (req: Request, res: Response, next) => {
+const lwrServer = createServer({ serverType: 'express' });
+```
+
+Add the Express middleware directly.
+
+```js
+expressApp.use(async (req, res, next) => {
     res.setHeader('express-custom-header', 'Express middleware is running!');
     next();
 });
 ```
 
+In app.js, add a client side request back to the app server to capture and display the HTTP headers coming from the server.
+
 ## Recipe Setup
 
-Use the following command to build this recipe.
+Use the following commands to build this recipe and start the LWR server.
 
 ```bash
 # from the lwr-recipes root
