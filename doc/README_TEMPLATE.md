@@ -2,14 +2,14 @@
 
 _See /module-provider/README.md for an example of a complete readme file._
 
--   [Introduction](#introduction)
--   [Details](#details)
-    -   [Project Setup](#project-setup)
-    -   [Topic 2](#topic-2)
-    -   ...
-    -   [Topic n](#topic-n)
-    -   [Configuration](#configuration)
--   [Recipe Setup](#Recipe-setup)
+-   [Feature Name](#feature-name)
+    -   [Introduction](#introduction)
+    -   [Details](#details)
+        -   [Project Setup](#project-setup)
+        -   [Topic 2](#topic-2)
+        -   [Topic n](#topic-n)
+        -   [Configuration](#configuration)
+    -   [Recipe Setup](#recipe-setup)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ _Add sub-headings to explain each concept of the feature. Use the sample section
 
 _Show file structure of project and call out any special files or structure that deviates from standard._
 
-```
+```text
 src/
   ├── assets/
   │   └── styles.css

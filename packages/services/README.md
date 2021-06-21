@@ -1,18 +1,74 @@
 # Using LWR Services
 
-## Features
+- [Using LWR Services](#using-lwr-services)
+  - [Introduction](#introduction)
+  - [Details](#details)
+    - [Project Setup](#project-setup)
+    - [Configuration](#configuration)
+  - [Recipe Setup](#recipe-setup)
 
-### Concepts
+## Introduction
 
--   Configure and use LWR services to allow for:
-    -   [LWR Loader Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-loader-hooks)
-        -   **Note**: Loader Hooks are an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)-only feature
-    -   [LWR Module Invalidation Hooks](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-module-invalidation-hooks)
+The services recipe uses system-level modules to access services not available to standard or custom modules.
 
-### Files
+-   [Loader hooks](./src/modules/example/loaderHooks/loaderHooks.js) allow the client to handle the loading of modules before the app initializes so that they can be cached and returned from a local persistent cache.
+    > Note: Loader hooks are an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)-only feature.
+-   [Module invalidation hooks](./src/modules/example/invalidationHook/invalidationHook.js) react to module fingerprint changes when that module is changed on the server.
 
--   lwc modules at [src/modules/](./src/modules)
--   LWR configuration at [lwr.config.json](./lwr.config.json)
--   server creation in TypeScript at [src/index.ts](./src/index.ts)
--   custom loader hooks at [src/modules/example/loaderHooks/loaderHooks.js](./src/modules/example/loaderHooks/loaderHooks.js)
--   custom module invalidation hook at [src/modules/example/invalidationHook/invalidationHook.js](./src/modules/example/invalidationHook/invalidationHook.js)
+## Details
+
+### Project Setup
+
+```text
+src/
+  ├── assets/
+  │   └── styles.css
+  ├── modules/
+  │   └── example/
+  │       └── app/
+  │           ├── app.css
+  │           ├── app.html
+  │           └── app.js
+  │       └── dynamic/            // system-level module to dynamically load components
+  │       └── invalidationHook/   // system-level module for custom module invalidation hook
+  │       └── loaderHooks/        // system-level module for custom loader hooks
+  │       └── logger/             // system-level module to log exceptions
+  └── index.ts
+```
+
+### Configuration
+
+To enable loader hooks and module invalidation hooks for your app, add them to the list of bootstrap services in the app config. The `bootstrap.autoBoot` property is `true` by default, so set it to `false` to trigger custom initialization.
+
+```json
+// lwr.config.json
+{
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "bundleConfig": { "exclude": ["lwc"] },
+    "routes": [
+        {
+            "id": "services",
+            "path": "/",
+            "rootComponent": "example/app",
+            "bootstrap": {
+                "autoBoot": false,
+                "services": ["example/loaderHooks", "example/invalidationHook"]
+            }
+        }
+    ]
+}
+```
+
+## Recipe Setup
+
+Execute the following commands to build and run this recipe in `dev` mode.
+
+```bash
+yarn install
+yarn build
+yarn start
+```
+
+Open the site at [http://localhost:3000](http://localhost:3000).
+
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
