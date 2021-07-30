@@ -7,6 +7,7 @@
         -   [The LWR Server](#the-lwr-server)
         -   [Configuration](#configuration)
             -   [LWC Modules](#lwc-modules)
+            -   [Packages](#packages)
             -   [Bundling](#bundling)
             -   [Routes](#routes)
             -   [Error Routes](#error-routes)
@@ -130,6 +131,16 @@ The resolver iterates through the modules array and returns the first module tha
 
 See the [LWC documentation](https://github.com/salesforce/lwc/tree/master/packages/%40lwc/module-resolver#module-resolution) for more details on how LWC module resolution works.
 
+#### Packages
+
+The following table maps available LWR packages to recipes so you can see how they're used. If the package is a module provider, add it to the list of module providers in `lwr.config.json`.
+
+| Package Name          | Description                                                                   | Is Module Provider? | Recipes that Use Package                                                                                                                                                                                                                                                                                                |
+| --------------------- | ----------------------------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| label-module-provider | Pulls labels from JSON files and returns them as ES modules for localization  | Yes                 | [labels](https://github.com/salesforce/lwr-recipes/tree/master/packages/labels)                                                                                                                                                                                                                                         |
+| router                | Uses the router API to add navigation capabilities to your app                | No                  | [nested routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/nested-routing), [simple routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing), [routing-extended-metadata](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata) |
+| shared-utils          | Helpers used for advanced functionality, like writing custom module providers | No                  | [module provider](https://github.com/salesforce/lwr-recipes/tree/master/packages/module-provider)                                                                                                                                                                                                                       |
+
 #### Bundling
 
 If a recipe is running in [`prod` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons. Examples of such modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-shadow`.
@@ -144,6 +155,8 @@ The solution is to put these modules in their own, shareable bundles:
     }
 }
 ```
+
+Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
 
 #### Routes
 

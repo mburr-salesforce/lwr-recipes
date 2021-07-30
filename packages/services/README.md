@@ -1,11 +1,11 @@
 # Using LWR Services
 
-- [Using LWR Services](#using-lwr-services)
-  - [Introduction](#introduction)
-  - [Details](#details)
-    - [Project Setup](#project-setup)
-    - [Configuration](#configuration)
-  - [Recipe Setup](#recipe-setup)
+-   [Using LWR Services](#using-lwr-services)
+    -   [Introduction](#introduction)
+    -   [Details](#details)
+        -   [Project Setup](#project-setup)
+        -   [Configuration](#configuration)
+    -   [Recipe Setup](#recipe-setup)
 
 ## Introduction
 
