@@ -1,0 +1,63 @@
+<template>
+    <template if:true={tableTitle}>
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunities">
+                            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+                            </svg>
+                            <span class="slds-assistive-text">opportunity</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <span class="slds-card__header-link slds-truncate">{tableTitle}</span>
+                        </h2>
+                    </div>
+                </header>
+            </div>
+        </article>
+    </template>
+
+    <template if:true={loading}>
+        <p class="loading">loading...</p>
+    </template>
+
+    <template if:true={noResults}>
+        <p class="none">No results</p>
+    </template>
+
+    <template if:true={errorMsg}>
+        <p class="error">{errorMsg}</p>
+    </template>
+
+    <table if:true={hasResults} class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <!-- Print out each field name as a table heading -->
+                <template for:each={fieldLabels} for:item="label">
+                    <th key={label}>{label}</th>
+                </template>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Create a table row for each record -->
+            <template for:each={recordFields} for:item="record">
+                <tr class="slds-hint-parent" key={record.id} onclick={editRecord}>
+                    <!-- Create a table cell for each record field value -->
+                    <template for:each={record.values} for:item="field">
+                        <td key={field.value} data-record-id={record.id} style={tdStyles}>{field.value}</td>
+                    </template>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+
+    <!-- Edit a record -->
+    <template if:true={canEditRecord}>
+        <div class="spacer"></div>
+        <example-data-record record-id={recordId}></example-data-record>
+    </template>
+</template>

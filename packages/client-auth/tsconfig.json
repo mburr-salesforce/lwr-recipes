@@ -1,0 +1,19 @@
+{
+    "extends": "../../config/tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "build",
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "paths": {
+            "example/data": ["modules/example/data/data.ts"],
+            "data/uiApi": ["modules/data/uiApi/uiApi.ts"],
+            "lightning/*": [
+                "../nexus-packages/@salesforce-lwc-adapters-uiapi/dist/src/generated/artifacts/bound-adapters.d.ts"
+            ]
+        }
+    },
+    "exclude": ["build"]
+}

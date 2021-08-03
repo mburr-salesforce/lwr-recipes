@@ -1,0 +1,46 @@
+<template>
+    <div class={leftClass}>
+        <header>
+            <h2 class="title">Opportunities</h2>
+            
+            <label class="toggle">
+                <span class="label">chart</span>
+                <input type="checkbox" onchange={toggleDisplay}>
+                <span class="slider"></span>
+                <span class="label second">table</span>
+            </label>
+
+            <div class="dropdown list-views">
+                <select name="lists" onchange={toggleListView}>
+                    <template for:each={listViews} for:item="item">
+                        <option key={item.value} value={item.value}>{item.label}</option>
+                    </template>
+                </select>
+            </div>
+
+            <div class="dropdown" style={fieldDropdownStyles}>
+                by 
+                <select name="fields" onchange={toggleField}>
+                    <template for:each={fields} for:item="item">
+                        <option key={item.value} value={item.value}>{item.label}</option>
+                    </template>
+                </select>
+            </div>
+        </header>
+
+        <template if:true={isTable}>
+            <example-data-table list-view={listView}></example-data-table>
+        </template>
+        <template if:false={isTable}>
+            <example-data-chart onbarclick={openSidebar} list-view={listView} field={field}></example-data-chart>
+        </template>
+    </div>
+
+    <div if:true={showSidebar} class="sidebar">
+        <div class="header">
+            <h3>Details</h3>
+            <a onclick={closeSidebar} title="Close">✕</a>
+        </div>
+        <example-data-table editable list-view={listView} field={field} field-value={fieldValue}></example-data-table>
+    </div>
+</template>

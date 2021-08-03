@@ -2117,6 +2117,19 @@
   resolved "https://registry.yarnpkg.com/@locker/shared/-/shared-0.13.5.tgz#25c61345063e0b92ffb010fede5d27ec4273b599"
   integrity sha512-HGRLQS2Ozn/pZZUbZVmqNANUfAM1oD6L5wUScKaTDZrbU78UY3k97mWHtdSg49GNGutHWzvYJ5WSKkcnNJZ8NA==
 
+"@luvio/engine@0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@luvio/engine/-/engine-0.33.0.tgz#b0f1b3490453293ed7cdd2ad04d845f2e7522291"
+  integrity sha512-8yuOYqwbLxbz79pzNUekRE3Bncye2fbhG4/9AYgZ2ey7lOkIGkzewyxZ8/RDU/CXdcs+IW5XtaVu0lfHIrunug==
+
+"@luvio/lwc-luvio@0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@luvio/lwc-luvio/-/lwc-luvio-0.33.0.tgz#9440f44ce4a77d2c3239cc7f079d800ed6af14d0"
+  integrity sha512-ZsiP6WoBERhLTYO0v8wZgfXPU2G4dE3TPjfKz4OOSt7pZMN3W7kwIoX2F8pFrLkXXvR2VWfkEobMy+96z2Tqzg==
+  dependencies:
+    "@luvio/engine" "0.33.0"
+    "@lwc/engine-core" "^1.7.5"
+
 "@lwc/babel-plugin-component@2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@lwc/babel-plugin-component/-/babel-plugin-component-2.2.0.tgz#086f09fd6fb79292587a030365aa31b51bff8f72"
@@ -2139,6 +2152,11 @@
     "@lwc/shared" "2.2.0"
     "@lwc/style-compiler" "2.2.0"
     "@lwc/template-compiler" "2.2.0"
+
+"@lwc/engine-core@^1.7.5":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@lwc/engine-core/-/engine-core-1.18.0.tgz#df80c6577ea7cf17c623ea7432675f8a83e4e141"
+  integrity sha512-kEUarL3iQAqK6agfqFO9cGhXRdlRoIdNv/zafELhb7MIeKGbJnHDIQAjidhHYbczSx1opyyiULCfXLldiWxGxA==
 
 "@lwc/engine-dom@2.2.0":
   version "2.2.0"
@@ -2673,6 +2691,16 @@
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.14.1.tgz#23b394ebec2a33b8110371909b1b7d13a151ecfc"
   integrity sha512-3PIDRbJ10Mw29lWjNllcKN4DbRnhBGQy9neSklbaH+kwDh8NMET6qfMaH6KlFpGQY+T/ZpScKCELHaDSm3FE6Q==
+
+"@salesforce/lds-default-luvio@file:packages/client-auth/nexus-packages/@salesforce-lds-default-luvio":
+  version "1.13.0"
+  dependencies:
+    "@luvio/engine" "0.33.0"
+
+"@salesforce/lwc-adapters-uiapi@file:packages/client-auth/nexus-packages/@salesforce-lwc-adapters-uiapi":
+  version "1.13.0"
+  dependencies:
+    "@luvio/lwc-luvio" "0.33.0"
 
 "@sindresorhus/is@^4.0.0":
   version "4.0.0"
@@ -4179,6 +4207,11 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chart.js@^3.2.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.5.0.tgz#6eb075332d4ebbbb20a94e5a07a234052ed6c4fb"
+  integrity sha512-J1a4EAb1Gi/KbhwDRmoovHTRuqT8qdF0kZ4XgwxpGethJHUdDrkqyPYwke0a+BuvSeUxPf8Cos6AX2AB8H8GLA==
 
 chokidar@^1.6.0:
   version "1.7.0"
@@ -7964,6 +7997,9 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+"lwc-components-lightning@file:packages/client-auth/nexus-packages/lwc-components-lightning":
+  version "1.11.2-alpha"
 
 lwc@~2.2.0:
   version "2.2.0"

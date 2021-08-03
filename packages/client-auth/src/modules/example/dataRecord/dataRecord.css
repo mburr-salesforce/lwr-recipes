@@ -1,0 +1,42 @@
+.slds-card__header {
+    padding: 0;
+}
+.slds-media {
+    margin: 12px 16px 7px 16px;
+}
+.message-border {
+    width: 4px;
+    background-color: rgba(var(--sk_foreground_low_solid,221,221,221),1);
+    border-radius: 8px;
+}
+table {
+    margin-left: 5px;
+}
+.pull-left {
+    position: relative;
+    left: -13px;
+}
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.form {
+	height: 28px;
+    margin: 8px 4px 0 0;
+	border: 1px solid #b6b5b6;
+    border-radius: 5px;
+    padding: 0 8px 1px;
+}
+button.form {
+    font-weight: 700;
+}
+button.form[disabled] {
+    color: #888;
+}
+.form:hover,
+.form:focus,
+.form:focus-visible {
+	outline: 0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+    background: rgba(var(--sk_foreground_min_solid,248,248,248),1);
+}

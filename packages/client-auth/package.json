@@ -1,0 +1,33 @@
+{
+    "name": "client-auth",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rm -rf build && rm -rf __lwr_cache__ && rimraf nexus-packages/@salesforce-lds-default-luvio/ && rimraf nexus-packages/@salesforce-lwc-adapters-uiapi/ && rimraf nexus-packages/lwc-components-lightning/",
+        "preinstall": "tar -xzf nexus-packages/@salesforce-lds-default-luvio.tgz && tar -xzf nexus-packages/@salesforce-lwc-adapters-uiapi.tgz && tar -xzf nexus-packages/lwc-components-lightning.tgz",
+        "build": "tsc -b && node ./scripts/copy-resources.mjs && node scripts/copy-chartjs.mjs",
+        "start": "node build/index.js",
+        "start:prod": "MODE=prod yarn start",
+        "start:amd": "MODE=compat yarn start"
+    },
+    "devDependencies": {
+        "@salesforce/lds-default-luvio": "file:nexus-packages/@salesforce-lds-default-luvio",
+        "@salesforce/lwc-adapters-uiapi": "file:nexus-packages/@salesforce-lwc-adapters-uiapi",
+        "@salesforce-ux/design-system": "^2.11.6",
+        "chart.js": "^3.2.0",
+        "cpx": "^1.5.0",
+        "lwc": "~2.2.0",
+        "lwc-components-lightning": "file:nexus-packages/lwc-components-lightning",
+        "lwr": "0.3.5",
+        "typescript": "^4.2.2"
+    },
+    "engines": {
+        "node": ">=14.15.4 <15"
+    }
+}

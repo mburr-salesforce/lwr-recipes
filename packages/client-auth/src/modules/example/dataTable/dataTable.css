@@ -1,0 +1,22 @@
+article {
+    margin-bottom: 20px;
+}
+.spacer {
+    height: 15px;
+}
+
+/** Messages **/
+p {
+	font-size: 15px;
+	font-weight: 900;
+	text-align: center;
+}
+p.error {
+    color: darkred;
+	margin-top: 20px;
+}
+p a,
+p a:active,
+p a:visited {
+	color: black;
+}

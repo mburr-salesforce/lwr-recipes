@@ -1,0 +1,47 @@
+<template>
+    <article if:true={theId} class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunities">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span class="slds-card__header-link slds-truncate" title={name}>
+                            <span>{name}</span>
+                        </span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <table class="slds">
+                <tr if:true={amount}>
+                    <td><label for="Amount">Amount:</label></td>
+                    <td class="pull-left">$ <input type="number" class="form" id="Amount" name="Amount" min="0" step=".01" value={amount} onchange={enableButton}></td>
+                </tr>
+                <tr if:true={stage}>
+                    <td><label for="StageName">Stage:</label></td>
+                    <td>
+                        <select class="form" id="StageName" name="StageName" onchange={enableButton}>
+                            <template for:each={stages} for:item="stage">
+                                <option key={stage.value} value={stage.value} selected={stage.selected}>{stage.label}</option>
+                            </template>
+                        </select>
+                    </td>
+                </tr>
+                <tr if:true={closeDate}>
+                    <td><label for="CloseDate">Close Date:</label></td>
+                    <td><input type="date" class="form" id="CloseDate" name="CloseDate" value={closeDate} onchange={enableButton}></td>
+                </tr>
+                <tr>
+                    <td><button type="button" class="form" disabled={buttonDisabled} onclick={updateOppty}>Update</button></td>
+                </tr>
+            </table>
+        </div>
+    </article>
+</template>

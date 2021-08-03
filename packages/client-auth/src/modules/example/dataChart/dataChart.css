@@ -1,0 +1,18 @@
+div.canvas {
+    position: relative;
+    padding-bottom: 18px;
+}
+p {
+	font-size: 15px;
+	font-weight: 900;
+	text-align: center;
+}
+p.error {
+	color: darkred;
+	margin-top: 20px;
+}
+p a,
+p a:active,
+p a:visited {
+	color: black;
+}

@@ -1,0 +1,109 @@
+:host {
+    margin: 50px;
+    display: flex !important;
+}
+:host > * {
+    width: 50%;
+    transition: width 0.05s linear;
+}
+.full {
+    width: 100%;
+}
+header {
+	display: flex;
+	align-items: center;
+}
+h2 {
+	font-size: 1.5em;
+}
+
+/** Sidebar **/
+.sidebar {
+	margin-left: 10px;
+}
+div.header {
+	display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #514f4d;
+}
+div.header h3 {
+	font-size: 1.5em;
+	margin-top: 5px;
+}
+div.header a {
+    padding: 10px 12px 0;
+    text-decoration: none;
+    color: rgb(29, 28, 29);
+}
+div.header a:hover {
+    background-color: rgba(29, 28, 29, .04);
+}
+
+/** List View and Field dropdowns **/
+.dropdown.list-views {
+    margin-left: 100px;
+}
+.dropdown select {
+	font-size: 13px;
+	height: 28px;
+    margin: 10px;
+	border: 1px solid #b6b5b6;
+	background-color: white;
+	border-radius: 5px;
+}
+.dropdown select:hover,
+.dropdown select:focus,
+.dropdown select:focus-visible {
+	outline: 0;
+	background-color: #ddd;
+}
+
+/** Table/Chart toggle button **/
+.toggle {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+    height: 30px;
+    margin-left: 30px;
+}
+.slider {
+	position: absolute;
+	top: 0;
+	left: 40px;
+	right: -40px;
+	bottom: 0;
+	cursor: pointer;
+	border-radius: 34px;
+	background-color: white;
+	border: 1px solid #b6b5b6;
+	transition: .4s;
+}
+/* The slider ball */
+.slider:before {
+	content: "";
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #3f0f40;
+	transition: .4s;
+	border-radius: 50%;
+}
+/* Hide the checkbox */
+.toggle input {
+	display: none;
+}
+.toggle input:checked + .slider:before {
+	transform: translateX(50px);
+}
+.toggle .label {
+    position: absolute;
+	line-height: 30px;
+}
+.toggle .label.second {
+	left: 125px;
+	min-width: 50px;
+}
