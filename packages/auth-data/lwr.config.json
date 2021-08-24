@@ -30,10 +30,11 @@
         {
             "id": "auth-data",
             "path": "/",
-            "rootComponent": "example/app",
+            "rootComponent": "example/data",
             "layoutTemplate": "$layoutsDir/main.html",
             "bootstrap": {
-                "syntheticShadow": true
+                "syntheticShadow": true,
+                "services": ["example/setupLDS"]
             }
         }
     ]

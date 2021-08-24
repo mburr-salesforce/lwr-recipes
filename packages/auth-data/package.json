@@ -14,7 +14,8 @@
         "build": "tsc -b && node ./scripts/copy-resources.mjs && node scripts/copy-chartjs.mjs",
         "start": "node build/index.js",
         "start:prod": "MODE=prod yarn start",
-        "start:amd": "MODE=compat yarn start"
+        "start:amd": "MODE=compat yarn start",
+        "start:prod-amd": "MODE=prod-compat yarn start"
     },
     "devDependencies": {
         "@salesforce/lds-default-luvio": "file:nexus-packages/@salesforce-lds-default-luvio",

@@ -21,8 +21,11 @@ There are a few sections to note in the project directories:
 
 -   _src/assets/_ contains static files from [SLDS](https://www.lightningdesignsystem.com/) (as seen in the [base components](https://github.com/salesforce/lwr-recipes/tree/master/packages/base-slds) recipe) and [Chart.js](https://www.chartjs.org/)
 -   _src/layouts/main.html_ pulls in the static files
--   _src/modules_ contains the "example/app" [root component](#configuration), a few "example/data\*" components which display the recipe UI, and "example/loginLink" which does the [client-side authentication](#authentication)
--   _src/modules/data/_ contains code which sets up [Luvio](https://rfcs.lwc.dev/rfcs/luvio) to allow [Salesforce data access](#data-access)
+-   _src/modules_ contains:
+    -   the "example/app" [root component](#configuration)
+    -   a few "example/data\*" components which display the recipe UI
+    -   "example/loginLink" which performs [client-side authentication](#authentication)
+    -   "example/setupLDS" which sets up [Luvio](https://rfcs.lwc.dev/rfcs/luvio) to enable [Salesforce data access](#data-access)
 
 ```text
 src/
@@ -30,22 +33,21 @@ src/
   ├── layouts/
   │   └── main.html
   ├── modules/
-  │   ├── example/
-  │   │   ├── app/
-  │   │   │   ├── app.html
-  │   │   │   └── app.ts
-  │   │   ├── data*/
-  │   │   │   ├── data*.css
-  │   │   │   ├── data*.html
-  │   │   │   └── data*.ts
-  │   │   └── loginLink/
-  │   │       ├── loginLink.css
-  │   │       ├── loginLink.html
-  │   │       └── loginLink.ts
-  │   └── data/
-  │       └── uiApi/
+  │   └── example/
+  │       ├── app/
+  │       │   ├── app.html
+  │       │   └── app.ts
+  │       ├── data*/
+  │       │   ├── data*.css
+  │       │   ├── data*.html
+  │       │   └── data*.ts
+  │       ├── loginLink/
+  │       │   ├── loginLink.css
+  │       │   ├── loginLink.html
+  │       │   └── loginLink.ts
+  │       └── setupLDS/
   │           ├── network.ts
-  │           └── uiApi.ts
+  │           └── setupLDS.ts
   └── index.ts
 ```
 
@@ -73,22 +75,23 @@ To set up a Connected App and enable OAuth, follow these steps:
 
 ### Data Access
 
-Once OAuth is setup, and the current user is logged in, Salesforce data can be accessed and updated via the [`lightning/ui*Api` wire adapters and functions](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_ui_api), the code for which lives in the "@salesforce/lwc-adapters-uiapi" and "lwc-components-lightning" packages.
+Once OAuth is set up, and the current user is logged in, Salesforce data can be accessed and updated via the [Lightning Data Service (LDS)](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_ui_api) and[`lightning/ui*Api` wire adapters and functions](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_ui_api), which live in the "@salesforce/lwc-adapters-uiapi" and "lwc-components-lightning" packages.
 
-These adapters and functions are enabled by setting up a default [Luvio](https://rfcs.lwc.dev/rfcs/luvio) instance in the LWR application root component, ["example/app"](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/app/app.ts). The Luvio instance uses a custom [network adapter](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/data/uiApi/network.ts) which integrates the authentication token procured by the [login link](#authentication).
+These LDS adapters and functions are enabled by setting up a default [Luvio](https://rfcs.lwc.dev/rfcs/luvio) instance in a [bootstrap `service`](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-app-config#client-bootstrap-config). The Luvio instance uses a custom [network adapter](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/setupLDS/network.ts) which integrates the authentication token procured by the [login link](#authentication).
 
-It is important to avoid timing issues with this setup; the default Luvio instance **must** be established before the UI API adapters are used by the "example/data\*" components. Pulling the "example/data" component into the "example/app" via a [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) ensures correct ordering of code execution.
+It is important to avoid timing issues with this setup. The default Luvio instance **must** be established before any component which uses the adapters is defined. Initializing Luvio/LDS in a `service` of the [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#application-bootstrap-module) ensures that code executes in the correct order.
 
 ### Configuration
 
 The LWR configuration contains a few important parts:
 
--   the "@salesforce/lwc-adapters-uiapi" and "lwc-components-lightning" packages supply modules containing the [UI API wire adapters and functions](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_ui_api)
+-   the "example/setupLDS" module **must** be configured as a bootstrap `service`
+-   the "@salesforce/lwc-adapters-uiapi" and "lwc-components-lightning" packages supply modules containing the UI API wire adapters and functions
 -   bundling **must** exclude the "@salesforce/lds-default-luvio" module, as it is a singleton
--   the "force/ldsAdaptersUiapi" (exposed in the "@salesforce/lwc-adapters-uiapi" package) and "example/dataChart" modules are trusted by [Locker](https://rfcs.lwc.dev/rfcs/locker) so they can access the global `process` variable
+-   the "force/ldsAdaptersUiapi" (exposed in the "@salesforce/lwc-adapters-uiapi" package) and "example/dataChart" modules are trusted by [Locker](https://rfcs.lwc.dev/rfcs/locker) so they can access the global scope
 
 ```json
-// lwr.config.json
+// abridged lwr.config.json
 {
     "lwc": {
         "modules": [
@@ -101,7 +104,17 @@ The LWR configuration contains a few important parts:
     "locker": {
         "enabled": true,
         "trustedComponents": ["@lwc/synthetic-shadow", "force/ldsAdaptersUiapi", "example/dataChart"]
-    }
+    },
+    "routes": [
+        {
+            "id": "auth-data",
+            "path": "/",
+            "rootComponent": "example/data",
+            "bootstrap": {
+                "services": ["example/setupLDS"]
+            }
+        }
+    ]
 }
 ```
 

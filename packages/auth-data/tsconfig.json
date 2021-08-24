@@ -9,7 +9,6 @@
         "skipLibCheck": true,
         "paths": {
             "example/data": ["modules/example/data/data.ts"],
-            "data/uiApi": ["modules/data/uiApi/uiApi.ts"],
             "lightning/*": [
                 "../nexus-packages/@salesforce-lwc-adapters-uiapi/dist/src/generated/artifacts/bound-adapters.d.ts"
             ]
