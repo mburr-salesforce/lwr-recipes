@@ -1,6 +1,6 @@
-# Client Authentication and Data
+# Authentication and Data
 
--   [Client Authentication and Data](#client-authentication-and-Data)
+-   [Authentication and Data](#authentication-and-Data)
     -   [Introduction](#introduction)
     -   [Details](#details)
         -   [Project Setup](#project-setup)
@@ -53,7 +53,7 @@ src/
 
 This recipe uses the [OAuth 2.0 User-Agent Flow](https://help.salesforce.com/articleView?id=sf.remoteaccess_oauth_user_agent_flow.htm&type=5) to authenticate to a [Connected App](https://help.salesforce.com/articleView?id=sf.connected_app_overview.htm&type=5).
 
-The recipe's [login link component](https://github.com/salesforce/lwr-recipes/tree/master/packages/client-auth/src/modules/example/loginLink) handles the flow. The origin and "consumer key" for the Connected App are passed into the component through the ["example/dataChart" template](https://github.com/salesforce/lwr-recipes/tree/master/packages/client-auth/src/modules/example/dataChart/dataChart.html).
+The recipe's [login link component](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/loginLink) handles the flow. The origin and "consumer key" for the Connected App are passed into the component through the ["example/dataChart" template](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/dataChart/dataChart.html).
 
 To set up a Connected App and enable OAuth, follow these steps:
 
@@ -75,7 +75,7 @@ To set up a Connected App and enable OAuth, follow these steps:
 
 Once OAuth is setup, and the current user is logged in, Salesforce data can be accessed and updated via the [`lightning/ui*Api` wire adapters and functions](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_ui_api), the code for which lives in the "@salesforce/lwc-adapters-uiapi" and "lwc-components-lightning" packages.
 
-These adapters and functions are enabled by setting up a default [Luvio](https://rfcs.lwc.dev/rfcs/luvio) instance in the LWR application root component, ["example/app"](https://github.com/salesforce/lwr-recipes/tree/master/packages/client-auth/src/modules/example/app/app.ts). The Luvio instance uses a custom [network adapter](https://github.com/salesforce/lwr-recipes/tree/master/packages/client-auth/src/modules/data/uiApi/network.ts) which integrates the authentication token procured by the [login link](#authentication).
+These adapters and functions are enabled by setting up a default [Luvio](https://rfcs.lwc.dev/rfcs/luvio) instance in the LWR application root component, ["example/app"](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/app/app.ts). The Luvio instance uses a custom [network adapter](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/data/uiApi/network.ts) which integrates the authentication token procured by the [login link](#authentication).
 
 It is important to avoid timing issues with this setup; the default Luvio instance **must** be established before the UI API adapters are used by the "example/data\*" components. Pulling the "example/data" component into the "example/app" via a [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) ensures correct ordering of code execution.
 
@@ -107,13 +107,13 @@ The LWR configuration contains a few important parts:
 
 ## Recipe Setup
 
-Before running the recipe, ensure the [Connected App](#authentication) origin and consumer key are set in the ["example/dataChart" template](https://github.com/salesforce/lwr-recipes/tree/master/packages/client-auth/src/modules/example/dataChart/dataChart.html).
+Before running the recipe, ensure the [Connected App](#authentication) origin and consumer key are set in the ["example/dataChart" template](https://github.com/salesforce/lwr-recipes/tree/master/packages/auth-data/src/modules/example/dataChart/dataChart.html).
 
 ```bash
 # from the lwr-recipes root
 yarn install
 yarn build
-cd packages/client-auth
+cd packages/auth-data
 yarn start # dev mode and ESM format
 ```
 

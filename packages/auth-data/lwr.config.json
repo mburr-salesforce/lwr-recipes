@@ -28,7 +28,7 @@
     },
     "routes": [
         {
-            "id": "client-auth",
+            "id": "auth-data",
             "path": "/",
             "rootComponent": "example/app",
             "layoutTemplate": "$layoutsDir/main.html",

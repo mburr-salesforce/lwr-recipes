@@ -1,5 +1,5 @@
 {
-    "name": "client-auth",
+    "name": "auth-data",
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
@@ -24,7 +24,7 @@
         "cpx": "^1.5.0",
         "lwc": "~2.2.0",
         "lwc-components-lightning": "file:nexus-packages/lwc-components-lightning",
-        "lwr": "0.3.5",
+        "lwr": "0.4.1",
         "typescript": "^4.2.2"
     },
     "engines": {

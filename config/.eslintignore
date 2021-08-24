@@ -3,5 +3,5 @@ build/
 __lwr_cache__
 **/pageObjects/*
 **/base-slds/src/assets/
-**/client-auth/src/assets/
+**/auth-data/src/assets/
 **/nexus-packages/
