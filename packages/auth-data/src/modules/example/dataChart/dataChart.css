@@ -15,4 +15,5 @@ p a,
 p a:active,
 p a:visited {
 	color: black;
+	text-decoration: underline;
 }

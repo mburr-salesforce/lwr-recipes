@@ -4,15 +4,8 @@
     </template>
 
     <template if:true={errorMsg}>
-        <p class="error">
-            {errorMsg}&nbsp;&nbsp;
-            <template if:true={showLogin}>
-                <example-login-link
-                    auth-origin="https://my-connected-app.com"
-                    consumer-key="abc123">
-                </example-login-link>
-            </template>
-        </p>
+        <p class="error">{errorMsg}</p>
+        <p if:true={showLogin}><a href="/login">Login to Salesforce</a></p>
     </template>
 
     <div lwc:dom="manual" role="img" aria-label="Record Chart" class="canvas"></div>

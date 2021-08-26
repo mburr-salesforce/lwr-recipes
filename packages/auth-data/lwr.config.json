@@ -24,7 +24,12 @@
     ],
     "locker": {
         "enabled": true,
-        "trustedComponents": ["@lwc/synthetic-shadow", "force/ldsAdaptersUiapi", "example/dataChart"]
+        "trustedComponents": [
+            "@lwc/synthetic-shadow",
+            "force/ldsAdaptersUiapi",
+            "example/dataChart",
+            "example/setupLDS"
+        ]
     },
     "routes": [
         {

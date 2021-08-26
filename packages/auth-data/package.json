@@ -18,14 +18,16 @@
         "start:prod-amd": "MODE=prod-compat yarn start"
     },
     "devDependencies": {
+        "@salesforce-ux/design-system": "^2.11.6",
         "@salesforce/lds-default-luvio": "file:nexus-packages/@salesforce-lds-default-luvio",
         "@salesforce/lwc-adapters-uiapi": "file:nexus-packages/@salesforce-lwc-adapters-uiapi",
-        "@salesforce-ux/design-system": "^2.11.6",
+        "@types/node-fetch": "^2.5.12",
         "chart.js": "^3.2.0",
         "cpx": "^1.5.0",
         "lwc": "~2.2.0",
         "lwc-components-lightning": "file:nexus-packages/lwc-components-lightning",
         "lwr": "0.4.1",
+        "node-fetch": "^2.6.1",
         "typescript": "^4.2.2"
     },
     "engines": {

@@ -1,6 +1,8 @@
 import type { FetchResponse, Headers as LuvioHeaders, ResourceRequest } from '@luvio/engine';
 
-// Authenticated UI API Luvio Network Adapter
+/**
+ * Authenticated UI API Luvio Network Adapter
+ */
 
 // See LDS error handling: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_error
 class RecordError extends Error {
@@ -17,14 +19,12 @@ class RecordError extends Error {
     }
 }
 
-export function createNetworkAdapter(
-    instance_url?: string,
-    access_token?: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): (req: ResourceRequest) => Promise<FetchResponse<any>> {
-    // Luvio uses this function to send authenticated network requests to Salesforce
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function createNetworkAdapter(): (req: ResourceRequest) => Promise<FetchResponse<any>> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return async function networkAdapter(req: ResourceRequest): Promise<FetchResponse<any>> {
+        // Build an authenticated request to the UI API
+        const { instance_url, access_token } = getOAuthInfoFromCookie();
         if (instance_url && access_token) {
             const { baseUri, basePath, body, queryParams, method, headers } = req;
             const path = `${instance_url}${baseUri}${basePath}${generateQueryString(queryParams)}`;
@@ -33,7 +33,7 @@ export function createNetworkAdapter(
                     method: method.toUpperCase(),
                     headers: generateHeaders({
                         ...headers,
-                        Authorization: `Bearer ${access_token}`,
+                        Authorization: `Bearer ${access_token}`, // pass the OAuth token
                     }),
                     body: body === null ? null : JSON.stringify(body),
                 });
@@ -50,6 +50,7 @@ export function createNetworkAdapter(
                 throw new RecordError(res.statusText, res.status);
             } catch (e) {
                 // Return the failure; no response status => 401
+                // e.g. CORS or prefetch errors
                 throw new RecordError(e.message, e.status >= 0 ? e.status : 401);
             }
         } else {
@@ -57,6 +58,11 @@ export function createNetworkAdapter(
             throw new RecordError('You are not authenticated.', 401);
         }
     };
+}
+
+function getOAuthInfoFromCookie(): { instance_url?: string; access_token?: string } {
+    const oauthInfoStr = document.cookie.split('; ').find((c) => c.startsWith('lwr_recipe='));
+    return oauthInfoStr ? JSON.parse(decodeURIComponent(oauthInfoStr.split('=')[1])) : {};
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
