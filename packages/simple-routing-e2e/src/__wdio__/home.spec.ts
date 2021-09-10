@@ -6,7 +6,7 @@ import Products from 'simple-routing/pageObjects/products';
 // TODO Dumb workaround but wdio doesn't wait in our test cases for the app to load
 // Need to talk with utam folks about this / figure out the proper configuration
 // 5 seconds seems to work on CI - less is needed locally
-const waitForAppLoadTimeout = process.env.UTAM_TIMEOUT ? parseInt(process.env.UTAM_TIMEOUT) : 4000;
+const waitForAppLoadTimeout = process.env.UTAM_TIMEOUT ? parseInt(process.env.UTAM_TIMEOUT) : 5000;
 
 describe('app navbar navigation', () => {
     it('lands on the home page', async () => {
