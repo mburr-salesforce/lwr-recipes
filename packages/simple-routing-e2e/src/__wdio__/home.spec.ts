@@ -7,6 +7,8 @@ import Products from 'simple-routing/pageObjects/products';
 // Need to talk with utam folks about this / figure out the proper configuration
 // 5 seconds seems to work on CI - less is needed locally
 const waitForAppLoadTimeout = process.env.UTAM_TIMEOUT ? parseInt(process.env.UTAM_TIMEOUT) : 5000;
+// TODO: W-9871593 prevent navigate race condition -- remove once fixed
+const waitToNavigateTimeout = 300;
 
 describe('app navbar navigation', () => {
     it('lands on the home page', async () => {
@@ -49,6 +51,8 @@ describe('app navbar navigation', () => {
         const homePage: Home = await outlet.getContent(Home);
         expect(homePage).toBeDefined();
         expect(await homePage.isVisible()).toBe(true);
+
+        await browser.pause(waitToNavigateTimeout);
 
         homePage.linkToProducts();
 
