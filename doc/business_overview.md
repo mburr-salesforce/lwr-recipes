@@ -9,7 +9,7 @@
 
 ## Benefits of a Lightning Web Runtime (LWR) App
 
-Lightning Web Runtime (LWR) is a flexible [Jamstack](https://jamstack.org/) architecture built on Node.js that supports a wide range of end-to-end modern digital experiences. Out of the box, LWR provides many built-in features:
+Lightning Web Runtime (LWR) is a flexible app-building platform that supports a wide range of end-to-end modern digital experiences. Out of the box, LWR provides many built-in features:
 
 -   Development environment with hot module reload (HMR)
 -   Configurable module bundling
