@@ -9,7 +9,10 @@
         {
             "id": "security-base",
             "path": "/",
-            "rootComponent": "example/app"
+            "rootComponent": "example/app",
+            "bootstrap": {
+                "configAsSrc": true
+            }
         }
     ]
 }

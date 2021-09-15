@@ -25,6 +25,7 @@ src/
   │           ├── app.html
   │           └── app.js
   └── index.ts
+lwr.config.json
 ```
 
 We have added the integration with Helmet in index.ts. In the app.js we are doing a client side request back to the app server to capture and display the HTTP headers coming from the server.
@@ -40,12 +41,31 @@ expressApp.use(
         contentSecurityPolicy: {
             directives: {
                 defaultSrc: ["'self'"],
-                styleSrc: ["'self'", "'unsafe-inline'"],
-                scriptSrc: ["'self'", 'salesforce.com', "'unsafe-inline'"],
+                styleSrc: ["'self'"],
+                scriptSrc: ["'self'", 'salesforce.com'],
             },
         },
     }),
 );
+```
+
+### Client Bootstrap Configuration as Script Source
+
+The Client Bootstrap Configuration is javascript code sent by the LWR-JS server to initialize the application bootstrap. By default this code is inlined in a script tag in the application HTML document. This would be a violation of the above content security policy. LWR-JS server allows an additional configuration (the `configAsSrc` property of the Bootstrap Config) to have the Client Bootstrap Configuration come as a src attribute on a script element in the HTML document.
+
+See the [lwr.config.json](https://github.com/salesforce/lwr-recipes/blob/master/packages/security/lwr.config.json).
+
+```js
+"routes": [
+    {
+        "id": "security-base",
+        "path": "/",
+        "rootComponent": "example/app",
+        "bootstrap": {
+            "configAsSrc": true
+        }
+    }
+]
 ```
 
 ## Recipe Setup
