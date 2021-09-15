@@ -32,7 +32,7 @@ If this command fails with an error about _UNABLE_TO_GET_ISSUER_CERT_LOCALLY_, _
 yarn build
 ```
 
-## Run a LWR Recipe
+## Run an LWR Recipe
 
 Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
 
@@ -51,7 +51,7 @@ Recipes can be started in three different modes:
 | prod   | `yarn start:prod` |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
 | compat | `yarn start:amd`  |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
 
-## Clean a LWR Recipe
+## Clean an LWR Recipe
 
 Cleaning a recipe removes the build directory and file cache. This command is useful if you run into errors or have a stale project.
 
