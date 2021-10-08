@@ -22,6 +22,8 @@ Important exports from the package:
 
 ## Details
 
+> Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/master/doc/navigation.md).
+
 ### Project Setup
 
 ```
