@@ -1,16 +1,18 @@
 {
-    "root": true,
-    "selector": {
-        "css": "example-products"
-    },
     "shadow": {
         "elements": [
             {
                 "name": "heading",
                 "public": true,
-                "type": "actionable",
                 "selector": {
                     "css": "h1"
+                }
+            },
+            {
+                "name": "list",
+                "public": true,
+                "selector": {
+                    "css": ".list"
                 }
             }
         ]

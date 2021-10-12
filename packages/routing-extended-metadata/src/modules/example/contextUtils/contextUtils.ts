@@ -44,7 +44,7 @@ export function generateContextualWireAdapter<TContext, TConfig = unknown, TEmit
         //Wires that need more complex logic or use another emit type should override this method.
         update(config: TConfig, context: TContext): void {
             if (context) {
-                this._callback((context as unknown) as TEmit);
+                this._callback(context as unknown as TEmit);
             }
         }
 
