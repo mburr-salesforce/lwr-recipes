@@ -1,0 +1,1 @@
+web: yarn workspace custom-middleware start:prod

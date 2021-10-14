@@ -10,7 +10,7 @@
         "start:prod": "MODE=prod yarn start",
         "start:amd": "MODE=compat yarn start"
     },
-    "devDependencies": {
+    "dependencies": {
         "lwc": "~2.2.0",
         "lwr": "0.4.1"
     },

@@ -1,0 +1,1 @@
+web: yarn workspace hello-world start:prod
