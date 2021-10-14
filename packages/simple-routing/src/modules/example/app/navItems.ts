@@ -43,4 +43,15 @@ export const NAV_ITEMS: NavData[] = [
             state: {},
         },
     },
+    {
+        id: '5',
+        label: 'Error Page',
+        pageReference: {
+            type: 'namedPage',
+            attributes: {
+                pageName: 'pageHasError',
+            },
+            state: {},
+        },
+    },
 ];

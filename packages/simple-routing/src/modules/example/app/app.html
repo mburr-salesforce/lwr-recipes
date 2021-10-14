@@ -1,6 +1,8 @@
 <template>
     <lwr-router-container router={router}>
         <example-nav items={navItems}></example-nav>
-        <lwr-outlet></lwr-outlet>
+        <lwr-outlet onviewchange={onViewChange} onviewerror={onViewError}>
+            <div slot="error">If the component experiences a runtime error, the contents of this slot will replace the component template for the current route.</div>
+        </lwr-outlet>
     </lwr-router-container>
 </template>

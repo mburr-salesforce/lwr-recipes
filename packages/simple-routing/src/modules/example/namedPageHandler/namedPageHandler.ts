@@ -24,6 +24,9 @@ export default class RecordPageHandler {
             case 'contact':
                 viewGetter = (): Promise<Module> => import('example/contact');
                 break;
+            case 'pageHasError':
+                viewGetter = (): Promise<Module> => import('example/pageHasError');
+                break;
             default:
                 return;
         }
