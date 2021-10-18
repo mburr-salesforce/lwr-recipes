@@ -401,18 +401,40 @@ It is the router's job to [resolve view components](#route-handlers) for a given
 <!-- my/app/app.html -->
 <template>
     <lwr-router-container>
-        <lwr-outlet refocus-off onviewchange="{onViewChange}"></lwr-outlet>
+        <lwr-outlet refocus-off onviewchange="{onViewChange}" onviewerror="{onViewError}"></lwr-outlet>
     </lwr-router-container>
 </template>
 ```
 
 The outlet uses the [`CurrentView` wire](#currentview) to get the current view component, then displays it in the DOM. It has these properties:
 
--   `onviewchange` event: dispatched whenever the view component changes; `event.detail` is the view component class
+-   `onviewchange` event: dispatched whenever the view component changes; `event.detail` is the view component class:
+
+```ts
+type Constructor<T = object> = new (...args: any[]) => T;
+interface Constructable<T = object> {
+    constructor: Constructor<T>;
+}
+interface ViewChangePayload {
+    detail: Constructable;
+}
+```
+
+-   `onviewerror` event: dispatched whenever the view component fails to mount; `event.detail` is the error and stack:
+
+```ts
+interface ViewErrorPayload {
+    detail: {
+        error: Error;
+        stack: string;
+    };
+}
+```
+
 -   `refocus-off` boolean: if present, the outlet will **not** put the browser focus on the view component when it loads; refocusing is on by default as an accessibility feature
 -   `view-name`: the key of the `ViewSet` entry to display; the default value is `"default"`
 
-> See the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline#lwr%2Foutlet) and the `viewchange` event [here](https://rfcs.lwc.dev/rfcs/lws/0000-router-viewChange-event).
+> See the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline#lwr%2Foutlet) and the `viewchange` and `viewerror` events [here](https://rfcs.lwc.dev/rfcs/lws/0000-router-viewChange-event).
 
 ### Multiple Outlets
 
