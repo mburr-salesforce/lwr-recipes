@@ -14,7 +14,9 @@
         "build": "tsc -b && yarn utam:compile",
         "start": "node build/autostart.js",
         "start:prod": "MODE=prod yarn start",
+        "start:compat": "MODE=compat yarn start",
         "start:amd": "MODE=compat yarn start",
+        "start:prod-compat": "MODE=prod-compat yarn start",
         "utam:compile": "utam -c utam.config.js"
     },
     "devDependencies": {
@@ -25,13 +27,13 @@
         "chromedriver": "^94.0.0",
         "lerna": "^3.20.2",
         "lwc": "~2.2.0",
-        "lwr": "0.4.1",
+        "lwr": "0.5.5",
         "rimraf": "^3.0.2",
         "ts-node": "^9.0.0",
         "typescript": "^4.2.2",
         "utam": "0.0.9"
     },
     "engines": {
-        "node": ">=14.15.4 <15"
+        "node": ">=14.15.4 <17"
     }
 }

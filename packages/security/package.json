@@ -10,17 +10,19 @@
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
         "start": "node build/index.js",
+        "start:prod": "MODE=prod yarn start",
+        "start:compat": "MODE=compat yarn start",
         "start:amd": "MODE=compat yarn start",
-        "start:prod": "MODE=prod yarn start"
+        "start:prod-compat": "MODE=prod-compat yarn start"
     },
     "devDependencies": {
         "@types/helmet": "^4.0.0",
         "lwc": "~2.2.0",
-        "lwr": "0.4.1",
+        "lwr": "0.5.5",
         "typescript": "^4.2.2"
     },
     "engines": {
-        "node": ">=14.15.4 <15"
+        "node": ">=14.15.4 <17"
     },
     "dependencies": {
         "helmet": "^4.3.1"

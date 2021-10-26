@@ -48,8 +48,8 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 // package.json
 {
     "devDependencies": {
-        "lwc": "~1.9.0",
-        "lwr": "0.1.7"
+        "lwc": "~2.2.0",
+        "lwr": "0.5.5"
     }
 }
 ```
@@ -72,6 +72,21 @@ createServer()
         console.error(e);
         process.exit(1);
     });
+```
+
+Or use the `lwr serve` CLI command to start your project.
+
+```json
+// package.json
+{
+    "name": "my-lwr-project",
+    "scripts": {
+        "start": "lwr serve --port 3000",
+        "start:prod": "lwr serve --port 3001 --mode prod",
+        "start:compat": "lwr serve --port 3002 --mode compat",
+        "start:prod-compat": "lwr serve --port 3003 --mode prod-compat"
+    }
+}
 ```
 
 ### Configuration

@@ -12,16 +12,18 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
-        "start": "node build/index.js",
-        "start:prod": "MODE=prod yarn start",
-        "start:amd": "MODE=compat yarn start"
+        "start": "lwr serve --port 3000",
+        "start:prod": "lwr serve --port 3000 --mode prod",
+        "start:compat": "lwr serve --port 3000 --mode compat",
+        "start:amd": "lwr serve --port 3000 --mode compat",
+        "start:prod-compat": "lwr serve --port 3000 --mode prod-compat"
     },
     "devDependencies": {
         "lwc": "~2.2.0",
-        "lwr": "0.4.1",
+        "lwr": "0.5.5",
         "typescript": "^4.2.2"
     },
     "engines": {
-        "node": ">=14.15.4 <15"
+        "node": ">=14.15.4 <17"
     }
 }

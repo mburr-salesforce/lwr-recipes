@@ -13,7 +13,7 @@ expressApp.use(async (req, res, next) => {
     next();
 });
 
-//Start the server
+// Start the server
 lwrServer
     .listen(({ port, serverMode }: { port: number; serverMode: string }) => {
         console.log(`App listening on port ${port} in ${serverMode} mode\n`);
