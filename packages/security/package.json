@@ -9,11 +9,10 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
-        "start": "node build/index.js",
-        "start:prod": "MODE=prod yarn start",
-        "start:compat": "MODE=compat yarn start",
-        "start:amd": "MODE=compat yarn start",
-        "start:prod-compat": "MODE=prod-compat yarn start"
+        "dev": "node build/index.js",
+        "start": "MODE=prod yarn dev",
+        "start:compat": "MODE=compat yarn dev",
+        "start:prod-compat": "MODE=prod-compat yarn dev"
     },
     "devDependencies": {
         "@types/helmet": "^4.0.0",

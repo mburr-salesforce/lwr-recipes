@@ -47,8 +47,8 @@ Recipes can be started in four different modes:
 
 | Mode        | Start Command            | Format |     File Watch     |      Bundling      |       Minify       |
 | ----------- | ------------------------ | :----: | :----------------: | :----------------: | :----------------: |
-| dev         | `yarn start`             |  ESM   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
-| prod        | `yarn start:prod`        |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
+| dev         | `yarn dev`               |  ESM   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
+| prod        | `yarn start`             |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
 | compat      | `yarn start:compat`      |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
 | prod-compat | `yarn start:prod-compat` |  AMD   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
 

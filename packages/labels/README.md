@@ -151,7 +151,7 @@ The Label Module Provider returns the label value from the file corresponding to
 yarn install
 yarn build
 cd packages/labels
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

@@ -1,1 +1,1 @@
-web: yarn workspace module-provider start:prod
+web: yarn workspace module-provider start

@@ -186,7 +186,7 @@ Please note `routes` defined in `lwr.config.json` are **server-side**; they are 
 yarn install
 yarn build
 cd packages/nested-routing
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

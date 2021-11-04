@@ -81,8 +81,8 @@ Or use the `lwr serve` CLI command to start your project.
 {
     "name": "my-lwr-project",
     "scripts": {
-        "start": "lwr serve --port 3000",
-        "start:prod": "lwr serve --port 3001 --mode prod",
+        "dev": "lwr serve --port 3000",
+        "start": "lwr serve --port 3001 --mode prod",
         "start:compat": "lwr serve --port 3002 --mode compat",
         "start:prod-compat": "lwr serve --port 3003 --mode prod-compat"
     }

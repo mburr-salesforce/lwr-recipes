@@ -70,7 +70,7 @@ Use the following command to build this recipe.
 yarn install
 yarn build
 cd packages/locker
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

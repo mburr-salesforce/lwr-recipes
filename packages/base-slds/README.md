@@ -143,7 +143,7 @@ Configuration changes are required to support SLDS resources in the application:
 yarn install
 yarn build
 cd packages/base-slds
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

@@ -301,7 +301,7 @@ export default class MyProvider implements ModuleProvider {
 yarn install
 yarn build
 cd packages/module-provider
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

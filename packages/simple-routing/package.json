@@ -12,11 +12,10 @@
     "scripts": {
         "clean": "rimraf build/ pageObjects/ node_modules/ __lwr_cache__",
         "build": "tsc -b && yarn utam:compile",
-        "start": "node build/autostart.js",
-        "start:prod": "MODE=prod yarn start",
-        "start:compat": "MODE=compat yarn start",
-        "start:amd": "MODE=compat yarn start",
-        "start:prod-compat": "MODE=prod-compat yarn start",
+        "dev": "node build/autostart.js",
+        "start": "MODE=prod yarn dev",
+        "start:compat": "MODE=compat yarn dev",
+        "start:prod-compat": "MODE=prod-compat yarn dev",
         "utam:compile": "utam -c utam.config.js"
     },
     "devDependencies": {

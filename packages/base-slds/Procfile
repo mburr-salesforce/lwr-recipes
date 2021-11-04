@@ -1,1 +1,1 @@
-web: yarn workspace base-slds start:prod
+web: yarn workspace base-slds start

@@ -1,1 +1,1 @@
-web: yarn workspace templating start:prod
+web: yarn workspace templating start

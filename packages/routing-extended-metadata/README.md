@@ -78,7 +78,7 @@ The only configuration for this app is the location of the modules directory and
 yarn install
 yarn build
 cd packages/routing-extended-metadata
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

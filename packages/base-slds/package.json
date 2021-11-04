@@ -12,10 +12,9 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "node ./scripts/copy-resources.mjs",
-        "start": "lwr serve --port 3000",
-        "start:prod": "lwr serve --port 3000 --mode prod",
+        "dev": "lwr serve --port 3000",
+        "start": "lwr serve --port 3000 --mode prod",
         "start:compat": "lwr serve --port 3000 --mode compat",
-        "start:amd": "lwr serve --port 3000 --mode compat",
         "start:prod-compat": "lwr serve --port 3000 --mode prod-compat"
     },
     "dependencies": {
