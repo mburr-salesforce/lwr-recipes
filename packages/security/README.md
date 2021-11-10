@@ -41,7 +41,7 @@ expressApp.use(
         contentSecurityPolicy: {
             directives: {
                 defaultSrc: ["'self'"],
-                styleSrc: ["'self'"],
+                styleSrc: ["'self'", "'unsafe-inline'"],
                 scriptSrc: ["'self'", 'salesforce.com'],
             },
         },

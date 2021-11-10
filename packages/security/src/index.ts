@@ -13,7 +13,7 @@ expressApp.use(
         contentSecurityPolicy: {
             directives: {
                 defaultSrc: ["'self'"],
-                styleSrc: ["'self'"],
+                styleSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline used to apply lwc module styles
                 scriptSrc: ["'self'", 'salesforce.com'],
             },
         },
