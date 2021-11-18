@@ -20,7 +20,7 @@ A large part of what LWR offers is resolving and serving modules for LWR Applica
 
 This documentation walks through the creation of two different types of module providers: [ES](#moduleprovider-class) and [LWC](#lwc-module-providers).
 
-For detailed design information, read the LWR Module Registry RFC and spec [here](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#module-providers).
+For detailed design information, read the LWR Module Registry RFC and spec [here](https://rfcs.lwc.dev/rfcs/lwr/0000-registry-v2#module-providers).
 
 ## Details
 
@@ -30,7 +30,7 @@ An LWR Application is automatically set up with several default module providers
 
 -   LWC module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
 -   npm module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
--   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources)
+-   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources)
 
 ### Create a module provider
 
@@ -70,7 +70,7 @@ See a full ES module provider example [here](./src/services/echo-provider.ts).
 
 ##### getModuleEntry()
 
-A LWR server contains a [module registry](https://rfcs.lwc.dev/rfcs/lws/0000-registry-v2#registry), which is in charge of fulfilling module requests. The module registry maintains a list of the available module providers. When a module request comes in, the module registry delegates to its module providers by calling `getModuleEntry()` on each one. This function receives two arguments:
+A LWR server contains a [module registry](https://rfcs.lwc.dev/rfcs/lwr/0000-registry-v2#registry), which is in charge of fulfilling module requests. The module registry maintains a list of the available module providers. When a module request comes in, the module registry delegates to its module providers by calling `getModuleEntry()` on each one. This function receives two arguments:
 
 -   a module ID, which contains the module `specifier`
 -   `RuntimeParams`, a `Record<string, string | number | boolean | null | undefined>` map of information specific to the request (eg: `locale`)

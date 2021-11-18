@@ -107,7 +107,7 @@ The context that LWR passes into HTML and Nunjucks [templates](#templates) conta
 
 The LWR framework automatically passes these two context properties:
 
--   `lwr_resources`: a string containing all the scripts needed to run an application, such as the LWC library and [LWR client resources](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-bootstrap#lwr-framework-client-resources); embedded LWCs don't render if this string is excluded from the page response
+-   `lwr_resources`: a string containing all the scripts needed to run an application, such as the LWC library and [LWR client resources](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources); embedded LWCs don't render if this string is excluded from the page response
 -   `body`: available in layout templates, a string containing the rendered page content that is output from the [route's](#configuration) `contentTemplate` or `rootComponent`
 
 Here are examples of HTML and Nunjucks layout templates which use both properties:

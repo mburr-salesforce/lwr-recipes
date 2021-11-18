@@ -27,7 +27,7 @@ The [`@lwrjs/router` package](https://github.com/salesforce/lwr/tree/master/pack
 
 LWR routers can be customized with configuration and hooks. They can also be nested, to create a hierarchy in an application.
 
-> See the RFC on LWR routing APIs [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline).
+> See the RFC on LWR routing APIs [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline).
 
 ## App Configuration
 
@@ -43,7 +43,7 @@ The `@lwrjs/router` package is automatically available to all LWR applications. 
 
 > Read more about bundle configuration [here](./config.md#bundling).
 
-> _Important_: The `routes` array seen in LWR app configuration is for **server-side** routes (see RFC [here](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-app-config#application-routes)), and is unrelated to the `@lwrjs/router` package.
+> _Important_: The `routes` array seen in LWR app configuration is for **server-side** routes (see RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-app-config#application-routes)), and is unrelated to the `@lwrjs/router` package.
 
 ## Router
 
@@ -125,18 +125,18 @@ interface RouteDefinition<TMetadata = Record<string, any>> {
 containing the following properties:
 
 -   `id`: each `RouteDefinition` must have a unique identifier
--   `uri`: a string pattern for URI locations which match this `RouteDefinition`; the grammar is fully defined [in an RFC](https://rfcs.lwc.dev/rfcs/lws/0006-route-binding-and-serialization#uri-grammar-syntax) and includes these characters:
+-   `uri`: a string pattern for URI locations which match this `RouteDefinition`; the grammar is fully defined [in an RFC](https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#uri-grammar-syntax) and includes these characters:
     -   `/`: path separator
     -   `:parameter`: captures a variable from a path or query parameter; must be alpha-numeric (i.e. [a-zA-Z0-9])
     -   `?`: denotes the beginning of the query string
     -   `&`: query parameter separator
--   `page`: shape for page references which match this `RouteDefinition`; the usage is detailed [in an RFC](https://rfcs.lwc.dev/rfcs/lws/0006-route-binding-and-serialization#pagereference-binding) and allows:
+-   `page`: shape for page references which match this `RouteDefinition`; the usage is detailed [in an RFC](https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#pagereference-binding) and allows:
     -   `:parameter` bindings: map a path or query parameter from the `uri` to an `attributes` or `state` property
     -   literal bindings: hard-code the `type`, an `attribute`, or `state` property to a literal value
 -   `handler`: a `Promise` to a module which is called when a `RouteDefinition` is matched by a location; see the [Route Handlers section](#route-handlers)
--   `patterns` (optional): a regular expression which a parameter must match in order to be valid; described in an RFC [here](<https://rfcs.lwc.dev/rfcs/lws/0006-route-binding-and-serialization#parameter-validation-(patterns)>)
+-   `patterns` (optional): a regular expression which a parameter must match in order to be valid; described in an RFC [here](<https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#parameter-validation-(patterns)>)
 -   `exact` (optional, default = `true`): see the [Nesting Router Containers section](#nesting-router-containers)
--   `metadata` (optional): developer-defined metadata attached to `RouteDefinition`; see the RFC [here](https://rfcs.lwc.dev/rfcs/lws/0000-route-definition-meta) and a recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata)
+-   `metadata` (optional): developer-defined metadata attached to `RouteDefinition`; see the RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-route-definition-meta) and a recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata)
 
 ### Route Matching
 
@@ -205,7 +205,7 @@ This URI and page reference **do not** match:
 }
 ```
 
-> See more `RouteDefinition` examples with [matching](https://rfcs.lwc.dev/rfcs/lws/0006-route-binding-and-serialization#positively-matching-pagereferences%3A) and [non-matching](https://rfcs.lwc.dev/rfcs/lws/0006-route-binding-and-serialization#failing-matching-pagereferences%3A) page references in the RFC.
+> See more `RouteDefinition` examples with [matching](https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#positively-matching-pagereferences%3A) and [non-matching](https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#failing-matching-pagereferences%3A) page references in the RFC.
 
 ### Route Handlers
 
@@ -281,7 +281,7 @@ export default class RecipeHandler {
 }
 ```
 
-> See the `RouteHandler` RFC [here](https://rfcs.lwc.dev/rfcs/lws/0002-route-handler) and some example handlers [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing/src/modules/example).
+> See the `RouteHandler` RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler) and some example handlers [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing/src/modules/example).
 
 ## Router Container
 
@@ -434,7 +434,7 @@ interface ViewErrorPayload {
 -   `refocus-off` boolean: if present, the outlet will **not** put the browser focus on the view component when it loads; refocusing is on by default as an accessibility feature
 -   `view-name`: the key of the `ViewSet` entry to display; the default value is `"default"`
 
-> See the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline#lwr%2Foutlet) and the `viewchange` and `viewerror` events [here](https://rfcs.lwc.dev/rfcs/lws/0000-router-viewChange-event).
+> See the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#lwr%2Foutlet) and the `viewchange` and `viewerror` events [here](https://rfcs.lwc.dev/rfcs/lwr/0000-router-viewChange-event).
 
 ### Multiple Outlets
 

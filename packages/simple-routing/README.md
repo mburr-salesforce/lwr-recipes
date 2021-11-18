@@ -111,7 +111,7 @@ Attach this router instance to `lwr/routerContainer`.
 
 See the example [here](./src/modules/example/app/).
 
-For more details, see [RFC: Router API](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline).
+For more details, see [RFC: Router API](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline).
 
 ### Define a Route Handler
 
@@ -145,7 +145,7 @@ Route handlers in this example:
 -   [namedPageHandler](./src/modules/example/namedPageHandler/namedPageHandler.ts)
 -   [recipesPageHandler](./src/modules/example/recipesPageHandler/recipesPageHandler.ts)
 
-For more details, see [RFC: Route Handler](https://rfcs.lwc.dev/rfcs/lws/0002-route-handler).
+For more details, see [RFC: Route Handler](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler).
 
 ### Navigate
 
@@ -219,7 +219,7 @@ onViewError(viewErrorEvent: CustomEvent) {
 
 See the example [here](./src/modules/example/app/app.html) and [here](./src/modules/example/pageHasError/pageHasError.ts).
 
-For more details, see the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline#lwr%2Foutlet) and the `viewerror` and `viewchange` events [here](https://rfcs.lwc.dev/rfcs/lws/0000-router-viewChange-event).
+For more details, see the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#lwr%2Foutlet) and the `viewerror` and `viewchange` events [here](https://rfcs.lwc.dev/rfcs/lwr/0000-router-viewChange-event).
 
 ### Configuration
 

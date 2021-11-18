@@ -20,7 +20,7 @@ Additional resources:
 
 -   See the simple routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing).
 -   Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/master/doc/navigation.md).
--   Read the RFC sections on nested routing [here](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline#nested-mount-point).
+-   Read the RFC sections on nested routing [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#nested-mount-point).
 
 ### Project Setup
 
