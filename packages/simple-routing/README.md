@@ -108,7 +108,7 @@ Attach this router instance to `lwr/routerContainer`.
 
 See the example [here](./src/modules/example/app/).
 
-For more details, see [RFC: Router API](https://rfcs.lwc.dev/rfcs/lws/0003-router-api-baseline).
+For more details, see [RFC: Router API](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline).
 
 ### Define a Route Handler
 
@@ -142,7 +142,7 @@ Route handlers in this example:
 -   [namedPageHandler](./src/modules/example/namedPageHandler/namedPageHandler.ts)
 -   [recipesPageHandler](./src/modules/example/recipesPageHandler/recipesPageHandler.ts)
 
-For more details, see [RFC: Route Handler](https://rfcs.lwc.dev/rfcs/lws/0002-route-handler).
+For more details, see [RFC: Route Handler](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler).
 
 ### Navigate
 
