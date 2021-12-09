@@ -4,9 +4,6 @@
     "license": "MIT",
     "description": "LWR Javascript Implementation",
     "main": "index.js",
-    "bin": {
-        "lwc-pack": "./bin/lwc-pack.js"
-    },
     "scripts": {
         "clean": "lerna run clean --stream && lerna exec -- rimraf build/ tsconfig.tsbuildinfo __lwr_cache__ node_modules && lerna clean --yes && rimraf node_modules",
         "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
