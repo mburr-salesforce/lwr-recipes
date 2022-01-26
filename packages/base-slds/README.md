@@ -14,7 +14,7 @@
 This recipe explains how to include these resources from Salesforce:
 
 -   [Salesforce Lightning Design System (SLDS)](https://www.lightningdesignsystem.com/getting-started/) for styling
--   [Lightning Base Components (LBC)](https://github.com/salesforce/lightning-base-components) as a component library
+-   [Lightning Base Components (LBC)](https://developer.salesforce.com/docs/component-library/overview/components) as a component library
 
 ## Details
 
@@ -71,7 +71,7 @@ cpx.copy('../../node_modules/@salesforce-ux/design-system/assets/**/*', 'src/ass
 
 ### Lightning Base Components
 
-In order to use [Lightning Base Components (LBC)](https://github.com/salesforce/lightning-base-components) in an LWR application:
+In order to use [Lightning Base Components (LBC)](https://developer.salesforce.com/docs/component-library/overview/components) in an LWR application:
 
 1. Create a dependency on `lightning-base-components` in [package.json](./package.json).
 
