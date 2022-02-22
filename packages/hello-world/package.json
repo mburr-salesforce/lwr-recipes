@@ -6,14 +6,14 @@
     "type": "module",
     "scripts": {
         "clean": "rm -rf __lwr_cache__",
-        "dev": "lwr serve --port 3000",
-        "start": "lwr serve --port 3000 --mode prod",
-        "start:compat": "lwr serve --port 3000 --mode compat",
-        "start:prod-compat": "lwr serve --port 3000 --mode prod-compat"
+        "dev": "lwr serve",
+        "start": "lwr serve --mode prod",
+        "start:compat": "lwr serve --mode compat",
+        "start:prod-compat": "lwr serve --mode prod-compat"
     },
     "dependencies": {
         "lwc": "~2.2.0",
-        "lwr": "0.5.5"
+        "lwr": "0.6.0"
     },
     "engines": {
         "node": ">=14.15.4 <17"

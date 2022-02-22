@@ -12,15 +12,15 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "node ./scripts/copy-resources.mjs",
-        "dev": "lwr serve --port 3000",
-        "start": "lwr serve --port 3000 --mode prod",
-        "start:compat": "lwr serve --port 3000 --mode compat",
-        "start:prod-compat": "lwr serve --port 3000 --mode prod-compat"
+        "dev": "lwr serve",
+        "start": "lwr serve --mode prod",
+        "start:compat": "lwr serve --mode compat",
+        "start:prod-compat": "lwr serve --mode prod-compat"
     },
     "dependencies": {
         "lightning-base-components": "^1.9.0-alpha",
         "lwc": "~2.2.0",
-        "lwr": "0.5.5"
+        "lwr": "0.6.0"
     },
     "devDependencies": {
         "@salesforce-ux/design-system": "^2.11.6",

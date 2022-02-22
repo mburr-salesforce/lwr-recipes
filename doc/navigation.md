@@ -29,22 +29,6 @@ LWR routers can be customized with configuration and hooks. They can also be nes
 
 > See the RFC on LWR routing APIs [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline).
 
-## App Configuration
-
-The `@lwrjs/router` package is automatically available to all LWR applications. Add the following configuration to `lwr.config.json` to ensure that the modules are properly bundled:
-
-```json
-{
-    "bundleConfig": {
-        "exclude": ["lwr/navigation"]
-    }
-}
-```
-
-> Read more about bundle configuration [here](./config.md#bundling).
-
-> _Important_: The `routes` array seen in LWR app configuration is for **server-side** routes (see RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-app-config#application-routes)), and is unrelated to the `@lwrjs/router` package.
-
 ## Router
 
 A router is a piece of code that manages client-side navigation changes. All navigation events flow through a router for processing. Use the `createRouter(config: RouterConfig)` API to initialize a LWR router:
@@ -137,6 +121,8 @@ containing the following properties:
 -   `patterns` (optional): a regular expression which a parameter must match in order to be valid; described in an RFC [here](<https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#parameter-validation-(patterns)>)
 -   `exact` (optional, default = `true`): see the [Nesting Router Containers section](#nesting-router-containers)
 -   `metadata` (optional): developer-defined metadata attached to `RouteDefinition`; see the RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-route-definition-meta) and a recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata)
+
+> _Important_: The `routes` array seen in [LWR app configuration](./config.md) is for **server-side** routes (see RFC [here](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-app-config#application-routes)), and is unrelated to the `@lwrjs/router` package.
 
 ### Route Matching
 

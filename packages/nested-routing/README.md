@@ -163,7 +163,6 @@ Please note `routes` defined in `lwr.config.json` are **server-side**; they are 
 // nested-routing/lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
-    "bundleConfig": { "exclude": ["lwc"] },
     "routes": [
         {
             "id": "app",

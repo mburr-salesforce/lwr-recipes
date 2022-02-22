@@ -44,7 +44,6 @@ To enable loader hooks and module invalidation hooks for your app, add them to t
 // lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
-    "bundleConfig": { "exclude": ["lwc"] },
     "routes": [
         {
             "id": "services",

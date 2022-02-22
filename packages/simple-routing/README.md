@@ -229,7 +229,6 @@ Please note the routes defined in `lwr.config.json` are server-side; they are di
 //lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
-    "bundleConfig": { "exclude": ["lwc", "lwr/navigation"] },
     "routes": [
         {
             "id": "app",

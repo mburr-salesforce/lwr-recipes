@@ -99,14 +99,12 @@ In order to use [Lightning Base Components (LBC)](https://developer.salesforce.c
 Configuration changes are required to support SLDS resources in the application:
 
 -   The `syntheticShadow` property must be `true` to allow the SLDS stylesheet to function as **global** styles.
--   The `@lwc/synthetic-shadow` module must be excluded in the `bundleConfig`.
 -   To allow the browser to access them, set up `/assets`, `/fonts` and `/lightning.utilitySprite` paths to SLDS stylesheets, fonts and images, respectively.
 
 ```json
 // lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }, { "npm": "lightning-base-components" }] },
-    "bundleConfig": { "exclude": ["lwc", "@lwc/synthetic-shadow"] },
     "assets": [
         {
             "alias": "assetsDir",
