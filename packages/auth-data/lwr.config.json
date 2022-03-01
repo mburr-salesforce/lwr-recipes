@@ -6,7 +6,7 @@
             { "npm": "lwc-components-lightning" }
         ]
     },
-    "bundleConfig": { "exclude": ["lwc", "@lwc/synthetic-shadow", "@salesforce/lds-default-luvio"] },
+    "bundleConfig": { "exclude": ["@salesforce/lds-default-luvio"] },
     "assets": [
         {
             "alias": "assetsDir",
@@ -24,12 +24,7 @@
     ],
     "locker": {
         "enabled": true,
-        "trustedComponents": [
-            "@lwc/synthetic-shadow",
-            "force/ldsAdaptersUiapi",
-            "example/dataChart",
-            "example/setupLDS"
-        ]
+        "trustedComponents": ["force/ldsAdaptersUiapi", "example/dataChart"]
     },
     "routes": [
         {

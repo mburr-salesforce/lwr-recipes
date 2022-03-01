@@ -1515,6 +1515,11 @@
     "@lwrjs/shared-utils" "0.6.0"
     postcss "^8.3.6"
 
+"@lwrjs/auth-middleware@0.6.0":
+  version "0.6.0"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/auth-middleware/-/auth-middleware-0.6.0.tgz#55e38ed7eee9333bf7c24d9d94724fa826d3805b"
+  integrity sha512-gngXEv7m7Et1IEU9Jlf1D+MscpMS8aDnC2SJepOCne1Etkqvn44pRJ6Plf/RfoFXEU2D6jfIDQKHolTRuNakpQ==
+
 "@lwrjs/base-template-engine@0.6.0":
   version "0.6.0"
   resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/base-template-engine/-/base-template-engine-0.6.0.tgz#8c25aa0c6d385811074b4e816e15e135347c338a"

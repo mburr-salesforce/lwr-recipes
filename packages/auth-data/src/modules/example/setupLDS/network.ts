@@ -23,47 +23,33 @@ class RecordError extends Error {
 export function createNetworkAdapter(): (req: ResourceRequest) => Promise<FetchResponse<any>> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return async function networkAdapter(req: ResourceRequest): Promise<FetchResponse<any>> {
-        // Build an authenticated request to the UI API
-        const { instance_url, access_token } = getOAuthInfoFromCookie();
-        if (instance_url && access_token) {
-            const { baseUri, basePath, body, queryParams, method, headers } = req;
-            const path = `${instance_url}${baseUri}${basePath}${generateQueryString(queryParams)}`;
-            try {
-                const res = await fetch(path, {
-                    method: method.toUpperCase(),
-                    headers: generateHeaders({
-                        ...headers,
-                        Authorization: `Bearer ${access_token}`, // pass the OAuth token
-                    }),
-                    body: body === null ? null : JSON.stringify(body),
-                });
-                if (res.ok) {
-                    return {
-                        body: res.status === 204 ? undefined : await res.json(), // HTTP 204 = No Content
-                        status: res.status,
-                        statusText: res.statusText,
-                        ok: res.ok,
-                        headers: {},
-                    };
-                }
-                // Request goes through but returns HTTP errors
-                throw new RecordError(res.statusText, res.status);
-            } catch (e) {
-                // Return the failure; no response status => 401
-                // e.g. CORS or prefetch errors
-                const error = e as RecordError;
-                throw new RecordError(error.message, error.status >= 0 ? error.status : 401);
+        // Build a request to the UI API proxied through the LWR auth middleware
+        const { baseUri, basePath, body, queryParams, method, headers } = req;
+        const path = `${baseUri}${basePath}${generateQueryString(queryParams)}`;
+        try {
+            const res = await fetch(path, {
+                method: method.toUpperCase(),
+                headers: generateHeaders(headers),
+                body: body === null ? null : JSON.stringify(body),
+            });
+            if (res.ok) {
+                return {
+                    body: res.status === 204 ? undefined : await res.json(), // HTTP 204 = No Content
+                    status: res.status,
+                    statusText: res.statusText,
+                    ok: res.ok,
+                    headers: {},
+                };
             }
-        } else {
-            // There is no authentication data available to make this request
-            throw new RecordError('You are not authenticated.', 401);
+            // Request goes through but returns HTTP errors
+            throw new RecordError(res.statusText, res.status);
+        } catch (e) {
+            // Return the epic failure; no response status => 401
+            // e.g. CORS or prefetch errors
+            const error = e as RecordError;
+            throw new RecordError(error.message, error.status >= 0 ? error.status : 401);
         }
     };
-}
-
-function getOAuthInfoFromCookie(): { instance_url?: string; access_token?: string } {
-    const oauthInfoStr = document.cookie.split('; ').find((c) => c.startsWith('lwr_recipe='));
-    return oauthInfoStr ? JSON.parse(decodeURIComponent(oauthInfoStr.split('=')[1])) : {};
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -83,6 +69,7 @@ function generateHeaders(headers: LuvioHeaders): globalThis.Headers {
     for (const key of Object.keys(headers)) {
         fetchHeaders.set(key, headers[key]);
     }
+    // Always JSON
     fetchHeaders.set('Accept', 'application/json');
     fetchHeaders.set('Content-Type', 'application/json');
     return fetchHeaders;
