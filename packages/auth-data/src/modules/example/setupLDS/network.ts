@@ -51,7 +51,8 @@ export function createNetworkAdapter(): (req: ResourceRequest) => Promise<FetchR
             } catch (e) {
                 // Return the failure; no response status => 401
                 // e.g. CORS or prefetch errors
-                throw new RecordError(e.message, e.status >= 0 ? e.status : 401);
+                const error = e as RecordError;
+                throw new RecordError(error.message, error.status >= 0 ? error.status : 401);
             }
         } else {
             // There is no authentication data available to make this request
