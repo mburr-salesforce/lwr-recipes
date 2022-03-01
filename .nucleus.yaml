@@ -9,3 +9,6 @@ steps:
     description: Run WDIO/UTAM E2E Tests
     run:
       command: yarn test:e2e
+notifications:
+    email:
+        address: laf@salesforce.com

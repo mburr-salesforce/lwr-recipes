@@ -252,6 +252,7 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
         "$rootDir/build/services/es-custom-provider.js",
         "$rootDir/build/services/lwc-custom-provider.ts",
         "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
@@ -301,7 +302,7 @@ export default class MyProvider implements ModuleProvider {
 yarn install
 yarn build
 cd packages/module-provider
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

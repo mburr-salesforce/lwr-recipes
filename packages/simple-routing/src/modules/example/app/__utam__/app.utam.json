@@ -1,18 +1,26 @@
 {
     "root": true,
     "selector": {
-        "css": "example-app"
+        "css": "body"
     },
-    "shadow": {
-        "elements": [
-            {
-                "name": "outlet",
-                "type": "@lwrjs/router/pageObjects/outlet",
-                "public": true,
-                "selector": {
-                    "css": "lwr-outlet"
-                }
+    "elements": [
+        {
+            "name": "exampleApp",
+            "selector": {
+                "css": "example-app"
+            },
+            "shadow": {
+                "elements": [
+                    {
+                        "name": "outlet",
+                        "type": "@lwrjs/router/pageObjects/outlet",
+                        "public": true,
+                        "selector": {
+                            "css": "lwr-outlet"
+                        }
+                    }
+                ]
             }
-        ]
-    }
+        }
+    ]
 }

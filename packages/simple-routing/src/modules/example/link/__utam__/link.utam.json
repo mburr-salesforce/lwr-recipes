@@ -1,8 +1,4 @@
 {
-    "root": true,
-    "selector": {
-        "css": "example-link"
-    },
     "methods": [
         {
             "name": "click",
@@ -18,7 +14,8 @@
         "elements": [
             {
                 "name": "anchor",
-                "type": "clickable",
+                "public": true,
+                "type": ["clickable"],
                 "selector": {
                     "css": "a"
                 }

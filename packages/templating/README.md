@@ -518,7 +518,7 @@ You can write code that dynamically updates the [configuration](https://github.c
 yarn install
 yarn build
 cd packages/templating
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the main site at [http://localhost:3000](http://localhost:3000).

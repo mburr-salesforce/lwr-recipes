@@ -3,9 +3,7 @@
         /* only process references */
     ],
     "references": [
-        { "path": "./packages/base-slds" },
         { "path": "./packages/labels" },
-        { "path": "./packages/locker" },
         { "path": "./packages/module-provider" },
         { "path": "./packages/nested-routing" },
         { "path": "./packages/security" },

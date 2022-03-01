@@ -33,7 +33,8 @@
             ],
             "lwr/navigationService": [
                 "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
-            ]
+            ],
+            "example/pageHasError": ["modules/example/pageHasError/pageHasError.ts"]
         }
     },
     "exclude": ["build"]

@@ -71,7 +71,7 @@ _Describe any setup steps specific to this recipe._
 yarn install
 yarn build
 cd packages/recipe-dir # REPLACE WITH CORRECT DIRECTORY NAME
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

@@ -6,15 +6,16 @@
     "type": "module",
     "scripts": {
         "clean": "rm -rf __lwr_cache__",
-        "start": "node scripts/start-server.mjs",
-        "start:prod": "MODE=prod yarn start",
-        "start:amd": "MODE=compat yarn start"
+        "dev": "lwr serve",
+        "start": "lwr serve --mode prod",
+        "start:compat": "lwr serve --mode compat",
+        "start:prod-compat": "lwr serve --mode prod-compat"
     },
-    "devDependencies": {
+    "dependencies": {
         "lwc": "~2.2.0",
-        "lwr": "0.3.5"
+        "lwr": "0.6.0"
     },
     "engines": {
-        "node": ">=14.15.4 <15"
+        "node": ">=14.15.4 <17"
     }
 }

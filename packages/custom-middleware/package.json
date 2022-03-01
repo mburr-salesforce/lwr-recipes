@@ -12,18 +12,19 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
-        "start": "node build/express.js",
+        "dev": "node build/express.js",
         "start:express": "node build/express.js",
         "start:koa": "node build/koa.js",
-        "start:prod": "MODE=prod yarn start",
-        "start:amd": "MODE=compat yarn start"
+        "start": "MODE=prod yarn dev",
+        "start:compat": "MODE=compat yarn dev",
+        "start:prod-compat": "MODE=prod-compat yarn dev"
     },
     "devDependencies": {
         "lwc": "~2.2.0",
-        "lwr": "0.3.5",
+        "lwr": "0.6.0",
         "typescript": "^4.2.2"
     },
     "engines": {
-        "node": ">=14.15.4 <15"
+        "node": ">=14.15.4 <17"
     }
 }

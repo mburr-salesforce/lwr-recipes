@@ -9,6 +9,7 @@
             -   [LWC Modules](#lwc-modules)
             -   [Packages](#packages)
             -   [Bundling](#bundling)
+            -   [Hot Reloading](#hot-reloading)
             -   [Routes](#routes)
             -   [Error Routes](#error-routes)
             -   [Assets](#assets)
@@ -48,8 +49,8 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 // package.json
 {
     "devDependencies": {
-        "lwc": "~1.9.0",
-        "lwr": "0.1.7"
+        "lwc": "~2.2.0",
+        "lwr": "0.6.0"
     }
 }
 ```
@@ -74,6 +75,21 @@ createServer()
     });
 ```
 
+Or use the `lwr serve` CLI command to start your project.
+
+```json
+// package.json
+{
+    "name": "my-lwr-project",
+    "scripts": {
+        "dev": "lwr serve",
+        "start": "lwr serve --mode prod",
+        "start:compat": "lwr serve --mode compat",
+        "start:prod-compat": "lwr serve --mode prod-compat"
+    }
+}
+```
+
 ### Configuration
 
 The LWR server is configured in `lwr.config.json`, at the root of the project.
@@ -96,7 +112,7 @@ The `package.json` now includes the `lightning-base-components` package.
     "devDependencies": {
         "lightning-base-components": "^1.9.0-alpha",
         "lwc": "~1.9.0",
-        "lwr": "0.1.7"
+        "lwr": "0.6.0"
     }
 }
 ```
@@ -143,18 +159,20 @@ The following table maps available LWR packages to recipes so you can see how th
 
 #### Bundling
 
-If a recipe is running in [`prod` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons. Examples of such modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-shadow`.
+If a recipe is running in [`prod` or `prod-compat` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons.
 
-The solution is to put these modules in their own, shareable bundles:
+Examples of singleton modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-shadow`. Since these are framework modules, LWR automatically puts them into their own, shareable bundles. If an application contains additional singleton modules, exclude them from bundling as well:
 
 ```json
 // lwr.config.json
 {
     "bundleConfig": {
-        "exclude": ["lwc", "lwr/navigation"]
+        "exclude": ["my/singleton", "do/notBundle"]
     }
 }
 ```
+
+#### Hot Reloading
 
 Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
 
@@ -276,6 +294,7 @@ LWR automatically includes a set of default module providers, so you don't need 
     "moduleProviders": [
         "@lwrjs/label-module-provider",
         "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]

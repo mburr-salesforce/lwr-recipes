@@ -1,25 +1,9 @@
 {
-    "root": true,
-    "selector": {
-        "css": "example-home"
-    },
-    "methods": [
-        {
-            "name": "linkToProducts",
-            "compose": [
-                {
-                    "element": "productLink",
-                    "apply": "click"
-                }
-            ]
-        }
-    ],
     "shadow": {
         "elements": [
             {
                 "name": "heading",
                 "public": true,
-                "type": "actionable",
                 "selector": {
                     "css": "h1"
                 }
@@ -32,8 +16,9 @@
                 }
             },
             {
-                "name": "productLink",
-                "type": "simple-routing/pageObjects/link",
+                "name": "productsLink",
+                "public": true,
+                "type": ["clickable"],
                 "selector": {
                     "css": "example-link"
                 }

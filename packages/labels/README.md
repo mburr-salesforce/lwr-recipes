@@ -48,15 +48,15 @@ Each file contains a JSON object with the label references and values nested by 
 
 Label Module Provider is not a default provider, so you must add it to your project configuration. Learn more in [Configure a LWR Project](../../doc/config.md#module-providers).
 
-Add `"@lwrjs/label-module-provider": "0.1.3"` as a dependency in `package.json`.
+Add `"@lwrjs/label-module-provider": "0.6.0"` as a dependency in `package.json`.
 
 ```json
 // package.json
 {
     "dependencies": {
-        "@lwrjs/label-module-provider": "0.1.7",
+        "@lwrjs/label-module-provider": "0.6.0",
         "lwc": "1.11.4",
-        "lwr": "0.1.7"
+        "lwr": "0.6.0"
     }
 }
 ```
@@ -69,6 +69,7 @@ Register the Label Module Provider in `lwr.config.json`.
     "moduleProviders": [
         "@lwrjs/label-module-provider",
         "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
@@ -97,6 +98,7 @@ When registering the module provider, you can optionally configure the package s
             }
         ],
         "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
@@ -151,7 +153,7 @@ The Label Module Provider returns the label value from the file corresponding to
 yarn install
 yarn build
 cd packages/labels
-yarn start # dev mode and ESM format
+yarn start # prod mode and ESM format
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

@@ -6,6 +6,7 @@
     -   [Create a Router](#create-a-router)
     -   [Define a Route Handler](#define-a-route-handler)
     -   [Navigate](#navigate)
+    -   [Error Handling](#error-handling)
     -   [Configuration](#configuration)
 -   [Recipe Setup](#Recipe-setup)
 
@@ -21,6 +22,8 @@ Important exports from the package:
 -   `lwr/navigation`
 
 ## Details
+
+> Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/master/doc/navigation.md).
 
 ### Project Setup
 
@@ -101,7 +104,7 @@ Attach this router instance to `lwr/routerContainer`.
 ```html
 <template>
     <lwr-router-container router="{router}">
-        <lwr-outlet></lwr-outlet>
+        <lwr-outlet onviewchange="{onViewChange}"></lwr-outlet>
     </lwr-router-container>
 </template>
 ```
@@ -173,6 +176,51 @@ export default class Example extends LightningElement {
 
 See the link module example [here](./src/modules/example/link/link.ts).
 
+### Error Handling
+
+Sometimes the router navigation completes, but the component's new view contains an error. This is considered a successful navigation, so an `errornavigate` event doesn't fire. LWR handles this scenario in two ways:
+
+1. Display an error slot in `lwr/outlet`.
+
+```html
+<lwr-outlet>
+    <div slot="error">This content failed to display</div>
+</lwr-outlet>
+```
+
+Or use a custom component
+
+```html
+<lwr-outlet>
+    <div slot="error">
+        <c-my-error></c-my-error>
+    </div>
+</lwr-outlet>
+```
+
+2. The `lwr/outlet` dispatches the `viewerror` event:
+
+```html
+<template>
+    <lwr-router-container router="{router}">
+        <lwr-outlet onviewerror="{onViewError}"></lwr-outlet>
+    </lwr-router-container>
+</template>
+```
+
+```ts
+onViewError(viewErrorEvent: CustomEvent) {
+    // handle viewerror
+    const error: Error = viewErrorEvent.detail.error;
+    const stack: string = viewErrorEvent.detail.stack;
+    console.error(`error rendering view component: "${error.message}" from:\n${stack}`);
+}
+```
+
+See the example [here](./src/modules/example/app/app.html) and [here](./src/modules/example/pageHasError/pageHasError.ts).
+
+For more details, see the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#lwr%2Foutlet) and the `viewerror` and `viewchange` events [here](https://rfcs.lwc.dev/rfcs/lwr/0000-router-viewChange-event).
+
 ### Configuration
 
 Please note the routes defined in `lwr.config.json` are server-side; they are different from the `RouteDefinition` defined for the client-side router.
@@ -181,7 +229,6 @@ Please note the routes defined in `lwr.config.json` are server-side; they are di
 //lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
-    "bundleConfig": { "exclude": ["lwc", "lwr/navigation"] },
     "routes": [
         {
             "id": "app",
