@@ -1,0 +1,13 @@
+{
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "routes": [
+        {
+            "id": "metrics",
+            "path": "/",
+            "rootComponent": "example/app",
+            "bootstrap": {
+                "services": ["example/metricsSink", "example/mappingHook"]
+            }
+        }
+    ]
+}

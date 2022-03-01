@@ -1,0 +1,49 @@
+main {
+    font-family: sans-serif;
+    margin: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1, a {
+    color: #1798c1 !important;
+}
+
+h1 span {
+    margin-left: 5px;
+    font-size: .5em;
+    font-weight: normal;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+ul > li {
+    list-style: none;
+}
+
+em {
+    margin-right: 5px;
+}
+
+div.buttons {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+button {
+    margin-right: 10px;
+    background-color: white;
+    box-shadow: -1px 1px 2px 0px black;
+    border: 2px solid #1798c1;
+    padding: 4px 8px;
+}
+
+button:hover, button:active, button:focus {
+    box-shadow: -1px 1px 4px 0px black;
+}

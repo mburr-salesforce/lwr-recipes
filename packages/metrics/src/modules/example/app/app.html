@@ -1,0 +1,72 @@
+<template>
+    <main>
+        <div>
+            <h1>
+                Bootstrap
+                <span>(<a target="_blank" href="https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#js-client-runtime">read more</a>)</span>
+            </h1>
+            <ul>
+                <li>
+                    <strong>Bootstrap time: </strong>
+                    <span if:true={hasTime}>{bootstrapTime} ms</span>
+                    <span if:false={hasTime}>Calculating...</span>
+                </li>
+                <li>
+                    <strong>Availability: </strong>
+                    <span if:true={hasBAvailability}>{bootstrapAvailability}%</span>
+                    <span if:false={hasBAvailability}>Calculating...</span>
+                </li>
+            </ul>
+            <h1>
+                AMD Loader
+                <span>(<a target="_blank" href="https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#amd-loader%2Floader-shim">read more</a>)</span>
+            </h1>
+            <ul>
+                <li>
+                    <strong>Availability: </strong>
+                    <span if:true={hasLAvailability}>{loaderAvailability}%</span>
+                    <span if:false={hasLAvailability}>Calculating...</span>
+                </li>
+                <li>
+                    <strong>Modules defined: </strong>
+                    <span if:false={definitionCount}><em>none</em></span>
+                    <ol>
+                        <template for:each={definitions} for:item="item">
+                            <li key={item.index}>{item.id}</li>
+                        </template>
+                    </ol>
+                </li>
+                <li>
+                    <strong>Modules fetched: </strong>
+                    <span if:false={moduleCount}><em>none</em></span>
+                    <ol>
+                        <template for:each={modules} for:item="item">
+                            <li key={item.index}>{item.id}</li>
+                        </template>
+                    </ol>
+                </li>
+                <li>
+                    <strong>Mappings fetched: </strong>
+                    <span if:false={mappingsCount}><em>none</em></span>
+                    <span>(<a target="_blank" href="https://rfcs.lwc.dev/rfcs/lwr/0000-mapping-api">read more</a>)</span>
+                    <ol>
+                        <template for:each={mappings} for:item="item">
+                            <li key={item.index}>{item.id}</li>
+                        </template>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h1>Load More Modules</h1>
+            <div class="buttons">
+                <button onclick={loadModuleA}>A</button>
+                <button onclick={loadModuleB}>B</button>
+                <button onclick={loadModuleC}>C</button>
+                <button onclick={loadModuleD}>D (does not exist)</button>
+                <button onclick={loadModuleE}>E (broken module)</button>
+            </div>
+            <example-dynamic lwc:dynamic={moduleCtor}></example-dynamic>
+        </div>
+    </main>
+</template>
