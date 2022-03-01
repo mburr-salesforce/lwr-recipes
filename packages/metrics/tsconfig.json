@@ -1,0 +1,17 @@
+{
+    "extends": "../../config/tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "build",
+        "paths": {
+            "example/a": ["modules/example/a/a.ts"],
+            "example/b": ["modules/example/b/b.ts"],
+            "example/c": ["modules/example/c/c.ts"],
+            "lwr/metrics": [
+                "../../../node_modules/@lwrjs/client-modules/build/modules/lwr/metrics/metrics.js"
+            ]
+        }
+    },
+    "exclude": ["build"]
+}

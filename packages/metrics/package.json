@@ -1,0 +1,29 @@
+{
+    "name": "metrics",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rm -rf build && rm -rf __lwr_cache__",
+        "build": "tsc -b",
+        "start": "ENABLE_FINGERPRINTS=true MODE=prod-compat node build/index.js",
+        "start:compat": "ENABLE_FINGERPRINTS=true MODE=compat node build/index.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "lwc": "~2.2.0",
+        "lwr": "0.6.0"
+    },
+    "devDependencies": {
+        "typescript": "^4.2.2"
+    },
+    "engines": {
+        "node": ">=14.15.4 <17"
+    }
+}

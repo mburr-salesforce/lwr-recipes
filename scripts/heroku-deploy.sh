@@ -1,5 +1,5 @@
 #!/bin/bash
-PACKAGES=('base-slds' 'custom-middleware' 'hello-world' 'labels' 'locker' 'module-provider' 'nested-routing' 'routing-extended-metadata' 'security' 'services' 'simple-routing' 'templating')
+PACKAGES=('base-slds' 'custom-middleware' 'hello-world' 'labels' 'locker' 'metrics' 'module-provider' 'nested-routing' 'routing-extended-metadata' 'security' 'services' 'simple-routing' 'templating')
 
 for package in "${PACKAGES[@]}"
 do
