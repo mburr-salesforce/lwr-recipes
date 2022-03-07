@@ -69,7 +69,6 @@ Register the Label Module Provider in `lwr.config.json`.
     "moduleProviders": [
         "@lwrjs/label-module-provider",
         "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
