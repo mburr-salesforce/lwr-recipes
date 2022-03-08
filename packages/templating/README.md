@@ -9,6 +9,7 @@
         -   [Template Locations](#template-locations)
         -   [Hooks](#hooks)
 -   [Recipe Setup](#Recipe-setup)
+-   [Heroku Deployment](#heroku-deployment)
 
 ## Introduction
 
@@ -528,3 +529,12 @@ Run a [route handler](#route-handler-params) at [http://localhost:3000/echo/Hell
 See a [custom response](#route-handler-params) at [http://localhost:3000/json/path-param?foo=query-param](http://localhost:3000/json/path-param?foo=query-param). The `path-param` and `query-param` can be replaced with any string, and be reflected in the JSON output.
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
+
+## Heroku Deployment
+
+```bash
+# from the lwr-recipes root
+./scripts/heroku-deploy.sh
+```
+
+The application would be deployed at [https://lwr-templating.herokuapp.com/](https://lwr-templating.herokuapp.com/)
