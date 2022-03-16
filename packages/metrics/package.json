@@ -18,7 +18,7 @@
     "dependencies": {
         "express": "^4.17.1",
         "lwc": "~2.2.0",
-        "lwr": "0.6.0"
+        "lwr": "0.6.1"
     },
     "devDependencies": {
         "typescript": "^4.2.2"
