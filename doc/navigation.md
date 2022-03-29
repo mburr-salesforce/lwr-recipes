@@ -335,12 +335,12 @@ export default class MyApp extends LightningElement {
 }
 ```
 
-A router container requires a [router](#router), and fires these events:
+A router container requires a [router](#router), and fires these [events](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/events_handling):
 
--   `handlenavigation`: dispatched when [`navigate(pageRef)`](#navigate) is called; `event.preventDefault()` **cancels** the navigation event; `event.detail` is the `PageReference`
--   `prenavigate`: dispatched when a navigation event is received and a `RouteDefinition` match is found; `event.preventDefault()` **cancels** the navigation event; `event.detail` is a `RouteChange`
--   `postnavigate`: dispatched when a navigation event has completed; `event.detail` is a `DomRoutingMatch` for the current location
--   `errornavigate`: dispatched when there is an error processing a navigation event (e.g. no `RouteDefinition` match, `prenavigate` cancelation); `event.detail` is a `MessageObject`
+-   `onhandlenavigation`: dispatched when [`navigate(pageRef)`](#navigate) is called; `event.preventDefault()` **cancels** the navigation event; `event.detail` is the `PageReference`
+-   `onprenavigate`: dispatched when a navigation event is received and a `RouteDefinition` match is found; `event.preventDefault()` **cancels** the navigation event; `event.detail` is a `RouteChange`
+-   `onpostnavigate`: dispatched when a navigation event has completed; `event.detail` is a `DomRoutingMatch` for the current location
+-   `onerrornavigate`: dispatched when there is an error processing a navigation event (e.g. no `RouteDefinition` match, `prenavigate` cancelation); `event.detail` is a `MessageObject`
 
 ```ts
 // router container event payload types
@@ -387,38 +387,40 @@ It is the router's job to [resolve view components](#route-handlers) for a given
 <!-- my/app/app.html -->
 <template>
     <lwr-router-container>
-        <lwr-outlet refocus-off onviewchange="{onViewChange}" onviewerror="{onViewError}"></lwr-outlet>
+        <lwr-outlet refocus-off onviewchange="{onViewChange}" onviewerror="{onViewError}">
+            <div slot="error">View component cannot display</div>
+        </lwr-outlet>
     </lwr-router-container>
 </template>
 ```
 
-The outlet uses the [`CurrentView` wire](#currentview) to get the current view component, then displays it in the DOM. It has these properties:
+The outlet uses the [`CurrentView` wire](#currentview) to get the current view component, then displays it in the DOM. It has:
 
--   `onviewchange` event: dispatched whenever the view component changes; `event.detail` is the view component class:
-
-```ts
-type Constructor<T = object> = new (...args: any[]) => T;
-interface Constructable<T = object> {
-    constructor: Constructor<T>;
-}
-interface ViewChangePayload {
-    detail: Constructable;
-}
-```
-
--   `onviewerror` event: dispatched whenever the view component fails to mount; `event.detail` is the error and stack:
-
-```ts
-interface ViewErrorPayload {
-    detail: {
-        error: Error;
-        stack: string;
-    };
-}
-```
-
--   `refocus-off` boolean: if present, the outlet will **not** put the browser focus on the view component when it loads; refocusing is on by default as an accessibility feature
--   `view-name`: the key of the `ViewSet` entry to display; the default value is `"default"`
+-   [properties](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_data_binding):
+    -   `view-name`: the key of the `ViewSet` entry to display; the default value is `"default"`
+    -   `refocus-off` boolean: if present, the outlet will **not** put the browser focus on the view component when it loads; refocusing is on by default as an accessibility feature
+-   [events](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/events_handling):
+    -   `onviewchange` event: dispatched whenever the view component changes; `event.detail` is the view component class:
+    ```ts
+    type Constructor<T = object> = new (...args: any[]) => T;
+    interface Constructable<T = object> {
+        constructor: Constructor<T>;
+    }
+    interface ViewChangePayload {
+        detail: Constructable;
+    }
+    ```
+    -   `onviewerror` event: dispatched whenever the view component fails to mount; `event.detail` is the error and stack:
+    ```ts
+    interface ViewErrorPayload {
+        detail: {
+            error: Error;
+            stack: string;
+        };
+    }
+    ```
+-   [slots](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_slots):
+    -   "error": The contents of the error slot are shown whenever the view component fails to mount
 
 > See the RFC for the outlet [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#lwr%2Foutlet) and the `viewchange` and `viewerror` events [here](https://rfcs.lwc.dev/rfcs/lwr/0000-router-viewChange-event).
 
