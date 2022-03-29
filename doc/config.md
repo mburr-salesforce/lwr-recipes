@@ -7,14 +7,13 @@
         -   [The LWR Server](#the-lwr-server)
         -   [Configuration](#configuration)
             -   [LWC Modules](#lwc-modules)
-            -   [Packages](#packages)
             -   [Bundling](#bundling)
-            -   [Hot Reloading](#hot-reloading)
             -   [Routes](#routes)
             -   [Error Routes](#error-routes)
             -   [Assets](#assets)
             -   [Module Providers](#module-providers)
             -   [More Configuration](#more-configuration)
+        -   [Packages](#packages)
 
 ## Introduction
 
@@ -30,12 +29,19 @@ A typical directory structure for a basic JavaScript-based LWR project looks lik
 src/
   ├── assets/           // static assets (images, css, etc)
   │   └── logo.png
+  ├── content/          // content templates
+  │   └── help.html
+  ├── data/             // global data for content and layout templates
+  │   └── global.json
+  ├── layouts/          // layout templates
+  │   ├── main.html
+  │   └── site.njk
   └── modules/          // lwc modules
-      └── namespace/
-          └── name/
-              ├── name.css
-              ├── name.html
-              └── name.js
+  │   └── namespace/
+  │       └── name/
+  │           ├── name.css
+  │           ├── name.html
+  │           └── name.js
   └── index.ts          // create and start a LWR server
 lwr.config.json         // lwr configuration
 package.json            // npm packaging configuration
@@ -49,7 +55,7 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 // package.json
 {
     "devDependencies": {
-        "lwc": "~2.2.0",
+        "lwc": "~2.5.8",
         "lwr": "0.6.0"
     }
 }
@@ -147,16 +153,6 @@ The resolver iterates through the modules array and returns the first module tha
 
 See the [LWC documentation](https://github.com/salesforce/lwc/tree/master/packages/%40lwc/module-resolver#module-resolution) for more details on how LWC module resolution works.
 
-#### Packages
-
-The following table maps available LWR packages to recipes so you can see how they're used. If the package is a module provider, add it to the list of module providers in `lwr.config.json`.
-
-| Package Name          | Description                                                                   | Is Module Provider? | Recipes that Use Package                                                                                                                                                                                                                                                                                                |
-| --------------------- | ----------------------------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| label-module-provider | Pulls labels from JSON files and returns them as ES modules for localization  | Yes                 | [labels](https://github.com/salesforce/lwr-recipes/tree/master/packages/labels)                                                                                                                                                                                                                                         |
-| router                | Uses the router API to add navigation capabilities to your app                | No                  | [nested routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/nested-routing), [simple routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing), [routing-extended-metadata](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata) |
-| shared-utils          | Helpers used for advanced functionality, like writing custom module providers | No                  | [module provider](https://github.com/salesforce/lwr-recipes/tree/master/packages/module-provider)                                                                                                                                                                                                                       |
-
 #### Bundling
 
 If a recipe is running in [`prod` or `prod-compat` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons.
@@ -172,10 +168,6 @@ Examples of singleton modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-s
 }
 ```
 
-#### Hot Reloading
-
-Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-a-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
-
 #### Routes
 
 Each server-side route includes these properties:
@@ -190,6 +182,8 @@ Each server-side route includes these properties:
 -   `cache`: cache settings for the routing, including:
     -   `ttl`: number, in seconds, or a [time string](https://github.com/vercel/ms#examples) to use as the `max-age` on the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header
 -   `bootstrap`: specifies the client options that shape how an application page is bootstrapped. See an example in the [services](https://github.com/salesforce/lwr-recipes/blob/master/packages/services/lwr.config.json) recipe.
+    -   `syntheticShadow`: set to `true` to turn on [lwc synthetic shadow](https://www.npmjs.com/package/@lwc/synthetic-shadow), default is `false`
+    -   `services`: an array of lwc modules to run when the app is bootstrapping (i.e. on page load), see the [Metrics](https://github.com/salesforce/lwr-recipes/tree/master/packages/metrics#recipe-setup) and [Services](https://github.com/salesforce/lwr-recipes/tree/master/packages/services) recipes
 
 ```json
 // lwr.config.json
@@ -201,7 +195,11 @@ Each server-side route includes these properties:
             "rootComponent": "example/app",
             "layoutTemplate": "$layoutsDir/main.html",
             "properties": { "staticParam": "This is the Home page" },
-            "cache": { "ttl": 60 }
+            "cache": { "ttl": 60 },
+            "bootstrap": {
+                "syntheticShadow": true,
+                "services": ["example/service", "example/loaderHooks"]
+            }
         },
         {
             "id": "docs",
@@ -275,9 +273,25 @@ You can configure one or more files or directories to serve static assets in `lw
 }
 ```
 
-The static assets can then be referenced in LWC templates:
+The static assets can then be referenced in content or layout templates using the `alias`:
 
 ```html
+<!-- /src/layouts/main.html -->
+<html>
+    <head>
+        <link rel="icon" href="$imageDir/logo.svg" />
+        <title>My Website</title>
+    </head>
+    <body>
+        <!-- ... -->
+    </body>
+</html>
+```
+
+Or in LWC templates using the `urlPath`:
+
+```html
+<!-- /src/modules/my/component/component.html -->
 <template>
     <img src="/logo" alt="logo" />
     <img src="/images/home.png" alt="home" />
@@ -289,19 +303,19 @@ The static assets can then be referenced in LWC templates:
 LWR automatically includes a set of default module providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional module providers. The `moduleProviders` array overwrites the default one provided by LWR, so you must list all module providers needed by the application, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50).
 
 ```json
-// lwr.config.json with the Label Module Provider and the LWR default module providers
+// lwr.config.json with a custom module provider, the Label Module Provider, and the LWR default module providers
 {
     "moduleProviders": [
+        "$rootDir/src/services/my-module-provider.ts",
         "@lwrjs/label-module-provider",
         "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
 }
 ```
 
-To see a list of module providers not included by default, see [Available Packages](./business_overview.md#available-packages) in the LWR business overview.
+For more examples, see the [Module Provider](https://github.com/salesforce/lwr-recipes/tree/master/packages/module-provider) and [Labels](https://github.com/salesforce/lwr-recipes/tree/master/packages/labels) recipes.
 
 #### More Configuration
 
@@ -315,6 +329,8 @@ LWR also offers the following optional configuration:
 -   `contentDir`: The content templates directory. The default is `"$rootDir/src/content"`.
 -   `layoutsDir`: The layout templates directory. The default is `"$rootDir/src/layouts"`.
 -   `globalDataDir`: The directory of [global data](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating#global-data) for templating. The default is `"$rootDir/src/data"`.
+-   `hooks`: A list of configuration hooks, used to dynamically alter the LWR Configuration at server startup. See more information in the [templating recipe](https://github.com/salesforce/lwr-recipes/tree/master/packages/templating#hooks).
+-   `locker`: Allows you to enable [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm) and optionally configure a list of trusted components. By default, locker is disabled. If locker is on, components from LWC and LWR are automatically trusted. See the locker recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/locker).
 
 ```json
 // lwr.config.json
@@ -326,6 +342,21 @@ LWR also offers the following optional configuration:
     "cacheDir": "$rootDir/build/cache",
     "contentDir": "$rootDir/templates",
     "layoutsDir": "$rootDir",
-    "globalDataDir": "$rootDir/src/templateContext"
+    "globalDataDir": "$rootDir/src/templateContext",
+    "hooks": ["$rootDir/src/hooks/docs-app-hooks.js"],
+    "locker": {
+        "enabled": true,
+        "trustedComponents": ["my/trustedCmp"]
+    }
 }
 ```
+
+### Packages
+
+The following table maps available LWR packages to recipes so you can see how they're used. If the package is a module provider, add it to the list of module providers in `lwr.config.json`.
+
+| Package Name          | Description                                                                   | Is Module Provider? | Recipes that Use Package                                                                                                                                                                                                                                                                                                |
+| --------------------- | ----------------------------------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| label-module-provider | Pulls labels from JSON files and returns them as ES modules for localization  | Yes                 | [labels](https://github.com/salesforce/lwr-recipes/tree/master/packages/labels)                                                                                                                                                                                                                                         |
+| router                | Uses the router API to add navigation capabilities to your app                | No                  | [nested routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/nested-routing), [simple routing](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing), [routing-extended-metadata](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata) |
+| shared-utils          | Helpers used for advanced functionality, like writing custom module providers | No                  | [module provider](https://github.com/salesforce/lwr-recipes/tree/master/packages/module-provider)                                                                                                                                                                                                                       |

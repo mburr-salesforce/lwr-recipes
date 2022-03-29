@@ -6,6 +6,7 @@
     -   [Configuration](#configuration)
     -   [Importing Labels into Your Component](#importing-labels-into-your-component)
 -   [Recipe Setup](#recipe-setup)
+-   [Heroku Deployment](#heroku-deployment)
 
 ## Introduction
 
@@ -69,7 +70,6 @@ Register the Label Module Provider in `lwr.config.json`.
     "moduleProviders": [
         "@lwrjs/label-module-provider",
         "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
@@ -161,3 +161,12 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 Try changing the browser language to English, Spanish, French or Italian. Refresh the page and see the text change.
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
+
+## Heroku Deployment
+
+```bash
+# from the lwr-recipes root
+./scripts/heroku-deploy.sh
+```
+
+The application would be deployed at [https://lwr-labels.herokuapp.com/](https://lwr-labels.herokuapp.com/)

@@ -6,6 +6,7 @@
     -   [Current Route Metadata Context Wire](#current-route-metadata-context-wire)
     -   [Configuration](#configuration)
 -   [Recipe Setup](#Recipe-setup)
+-   [Heroku Deployment](#heroku-deployment)
 
 ## Introduction
 
@@ -84,3 +85,12 @@ yarn start # prod mode and ESM format
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/README.md#getting-started).
+
+## Heroku Deployment
+
+```bash
+# from the lwr-recipes root
+./scripts/heroku-deploy.sh
+```
+
+The application would be deployed at [https://lwr-routing-extended-metadata.herokuapp.com/](https://lwr-routing-extended-metadata.herokuapp.com/)

@@ -18,9 +18,9 @@
         "start:prod-compat": "lwr serve --mode prod-compat"
     },
     "dependencies": {
-        "@lwrjs/label-module-provider": "0.6.0",
+        "@lwrjs/label-module-provider": "0.6.1",
         "lwc": "~2.2.0",
-        "lwr": "0.6.0"
+        "lwr": "0.6.1"
     },
     "devDependencies": {
         "typescript": "^4.2.2"

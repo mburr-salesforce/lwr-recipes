@@ -52,6 +52,10 @@ Recipes can be started in four different modes:
 | compat      | `yarn start:compat`      |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
 | prod-compat | `yarn start:prod-compat` |  AMD   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
 
+### Hot Reloading
+
+Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-an-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
+
 ## Clean an LWR Recipe
 
 Cleaning a recipe removes the build directory and file cache. This command is useful if you run into errors or have a stale project.

@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "lwc": "~2.2.0",
-        "lwr": "0.6.0",
+        "lwr": "0.6.1",
         "typescript": "^4.2.2"
     },
     "engines": {

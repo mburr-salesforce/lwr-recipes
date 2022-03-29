@@ -8,6 +8,7 @@
         -   [Lightning Base Components](#lightning-base-components)
         -   [Configuration](#configuration)
     -   [Recipe Setup](#recipe-setup)
+    -   [Heroku Deployment](#heroku-deployment)
 
 ## Introduction
 
@@ -147,3 +148,12 @@ yarn start # prod mode and ESM format
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
+
+## Heroku Deployment
+
+```bash
+# from the lwr-recipes root
+./scripts/heroku-deploy.sh
+```
+
+The application would be deployed at [https://lwr-base-slds.herokuapp.com/](https://lwr-base-slds.herokuapp.com/)
