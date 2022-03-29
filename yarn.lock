@@ -1421,6 +1421,19 @@
   resolved "https://registry.yarnpkg.com/@locker/shared/-/shared-0.15.10.tgz#fec8a388f76a9af6cad0ca4b5ab102822a9e1050"
   integrity sha512-ZYg2VV17/W1gAJRaYxLJ8e8VpEDPugsCABKlHk9yPv+qTxlwj6J2OSDDnOK0OPX+SaktomRW3TmH82kCNx3vig==
 
+"@luvio/engine@0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@luvio/engine/-/engine-0.33.0.tgz#b0f1b3490453293ed7cdd2ad04d845f2e7522291"
+  integrity sha512-8yuOYqwbLxbz79pzNUekRE3Bncye2fbhG4/9AYgZ2ey7lOkIGkzewyxZ8/RDU/CXdcs+IW5XtaVu0lfHIrunug==
+
+"@luvio/lwc-luvio@0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@luvio/lwc-luvio/-/lwc-luvio-0.33.0.tgz#9440f44ce4a77d2c3239cc7f079d800ed6af14d0"
+  integrity sha512-ZsiP6WoBERhLTYO0v8wZgfXPU2G4dE3TPjfKz4OOSt7pZMN3W7kwIoX2F8pFrLkXXvR2VWfkEobMy+96z2Tqzg==
+  dependencies:
+    "@luvio/engine" "0.33.0"
+    "@lwc/engine-core" "^1.7.5"
+
 "@lwc/babel-plugin-component@2.2.12":
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/@lwc/babel-plugin-component/-/babel-plugin-component-2.2.12.tgz#407108069b35b3fc5dca9be12d02986f4dbd3a9a"
@@ -1443,6 +1456,11 @@
     "@lwc/shared" "2.2.12"
     "@lwc/style-compiler" "2.2.12"
     "@lwc/template-compiler" "2.2.12"
+
+"@lwc/engine-core@^1.7.5":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@lwc/engine-core/-/engine-core-1.18.0.tgz#df80c6577ea7cf17c623ea7432675f8a83e4e141"
+  integrity sha512-kEUarL3iQAqK6agfqFO9cGhXRdlRoIdNv/zafELhb7MIeKGbJnHDIQAjidhHYbczSx1opyyiULCfXLldiWxGxA==
 
 "@lwc/engine-dom@2.2.12":
   version "2.2.12"
@@ -1534,6 +1552,11 @@
   dependencies:
     "@lwrjs/shared-utils" "0.6.1"
     postcss "^8.3.6"
+
+"@lwrjs/auth-middleware@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@lwrjs/auth-middleware/-/auth-middleware-0.6.1.tgz#862c5dbfb740ac0c4805341d480b5d641014ebf3"
+  integrity sha512-/G+R/jDJ4oR3DuBN2dOait9BKl8xi85EWAhmMf3zkmpr+2Kh9yawwnqGv8eKQ/VXggNsYWUX8g1Vo+qmBqt8aw==
 
 "@lwrjs/base-template-engine@0.6.1":
   version "0.6.1"
@@ -2396,6 +2419,14 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.1.0.tgz#baf17ab2cca3fcce2d322ebc30454bff487efad5"
   integrity sha512-QCWHkbMv4Y5U9oW10Uxbr45qMMSzl4OzijsozynUAgx3kEHUdXB00udx2dWDQ7f2TU2a2uuiFaRZjCe3unPpeg==
 
+"@types/node-fetch@^2.5.12":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.6.1.tgz#8f127c50481db65886800ef496f20bbf15518975"
+  integrity sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==
+  dependencies:
+    "@types/node" "*"
+    form-data "^3.0.0"
+
 "@types/node@*", "@types/node@^17.0.4":
   version "17.0.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
@@ -2410,11 +2441,6 @@
   version "13.13.52"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.52.tgz#03c13be70b9031baaed79481c0c0cfb0045e53f7"
   integrity sha512-s3nugnZumCC//n4moGGe6tkNMyYEdaDBitVjwPxXmR5lnMG5dHePinH2EdxkG3Rh1ghFHHixAG4NJhpJW1rthQ==
-
-"@types/node@^15.12.5":
-  version "15.14.9"
-  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@types/node/-/node-15.14.9.tgz#bc43c990c3c9be7281868bbc7b8fdd6e2b57adfa"
-  integrity sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==
 
 "@types/node@^6.0.46":
   version "6.14.13"
@@ -3717,6 +3743,11 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+chart.js@^3.2.0:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.7.1.tgz#0516f690c6a8680c6c707e31a4c1807a6f400ada"
+  integrity sha512-8knRegQLFnPQAheZV8MjxIXc5gQEfDFD897BJgv/klO/vtIyFFmgMXrNfgrXpbTr/XbTturxRgxIXx/Y+ASJBA==
+
 chokidar@3.5.3, chokidar@^3.0.0:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
@@ -3943,7 +3974,7 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-colorette@^1.2.2, colorette@^1.4.0:
+colorette@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.4.0.tgz#5190fbb87276259a86ad700bff2c6d6faa3fca40"
   integrity sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g==

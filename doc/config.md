@@ -55,8 +55,8 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 // package.json
 {
     "devDependencies": {
-        "lwc": "~2.5.8",
-        "lwr": "0.6.0"
+        "lwc": "~2.2.0",
+        "lwr": "0.6.1"
     }
 }
 ```
@@ -117,8 +117,8 @@ The `package.json` now includes the `lightning-base-components` package.
 {
     "devDependencies": {
         "lightning-base-components": "^1.9.0-alpha",
-        "lwc": "~1.9.0",
-        "lwr": "0.6.0"
+        "lwc": "~2.2.0",
+        "lwr": "0.6.1"
     }
 }
 ```

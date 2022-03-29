@@ -49,15 +49,15 @@ Each file contains a JSON object with the label references and values nested by 
 
 Label Module Provider is not a default provider, so you must add it to your project configuration. Learn more in [Configure a LWR Project](../../doc/config.md#module-providers).
 
-Add `"@lwrjs/label-module-provider": "0.6.0"` as a dependency in `package.json`.
+Add `"@lwrjs/label-module-provider": "0.6.1"` as a dependency in `package.json`.
 
 ```json
 // package.json
 {
     "dependencies": {
-        "@lwrjs/label-module-provider": "0.6.0",
+        "@lwrjs/label-module-provider": "0.6.1",
         "lwc": "1.11.4",
-        "lwr": "0.6.0"
+        "lwr": "0.6.1"
     }
 }
 ```
