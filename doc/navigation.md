@@ -7,6 +7,10 @@
     -   [Route Definitions](#route-definitions)
     -   [Route Matching](#route-matching)
     -   [Route Handlers](#route-handlers)
+    -   [Generated Routers](#generated-routers)
+        -   [Configuration](#configuration)
+        -   [Router JSON](#router-json)
+        -   [Usage](#usage)
 -   [Router Container](#router-container)
     -   [Nesting Router Containers](#nesting-router-containers)
 -   [Outlet](#outlet)
@@ -268,6 +272,151 @@ export default class RecipeHandler {
 ```
 
 > See the `RouteHandler` RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler) and some example handlers [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing/src/modules/example).
+
+### Generated Routers
+
+The Router Module Provider can generate a router based on a static JSON file. A generated router consumes its [configuration](#router) from a portable JSON file rather than a JavaScript module. Static configuration can be easier to author and to maintain. This approach is most helpful for straightforward use cases.
+
+#### Configuration
+
+The Router Module Provider is not a default module provider, so it must be added to the project configuration. Learn more in [Configure a LWR Project](./config.md#module-providers).
+
+Add `"@lwrjs/router/module-provider": "0.6.1"` as a dependency in `package.json`.
+
+```json
+// package.json
+{
+    "dependencies": {
+        "@lwrjs/router/module-provider": "0.6.1"
+    }
+}
+```
+
+Register the Router Module Provider in `lwr.config.json`.
+
+```json
+// lwr.config.json with the Router Module Provider and the LWR default module providers
+{
+    "moduleProviders": [
+        "@lwrjs/router/module-provider",
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}
+```
+
+When registering the module provider, optionally configure the directory location of the router JSON files.
+
+```json
+// lwr.config.json
+{
+    "moduleProviders": [
+        ["@lwrjs/router/module-provider", { "routesDir": "$rootDir/config/router" }],
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}
+```
+
+If a configuration is not specified when registering the Router Module Provider, it uses this default configuration.
+
+```json
+{
+    "routesDir": "$rootDir/src/routes"
+}
+```
+
+#### Router JSON
+
+The Router Module Provider generates a router module based on JSON configuration: `LwrRouterConfig`.
+
+```ts
+interface LwrRouterConfig {
+    basePath?: string;
+    caseSensitive?: boolean;
+    routes: LwrConfigRouteDefinition[];
+}
+
+interface LwrConfigRouteDefinition<TMetadata = Record<string, any>> {
+    // These properties are the same as in RouteDefinition
+    id: string;
+    uri: string;
+    page?: Partial<PageReference>;
+    patterns?: { [paramName: string]: string };
+    exact?: boolean;
+    metadata?: TMetadata;
+    // These properties are different than RouteDefinition
+    // A Route Definition must have 1 or the other, but not both
+    handler?: string; // a STRING reference to the handler class
+    component?: string; // a STRING reference to a page component
+}
+```
+
+The `LwrRouterConfig` contains the same properties which are passed to [`createRouter()`](#router). The `LwrConfigRouteDefinition` contains the same properties as [`RouteDefinition`](#route-definitions), except for:
+
+-   `handler`: A **string** reference to the [`RouteHandler`](#route-handlers) class specifier, rather than a function.
+-   `component`: A **string** reference to the view component specifier. This is a shortcut so the view component can be specified directly, without authoring a `RouteHandler`. A `LwrConfigRouteDefinition` must contain a `handler` or a `component`, but not both.
+
+> Note: `LwrConfigRouteDefinition` is pure JSON, which is why it cannot contain any functions like `RouteDefinition` does.
+
+Here is a Router config example.
+
+```json
+// src/routes/website.json
+{
+    "routes": [
+        {
+            "id": "home",
+            "uri": "/",
+            "component": "examples/home",
+            "page": {
+                "type": "home"
+            },
+            "metadata": {
+                "title": "Home"
+            }
+        },
+        {
+            "id": "namedPage",
+            "uri": "/:pageName",
+            "handler": "examples/namedPageHandler",
+            "page": {
+                "type": "namedPage",
+                "attributes": {
+                    "pageName": ":pageName"
+                }
+            }
+        }
+    ]
+}
+```
+
+#### Usage
+
+Import and use a router generated using the JSON above.
+
+```js
+// src/modules/my/app/app.js
+import { LightningElement } from 'lwc';
+import { createRouter } from '@lwrjs/router/website'; // "website" refers to src/routes/website.json
+
+export default class MyApp extends LightningElement {
+    router = createRouter();
+}
+```
+
+```html
+<!-- src/modules/my/app/app.html -->
+<template>
+    <lwr-router-container router="{router}">
+        <lwr-outlet></lwr-outlet>
+    </lwr-router-container>
+</template>
+```
+
+The generated router module specifier is: `@lwrjs/router/<name of the JSON config file>`. It provides a `createRouter()` function that is identical to the [static `createRouter()` function](#router), except that it does not take a `routes` array, since the routes are configured in the JSON file instead. If `basePath` or `caseSensitive` is specified in both the JSON file and the `createRouter()` call, then the latter takes precedence.
 
 ## Router Container
 
