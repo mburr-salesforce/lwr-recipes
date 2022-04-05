@@ -19,7 +19,6 @@
     },
     "dependencies": {
         "lightning-base-components": "^1.9.0-alpha",
-        "lwc": "~2.2.0",
         "lwr": "0.6.1"
     },
     "devDependencies": {
