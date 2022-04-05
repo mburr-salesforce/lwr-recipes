@@ -7464,10 +7464,10 @@ lighthouse-logger@^1.0.0:
     debug "^2.6.9"
     marky "^1.2.2"
 
-lightning-base-components@^1.9.0-alpha:
-  version "1.9.0-alpha"
-  resolved "https://registry.yarnpkg.com/lightning-base-components/-/lightning-base-components-1.9.0-alpha.tgz#a57e4e63c96602d3d8d7585fbc86dc0d941acb2d"
-  integrity sha512-tzOr/HOnmDwu19xuYFAIC+HmGqfueNMZm3TX3IhiDUyucQlpEHys8I+pXKUplwqd/eOLPt7eoeB46MimjIE+bw==
+lightning-base-components@^1.14.6-alpha:
+  version "1.14.6-alpha"
+  resolved "https://registry.yarnpkg.com/lightning-base-components/-/lightning-base-components-1.14.6-alpha.tgz#ff9009c0e595f4882400c4f722f757eadbaf514e"
+  integrity sha512-WGn9dVIQ60DmKD23fHO+s9wVmmIgAA3Bs6KxY5+Wr0/2Y5/DMLmx66pmQLJixONM6Go7m1wOVXM4K6nzHbCupw==
 
 line-column@~1.0.2:
   version "1.0.2"
