@@ -15,7 +15,7 @@
 LWR applications running in [AMD format](https://en.wikipedia.org/wiki/Asynchronous_module_definition) (`compat` or `prod-compat` mode) with [fingerprints](https://rfcs.lwc.dev/rfcs/lwr/0000-fingerprints) collect metrics for:
 
 -   LWR bootstrap (i.e. [AMD shim](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#amd-loader%2Floader-shim))
--   the LWR AMD module loader (i.e. [`@lwrjs/loader`](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/loader))
+-   the LWR AMD module loader (i.e. [`@lwrjs/loader`](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/loader))
 
 LWR application developers can view, record and process this instrumentation data.
 
@@ -49,7 +49,7 @@ The following metrics are collected during [LWR bootstrap](https://rfcs.lwc.dev/
 | `lwr.bootstrap.end`   | Marks when the LWR Client Runtime has **successfully finished** bootstrapping an application, which is orchestrated by the [AMD shim](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#amd-loader%2Floader-shim). This will happen 0 or 1 times per page load.                     |
 | `lwr.bootstrap.error` | Marks when an error occurs during application bootstrap. Since all bootstrap errors are **fatal** and cause the script to [enter its error state](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#error-handling-and-timeouts), this will only happen 1 or 0 times per page load. |
 
-and these metrics are collected by the [AMD loader](<(https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/loader)>):
+and these metrics are collected by the [AMD loader](<(https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/loader)>):
 
 | Name                                    | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -8,7 +8,7 @@ To learn more, see [Overview of Building LWR Apps](./doc/business_overview.md).
 
 This repo consists of a collection of sample projects, called recipes. Each recipe demonstrates how to code a specific use case. From [Hello World](./packages/hello-world) to single page applications to resource bundling and chunking, there is a recipe for that!
 
-All recipes are installed when you clone this repo. Go to [packages](https://github.com/salesforce/lwr-recipes/tree/master/packages) to see all the recipes. Each recipe has its own README that walks you through how to configure and run it.
+All recipes are installed when you clone this repo. Go to [packages](https://github.com/salesforce/lwr-recipes/tree/main/packages) to see all the recipes. Each recipe has its own README that walks you through how to configure and run it.
 
 To learn more, see [Configure a LWR Project](./doc/config.md).
 

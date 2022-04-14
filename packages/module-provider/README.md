@@ -29,9 +29,9 @@ For detailed design information, read the LWR Module Registry RFC and spec [here
 
 An LWR Application is automatically set up with several default module providers:
 
--   LWC module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
--   npm module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
--   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources)
+-   LWC module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
+-   npm module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
+-   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources)
 
 ### Create a module provider
 
@@ -307,7 +307,7 @@ yarn start # prod mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

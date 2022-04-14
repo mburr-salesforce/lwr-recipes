@@ -54,7 +54,7 @@ Recipes can be started in four different modes:
 
 ### Hot Reloading
 
-Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md#run-an-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
+Running a recipe in [`dev` mode](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md#run-an-lwr-recipe) uses hot reloading for easier debugging, so when you change a component in one place it updates immediately. In `dev` mode, the server registers all file paths and watches them individually.
 
 ## Clean an LWR Recipe
 

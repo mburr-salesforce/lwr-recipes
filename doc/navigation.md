@@ -27,7 +27,7 @@
 
 ## Introduction
 
-The [`@lwrjs/router` package](https://github.com/salesforce/lwr/tree/master/packages/%40lwrjs/router) provides modules for client-side routing (`lwr/router`) and navigation (`lwr/navigation`), which export APIs to create a router, navigate, generate URLs and subscribe to navigation events. Client-side routing enables the creation of a Single Page Application (SPA).
+The [`@lwrjs/router` package](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/router) provides modules for client-side routing (`lwr/router`) and navigation (`lwr/navigation`), which export APIs to create a router, navigate, generate URLs and subscribe to navigation events. Client-side routing enables the creation of a Single Page Application (SPA).
 
 LWR routers can be customized with configuration and hooks. They can also be nested, to create a hierarchy in an application.
 
@@ -124,7 +124,7 @@ containing the following properties:
 -   `handler`: a `Promise` to a module which is called when a `RouteDefinition` is matched by a location; see the [Route Handlers section](#route-handlers)
 -   `patterns` (optional): a regular expression which a parameter must match in order to be valid; described in an RFC [here](<https://rfcs.lwc.dev/rfcs/lwr/0006-route-binding-and-serialization#parameter-validation-(patterns)>)
 -   `exact` (optional, default = `true`): see the [Nesting Router Containers section](#nesting-router-containers)
--   `metadata` (optional): developer-defined metadata attached to `RouteDefinition`; see the RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-route-definition-meta) and a recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/routing-extended-metadata)
+-   `metadata` (optional): developer-defined metadata attached to `RouteDefinition`; see the RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0000-route-definition-meta) and a recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/routing-extended-metadata)
 
 > _Important_: The `routes` array seen in [LWR app configuration](./config.md) is for **server-side** routes (see RFC [here](https://rfcs.lwc.dev/rfcs/lws/0000-lwr-app-config#application-routes)), and is unrelated to the `@lwrjs/router` package.
 
@@ -271,7 +271,7 @@ export default class RecipeHandler {
 }
 ```
 
-> See the `RouteHandler` RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler) and some example handlers [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing/src/modules/example).
+> See the `RouteHandler` RFC [here](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler) and some example handlers [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/simple-routing/src/modules/example).
 
 ### Generated Routers
 
@@ -509,7 +509,7 @@ interface MessageObject {
 }
 ```
 
-> See a simple routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/simple-routing).
+> See a simple routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/simple-routing).
 
 ### Nesting Router Containers
 
@@ -526,7 +526,7 @@ A router container can have up to 1 child router. Each router is responsible for
 }
 ```
 
-> See a nested routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/master/packages/nested-routing).
+> See a nested routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/nested-routing).
 
 ## Outlet
 

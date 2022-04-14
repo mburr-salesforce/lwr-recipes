@@ -4,5 +4,5 @@ PACKAGES=('base-slds' 'custom-middleware' 'hello-world' 'labels' 'locker' 'metri
 for package in "${PACKAGES[@]}"
 do
     heroku_app_name="https://git.heroku.com/lwr-$package.git"
-    git push $heroku_app_name HEAD:master
+    git push $heroku_app_name HEAD:main
 done

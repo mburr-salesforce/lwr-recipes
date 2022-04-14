@@ -50,8 +50,8 @@ git remote add upstream git@github.com:salesforce/lwr-recipes.git
 ### Create a feature branch
 
 ```bash
-git checkout master
-git pull origin master
+git checkout main
+git pull origin main
 git checkout -b <name-of-the-feature>
 ```
 
@@ -74,17 +74,17 @@ request.
 
 ### Rebase
 
-Sometimes your feature branch will get stale with respect to the master branch,
+Sometimes your feature branch will get stale with respect to the main branch,
 and it will require a rebase. The following steps can help:
 
 ```bash
-git checkout master
-git pull upstream master
+git checkout main
+git pull upstream main
 git checkout <name-of-the-feature>
-git rebase upstream/master
+git rebase upstream/main
 ```
 
-_note: If no conflicts arise, these commands will ensure that your changes are applied on top of the master branch. Any conflicts will have to be manually resolved._
+_note: If no conflicts arise, these commands will ensure that your changes are applied on top of the main branch. Any conflicts will have to be manually resolved._
 
 ### Check your submission
 
