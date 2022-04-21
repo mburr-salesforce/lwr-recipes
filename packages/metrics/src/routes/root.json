@@ -1,0 +1,28 @@
+{
+    "routes": [
+        {
+            "id": "a",
+            "uri": "/",
+            "component": "example/a",
+            "page": {
+                "type": "a"
+            }
+        },
+        {
+            "id": "b",
+            "uri": "/b",
+            "component": "example/b",
+            "page": {
+                "type": "b"
+            }
+        },
+        {
+            "id": "c",
+            "uri": "/c",
+            "component": "example/c",
+            "page": {
+                "type": "c"
+            }
+        }
+    ]
+}

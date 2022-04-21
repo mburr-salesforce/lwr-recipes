@@ -1339,6 +1339,11 @@
   resolved "https://registry.yarnpkg.com/@locker/compiler/-/compiler-0.15.10.tgz#5502f7885a19ebe8e24d730faab52a88a7dc5100"
   integrity sha512-SC/rpWQifqQOaq8fcTEgew3Iid9nLUAZ1zNW1ublDzXoNfMHUP6TBwl7E2MHiLMIIOSN8D/LVfIDS7//9d1Ryw==
 
+"@locker/compiler@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/compiler/-/compiler-0.16.1.tgz#6237c62d23b5a3a567adb4c28422aa6fa619481d"
+  integrity sha512-W/PPZe9IPkHHf4/R7ZAA5gUy5SS8lf8lnEZHNtnoUUwDMGyDfhvMAt6WNdI/81EvQEaolAy3xtIYVbG2yytGkA==
+
 "@locker/distortion@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@locker/distortion/-/distortion-0.15.10.tgz#3f5924f3f4da68da0b310df378da5002a7356e14"
@@ -1350,6 +1355,17 @@
     "@locker/shared-dom" "0.15.10"
     "@locker/shared-url" "0.15.10"
 
+"@locker/distortion@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/distortion/-/distortion-0.16.1.tgz#cc986fc3730ce7d2f0801dc4bc774bd8552dccb7"
+  integrity sha512-y1LH2FxJuPcdpXhq4kQE0el0W+lZ7wJUFtDW4blQWzKxlxke6ek4FuArmxIrjsIPf/wBqRctbmzMbtFnVoQTwQ==
+  dependencies:
+    "@locker/html-sanitizer" "0.16.1"
+    "@locker/instrumentation" "0.16.1"
+    "@locker/shared" "0.16.1"
+    "@locker/shared-dom" "0.16.1"
+    "@locker/shared-url" "0.16.1"
+
 "@locker/html-sanitizer@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@locker/html-sanitizer/-/html-sanitizer-0.15.10.tgz#94d152ed6d1e8e125fb39067ae3241e695a32906"
@@ -1360,12 +1376,29 @@
     "@types/dompurify" "2.3.1"
     dompurify "2.3.4"
 
+"@locker/html-sanitizer@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/html-sanitizer/-/html-sanitizer-0.16.1.tgz#92b6afa353be766dac8cd26b6a3b989e51877142"
+  integrity sha512-rizJhZmADbjAJez3bzjs5Lu24PgeKhbSGdyC5it3znG5mAPIyW1GaU4AJ9Nt8VPu5qoAg6cL33aVRmBtqOExaw==
+  dependencies:
+    "@locker/shared" "0.16.1"
+    "@locker/shared-dom" "0.16.1"
+    "@types/dompurify" "2.3.1"
+    dompurify "2.3.6"
+
 "@locker/instrumentation@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@locker/instrumentation/-/instrumentation-0.15.10.tgz#b2c11da4f7302eca99a595ee417a09e045dd17c4"
   integrity sha512-Q+1oknR9tPY0puSowjllUHUGXCs2IWWBmc95bZkWXuThysTrjTfPaHBgyH4yhPmY2/WKd8F3Uql46JHs7Dmqew==
   dependencies:
     "@locker/shared" "0.15.10"
+
+"@locker/instrumentation@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/instrumentation/-/instrumentation-0.16.1.tgz#c59b6c0f99580650adf700a0059bef87f34df4cc"
+  integrity sha512-IOH/DDKeeJ0Yyv7MS41Au0xkeQdv79nTK0FdXk37Ji+J5+YXMfwrTwZcDJrEAIQTTAQRz5Fx4Tz2lPWIZCbRvA==
+  dependencies:
+    "@locker/shared" "0.16.1"
 
 "@locker/sandbox@0.15.10":
   version "0.15.10"
@@ -1377,12 +1410,29 @@
     "@locker/shared" "0.15.10"
     "@locker/shared-dom" "0.15.10"
 
+"@locker/sandbox@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/sandbox/-/sandbox-0.16.1.tgz#93b5c4b55f3c2b04db0372b269ae49a15cf7abeb"
+  integrity sha512-Scl8iE7L+KPdS4HGX6gS6B+P4gu7zS4fNmKsiZwlZvE/GgERMJfUu4P84PoBVd4DvNzPPL942ArZ5mVAn6CI+g==
+  dependencies:
+    "@locker/distortion" "0.16.1"
+    "@locker/instrumentation" "0.16.1"
+    "@locker/shared" "0.16.1"
+    "@locker/shared-dom" "0.16.1"
+
 "@locker/shared-dom@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@locker/shared-dom/-/shared-dom-0.15.10.tgz#d43ace8a9aaa4ee24bc400ec345fe2719a6a6977"
   integrity sha512-83ICsfBo1Gyz+5tjuIXLRMmGgf9iWzj4RSscaaa9SvZahhe+d6MRb2/qQk1Qrca3dzpZkY2rxdU9ncfOSyGZCQ==
   dependencies:
     "@locker/shared" "0.15.10"
+
+"@locker/shared-dom@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/shared-dom/-/shared-dom-0.16.1.tgz#e271d018eea309bf4ce3b2a17c58102491eef016"
+  integrity sha512-vWSelf9fqj81OmQljLB66YiiieTseMw0f+O47EssEMFee1wryj05rxROC7kxJ/+JdAXzgfvQv28dZgW4f1OTiw==
+  dependencies:
+    "@locker/shared" "0.16.1"
 
 "@locker/shared-url@0.15.10":
   version "0.15.10"
@@ -1392,10 +1442,23 @@
     "@locker/shared" "0.15.10"
     "@locker/shared-dom" "0.15.10"
 
+"@locker/shared-url@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/shared-url/-/shared-url-0.16.1.tgz#182f49d682befe173674d9b1e03ce3199ea9ca7a"
+  integrity sha512-w2AVT0Ay+tVsb9VnnM7q/j7bODuI/eMeSYP6zUub5WJRYN7N9QEnMibz4GDU3Q2Xfh2DNyAFHhxGcsUTJ3Feug==
+  dependencies:
+    "@locker/shared" "0.16.1"
+    "@locker/shared-dom" "0.16.1"
+
 "@locker/shared@0.15.10":
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/@locker/shared/-/shared-0.15.10.tgz#fec8a388f76a9af6cad0ca4b5ab102822a9e1050"
   integrity sha512-ZYg2VV17/W1gAJRaYxLJ8e8VpEDPugsCABKlHk9yPv+qTxlwj6J2OSDDnOK0OPX+SaktomRW3TmH82kCNx3vig==
+
+"@locker/shared@0.16.1":
+  version "0.16.1"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@locker/shared/-/shared-0.16.1.tgz#eda56b6e339773de905c3227d8cd6e16abaea6e0"
+  integrity sha512-MqkDrYj/ndWHZP4Q1CChjbSUoGisxePGh7sZGSSvrSXKJFvV/iS5S2Y1eodFnSqR4j2utz+48j2Aff36ZkNGNQ==
 
 "@lwc/babel-plugin-component@2.2.12":
   version "2.2.12"
@@ -1441,6 +1504,13 @@
   integrity sha512-eLWVHrLnoA7N1PYIsHgMtDdiCoFHFtWW8bZQ8v0534UenhWi0q2g4ij6hd2Kr/hxmGKua8x7LmNWxvmRQZ4XNw==
   dependencies:
     "@lwc/shared" "2.2.12"
+
+"@lwc/module-resolver@2.13.0":
+  version "2.13.0"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwc/module-resolver/-/module-resolver-2.13.0.tgz#0ebcf62c1a4f92dfdae892bcdc407b40fb3d840b"
+  integrity sha512-Brx/j8o1Qq4Bj+mGI6bhbYPEKD5xhbnpB7sdEt/Rm8zIUpMjjdQIHSZTK2do2e5tApp/ngltzmqz8poOxpkraQ==
+  dependencies:
+    resolve "~1.22.0"
 
 "@lwc/module-resolver@2.5.8":
   version "2.5.8"
@@ -1495,6 +1565,14 @@
     "@lwrjs/diagnostics" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/app-service@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/app-service/-/app-service-0.7.0-alpha.4.tgz#a8ff7f5b9dc8e42ca3daa3fb5ce772194634d7b6"
+  integrity sha512-jbEKEsEcwvbmC5vwoZ8IOgMv9ai0oI3Z13LWdxHk/wNJ/UbPgnrGVv/pl4p6IDlDCSHe7rOGMT8LFnn/VFdFzg==
+  dependencies:
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/asset-registry@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/asset-registry/-/asset-registry-0.6.1.tgz#bad68eb7e3ad591337b398a3bb19ff5e2f672c89"
@@ -1502,6 +1580,14 @@
   dependencies:
     "@lwrjs/diagnostics" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
+
+"@lwrjs/asset-registry@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/asset-registry/-/asset-registry-0.7.0-alpha.4.tgz#ede161f4b88f7e1692a089458878442789fbce2e"
+  integrity sha512-Cj4nNPl+dq7DzS3sx2zig1urPH1H/5dJmDSqWl1vWAR7EjvAjVndA54ogiDmRuIscnOtg7KpPEPxTheViZDDng==
+  dependencies:
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
 
 "@lwrjs/asset-transformer@0.6.1":
   version "0.6.1"
@@ -1511,10 +1597,25 @@
     "@lwrjs/shared-utils" "0.6.1"
     postcss "^8.3.6"
 
+"@lwrjs/asset-transformer@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/asset-transformer/-/asset-transformer-0.7.0-alpha.4.tgz#cd03fae740e04219ce2a2af51780d16c28aa6ca8"
+  integrity sha512-V9jTIZAlt6RHBrtgdeWjocJoNTUQ0734gsyIxbNEDBDEoQBzWTfmeduRs6Z9tuS+bEr0Dv/ezXSoyyK9GPE9Ow==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    postcss "^8.3.6"
+
 "@lwrjs/base-template-engine@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/base-template-engine/-/base-template-engine-0.6.1.tgz#de378ba1b3a46753caa3fa6e6991d79ec4718d86"
   integrity sha512-OtTCE3INJJ4nkqrcHC34IyHsuqMLUdvQX17WcCogEAz8gLtBmxxTxZefNG29J7fn8BO+oyWuSpLyebXGVKaKbQ==
+  dependencies:
+    escape-goat "^3.0.0"
+
+"@lwrjs/base-template-engine@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/base-template-engine/-/base-template-engine-0.7.0-alpha.4.tgz#e6bb3dfb719348e961b798b659a1658532ebe99f"
+  integrity sha512-IaUsIkaktwsm9MRPZXfKAoXtGCZvZ4odzhrQ5pkIwwJDHxV0osVrvjirKVY6haSKf844SGqeR6yhMXQp1Zb+4g==
   dependencies:
     escape-goat "^3.0.0"
 
@@ -1526,6 +1627,14 @@
     "@lwrjs/base-template-engine" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/base-view-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/base-view-provider/-/base-view-provider-0.7.0-alpha.4.tgz#a20ff31d51eb5a1d8c1d4a62c33550d17a062b96"
+  integrity sha512-as5tEn+m7qGdWfktoCTZ+PokCUIPteXNN4ouxtp84r24qns5Xz6psf9huw5vZRoAgOMfZV/dcG8+x4YbbWruaQ==
+  dependencies:
+    "@lwrjs/base-template-engine" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/base-view-transformer@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/base-view-transformer/-/base-view-transformer-0.6.1.tgz#71e01bfdffec028a4fc7786272ce1ef38556c61d"
@@ -1533,6 +1642,14 @@
   dependencies:
     "@lwrjs/diagnostics" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
+
+"@lwrjs/base-view-transformer@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/base-view-transformer/-/base-view-transformer-0.7.0-alpha.4.tgz#89d95adc4ede9af49a43376352c06defe51ff918"
+  integrity sha512-QaRLyMk4btzqMRWi631u6fEI3EVrp1z4PLIWwdgZbcaTp6lHULsxpNnM9Fjtgc/lDS0gxxkadGQM8m/chkaCcQ==
+  dependencies:
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
 
 "@lwrjs/client-modules@0.6.1":
   version "0.6.1"
@@ -1542,6 +1659,14 @@
     "@locker/sandbox" "0.15.10"
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/client-modules@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/client-modules/-/client-modules-0.7.0-alpha.4.tgz#dd988c9c4bc8937d97e335c0f3ea0d06ad0680b6"
+  integrity sha512-J7TdB7JCmHrXQHJzx4/yIGf7ma+I9WomxsLHN+4sEcZCzdvRNka+5ufNoKBSypVsH/c/zW+qlBtJlQ+cuTjgpg==
+  dependencies:
+    "@locker/sandbox" "0.16.1"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/compiler@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/compiler/-/compiler-0.6.1.tgz#7d28326e66ef0af6c356453c9bc1c727d4fa2279"
@@ -1550,6 +1675,17 @@
     "@locker/compiler" "0.15.10"
     "@locker/sandbox" "0.15.10"
     "@lwrjs/shared-utils" "0.6.1"
+    esbuild "^0.9.7"
+    rollup "~2.45.2"
+
+"@lwrjs/compiler@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/compiler/-/compiler-0.7.0-alpha.4.tgz#d5afd8798437ced326553d98ae0dd51d80af5739"
+  integrity sha512-b9+wVurwhRWWmF0LLJYCIxIzk844xP/4T+8yce8KA5PbNy45ZrO8RXUbiKHZt+YFGryty1B5uOD2BenYHl6/3Q==
+  dependencies:
+    "@locker/compiler" "0.16.1"
+    "@locker/sandbox" "0.16.1"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
     esbuild "^0.9.7"
     rollup "~2.45.2"
 
@@ -1591,10 +1727,53 @@
     path-to-regexp "^6.2.0"
     qs "^6.9.4"
 
+"@lwrjs/core@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/core/-/core-0.7.0-alpha.4.tgz#4316a15068e1530776124a0f5e408a7452d908ad"
+  integrity sha512-y60q68fOGxfpHH+oV7LFBhSBV+TYu8jrk4YjeX2HwF08C5hTz+V/gdch08Xm5VO3FhoKqYDqwu4PsNVizWjb7g==
+  dependencies:
+    "@lwrjs/app-service" "0.7.0-alpha.4"
+    "@lwrjs/asset-registry" "0.7.0-alpha.4"
+    "@lwrjs/asset-transformer" "0.7.0-alpha.4"
+    "@lwrjs/base-template-engine" "0.7.0-alpha.4"
+    "@lwrjs/base-view-provider" "0.7.0-alpha.4"
+    "@lwrjs/base-view-transformer" "0.7.0-alpha.4"
+    "@lwrjs/client-modules" "0.7.0-alpha.4"
+    "@lwrjs/compiler" "0.7.0-alpha.4"
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/fs-asset-provider" "0.7.0-alpha.4"
+    "@lwrjs/html-view-provider" "0.7.0-alpha.4"
+    "@lwrjs/loader" "0.7.0-alpha.4"
+    "@lwrjs/lwc-module-provider" "0.7.0-alpha.4"
+    "@lwrjs/lwc-ssr" "0.7.0-alpha.4"
+    "@lwrjs/markdown-view-provider" "0.7.0-alpha.4"
+    "@lwrjs/module-bundler" "0.7.0-alpha.4"
+    "@lwrjs/module-registry" "0.7.0-alpha.4"
+    "@lwrjs/npm-module-provider" "0.7.0-alpha.4"
+    "@lwrjs/nunjucks-view-provider" "0.7.0-alpha.4"
+    "@lwrjs/o11y" "0.7.0-alpha.4"
+    "@lwrjs/resource-registry" "0.7.0-alpha.4"
+    "@lwrjs/router" "0.7.0-alpha.4"
+    "@lwrjs/server" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    "@lwrjs/view-registry" "0.7.0-alpha.4"
+    dompurify "^2.3.0"
+    fs-extra "^10.0.0"
+    jsdom "^16.7.0"
+    jsonc-parser "^3.0.0"
+    ms "^2.1.3"
+    path-to-regexp "^6.2.0"
+    qs "^6.9.4"
+
 "@lwrjs/diagnostics@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/diagnostics/-/diagnostics-0.6.1.tgz#6b76e622f83a87efc0404b71b292588eaaeb8659"
   integrity sha512-Ilc3ojMo2fkG1rJ8jPeyvpqIbkxCuDYfGPMMrcphfWgWCE0todIC2HEgOsL42A2cLb1sxXgOjPm+HxH9jx39lQ==
+
+"@lwrjs/diagnostics@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/diagnostics/-/diagnostics-0.7.0-alpha.4.tgz#0a1e9b934bc6932a11610309fbb0aaf8ae6b5c89"
+  integrity sha512-TsA46kzOa40DOPq67K2bmdOn4VQSklpSI7Pofk+Vfn2QX76U2fvkjjujPQctWSMEswChPIhr1gOLbqnhRoBVOA==
 
 "@lwrjs/fs-asset-provider@0.6.1":
   version "0.6.1"
@@ -1603,6 +1782,13 @@
   dependencies:
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/fs-asset-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/fs-asset-provider/-/fs-asset-provider-0.7.0-alpha.4.tgz#c4d01aec3ecbc730e9741eb59275646e33a40fac"
+  integrity sha512-6b8G4YVBDacIjNWnzkIwbQXIlJphFzglB0Uuc9nAuInY99Ukt6x3ZLTKIRHmbDDOTVcXekvjMBGYoVbZJXaLzw==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/html-view-provider@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/html-view-provider/-/html-view-provider-0.6.1.tgz#d5796abfda554ec166c88206c830f6b6501388b6"
@@ -1610,6 +1796,16 @@
   dependencies:
     "@lwrjs/base-template-engine" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
+    gray-matter "^4.0.2"
+    parse5-sax-parser "^6.0.1"
+
+"@lwrjs/html-view-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/html-view-provider/-/html-view-provider-0.7.0-alpha.4.tgz#949554b76c61f7961139cf38fbb7118b77165478"
+  integrity sha512-BrWS+uv5Uw7OVJrCm16yFq+WK6ca1/5vYp5myJisXfWeP3LOy5WXlG5ch6TLuHIIkPacTsq2XcRXQTCIqT/kdw==
+  dependencies:
+    "@lwrjs/base-template-engine" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
     gray-matter "^4.0.2"
     parse5-sax-parser "^6.0.1"
 
@@ -1629,6 +1825,13 @@
   dependencies:
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/loader@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/loader/-/loader-0.7.0-alpha.4.tgz#321668b04a100145de5274d3c86686952bbdc025"
+  integrity sha512-pTPGYhIMEBSRGtDLDU5J3j+JiwAHftAK5Ysr926o4oRiD4TZULSXqGFdJzQ5GV7DEYOCnAj16GtMva4xpL0UkA==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/lwc-module-provider@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/lwc-module-provider/-/lwc-module-provider-0.6.1.tgz#16020d4ebfac6ba28cb29735d99a4640050da0af"
@@ -1639,6 +1842,16 @@
     "@lwrjs/shared-utils" "0.6.1"
     es-module-lexer "^0.3.18"
 
+"@lwrjs/lwc-module-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/lwc-module-provider/-/lwc-module-provider-0.7.0-alpha.4.tgz#d98904a8c8460508755e7d2c200d3f2def7df1ef"
+  integrity sha512-TN3NQa5DAsbngti4b7rl6G5FN/38099+tP+GLQiCStUOxsBRz/CHfAt9u76kmc+LzESAS82/g7awxFwPXN3cAg==
+  dependencies:
+    "@babel/preset-typescript" "^7.9.0"
+    "@lwc/module-resolver" "2.13.0"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    es-module-lexer "^0.3.18"
+
 "@lwrjs/lwc-ssr@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/lwc-ssr/-/lwc-ssr-0.6.1.tgz#7df476d056245f3a0985b9011ef59f4f4a1c6622"
@@ -1646,6 +1859,14 @@
   dependencies:
     "@lwrjs/diagnostics" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
+
+"@lwrjs/lwc-ssr@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/lwc-ssr/-/lwc-ssr-0.7.0-alpha.4.tgz#35f025fe8104089a04b6d6d9c00e187da62e8573"
+  integrity sha512-FM6KHrnaCF8k7l4O2X9xoqyzLC0G5DZfN704GiqbD1ccvtIZEpdWNMcd3QQinnPIwsM/YYE9IQTaNeiapB9psQ==
+  dependencies:
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
 
 "@lwrjs/markdown-view-provider@0.6.1":
   version "0.6.1"
@@ -1671,12 +1892,43 @@
     unist-util-modify-children "^2.0.0"
     vfile "^4.2.1"
 
+"@lwrjs/markdown-view-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/markdown-view-provider/-/markdown-view-provider-0.7.0-alpha.4.tgz#d906e93c0ebfbb356404d9d3d6741c6c9a54da8c"
+  integrity sha512-sCPcSz8AvOFBGTrhXdrQ3/hxXOGTDF9+Vtmw1L5C3P0uoeLL2iCXjTGqEdhkL6FxYLjrPtQo3jPMckyruWUqkg==
+  dependencies:
+    "@lwrjs/base-template-engine" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    gray-matter "^4.0.2"
+    hast-util-has-property "^1.0.4"
+    hast-util-heading-rank "^1.0.1"
+    hast-util-to-string "^1.0.4"
+    prismjs "^1.21.0"
+    rehype-parse "^7.0.1"
+    rehype-raw "^5.0.0"
+    rehype-stringify "^8.0.0"
+    remark-gfm "^1.0.0"
+    remark-parse "^9.0.0"
+    remark-rehype "^8.0.0"
+    shiki "^0.9.2"
+    unified "^9.2.0"
+    unist-util-modify-children "^2.0.0"
+    vfile "^4.2.1"
+
 "@lwrjs/module-bundler@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/module-bundler/-/module-bundler-0.6.1.tgz#5e8a7c87567f0a0fb51291d6e9f2dc4e0c9faa88"
   integrity sha512-/CHBjJvLWLbmB9h1Qm+wnEdxX6f7WxUjQw0qnZzf9GCYVYp7YfmdFrq1tgKvvpTIdslOASpo9oHiXBMgA9i/dQ==
   dependencies:
     "@lwrjs/shared-utils" "0.6.1"
+    rollup "~2.45.2"
+
+"@lwrjs/module-bundler@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/module-bundler/-/module-bundler-0.7.0-alpha.4.tgz#853783c3865ca6d8994bacaafd119485c7622a26"
+  integrity sha512-C1FiG3RzbAUzzqrJt6au8uP8HhPqC3TaQpjQC6LmfrzK/kbIKV3Blx34/9gXQRjpLfPrIUrvhiyIlHdJm8dHNg==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
     rollup "~2.45.2"
 
 "@lwrjs/module-registry@0.6.1":
@@ -1689,6 +1941,16 @@
     es-module-lexer "^0.3.18"
     ws "^7.2.5"
 
+"@lwrjs/module-registry@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/module-registry/-/module-registry-0.7.0-alpha.4.tgz#67b38f2757e9fe202167e8076bd217d6e8cfafe4"
+  integrity sha512-MkLNBYJdI9N6D75I/9fu41vwuslwJHpcXSAXtCZeo/BMZZCvb5d9WRINN+O1mYkk5KI6A39XORG0lNyTyPLQ3g==
+  dependencies:
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    es-module-lexer "^0.3.18"
+    ws "^7.2.5"
+
 "@lwrjs/npm-module-provider@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/npm-module-provider/-/npm-module-provider-0.6.1.tgz#5c98ee891be33aef3af07b714951a2221dadb8e7"
@@ -1696,6 +1958,17 @@
   dependencies:
     "@esbuild-plugins/node-modules-polyfill" "^0.0.2"
     "@lwrjs/shared-utils" "0.6.1"
+    esbuild "^0.9.7"
+    esinstall "^1.0.5"
+    resolve "^1.19.0"
+
+"@lwrjs/npm-module-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/npm-module-provider/-/npm-module-provider-0.7.0-alpha.4.tgz#ada213a9cff67b7e7cc6d6105e9c0f7610b527b2"
+  integrity sha512-5+nf7UrTd72ffk4//MyRX9KMeZW9YcVNKKHsmukdCooi76onyjLnV6mfPLl5b+UgXTwLDBLDOYhVj5gKiFc90g==
+  dependencies:
+    "@esbuild-plugins/node-modules-polyfill" "^0.0.2"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
     esbuild "^0.9.7"
     esinstall "^1.0.5"
     resolve "^1.19.0"
@@ -1711,6 +1984,17 @@
     nunjucks "^3.2.2"
     parse5-sax-parser "^6.0.1"
 
+"@lwrjs/nunjucks-view-provider@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/nunjucks-view-provider/-/nunjucks-view-provider-0.7.0-alpha.4.tgz#2186850787a53fa80cc636834c7cabacdd7bd0c2"
+  integrity sha512-bkd/UtxoCjPIRMoYu7D64DeevJvHK5Umkmpd9IwuRzzNzBHlTu5Kx/3cyAnED/27kwnF2PgbPL+CAxCf1m7Cyw==
+  dependencies:
+    "@lwrjs/base-template-engine" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    gray-matter "^4.0.2"
+    nunjucks "^3.2.2"
+    parse5-sax-parser "^6.0.1"
+
 "@lwrjs/o11y@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/o11y/-/o11y-0.6.1.tgz#cb85db456b67b4d6075aec32a721196a4df8cd19"
@@ -1719,6 +2003,14 @@
     "@lwrjs/shared-utils" "0.6.1"
     o11y "238.1.4"
 
+"@lwrjs/o11y@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/o11y/-/o11y-0.7.0-alpha.4.tgz#b104498f6ee9ecc6c13a2bd45fa73b6c9508032f"
+  integrity sha512-dIx0BJ4PikoxdFlQKtxkPeWNSBU1ZI3OW+JGaY8KkdEJH9O54xBytf0+4ibhFWjfyLsKCEwumfaPhHhnqg+cOg==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    o11y "238.9.0"
+
 "@lwrjs/resource-registry@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/resource-registry/-/resource-registry-0.6.1.tgz#00f5a3e074e475af8e30ac88fde0cbc411ff128f"
@@ -1726,10 +2018,27 @@
   dependencies:
     "@lwrjs/shared-utils" "0.6.1"
 
+"@lwrjs/resource-registry@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/resource-registry/-/resource-registry-0.7.0-alpha.4.tgz#d5630a788847b90564bb9f676c11019b4763366e"
+  integrity sha512-/41g3UUhA46WGoBT+CUeLPSKa5ecXOETVwD0Ggkt4RAP2va0CJCh24nw8NpuminZNTn/j84hnLh6o28gWsjSww==
+  dependencies:
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+
 "@lwrjs/router@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/router/-/router-0.6.1.tgz#bd2bd51d7eaa4e33d77db501572626ad5e5606b6"
   integrity sha512-ZLuwB6btviiXGBVg0mL+HjO/TzsWclhAwE3bitox//oO7Kr4MHZXCaAcglypgUmM2Su/sgXljqp7bJv88Da1IQ==
+
+"@lwrjs/router@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/router/-/router-0.7.0-alpha.4.tgz#81a4fe6884a30fd697224e38fb212a2d232ccc3c"
+  integrity sha512-sBSt5+dyibm3aDMs6zMn5WiSG1qam71SNVChF2QW5gPwDsajsg+xaPfwBlQwU0PMJBq4IqmNgDEECI0BVsKhiA==
+  dependencies:
+    "@lwrjs/client-modules" "0.7.0-alpha.4"
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    ajv "6.12.6"
 
 "@lwrjs/server@0.6.1":
   version "0.6.1"
@@ -1747,10 +2056,43 @@
     shrink-ray-current "^4.1.2"
     spdy "^4.0.2"
 
+"@lwrjs/server@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/server/-/server-0.7.0-alpha.4.tgz#b60a22a6e7121a18a7d1649218830600c2e73d9f"
+  integrity sha512-Y/YyFzbt6kGcbUdWSFxLPSuQRXnAv6NhRE1biAuaRKDfZBrzRpO8pDsF7uJkWvAslL4qxgvsS3iTSGZEGAVGcw==
+  dependencies:
+    "@koa/router" "^10.0.0"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
+    "@types/compression" "^1.7.2"
+    "@types/express" "^4.17.11"
+    "@types/koa" "^2.11.7"
+    compression "^1.7.4"
+    express "^4.17.1"
+    koa "^2.13.1"
+    koa-compose "^4.1.0"
+    koa-compress "^5.0.1"
+    spdy "^4.0.2"
+  optionalDependencies:
+    shrink-ray-current "^4.1.2"
+
 "@lwrjs/shared-utils@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/shared-utils/-/shared-utils-0.6.1.tgz#44a8b772a1a13d26e364b6ed261375d2b1beb66d"
   integrity sha512-Kr6x5C2PN7zTGGzN4fhveRnH7TQjwVIRDXxc7yX5GcoVaXkm2YWKkQy2/VlC+2AlIT1gKQCmllcAq6F7p8tDFA==
+  dependencies:
+    chokidar "^3.4.0"
+    es-module-lexer "^0.3.18"
+    esbuild "^0.9.7"
+    fast-json-stable-stringify "^2.1.0"
+    magic-string "^0.25.7"
+    mime-types "^2.1.33"
+    parse5-sax-parser "^6.0.1"
+    slugify "^1.4.5"
+
+"@lwrjs/shared-utils@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/shared-utils/-/shared-utils-0.7.0-alpha.4.tgz#9eea7c2bf19b481be752309a1e7c104e85e10920"
+  integrity sha512-O16moPj72316mOb78njQkAy+3GmwS0z3dq8ILjRKaGB6camzRkMMYXbGl3Btixyb4oCSoSVoF8YPZxAEoqM8aw==
   dependencies:
     chokidar "^3.4.0"
     es-module-lexer "^0.3.18"
@@ -1766,6 +2108,11 @@
   resolved "https://registry.yarnpkg.com/@lwrjs/types/-/types-0.6.1.tgz#8b0686d1daf7edac02aea710d451eb371c5a5d17"
   integrity sha512-LEWTvkDtzPpzqxGOmTjStDBlDXuyB0Ijgt0qyjMa/Kr9F92Mky/nI9esQUoaecNCgalDwDXNPrZPBJUVcT/zbQ==
 
+"@lwrjs/types@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/types/-/types-0.7.0-alpha.4.tgz#c2c48ad7e9fb150bd337be098225f98e49a5c7da"
+  integrity sha512-xD2iz/J89kgBua8CLw6JDk25pTohlJL4ZiidnnQV1lY0HwoDoEsS4dP9aU2UPn+ibkDVWhi/5HgRt69cwErkDg==
+
 "@lwrjs/view-registry@0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@lwrjs/view-registry/-/view-registry-0.6.1.tgz#0f076547d52b3cdaa7186be15ef96e4b722c6b37"
@@ -1774,6 +2121,15 @@
     "@lwrjs/app-service" "0.6.1"
     "@lwrjs/diagnostics" "0.6.1"
     "@lwrjs/shared-utils" "0.6.1"
+
+"@lwrjs/view-registry@0.7.0-alpha.4":
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@lwrjs/view-registry/-/view-registry-0.7.0-alpha.4.tgz#5c2d5f43c034e627f028b811b793e222d8f841dd"
+  integrity sha512-1UAMT8YKSdSsqF35rRMQk65CyMl2I7qkpJYC++HWhb8iApeUJaiXRRY3vjlZ6LWVI5AdC4873jt52d7aClO03g==
+  dependencies:
+    "@lwrjs/app-service" "0.7.0-alpha.4"
+    "@lwrjs/diagnostics" "0.7.0-alpha.4"
+    "@lwrjs/shared-utils" "0.7.0-alpha.4"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -2108,6 +2464,13 @@
     "@types/keyv" "*"
     "@types/node" "*"
     "@types/responselike" "*"
+
+"@types/compression@^1.7.2":
+  version "1.7.2"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/@types/compression/-/compression-1.7.2.tgz#7cc1cdb01b4730eea284615a68fc70a2cdfd5e71"
+  integrity sha512-lwEL4M/uAGWngWFLSG87ZDr2kLrbuR8p7X+QZB1OQlT+qkHsCPDVFnHPyXf4Vyl4yDDorNY+mAhosxkCvppatg==
+  dependencies:
+    "@types/express" "*"
 
 "@types/connect@*":
   version "3.4.35"
@@ -2755,7 +3118,7 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-accepts@^1.3.0, accepts@^1.3.5, accepts@~1.3.8:
+accepts@^1.3.0, accepts@^1.3.5, accepts@~1.3.5, accepts@~1.3.8:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
   integrity sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==
@@ -3390,6 +3753,11 @@ byte-size@^5.0.1:
   resolved "https://registry.yarnpkg.com/byte-size/-/byte-size-5.0.1.tgz#4b651039a5ecd96767e71a3d7ed380e48bed4191"
   integrity sha512-/XuKeqWocKsYa/cBY1YbSJSWWqTi4cFgr9S6OyM7PBaPbr9zvNGwWP33vt0uqGhwDdN+y3yhbXVILEUpnwEWGw==
 
+bytes@3.0.0:
+  version "3.0.0"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
+  integrity sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
+
 bytes@3.1.2, bytes@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
@@ -3942,12 +4310,25 @@ compress-commons@^4.1.0:
     normalize-path "^3.0.0"
     readable-stream "^3.6.0"
 
-compressible@^2.0.0, compressible@^2.0.18:
+compressible@^2.0.0, compressible@^2.0.18, compressible@~2.0.16:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.18.tgz#af53cca6b070d4c3c0750fbd77286a6d7cc46fba"
   integrity sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==
   dependencies:
     mime-db ">= 1.43.0 < 2"
+
+compression@^1.7.4:
+  version "1.7.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/compression/-/compression-1.7.4.tgz#95523eff170ca57c29a0ca41e6fe131f41e5bb8f"
+  integrity sha512-jaSIDzP9pZVS4ZfQ+TzvtiWhdpFhE2RDHz8QJkpX9SIpLq88VueF5jJw6t+6CUQcAoA6t+x89MLrWAqpfDE8iQ==
+  dependencies:
+    accepts "~1.3.5"
+    bytes "3.0.0"
+    compressible "~2.0.16"
+    debug "2.6.9"
+    on-headers "~1.0.2"
+    safe-buffer "5.1.2"
+    vary "~1.1.2"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -4603,7 +4984,7 @@ dompurify@2.3.4:
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.4.tgz#1cf5cf0105ccb4debdf6db162525bd41e6ddacc6"
   integrity sha512-6BVcgOAVFXjI0JTjEvZy901Rghm+7fDQOrNIcxB4+gdhj6Kwp6T9VBhBY/AbagKHJocRkDYGd6wvI+p4/10xtQ==
 
-dompurify@^2.3.0:
+dompurify@2.3.6, dompurify@^2.3.0:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.6.tgz#2e019d7d7617aacac07cbbe3d88ae3ad354cf875"
   integrity sha512-OFP2u/3T1R5CEgWCEONuJ1a5+MFKnOYpkywpUSxv/dj1LeBT1erK+JwM7zK0ROy2BRhqVCf0LRw/kHqKuMkVGg==
@@ -7697,6 +8078,15 @@ lwr@0.6.1:
     "@lwrjs/types" "0.6.1"
     cac "^6.7.8"
 
+lwr@0.7.0-alpha.4:
+  version "0.7.0-alpha.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/lwr/-/lwr-0.7.0-alpha.4.tgz#5ea4b1cb194917f5ee3a6755185b0ec502ab5537"
+  integrity sha512-3LKe75BNpdA2JdL8Hg/jMhg+MU0HBTzimCaSiy3GpYSjYl08nlBw8ePwOrSOaZvunvQXwJFNmZCvPmIPAS9bGw==
+  dependencies:
+    "@lwrjs/core" "0.7.0-alpha.4"
+    "@lwrjs/types" "0.7.0-alpha.4"
+    cac "^6.7.8"
+
 macos-release@^2.2.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.5.0.tgz#067c2c88b5f3fb3c56a375b2ec93826220fa1ff2"
@@ -8573,10 +8963,24 @@ o11y@238.1.4:
     o11y_schema "238.0.0"
     protobufjs "6.10.2"
 
+o11y@238.9.0:
+  version "238.9.0"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/o11y/-/o11y-238.9.0.tgz#c7e0eff938b334ebd3eb4807a724f1eb43979d57"
+  integrity sha512-D0Kt8fm3DdRpx/eM6sY5Dt1NItCVd4+LTCR6QKyB03MJknLZKe1H1lxzn1zLClhbZFyQccir4M9CaH/MZJI2cg==
+  dependencies:
+    o11y_schema "238.20.0"
+    protobufjs "6.10.2"
+    web-vitals "2.1.4"
+
 o11y_schema@238.0.0:
   version "238.0.0"
   resolved "https://registry.yarnpkg.com/o11y_schema/-/o11y_schema-238.0.0.tgz#a9d11b46b94e3dc680dcf86b1dbf72d62e0a2688"
   integrity sha512-Cc0fNK4Xmvcq+LS/hzn0cOhYJi718vmz4Ynmue8YNT9KbxdGrxE9W4lZCcQtS3HiG7n5z44dkDZ7+J95boA4vw==
+
+o11y_schema@238.20.0:
+  version "238.20.0"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/o11y_schema/-/o11y_schema-238.20.0.tgz#48b9dcccefe207796fd7d912544323eff7f64fbf"
+  integrity sha512-cJngoOgELeCydqZoJ2e31HfMq7QtjHWjz1Vkci5Q/jpvqDsusKjViHnagipAwREzrnmV8tJwlSLgRsRlSh856g==
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -8672,7 +9076,7 @@ on-finished@~2.3.0:
   dependencies:
     ee-first "1.1.1"
 
-on-headers@^1.0.0:
+on-headers@^1.0.0, on-headers@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
   integrity sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
@@ -9855,7 +10259,7 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
-resolve@^1.1.7, resolve@^1.10.0, resolve@^1.17.0, resolve@^1.19.0, resolve@^1.20.0:
+resolve@^1.1.7, resolve@^1.10.0, resolve@^1.17.0, resolve@^1.19.0, resolve@^1.20.0, resolve@~1.22.0:
   version "1.22.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.0.tgz#5e0b8c67c15df57a89bdbabe603a002f21731198"
   integrity sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==
@@ -10025,15 +10429,15 @@ rxjs@^7.2.0, rxjs@^7.5.1, rxjs@^7.5.5:
   dependencies:
     tslib "^2.1.0"
 
+safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
+  integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
+
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@^5.2.1, safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
-
-safe-buffer@~5.1.0, safe-buffer@~5.1.1:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
-  integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -11469,11 +11873,6 @@ vscode-textmate@5.2.0:
   resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-5.2.0.tgz#01f01760a391e8222fe4f33fbccbd1ad71aed74e"
   integrity sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==
 
-"vscode-textmate@git+https://github.com/octref/vscode-textmate.git":
-  version "4.0.1"
-  uid e65aabe2227febda7beaad31dd0fca1228c5ddf3
-  resolved "git+https://github.com/octref/vscode-textmate.git#e65aabe2227febda7beaad31dd0fca1228c5ddf3"
-
 "vscode-textmate@https://github.com/octref/vscode-textmate":
   version "4.0.1"
   resolved "https://github.com/octref/vscode-textmate#e65aabe2227febda7beaad31dd0fca1228c5ddf3"
@@ -11527,6 +11926,11 @@ web-namespaces@^1.0.0:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-1.1.4.tgz#bc98a3de60dadd7faefc403d1076d529f5e030ec"
   integrity sha512-wYxSGajtmoP4WxfejAPIr4l0fVh+jeMXZb08wNc0tMg6xsfZXj3cECqIK0G7ZAqUq0PP8WlMDtaOGVBTAWztNw==
+
+web-vitals@2.1.4:
+  version "2.1.4"
+  resolved "https://nexus-proxy-prd.soma.salesforce.com/nexus/content/groups/npm-all/web-vitals/-/web-vitals-2.1.4.tgz#76563175a475a5e835264d373704f9dde718290c"
+  integrity sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==
 
 webdriver@7.19.5:
   version "7.19.5"

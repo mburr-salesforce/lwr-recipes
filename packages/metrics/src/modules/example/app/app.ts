@@ -1,4 +1,5 @@
-import { LightningElement } from 'lwc';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { LightningElement, track } from 'lwc';
 import {
     BOOTSTRAP_PREFIX,
     BOOTSTRAP_END,
@@ -7,18 +8,25 @@ import {
     MAPPINGS_FETCH,
     MAPPINGS_ERROR,
     MODULE_DEFINE,
-    MODULE_FETCH, // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    MODULE_ERROR, // @ts-ignore
-} from 'lwr/metrics';
+    MODULE_FETCH,
+    MODULE_ERROR,
+    ROUTER_ERROR,
+    ROUTER_NAV, // @ts-ignore
+} from 'lwr/metrics'; // @ts-ignore
+import { createRouter } from '@lwrjs/router/root';
 
 export default class MetricsApp extends LightningElement {
+    router = createRouter();
     bootstrapTime: number | boolean = false;
     bootstrapAvailability: number | boolean = false;
     loaderAvailability: number | boolean = false;
+    routerAvailability: number | boolean = false;
     loaderErrors = 0;
-    definitions: { index: number; id: string }[] = [];
-    modules: { index: number; id: string }[] = [];
-    mappings: { index: number; id: string }[] = [];
+    routerErrors = 0;
+    @track navEventCount = 0;
+    @track definitions: { index: number; id: string }[] = [];
+    @track modules: { index: number; id: string }[] = [];
+    @track mappings: { index: number; id: string }[] = [];
     moduleCtor: unknown = undefined;
 
     constructor() {
@@ -48,6 +56,7 @@ export default class MetricsApp extends LightningElement {
                 const entries = list.getEntries();
                 this.adjustBootstrapMetrics(entries);
                 this.adjustLoaderMetrics(entries);
+                this.adjustRouterMetrics(entries);
             });
             observer.observe({ entryTypes: ['mark'] });
         }
@@ -84,6 +93,24 @@ export default class MetricsApp extends LightningElement {
             this.moduleCount + this.mappingsCount,
             this.loaderErrors,
         );
+    }
+
+    adjustRouterMetrics(marks: PerformanceEntry[]): void {
+        // Parse loader entries
+        marks.forEach((e) => {
+            const name = e.name;
+
+            if (name.startsWith(ROUTER_NAV)) {
+                // Add to the navigation event count
+                this.navEventCount++;
+            } else if (name.startsWith(ROUTER_ERROR)) {
+                // Add to the router error count
+                this.routerErrors++;
+            }
+        });
+
+        // Calculate router availability %
+        this.routerAvailability = this.getAvailability(this.navEventCount, this.routerErrors);
     }
 
     adjustBootstrapMetrics(marks: PerformanceEntryList): void {
@@ -123,6 +150,10 @@ export default class MetricsApp extends LightningElement {
         return !(this.loaderAvailability === false);
     }
 
+    get hasRAvailability(): boolean {
+        return !this.routerAvailability === false;
+    }
+
     get definitionCount(): number {
         return this.definitions.length;
     }
@@ -136,33 +167,12 @@ export default class MetricsApp extends LightningElement {
     }
 
     // Dynamically load modules, so more loader metrics are produced
-    async loadModuleA(): Promise<void> {
-        const mod = await import('example/a');
-        this.moduleCtor = mod.default;
-    }
-    async loadModuleB(): Promise<void> {
-        const mod = await import('example/b');
-        this.moduleCtor = mod.default;
-    }
-    async loadModuleC(): Promise<void> {
-        const mod = await import('example/c');
-        this.moduleCtor = mod.default;
-    }
-    async loadModuleD(): Promise<void> {
-        // This will trigger the "lwr.loader.mapping.error" metric
-        const specifier = 'example/d'; // this module DOES NOT EXIST
+    async loadModule(e: Event): Promise<void> {
+        // 'example/d' DOES NOT EXIST
+        // 'example/e' produces a BAD mapping
+        const name = (e.target as HTMLElement)?.dataset.name;
         try {
-            const mod = await import(specifier);
-            this.moduleCtor = mod.default;
-        } catch {
-            this.moduleCtor = undefined;
-        }
-    }
-    async loadModuleE(): Promise<void> {
-        // This will trigger the "lwr.loader.module.error" metric
-        const specifier = 'example/bad'; // this module produces a BAD mapping
-        try {
-            const mod = await import(specifier);
+            const mod = await import(`example/${name}`);
             this.moduleCtor = mod.default;
         } catch {
             this.moduleCtor = undefined;

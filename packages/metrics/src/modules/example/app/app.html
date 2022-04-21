@@ -17,6 +17,20 @@
                     <span if:false={hasBAvailability}>Calculating...</span>
                 </li>
             </ul>
+
+            <h1>
+                Routing and Navigation
+                <span>(<a target="_blank" href="https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline">read more</a>)</span>
+            </h1>
+            <ul>
+                <li><strong>Navigation Event count: </strong>{navEventCount}</li>
+                <li>
+                    <strong>Availability: </strong>
+                    <span if:true={hasRAvailability}>{routerAvailability}%</span>
+                    <span if:false={hasRAvailability}>Calculating...</span>
+                </li>
+            </ul>
+
             <h1>
                 AMD Loader
                 <span>(<a target="_blank" href="https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#amd-loader%2Floader-shim">read more</a>)</span>
@@ -57,14 +71,23 @@
                 </li>
             </ul>
         </div>
+
         <div>
-            <h1>Load More Modules</h1>
+            <h1>Router and Outlet</h1>
+            <lwr-router-container router={router}>
+                <div>
+                    <example-nav-button name="a"></example-nav-button>
+                    <example-nav-button name="b"></example-nav-button>
+                    <example-nav-button name="c"></example-nav-button>
+                    <example-nav-button name="Error"></example-nav-button>
+                </div>
+                <lwr-outlet></lwr-outlet>
+            </lwr-router-container>
+
+            <h1>Loader Errors</h1>
             <div class="buttons">
-                <button onclick={loadModuleA}>A</button>
-                <button onclick={loadModuleB}>B</button>
-                <button onclick={loadModuleC}>C</button>
-                <button onclick={loadModuleD}>D (does not exist)</button>
-                <button onclick={loadModuleE}>E (broken module)</button>
+                <button data-name="d" onclick={loadModule}>Module does not exist</button>
+                <button data-name="e" onclick={loadModule}>Module with broken mappings</button>
             </div>
             <example-dynamic lwc:dynamic={moduleCtor}></example-dynamic>
         </div>
