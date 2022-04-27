@@ -1,11 +1,9 @@
 import path from 'path';
-import { slugify } from '@lwrjs/shared-utils';
-import type { HooksPlugin, LwrGlobalConfig, LwrRoute } from 'lwr';
+import { DEFAULT_LWR_BOOTSTRAP_CONFIG, slugify } from '@lwrjs/shared-utils';
+import type { HooksPlugin, NormalizedLwrGlobalConfig, NormalizedLwrRoute } from '@lwrjs/types';
 
 const DEFAULT_MAIN_LAYOUT = 'main_layout.njk';
 const CACHE_TTL = '30m';
-
-type AppConfig = Required<LwrGlobalConfig>;
 interface GuideItem {
     label: string;
     content: string;
@@ -32,7 +30,10 @@ function generateGuideSidebar(guide: GuideItem[]): GuideSidebarItem[] {
     });
 }
 
-function generateGuideRoutes(guide: GuideItem[], { contentDir, layoutsDir }: AppConfig): LwrRoute[] {
+function generateGuideRoutes(
+    guide: GuideItem[],
+    { contentDir, layoutsDir }: NormalizedLwrGlobalConfig,
+): NormalizedLwrRoute[] {
     return guide.map(({ label, content }) => {
         return {
             id: `guide_${slugify(label)}`,
@@ -40,6 +41,7 @@ function generateGuideRoutes(guide: GuideItem[], { contentDir, layoutsDir }: App
             contentTemplate: path.join(contentDir, content),
             layoutTemplate: path.join(layoutsDir, DEFAULT_MAIN_LAYOUT),
             cache: { ttl: CACHE_TTL },
+            bootstrap: DEFAULT_LWR_BOOTSTRAP_CONFIG,
         };
     });
 }
@@ -47,7 +49,7 @@ function generateGuideRoutes(guide: GuideItem[], { contentDir, layoutsDir }: App
 // Export an Application Configuration hook
 // Configured in lwr.config.json[hooks]
 export default class MyAppHooks implements HooksPlugin {
-    initConfigs(lwrConfig: AppConfig, globalData: GlobalData): void {
+    initConfigs(lwrConfig: NormalizedLwrGlobalConfig, globalData: GlobalData): void {
         // The guide is an ordered list of files we want to display
         // Hardcoded here: src/data/site/guide.json
         const guide = globalData.site.guide;
