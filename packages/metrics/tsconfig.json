@@ -10,6 +10,9 @@
             "example/c": ["modules/example/c/c.ts"],
             "lwr/metrics": [
                 "../../../node_modules/@lwrjs/client-modules/build/modules/lwr/metrics/metrics.js"
+            ],
+            "lwr/navigation": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
             ]
         }
     },
