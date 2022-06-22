@@ -23,12 +23,12 @@ interface ColorModule {
 function parseModuleName(name: string): ColorModule {
     // colorName = 'purple' or 'purple#purple.html' or 'purple#purple.css'
     const [color] = name.split('#');
-    const fileType = (path.extname(name) || '.js').substr(1);
+    const fileType = (path.extname(name) || '.js').substring(1);
     // eg: { color: 'purple', fileType: 'js' }
-    return { color, fileType };
+    return { color, fileType: fileType.endsWith('scoped=true') ? 'scoped' : fileType };
 }
 
-// Return generated LWC code strings by file type: js, css or html
+// Return generated LWC code strings by file type: js, css, scoped css or html
 function generateModule({ color, fileType }: ColorModule): string {
     switch (fileType) {
         case 'html':
@@ -52,6 +52,8 @@ div {
     border-radius: 150px;
     background-color: ${color};
 }`;
+        case 'scoped':
+            return '';
         default:
             // 'js'
             return `
@@ -76,9 +78,10 @@ export default class ColorProvider extends LwcModuleProvider implements ModulePr
     async getModuleEntry({ specifier }: AbstractModuleId): Promise<FsModuleEntry | undefined> {
         // Modules handled by this provider have specifiers in this form: "color/{colorName}"
         if (specifier.startsWith(this.namespace)) {
+            const normalized = specifier.replace('?scoped=true', '');
             return {
                 id: `${specifier}|${this.version}`, // used as part of the cache key for this module by the LWR Module Registry
-                entry: `<virtual>/${specifier}${path.extname(specifier) ? '' : '.js'}`,
+                entry: `<virtual>/${normalized}${path.extname(normalized) ? '' : '.js'}`,
                 specifier,
                 version: this.version,
             };
@@ -94,7 +97,7 @@ export default class ColorProvider extends LwcModuleProvider implements ModulePr
         const colorName = specifier.replace(this.namespace, '');
         const { color, fileType } = parseModuleName(colorName);
         const originalSource = generateModule({ color, fileType });
-        print(`Color Module Provider returning ${fileType} code for color "${color}": ${originalSource}`);
+        print(`Color Module Provider returning "${fileType}" code for color "${color}": ${originalSource}`);
 
         // Create and return a ModuleSource object
         const { version, id } = moduleEntry;

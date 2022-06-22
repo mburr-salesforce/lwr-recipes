@@ -180,7 +180,7 @@ import { hashContent } from '@lwrjs/shared-utils';
 
 // Return generated LWC code strings by file type: html, css or default js
 function generateModule(specifier: string): string {
-    const fileType = path.extname(specifier).substr(1);
+    const fileType = path.extname(specifier).substring(1);
     switch (fileType) {
         case 'html':
             return `<template><!-- HTML code --></template>`;

@@ -17,8 +17,8 @@
     },
     "dependencies": {
         "express": "^4.17.1",
-        "lwc": "~2.2.0",
-        "lwr": "0.7.0-alpha.4"
+        "lwc": "2.17.0",
+        "lwr": "0.7.1"
     },
     "devDependencies": {
         "typescript": "^4.2.2"

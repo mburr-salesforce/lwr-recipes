@@ -281,13 +281,13 @@ The Router Module Provider can generate a router based on a static JSON file. A 
 
 The Router Module Provider is not a default module provider, so it must be added to the project configuration. Learn more in [Configure a LWR Project](./config.md#module-providers).
 
-Add `"@lwrjs/router/module-provider": "0.6.1"` as a dependency in `package.json`.
+Add `"@lwrjs/router/module-provider" as a dependency in `package.json`.
 
 ```json
 // package.json
 {
     "dependencies": {
-        "@lwrjs/router/module-provider": "0.6.1"
+        "@lwrjs/router/module-provider": "0.7.1"
     }
 }
 ```
