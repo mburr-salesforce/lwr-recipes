@@ -1,0 +1,12 @@
+.special-button{
+    font-style: italic;
+    font-weight: lighter;
+    fill: none;
+    border: 0ch;
+    background-color: transparent;
+    font-size: 1.1rem;
+    color: #02a0e0;
+}
+.special-button:hover{
+    cursor: pointer;
+}

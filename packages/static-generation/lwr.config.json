@@ -1,0 +1,46 @@
+{
+    "lwc": {
+        "modules": [
+            {
+                "dir": "$rootDir/src/modules"
+            }
+        ]
+    },
+
+    "hooks": ["$rootDir/src/hooks/config.ts"],
+
+    "routes": [
+        {
+            "id": "home",
+            "path": "/",
+            "layoutTemplate": "$layoutsDir/main_layout.njk",
+            "contentTemplate": "$contentDir/home.html",
+            "properties": {
+                "title": "LWR"
+            }
+        },
+        {
+            "id": "recipes",
+            "path": "/recipes",
+            "layoutTemplate": "$layoutsDir/main_layout.njk",
+            "contentTemplate": "$contentDir/recipes.md",
+            "properties": {
+                "title": "LWR - Recipes"
+            }
+        },
+        {
+            "id": "recipe",
+            "path": "/recipes/:id",
+            "layoutTemplate": "$layoutsDir/main_layout.njk",
+            "contentTemplate": "$contentDir/recipes-dynamic.md",
+            "properties": {
+                "title": "LWR - Parameter Recipe"
+            }
+        }
+    ],
+    "staticSiteGenerator": {
+        "outputDir": "__generated_site__",
+        "locales": ["en-US"],
+        "_additionalRoutePaths": ["/recipes/0", "/recipes/1", "/recipes/2", "/recipes/3", "/recipes/4"]
+    }
+}

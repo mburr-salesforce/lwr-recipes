@@ -1,0 +1,19 @@
+{% if page.id.startsWith("guide_") and site.sidebar.length > 0 %}
+<nav class="nav" role="navigation" id="nav">
+    <ul class="nav__list">
+    {% for item in site.sidebar %}
+        <li class="{{ 'active' if page.id === item.id }}">
+            <input id="{{ item.id }}" type="checkbox" checked="" hidden="">
+            <label for="{{ item.id }}"><span class="icon-angle"></span><a href="{{ item.url }}">{{ item.label }}</a></label>
+            {% if page.id === item.id and headings and headings.length > 0 %}
+            <ul class="group-list">
+                {% for mdHeading in headings %}
+                    <li><a href="#{{mdHeading.slug}}">{{mdHeading.text}}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</nav>
+{% endif %}

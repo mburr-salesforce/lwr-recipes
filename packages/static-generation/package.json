@@ -1,0 +1,33 @@
+{
+    "name": "static-generation",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "clean": "rimraf __generated_site__  __lwr_cache__",
+        "build:static": "yarn clean && lwr static-build",
+        "start:static": "serve __generated_site__",
+        "start": "lwr serve --mode prod"
+    },
+    "devDependencies": {
+        "rimraf": "^3.0.2"
+    },
+    "dependencies": {
+        "lwc": "2.17.0",
+        "lwr": "0.7.1",
+        "serve": "^13.0.0"
+    },
+    "volta": {
+        "node": "14.16.0",
+        "yarn": "1.22.5"
+    },
+    "engines": {
+        "node": ">=14.16 <17"
+    }
+}

@@ -20,6 +20,7 @@ __benchmarks_results__/
 scripts/private/
 **/build
 packages/*/pageObjects
+__generated_site*
 
 # db volume
 db-data/

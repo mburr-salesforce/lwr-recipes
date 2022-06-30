@@ -1,0 +1,5 @@
+<ul class="menu">
+    {% for item in site.navbar %}
+        <li data-navbar-id="{{item.id}}"><a href="{{item.url}}">{{item.name}}</a></li>
+    {% endfor %}
+</ul>

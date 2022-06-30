@@ -1,0 +1,14 @@
+[
+    {
+        "label": "About",
+        "content": "guide/about.md"
+    },
+    {
+        "label": "Installation",
+        "content": "guide/installation.md"
+    },
+    {
+        "label": "Sample Modules",
+        "content": "guide/testModules.md"
+    }
+]

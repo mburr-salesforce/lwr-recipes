@@ -1,0 +1,15 @@
+{% if page.id === 'recipes'%}
+<nav class="nav" role="navigation" id="nav">
+    <ul class="nav__list">
+        <li class="active">
+            <input id="recipes" type="checkbox" checked="" hidden="">
+            <label for="recipes"><span class="icon-angle"></span><a href="#recipes">Menu</a></label>
+            <ul class="group-list">
+                {% for mdHeading in headings %}
+                    <li><a href="#{{mdHeading.slug}}">{{mdHeading.text}}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endif %}
