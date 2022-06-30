@@ -5,6 +5,7 @@
     -   [Project Setup](#project-setup)
     -   [Configuration](#configuration)
     -   [Importing Labels into Your Component](#importing-labels-into-your-component)
+    -   [Importing Labels into Your Template](#importing-labels-into-your-template)
 -   [Recipe Setup](#recipe-setup)
 -   [Heroku Deployment](#heroku-deployment)
 
@@ -29,18 +30,26 @@ src/
   │   ├── en.json       // English
   │   ├── es.json       // Spanish
   │   ├── it.json       // Italian
-  │   └── fr-FR.json    // French (France)
-  ├── modules/
-  └── index.ts
+  │   └── fr-fr.json    // French (France)
+  ├── labelHandler.ts   // route handler for template translations
+  ├── layout.html       // static layout template
+  └── modules/
 lwr.config.json
+package.json
 ```
 
 Each file contains a JSON object with the label references and values nested by namespace. For example, the label `@my/label/home.greeting` is added to the file as:
 
 ```json
+// src/labels/en.json
 {
+    "title": "Translation",
     "home": {
-        "greeting": "Hello"
+        "greeting": "Welcome"
+    },
+    "animal": {
+        "cat": "Cat",
+        "dog": "Dog"
     }
 }
 ```
@@ -98,7 +107,6 @@ When registering the module provider, you can optionally configure the package s
             }
         ],
         "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-ssr/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
     ]
@@ -108,6 +116,7 @@ When registering the module provider, you can optionally configure the package s
 If you don't specify configuration when registering Label Module Provider, it uses default configuration.
 
 ```json
+// lwr.config.json
 {
     "provideDefault": false,
     "labelDirs": [
@@ -118,6 +127,23 @@ If you don't specify configuration when registering Label Module Provider, it us
     ]
 }
 ```
+
+Lastly, add a handler to the app route:
+
+```json
+// lwr.config.json
+{
+    "routes": [
+        {
+            "id": "labels",
+            "path": "/",
+            "routeHandler": "$rootDir/src/labelHandler.ts"
+        }
+    ]
+}
+```
+
+> Read more about route handlers [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#route-handler-params).
 
 ### Importing Labels into Your Component
 
@@ -145,6 +171,56 @@ export default class LocalizedApp extends LightningElement {
 ```
 
 The Label Module Provider returns the label value from the file corresponding to the requested locale.
+
+### Importing Labels into Your Template
+
+Templates do not have access to the Label Module Provider. However, you can use a [route handler](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#route-handler-params) to pass translated strings into your [static templates](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#templates). The templates have access to the `viewParams` returned by the route handler.
+
+```ts
+// src/labelHandler.ts
+import type { HandlerContext, LocalizedViewRequest, RouteHandlerViewResponse } from '@lwrjs/types';
+
+const DEFAULT_LOCALE = 'en';
+
+function getViewParams(locale: string, rootDir: string): { title: string; language: string } {
+    // Get the translated string from the file system, a database, etc.
+}
+
+// Return translated strings to be used in the layout template
+export default function translationRouteHandler(
+    viewRequest: LocalizedViewRequest,
+    context: HandlerContext,
+): RouteHandlerViewResponse {
+    const locale = viewRequest.locale || DEFAULT_LOCALE;
+    const params = getViewParams(locale, context.rootDir);
+    return {
+        view: {
+            // This layout template uses the viewParams
+            layoutTemplate: '$rootDir/src/layout.html',
+        },
+        viewParams: {
+            // available as {{title}} or {{page.title}} in the layout template
+            title: info.title,
+            // available as {{language}} in the layout template
+            language: info.language,
+        },
+    };
+}
+```
+
+```html
+<!-- src/layout.html -->
+<!DOCTYPE html>
+<html lang="{{language}}">
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <example-app></example-app>
+        {{{lwr_resources}}}
+    </body>
+</html>
+```
 
 ## Recipe Setup
 

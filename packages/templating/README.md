@@ -403,14 +403,15 @@ The route handler function has this shape:
 
 ```ts
 type RouteHandlerFunction = (
-    viewRequest: ViewRequest,
+    viewRequest: LocalizedViewRequest,
     handlerContext: HandlerContext,
 ) => Promise<RouteHandlerViewResponse>;
 
 // Request: given GET http://www.example.com/custom/foobar?sort=desc
-interface ViewRequest {
+interface LocalizedViewRequest {
     url: string; // "/custom/foobar?sort=desc
     requestPath: string; // "/custom/foobar"
+    locale?: string;
     params?: Record<string, string>; // { "param": "foobar" }
     query?: Record<string, undefined | string | string[]>; // { "sort": "desc" }
 }

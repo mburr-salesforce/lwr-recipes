@@ -2,9 +2,9 @@
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
-            "id": "labels-base",
+            "id": "labels",
             "path": "/",
-            "rootComponent": "example/app"
+            "routeHandler": "$rootDir/src/labelHandler.ts"
         }
     ],
     "moduleProviders": [
