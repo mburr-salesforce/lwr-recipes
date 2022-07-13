@@ -725,6 +725,8 @@ The `@lwrjs/router` package provides an implementation of [`lightning/navigation
 
 The `lightning/navigation` module is an [alias](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution#aliasmodulerecord) for the `lwr/navigation` module, so it includes the same [wires](#navigation-wires) and [APIs](#navigation-apis), along with the [`NavigationMixin`](#navigationmixin).
 
+> **Important** Pick either `lightning/navigation` or `lwr/navigation` to use throughout your app. Otherwise, there could be JavaScript bundling clashes when running in `prod` mode.
+
 ### `NavigationMixin`
 
 Some developers may prefer to use the `NavigationMixin` over the [`navigate()` and `generateUrl()` APIs](#navigation-apis). Both offer the same functionality, but only the `NavigationMixin` is compatible with Lightning Experience (LEX). So a developer writing a component for use in both LWR and LEX should choose the `NavigationMixin`.
