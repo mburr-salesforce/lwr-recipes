@@ -1,0 +1,11 @@
+li.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 4px 0;
+}
+
+li.nav-item.active {
+    border-bottom: 4px solid #2a2e2f;
+    padding-bottom: 0;
+}

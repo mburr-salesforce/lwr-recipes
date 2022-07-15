@@ -1,0 +1,7 @@
+.otter-contents{
+    padding-left: 180px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}

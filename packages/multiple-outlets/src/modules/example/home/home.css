@@ -1,0 +1,11 @@
+.home-contents{
+    padding-left: 250px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+.home-paragraph {
+    margin: 0 0 10px 0;
+}

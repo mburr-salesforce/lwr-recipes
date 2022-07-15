@@ -1,0 +1,8 @@
+<template>
+    <lwr-router-container router={router}>
+        <example-nav items={navItems}></example-nav>
+        <lwr-outlet view-name="sidebar"></lwr-outlet>
+        <lwr-outlet ><!-- default view --> </lwr-outlet>  
+        <lwr-outlet view-name="footer"></lwr-outlet>
+    </lwr-router-container>
+</template>

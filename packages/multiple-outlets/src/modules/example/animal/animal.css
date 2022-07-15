@@ -1,0 +1,35 @@
+.animal-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 180px;
+}
+
+.animal-list{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    padding-top:20px;
+    padding-bottom: 50px;
+    justify-content: center; 
+}
+
+.animal-list-item{
+    background-color: #2a2e2f;
+    border-radius: 50px;
+    border-color: transparent;
+    padding: 5px 20px 5px 20px; 
+    margin: 0px 10px 0px 10px;
+    font-size: larger;
+    color:white;
+}
+
+.animal-list-item:hover{
+    cursor: pointer;
+    background-color: #02a0e0;
+}
+
+.pic-hidden{
+    display: none;
+}

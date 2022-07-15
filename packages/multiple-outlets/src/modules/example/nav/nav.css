@@ -1,0 +1,12 @@
+div.header {
+    padding: 10px;
+}
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: right;
+}
+example-nav-item {
+    flex-basis: 10em;
+}

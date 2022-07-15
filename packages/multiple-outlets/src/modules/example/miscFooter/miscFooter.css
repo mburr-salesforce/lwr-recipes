@@ -1,0 +1,24 @@
+.footer {
+    padding: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    position:fixed;
+    right:0;
+    bottom:30px; 
+    left:180px;   
+}
+.footer-text {
+    padding-right: 20px;
+
+}
+.footer .flex-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: fixed;
+    right: 40px; 
+}
+
+.footer .footer-sfdc-logo {
+    width: 100px;
+    margin-right: 0;
+}

@@ -1,0 +1,29 @@
+.container {
+    position: fixed;
+    left: 0px;
+    top:0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #02a0e0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: lighter;
+    padding-top: 40px;
+    box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.3);
+    color:white;
+    font-size: 20px;
+  }
+
+  .item{
+    padding:60px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .item:hover{
+    cursor: pointer;
+    color:#2a2e2f;
+  }
