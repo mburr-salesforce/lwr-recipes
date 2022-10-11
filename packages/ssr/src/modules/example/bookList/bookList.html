@@ -1,0 +1,37 @@
+<template lwc:render-mode="light">
+    <ul class="topics">
+        <template for:each={authors} for:item="author">
+            <li key={author.name}>
+                <a if:true={author.active} class="active" href={author.href}>{author.name}</a>
+                <a if:false={author.active} href={author.href}>{author.name}</a>
+            </li>
+        </template>
+    </ul>
+    <ul class="books">
+        <template if:true={data}>
+            <template for:each={books} for:item="book">
+                <template if:true={book.volumeInfo.imageLinks}>
+                    <template if:true={book.volumeInfo.description}>
+                        <li key={book.id}>
+                            <article>
+                                <div>
+                                    <img
+                                        alt={book.volumeInfo.title}
+                                        src={book.volumeInfo.imageLinks.smallThumbnail}
+                                        title={book.volumeInfo.title}
+                                    />
+                                </div>
+                                <div class="info">
+                                    <a href={book.href}>{book.volumeInfo.title}</a>
+                                    <div>
+                                        <div>{book.volumeInfo.description}</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                    </template>
+                </template>
+            </template>
+        </template>
+    </ul>
+</template>

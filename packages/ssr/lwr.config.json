@@ -1,0 +1,41 @@
+{
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "routes": [
+        {
+            "id": "home",
+            "path": "/",
+            "rootComponent": "example/home",
+            "layoutTemplate": "$layoutsDir/chrome.njk",
+            "properties": { "title": "Home" },
+            "bootstrap": {
+                "ssr": true
+            }
+        },
+        {
+            "id": "books",
+            "path": "/books/:author",
+            "rootComponent": "example/bookList",
+            "layoutTemplate": "$layoutsDir/chrome.njk",
+            "bootstrap": {
+                "ssr": true
+            }
+        },
+        {
+            "id": "books-details",
+            "path": "/books/:author/:bookId",
+            "rootComponent": "example/bookDetails",
+            "layoutTemplate": "$layoutsDir/chrome.njk",
+            "bootstrap": {
+                "ssr": true
+            }
+        }
+    ],
+    "staticSiteGenerator": {
+        "_additionalRoutePaths": [
+            "/books/beverly+cleary",
+            "/books/judy+blume",
+            "/books/eleanor+estes",
+            "/books/roald+dahl"
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>Server-side Rendering :: {{page.title}}</title>
+        <link rel="stylesheet" href="$assetsDir/global.css" />
+    </head>
+    <body>
+        <div class="header">
+            <!-- Pass the page/route id into the nav component as a public property -->
+            <example-nav page="{{page.id}}"></example-nav>
+        </div>
+        <main>{{ body | safe }}</main>
+        {{ lwr_resources | safe }}
+    </body>
+</html>

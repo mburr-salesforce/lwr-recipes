@@ -1,0 +1,45 @@
+ul.topics {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+ul.topics a:hover,
+ul.topics a.active {
+    background-color: transparent;
+    color: #005270;
+    text-decoration: overline;
+}
+ul.books {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 20px 20%;
+    list-style-type: none;
+}
+ul.books li {
+    border-bottom: 1px dotted #005270;
+}
+ul.books li:first-child {
+    border-top: 1px dotted #005270;
+}
+ul.books article {
+    display: flex;
+    margin: 10px 0;
+}
+ul.books article img {
+    margin-right: 20px;
+}
+div.info a {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -10px;
+}
+div.info a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+div.info div div {
+    margin-bottom: 10px;
+}
+a {
+    cursor: pointer;
+}

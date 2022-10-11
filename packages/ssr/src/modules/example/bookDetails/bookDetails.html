@@ -1,0 +1,38 @@
+<template lwc:render-mode="light">
+    <template if:true={data}>
+        <template if:true={data.volumeInfo.imageLinks}>
+            <template if:true={data.volumeInfo.description}>
+                <article>
+                    <h2><a href={data.volumeInfo.canonicalVolumeLink} target="_blank">{data.volumeInfo.title}</a></h2>
+                    <div>
+                        <img
+                            alt={data.volumeInfo.title}
+                            src={data.volumeInfo.imageLinks.thumbnail}
+                            title={data.volumeInfo.title}
+                        />
+                    </div>
+                    <div class="info">
+                        <div>
+                            <div><strong>By</strong>: 
+                                <template for:each={data.volumeInfo.authors} for:item="author">
+                                    <span key={author}> {author}</span>
+                                </template>
+                            </div>
+                            <div>{data.volumeInfo.description}</div>
+                            <template if:true={data.volumeInfo.categories}>
+                                <div><strong>Categories</strong>: 
+                                    <template for:each={data.volumeInfo.categories} for:item="category">
+                                        <span key={category}> {category}</span>
+                                    </template>
+                                </div>
+                            </template>
+                            <div><strong>Pages</strong>: {data.volumeInfo.pageCount}</div>
+                            <div><strong>Published</strong>: {data.volumeInfo.publishedDate}</div>
+                            <div><strong>Publisher</strong>: {data.volumeInfo.publisher}</div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+        </template>
+    </template>
+</template>

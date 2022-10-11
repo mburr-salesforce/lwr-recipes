@@ -1,0 +1,13 @@
+<template lwc:render-mode="light">
+    <nav role="navigation">
+        <ul>
+            <li class="name">&#128214; Little Library</li>
+            <template for:each={links} for:item="link">
+                <li key={link.name}>
+                    <a if:true={link.selected} class="selected" href={link.href}>{link.name}</a>
+                    <a if:false={link.selected} href={link.href}>{link.name}</a>
+                </li>
+            </template>
+        </ul>
+    </nav>
+</template>

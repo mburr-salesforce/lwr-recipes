@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #4f4e4c;
+}
+div.header {
+    height: 8em;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+div.header:before {
+    content: '';
+    background-image: url(/public/assets/row.jpg);
+    background-position: center;
+    opacity: 0.4;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
