@@ -24,13 +24,13 @@
     ],
     "locker": {
         "enabled": true,
-        "trustedComponents": ["force/ldsAdaptersUiapi", "example/dataChart"]
+        "trustedComponents": ["force/ldsAdaptersUiapi", "example/dataChart", "luvio-next/uiapi"]
     },
     "routes": [
         {
             "id": "auth-data",
             "path": "/",
-            "rootComponent": "example/data",
+            "rootComponent": "example/activeTheme",
             "layoutTemplate": "$layoutsDir/main.html",
             "bootstrap": {
                 "syntheticShadow": true,

@@ -9,6 +9,7 @@
         "skipLibCheck": true,
         "paths": {
             "example/data": ["modules/example/data/data.ts"],
+            "luvio-next/uiapi": ["modules/luvio-next/uiapi/uiapi.ts"],
             "lightning/*": [
                 "../nexus-packages/@salesforce-lwc-adapters-uiapi/dist/src/generated/artifacts/bound-adapters.d.ts"
             ]
