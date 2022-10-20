@@ -80,7 +80,7 @@ In order to use [Lightning Base Components (LBC)](https://developer.salesforce.c
 // package.json
 {
     "devDependencies": {
-        "lightning-base-components": "^1.9.0-alpha"
+        "lightning-base-components": "^1.16.6-alpha"
     }
 }
 ```

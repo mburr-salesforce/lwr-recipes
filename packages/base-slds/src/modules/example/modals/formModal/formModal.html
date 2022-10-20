@@ -1,0 +1,26 @@
+<template>
+    <lightning-modal-header
+        label='Modal Input Example'>
+    </lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-input type='text'
+            label='Enter some text'
+            value={inputValue}
+            onblur={handleBlur}>
+        </lightning-input>
+        <lightning-radio-group
+            name='radioGroup'
+            label='Radio Group'
+            options={radioOptions}
+            value={radioValue}
+            type='radio'
+            onchange={handleChange}>
+        </lightning-radio-group>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button
+            label='Submit'
+            onclick={handleClick}>
+        </lightning-button>
+    </lightning-modal-footer>
+</template>

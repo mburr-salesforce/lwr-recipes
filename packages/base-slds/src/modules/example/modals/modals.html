@@ -1,0 +1,52 @@
+<template>
+    <div class='slds-grid'>
+        <div class='slds-col'>
+            <div class='slds-m-bottom_small slds-grid slds-grid_align-spread slds-grid_vertical-align-center'>
+                <span>Basic modal</span>
+                <lightning-button
+                    aria-haspopup='modal'
+                    class='slds-m-left_x-small'
+                    label='Open Me'
+                    onclick={handleBasicClick}>
+                </lightning-button>
+            </div>
+            <div class='slds-m-bottom_small slds-grid slds-grid_align-spread slds-grid_vertical-align-center'>
+                <span>Headless modal</span>
+                <lightning-button
+                    aria-haspopup='modal'
+                    class='slds-m-left_x-small'
+                    label='Open Me'
+                    onclick={handleHeadlessClick}>
+                </lightning-button>
+            </div>
+            <div class='slds-m-bottom_small slds-grid slds-grid_align-spread slds-grid_vertical-align-center'>
+                <span>Footless modal</span>
+                <lightning-button
+                    aria-haspopup='modal'
+                    class='slds-m-left_x-small'
+                    label='Open Me'
+                    onclick={handleFootlessClick}>
+                </lightning-button>
+            </div>
+            <div class='slds-m-bottom_small slds-grid slds-grid_align-spread slds-grid_vertical-align-center'>
+                <span>Modal with inputs</span>
+                <lightning-button
+                    aria-haspopup='modal'
+                    class='slds-m-left_x-small'
+                    label='Open Me'
+                    onclick={handleFormClick}>
+                </lightning-button>
+            </div>
+        </div>
+        <div class='slds-col slds-size_6-of-12 slds-m-left_small slds-grid slds-grid_vertical'>
+            <div class='slds-box slds-grid slds-grid_vertical slds-m-bottom_small '>
+                <span class='slds-text-title_caps slds-m-bottom_small '>Modal return</span>
+                <code>{_result}</code></p>
+            </div>
+            <div class='slds-box slds-grid slds-grid_vertical'>
+                <span class='slds-text-title_caps slds-m-bottom_small '>Handling radio button selection in modal</span>
+                <code>{_selection}</code></p>
+            </div>
+        </div>
+    </div>
+</template>

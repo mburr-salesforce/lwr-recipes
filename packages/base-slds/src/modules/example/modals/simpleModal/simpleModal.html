@@ -1,0 +1,9 @@
+<template>
+    <lightning-modal-header if:true={_showHeader}
+        label='Modal Heading'>
+    </lightning-modal-header>
+    <lightning-modal-body> Content: {content} </lightning-modal-body>
+    <lightning-modal-footer if:true={_showFooter}>
+        <lightning-button label='Close Me' onclick={handleClick}></lightning-button>
+    </lightning-modal-footer>
+</template>

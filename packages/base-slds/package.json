@@ -18,7 +18,7 @@
         "start:prod-compat": "lwr serve --mode prod-compat"
     },
     "dependencies": {
-        "lightning-base-components": "^1.14.6-alpha",
+        "lightning-base-components": "^1.16.6-alpha",
         "lwr": "0.7.1"
     },
     "devDependencies": {
