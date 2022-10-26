@@ -1,0 +1,24 @@
+<template>
+    <main>
+        <header>
+            <h1>Feature Flag Provider</h1>
+        </header>
+        <div>
+            <p>Choose a feature flag to fetch its current value.</p>
+            <div class="radios">
+                <lightning-combobox
+                    name="flagName"
+                    label="Feature Flag Name:"
+                    value={flagName}
+                    placeholder="Select Feature Flag"
+                    options={options}
+                    onchange={handleChange}>
+                </lightning-combobox>
+            </div>
+        </div>
+        <div if:false={isEmpty}>
+            <pre if:true={isValid}><code>@salesforce/featureFlag/{flagName}=<strong>{flagValue}</strong></code></pre>
+            <pre if:false={isValid}><code>{flagName} is not a valid @salesforce/featureFlag</code></pre>
+        </div>
+    </main>
+</template>

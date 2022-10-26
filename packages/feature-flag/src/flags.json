@@ -1,0 +1,22 @@
+{
+    "Lightning": {
+        "org": {
+            "orgWideFeature": true
+        },
+        "user": {
+            "enabledFeature": true,
+            "disabledFeature": false
+        }
+    },
+    "Support": {
+        "user": {
+            "userOnlySupportFlag": false
+        }
+    },
+    "TestOnly": {
+        "org": {
+            "specialFeature": true,
+            "exampleFlag": false
+        }
+    }
+}
