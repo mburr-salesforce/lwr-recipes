@@ -62,10 +62,19 @@ This recipe contains three pages. Each page:
 
 The `staticSiteGenerator` object lists parameterized `books` routes to generate when this app is pre-built. Read more about static site generation [here](../static-generation/README.md#configuration).
 
+The SSR `moduleProvider` and `viewTransformer` must be pulled in to handle the SSR processing.
+
 ```json
 // ssr/lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "moduleProviders": [
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-ssr/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ],
+    "viewTransformers": ["@lwrjs/base-view-transformer", "@lwrjs/lwc-ssr/viewTransformer"],
     "routes": [
         {
             "id": "home",
