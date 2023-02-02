@@ -141,7 +141,7 @@ If you are done testing with LWR from source, you can remove the links by runnin
 ### Create a pull request
 
 If you've never created a pull request before, follow [these
-instructions][creating-a-pull-request]. Pull request samples can be found [here](https://github.com/salesforce/lwr-recipes/pulls)
+instructions][creating-a-pull-request]. Pull request samples can be found [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/pulls)
 
 #### Pull Request Title
 
@@ -195,7 +195,7 @@ to read on GitHub as well as in various git tools.
 
 Footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/salesforce/lwr/pulls))
+Samples: (even more [samples](https://github.com/salesforce-experience-platform-emu/lwr/pulls))
 
 ```
 docs(changelog): update change log to beta.

@@ -19,9 +19,9 @@ This example demonstrates how a `RouteHandler` can return multiple views within 
 
 Additional resources:
 
--   See the simple routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/simple-routing).
--   See the nested routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/nested-routing).
--   Learn more about using multiple outlets in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/main/doc/navigation.md#multiple-outlets).
+-   See the simple routing recipe [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/simple-routing).
+-   See the nested routing recipe [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/nested-routing).
+-   Learn more about using multiple outlets in the [LWR Routing & Navigation doc](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/navigation.md#multiple-outlets).
 -   Read the RFC sections on `viewsets` [here](https://rfcs.lwc.dev/rfcs/lwr/0002-route-handler#router-specifies-handler).
 
 ### Project Setup
@@ -232,4 +232,4 @@ yarn start # prod mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).

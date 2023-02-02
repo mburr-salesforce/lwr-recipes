@@ -12,7 +12,7 @@
 
 `@salesforce/featureFlag` is used to retrieve the current value of an access control. Feature Flag is a Salesforce scoped module that wraps an underlying access control such as a permission or preference. Feature flags can be used across containers, providing a single way for a component to consume an access control.
 
-We will reuse concepts from the [Module Provider](https://github.com/salesforce-experience-platform/lwr-recipes/tree/main/packages/module-provider) example. If you have not reviewed that recipe previously, familiarize yourself with that code now.
+We will reuse concepts from the [Module Provider](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/module-provider) example. If you have not reviewed that recipe previously, familiarize yourself with that code now.
 
 ## Details
 
@@ -59,7 +59,7 @@ This file contains the definition of the feature flags and their corresponding v
 
 ### Configuration
 
-In addition to the [Module Provider](https://github.com/salesforce-experience-platform/lwr-recipes/tree/main/packages/module-provider) example, we leverage the [base-slds](https://github.com/salesforce-experience-platform/lwr-recipes/tree/main/packages/base-slds) example by including Lightning Base Components. Our feature flag provider is also registered in this configuration file. See `lwr.config.json` and `package.json` properties below.
+In addition to the [Module Provider](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/module-provider) example, we leverage the [base-slds](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/base-slds) example by including Lightning Base Components. Our feature flag provider is also registered in this configuration file. See `lwr.config.json` and `package.json` properties below.
 
 ```json
 // lwr.config.json

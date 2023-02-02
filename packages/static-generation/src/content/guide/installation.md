@@ -1,6 +1,6 @@
 # Installation
 
-Check out documentation [here](https://github.com/salesforce/lwr-recipes/tree/main/doc)
+Check out documentation [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/doc)
 
 ## Some formatted code
 

@@ -143,7 +143,7 @@ Lastly, add a handler to the app route:
 }
 ```
 
-> Read more about route handlers [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#route-handler-params).
+> Read more about route handlers [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating#route-handler-params).
 
 ### Importing Labels into Your Component
 
@@ -174,7 +174,7 @@ The Label Module Provider returns the label value from the file corresponding to
 
 ### Importing Labels into Your Template
 
-Templates do not have access to the Label Module Provider. However, you can use a [route handler](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#route-handler-params) to pass translated strings into your [static templates](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating#templates). The templates have access to the `viewParams` returned by the route handler.
+Templates do not have access to the Label Module Provider. However, you can use a [route handler](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating#route-handler-params) to pass translated strings into your [static templates](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating#templates). The templates have access to the `viewParams` returned by the route handler.
 
 ```ts
 // src/labelHandler.ts
@@ -236,7 +236,7 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 
 Try changing the browser language to English, Spanish, French or Italian. Refresh the page and see the text change.
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

@@ -54,7 +54,7 @@ expressApp.use(
 
 The Client Bootstrap Configuration is javascript code sent by the LWR-JS server to initialize the application bootstrap. By default this code is inlined in a script tag in the application HTML document. This would be a violation of the above content security policy. LWR-JS server allows an additional configuration (the `configAsSrc` property of the Bootstrap Config) to have the Client Bootstrap Configuration come as a src attribute on a script element in the HTML document.
 
-See the [lwr.config.json](https://github.com/salesforce/lwr-recipes/blob/main/packages/security/lwr.config.json).
+See the [lwr.config.json](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/security/lwr.config.json).
 
 ```js
 "routes": [
@@ -83,7 +83,7 @@ yarn start
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

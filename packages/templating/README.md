@@ -13,7 +13,7 @@
 
 ## Introduction
 
-LWR supports the configuration of content and layout templates for each [route](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#routes) in an application. LWR renders the response for a page request given the current [route templates](#templates) and [context](#context).
+LWR supports the configuration of content and layout templates for each [route](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#routes) in an application. LWR renders the response for a page request given the current [route templates](#templates) and [context](#context).
 
 ```json
 // route with templates in lwr.config.json
@@ -57,7 +57,7 @@ LWR supports the following languages for templating:
 
 Additionally, templates in LWR can utilize the following resources when creating dynamic content:
 
--   [Asset](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#assets) References
+-   [Asset](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#assets) References
 -   Embedded [LWCs](https://lwc.dev/)
 -   [Context](#context) Object (HTML and Nunjucks templates **only**)
 
@@ -473,7 +473,7 @@ Things to note:
 
 ### Configuration
 
-Most templating configuration takes place in the routes. See the examples above and the [route](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#routes) and [error route](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#error-routes) configuration documentation.
+Most templating configuration takes place in the routes. See the examples above and the [route](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#routes) and [error route](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#error-routes) configuration documentation.
 
 To avoid validation errors, each route must have either a `rootComponent` or a `contentTemplate`, but not both. If a `rootComponent` is used, a default `contentTemplate` is applied in order to render it.
 
@@ -496,13 +496,13 @@ The directory locations of [global context data](#global-data), content/layout t
 }
 ```
 
-> See additional information on [directory configuration](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#more-configuration) and [assets](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#assets).
+> See additional information on [directory configuration](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#more-configuration) and [assets](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#assets).
 
 #### Hooks
 
 **Warning**: This is an advanced topic.
 
-You can write code that dynamically updates the [configuration](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md#configuration) and [global data](#global-data) for an application upon startup. The locations of configuration hooks are set like this:
+You can write code that dynamically updates the [configuration](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md#configuration) and [global data](#global-data) for an application upon startup. The locations of configuration hooks are set like this:
 
 ```json
 // lwr.config.json
@@ -529,7 +529,7 @@ Run a [route handler](#route-handler-params) at [http://localhost:3000/echo/Hell
 
 See a [custom response](#route-handler-params) at [http://localhost:3000/json/path-param?foo=query-param](http://localhost:3000/json/path-param?foo=query-param). The `path-param` and `query-param` can be replaced with any string, and be reflected in the JSON output.
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

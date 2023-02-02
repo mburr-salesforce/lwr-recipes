@@ -17,7 +17,7 @@ The [Lightning Web Components (LWC)](https://lwc.dev/) framework supports Server
 
 This recipe is a Multi-Page App (MPA), with all pages being SSRed. This means that each page's HTML document contains all its markup and data. Users do not need to wait for the LWC and component JavaScript to download and execute before seeing the page content.
 
-> Read more about SSR in LWR [here](https://github.com/salesforce-experience-platform/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#overview).
+> Read more about SSR in LWR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#overview).
 
 ## Details
 
@@ -129,7 +129,7 @@ If a root component in a content or layout template has attributes, these are pa
 <example-nav page="{{page.id}}"></example-nav>
 ```
 
-> Read more about building SSRed pages [here](https://github.com/salesforce-experience-platform/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#building-ssr-pages).
+> Read more about building SSRed pages [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#building-ssr-pages).
 
 ### Loading Data
 
@@ -165,7 +165,7 @@ export async function getPageData(context: SsrRequestContext): Promise<PageDataR
 }
 ```
 
-> Read more about data fetching [here](https://github.com/salesforce-experience-platform/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#loading-data-during-ssr).
+> Read more about data fetching [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#loading-data-during-ssr).
 
 ### Code Portability
 
@@ -207,7 +207,7 @@ async connectedCallback() {
 }
 ```
 
-> Read more about debugging SSR [here](https://github.com/salesforce-experience-platform/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#debugging).
+> Read more about debugging SSR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#debugging).
 
 ## Recipe Setup
 

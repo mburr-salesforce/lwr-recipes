@@ -13,7 +13,7 @@
 
 ## Introduction
 
-Use the [`@lwrjs/router`](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/router) package to create a Single Page Application with client-side routing.
+Use the [`@lwrjs/router`](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/router) package to create a Single Page Application with client-side routing.
 
 Important exports from the package:
 
@@ -24,7 +24,7 @@ Important exports from the package:
 
 ## Details
 
-> Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/main/doc/navigation.md).
+> Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/navigation.md).
 
 ### Project Setup
 
@@ -262,7 +262,7 @@ yarn start
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

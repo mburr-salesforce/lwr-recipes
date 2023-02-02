@@ -29,9 +29,9 @@ For detailed design information, read the LWR Module Registry RFC and spec [here
 
 An LWR Application is automatically set up with several default module providers:
 
--   LWC module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
--   npm module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
--   Application bootstrap module provider ([source](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources)
+-   LWC module provider ([source](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/lwc-module-provider/src)): uses the [LWC module resolver](https://rfcs.lwc.dev/rfcs/lwc/0020-module-resolution) to locate and serve LWC modules from the file system
+-   npm module provider ([source](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/npm-module-provider/src)): locates and serves ES modules from packages in the project's `node_modules` directories
+-   Application bootstrap module provider ([source](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/app-service/src/moduleProvider)): generates the ES [Application Bootstrap Module](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#lwr-framework-client-resources)
 
 ### Create a module provider
 
@@ -259,7 +259,7 @@ Register a custom module provider by adding it to _lwr.config.json_. Make sure T
 }
 ```
 
-_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/core/src/env-config.ts#L47-L50).
+_Note_: The `moduleProviders` array overwrites the default one provided by LWR, so **all** module providers needed by the application must be listed, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/config/src/defaults.ts#L31-L36).
 
 #### Module provider configuration
 
@@ -280,7 +280,7 @@ Configuration can be passed from _lwr.config.json_ to a module provider construc
 }
 ```
 
-The configuration is passed into the module provider constructor, along with [`ProviderContext`](https://github.com/salesforce/lwr/blob/68c660a224d1a4f6e40a17d04aa2825be5cdd776/packages/%40lwrjs/types/src/index.ts#L327) from the LWR server.
+The configuration is passed into the module provider constructor, along with `ProviderContext` from the LWR server.
 
 ```ts
 // src/services/provider-with-config.ts
@@ -307,7 +307,7 @@ yarn start # prod mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 

@@ -40,7 +40,7 @@ package.json
 
 Static generation can render _.html_, _.md_, and _.njk_ files. By default, page content templates go in the _content/_ folder and layouts go in the _layouts/_ folder.
 
-> This recipe also uses a configuration hook and global data. Read more in the [templating recipe](https://github.com/salesforce/lwr-recipes/tree/main/packages/templating).
+> This recipe also uses a configuration hook and global data. Read more in the [templating recipe](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating).
 
 ### Generating a Static Site
 
@@ -48,7 +48,7 @@ You can statically generate your site using the `generateStaticSite()` function.
 
 It takes an optional `LwrGlobalConfig` object, which has the same format as the configuration in _lwr.config.json_. Before generating the static site, the configurations are merged, with the passed object taking precedence.
 
-> See the LWR configuration doc [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md).
+> See the LWR configuration doc [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md).
 
 ```typescript
 // my-app/src/scripts.generate.js
@@ -84,7 +84,7 @@ This CLI script uses the `staticSiteGenerator` configuration from _lwr.config.js
 
 ### Configuration
 
-Learn more in [Configure a LWR Project](https://github.com/salesforce/lwr-recipes/blob/main/doc/config.md).
+Learn more in [Configure a LWR Project](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/config.md).
 
 The LWR static site generation configuration contains these properties:
 
@@ -134,4 +134,4 @@ yarn start
 
 Open the live site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/master/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/master/doc/get_started.md).

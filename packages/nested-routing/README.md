@@ -13,14 +13,14 @@
 
 ## Introduction
 
-The [`@lwrjs/router` package](https://github.com/salesforce/lwr/tree/main/packages/%40lwrjs/router) provides client-side routing modules, which are used to create a Static Page Application (SPA). LWR routers can be nested, to create a hierarchy in an application.
+The [`@lwrjs/router` package](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/router) provides client-side routing modules, which are used to create a Static Page Application (SPA). LWR routers can be nested, to create a hierarchy in an application.
 
 ## Details
 
 Additional resources:
 
--   See the simple routing recipe [here](https://github.com/salesforce/lwr-recipes/tree/main/packages/simple-routing).
--   Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce/lwr-recipes/blob/main/doc/navigation.md).
+-   See the simple routing recipe [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/simple-routing).
+-   Learn more in the [LWR Routing & Navigation doc](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/navigation.md).
 -   Read the RFC sections on nested routing [here](https://rfcs.lwc.dev/rfcs/lwr/0003-router-api-baseline#nested-mount-point).
 
 ### Project Setup
@@ -71,7 +71,7 @@ When a user navigates to any of the `/animal/*` URLs, they will see 2 view compo
 
 ### Create a Parent Router
 
-The parent route definitions are defined in [`example/rootRouter`](https://github.com/salesforce/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/rootRouter/rootRouter.ts) and output in [`example/app`](https://github.com/salesforce/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/app/app.html).
+The parent route definitions are defined in [`example/rootRouter`](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/rootRouter/rootRouter.ts) and output in [`example/app`](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/app/app.html).
 
 ```ts
 // parent route definitions in "example/rootRouter"
@@ -108,7 +108,7 @@ const routes: RouteDefinition[] = [
 
 ### Create a Child Router
 
-The child route definitions are defined in [`example/childRouter`](https://github.com/salesforce/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/childRouter/childRouter.ts) and output in [`example/animal`](https://github.com/salesforce/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/animal/animal.html).
+The child route definitions are defined in [`example/childRouter`](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/childRouter/childRouter.ts) and output in [`example/animal`](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/nested-routing/src/modules/example/animal/animal.html).
 
 ```ts
 // parent route definitions in example/childRouter
@@ -191,7 +191,7 @@ yarn start # prod mode and ESM format
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
-See documentation for all commands [here](https://github.com/salesforce/lwr-recipes/blob/main/doc/get_started.md).
+See documentation for all commands [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md).
 
 ## Heroku Deployment
 
