@@ -16,6 +16,7 @@
         "start": "lwr serve --mode prod"
     },
     "devDependencies": {
+        "@lwrjs/types": "0.8.8",
         "rimraf": "^3.0.2"
     },
     "dependencies": {
