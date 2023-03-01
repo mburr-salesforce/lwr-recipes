@@ -12,7 +12,8 @@
         "build": "lerna run build --stream && tsc -b",
         "start": "lerna run start --scope simple-routing --stream",
         "test:e2e": "lerna run test:e2e --scope simple-routing-e2e --stream",
-        "ready": "yarn && yarn lint && yarn prettier && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\""
+        "ready": "yarn && yarn lint && yarn prettier && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\"",
+        "postinstall": "ls -l node_modules; ls -l node_modules/@lwrjs; ls -l node_modules/@types; yarn why typescript"
     },
     "workspaces": [
         "packages/*"
