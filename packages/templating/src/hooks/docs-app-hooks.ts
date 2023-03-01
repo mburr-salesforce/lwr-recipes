@@ -1,6 +1,6 @@
 import path from 'path';
 import { DEFAULT_LWR_BOOTSTRAP_CONFIG, slugify } from '@lwrjs/shared-utils';
-import type { HooksPlugin, NormalizedLwrGlobalConfig, NormalizedLwrRoute } from '@lwrjs/types';
+import type { HooksPlugin, NormalizedLwrGlobalConfig, NormalizedLwrRoute, GlobalData } from '@lwrjs/types';
 
 const DEFAULT_MAIN_LAYOUT = 'main_layout.njk';
 const CACHE_TTL = '30m';
@@ -13,8 +13,8 @@ interface GuideSidebarItem {
     id: string;
     url: string;
 }
-interface GlobalData {
-    site: {
+interface SiteGlobalData extends GlobalData {
+    site?: {
         guide: GuideItem[];
         sidebar: GuideSidebarItem[];
     };
@@ -49,7 +49,11 @@ function generateGuideRoutes(
 // Export an Application Configuration hook
 // Configured in lwr.config.json[hooks]
 export default class MyAppHooks implements HooksPlugin {
-    initConfigs(lwrConfig: NormalizedLwrGlobalConfig, globalData: GlobalData): void {
+    initConfigs(lwrConfig: NormalizedLwrGlobalConfig, globalData: SiteGlobalData): void {
+        if (!globalData.site) {
+            throw 'Expected site global data to be defined';
+        }
+
         // The guide is an ordered list of files we want to display
         // Hardcoded here: src/data/site/guide.json
         const guide = globalData.site.guide;
