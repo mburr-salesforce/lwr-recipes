@@ -11,7 +11,7 @@
             -   [Routes](#routes)
             -   [Error Routes](#error-routes)
             -   [Assets](#assets)
-            -   [Module Providers](#module-providers)
+            -   [Providers](#providers)
             -   [More Configuration](#more-configuration)
         -   [Packages](#packages)
 
@@ -174,6 +174,7 @@ Each server-side route includes these properties:
 
 -   `id` (**required**): unique identifier for the route
 -   `path` (**required**): unique URI path from which the route is served
+-   `method`: HTTP method, either "get" or "post"
 -   `rootComponent`: top-level LWC that LWR bootstraps into the HTML output for the route. Each route must have either a `rootComponent` or a `contentTemplate`, but not both.
 -   `contentTemplate`: path to a static template which renders page content
 -   `layoutTemplate`: path to a static template which renders a page layout
@@ -184,6 +185,8 @@ Each server-side route includes these properties:
 -   `bootstrap`: specifies the client options that shape how an application page is bootstrapped. See an example in the [services](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/services/lwr.config.json) recipe.
     -   `syntheticShadow`: set to `true` to turn on [lwc synthetic shadow](https://www.npmjs.com/package/@lwc/synthetic-shadow), default is `false`
     -   `services`: an array of lwc modules to run when the app is bootstrapping (i.e. on page load), see the [Metrics](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/metrics#recipe-setup) and [Services](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/services) recipes
+    -   `configAsSrc`: set to `true` if the LWR config script should be servied via a URI rather than inline
+    -   `ssr`: set to `true` to turn on [Server-side Rendering](../packages/ssr/README.md)
 
 ```json
 // lwr.config.json
@@ -198,7 +201,8 @@ Each server-side route includes these properties:
             "cache": { "ttl": 60 },
             "bootstrap": {
                 "syntheticShadow": true,
-                "services": ["example/service", "example/loaderHooks"]
+                "services": ["example/service", "example/loaderHooks"],
+                "ssr": true
             }
         },
         {
@@ -298,12 +302,12 @@ Or in LWC templates using the `urlPath`:
 </template>
 ```
 
-#### Module Providers
+#### Providers
 
-LWR automatically includes a set of default module providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional module providers. The `moduleProviders` array overwrites the default one provided by LWR, so you must list all module providers needed by the application, including those owned by LWR. The latest default module provider list is in the LWR source code [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/config/src/defaults.ts#L31-L36).
+LWR automatically includes a set of default module, asset, resource, and view providers, so you don't need to list them in `lwr.config.json` unless your app requires one or more additional providers. The provider arrays overwrite the default ones provided by LWR, so you must list all providers needed by the application, including those owned by LWR. The latest default provider lists are in the LWR source code [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/config/src/defaults.ts#L31-L47).
 
 ```json
-// lwr.config.json with a custom module provider, the Label Module Provider, and the LWR default module providers
+// lwr.config.json with custom providers
 {
     "moduleProviders": [
         "$rootDir/src/services/my-module-provider.ts",
@@ -311,7 +315,10 @@ LWR automatically includes a set of default module providers, so you don't need 
         "@lwrjs/app-service/moduleProvider",
         "@lwrjs/lwc-module-provider",
         "@lwrjs/npm-module-provider"
-    ]
+    ],
+    "assetProviders": ["$rootDir/src/services/my-resource-provider.ts", "@lwrjs/fs-asset-provider"],
+    "resourceProviders": ["$rootDir/src/services/my-resource-provider.ts", "@lwrjs/loader"],
+    "viewProviders": ["$rootDir/src/services/my-view-provider.ts", "@lwrjs/base-view-provider"]
 }
 ```
 
@@ -324,6 +331,8 @@ LWR also offers the following optional configuration:
 -   `port`: The port from which to serve the LWR application. The default is `process.env.PORT || 3000`.
 -   `serverMode`: The mode in which the server should run. The default is `"dev"`. See available modes [here](./get_started.md#run-a-lwr-recipe). Typically, mode is set on the command line. See the `scripts` [package.json](./package.json).
 -   `serverType`: The type of underlying web server LWR should utilize. Supported values are `"express"`(default) || `"koa"` but more server types may be supported in the future.
+-   `minify`: `true` if module bundle code should be minified, `false` otherwise.
+-   `basePath`: The prefix for all LWR app URIs.
 -   `rootDir`: The root directory of the LWR project. The default is the current working directory (ie: `.`).
 -   `cacheDir`: LWR caches LWC modules that it has compiled and stores them in a cache directory. The default is `"$rootDir/__lwr_cache__"`.
 -   `contentDir`: The content templates directory. The default is `"$rootDir/src/content"`.
@@ -331,6 +340,7 @@ LWR also offers the following optional configuration:
 -   `globalDataDir`: The directory of [global data](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating#global-data) for templating. The default is `"$rootDir/src/data"`.
 -   `hooks`: A list of configuration hooks, used to dynamically alter the LWR Configuration at server startup. See more information in the [templating recipe](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/templating#hooks).
 -   `locker`: Allows you to enable [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm) and optionally configure a list of trusted components. By default, locker is disabled. If locker is on, components from LWC and LWR are automatically trusted. See the locker recipe [here](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/locker).
+-   `staticSiteGenerator`: Configure the Static Site Generator, see [this recipe](../packages/static-generation/README.md).
 
 ```json
 // lwr.config.json
@@ -338,6 +348,8 @@ LWR also offers the following optional configuration:
     "port": 3333,
     "serverMode": "prod",
     "serverType": "express",
+    "minify": false,
+    "basePath": "/my-app",
     "rootDir": "/Users/me/lwr/projects/awesome",
     "cacheDir": "$rootDir/build/cache",
     "contentDir": "$rootDir/templates",

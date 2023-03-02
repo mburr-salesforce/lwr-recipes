@@ -328,6 +328,34 @@ If a configuration is not specified when registering the Router Module Provider,
 }
 ```
 
+To automatically register **client-side** routes with the **server**, specify them as "sub routes" by pointing to their [Route JSON file](#router-json).
+
+```json
+// lwr.config.json
+{
+    "routes": [
+        {
+            "id": "spa",
+            "path": "/site",
+            "rootComponent": "my/spa",
+            "subRoutes": "$rootDir/src/routes/client.json"
+        }
+    ]
+}
+```
+
+If the client-side routes contain these `uri`s:
+
+-   "/"
+-   "/about"
+-   "/:id"
+    Then the LWR server will automatically register these `path`s:
+-   "_/site_"
+-   "_/site_/about"
+-   "_/site_/:id"
+
+This allows users to do a full page refresh on a client-side route without getting a 404.
+
 #### Router JSON
 
 The Router Module Provider generates a router module based on JSON configuration: `LwrRouterConfig`.
