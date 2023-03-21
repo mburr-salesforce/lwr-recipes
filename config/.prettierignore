@@ -2,7 +2,8 @@ node_modules/
 build/
 __lwr_cache__
 **/pageObjects/*
+**/__generated_site*
 **/base-slds/src/assets/
 **/feature-flag/src/assets/
 **/packages/*/site/*
-**/__generated_site*
+**/packages/*/app/*

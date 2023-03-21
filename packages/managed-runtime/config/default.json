@@ -1,0 +1,9 @@
+{
+    "ssrEnabled": true,
+    "ssrOnly": ["config/**", "loader.js", "package.json", "ssr.js", "site/.metadata/**"],
+    "ssrShared": ["site/1/bundle/**", "site/1/resource/**"],
+    "ssrParameters": {
+        "ssrFunctionNodeVersion": "16.x",
+        "proxyConfigs": []
+    }
+}

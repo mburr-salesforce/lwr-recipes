@@ -1,0 +1,30 @@
+{
+    "serverMode": "prod-compat",
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "routes": [
+        {
+            "id": "example",
+            "path": "/",
+            "rootComponent": "example/app",
+            "cache": { "ttl": 60 },
+            "bootstrap": {
+                "ssr": true
+            }
+        }
+    ],
+    "assets": [
+        {
+            "alias": "assetsDir",
+            "dir": "$rootDir/src/assets",
+            "urlPath": "/public/assets"
+        },
+        {
+            "alias": "favicon",
+            "file": "$rootDir/src/assets/favicon.ico",
+            "urlPath": "/favicon.ico"
+        }
+    ],
+    "staticSiteGenerator": {
+        "skipBaseDocumentGeneration": true
+    }
+}

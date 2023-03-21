@@ -1,0 +1,32 @@
+{
+    "name": "managed-runtime",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "rm -rf build node_modules __lwr_cache__ site tsconfig.tsbuildinfo",
+        "dev": "lwr dev",
+        "dev:compat": "lwr dev --mode compat",
+        "lwr:build": "lwr build --clean --target mrt",
+        "preview": "lwr preview --target mrt",
+        "stage": "yarn lwr:build && lwr preview",
+        "mrt:push": "cp -R ./app/config ./ && CLOUD_API_BASE=https://cloud-staging.mobify-staging.com pwa-kit-dev push --projectSlug ssr-demo-app  --buildDirectory ./app",
+        "mrt:save-creds": "pwa-kit-dev save-credentials --cloud-origin https://cloud-staging.mobify-staging.com",
+        "mrt:tail": "pwa-kit-dev tail-logs --cloud-origin https://cloud-staging.mobify-staging.com --project ssr-demo-app --environment production"
+    },
+    "devDependencies": {
+        "@lwrjs/lambda": "0.9.0-alpha.37",
+        "lwc": "2.40.0",
+        "lwr": "0.9.0-alpha.37",
+        "pwa-kit-dev": "2.7.0"
+    },
+    "engines": {
+        "node": ">=16.0.0 <17"
+    },
+    "volta": {
+        "node": "16.19.1",
+        "yarn": "1.22.19"
+    }
+}
