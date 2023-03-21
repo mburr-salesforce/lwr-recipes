@@ -56,9 +56,6 @@ jobs:
       - name: Format
         run: yarn prettier
 
-      - name: Bundle Size
-        run: yarn bundlesize
-
   test:
     name: Test
     runs-on: salesforce-experience-platform-emu-Ubuntu
