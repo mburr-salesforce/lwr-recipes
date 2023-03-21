@@ -1,0 +1,80 @@
+name: build-and-test
+
+on: [ pull_request ]
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 16.19.1
+
+jobs:
+  build:
+    name: Build
+    runs-on: salesforce-experience-platform-emu-Ubuntu
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+
+      - name: Install Dependencies & Build
+        run: yarn install --frozen-lockfile
+
+      - name: Cache Build
+        uses: actions/cache@v3
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}
+  
+  verify:
+    name: Verify
+    runs-on: salesforce-experience-platform-emu-Ubuntu
+    needs: build
+
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore Build
+        uses: actions/cache@v3
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Format
+        run: yarn prettier
+
+      - name: Bundle Size
+        run: yarn bundlesize
+
+  test:
+    name: Test
+    runs-on: salesforce-experience-platform-emu-Ubuntu
+    needs: build
+
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore Build
+        uses: actions/cache@v3
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}  
+
+      - name: e2e Tests
+        run: yarn test:e2e
