@@ -3,4 +3,6 @@ build/
 __lwr_cache__
 **/pageObjects/*
 **/base-slds/src/assets/
-__generated_site*
+**/feature-flag/src/assets/
+**/packages/*/site/*
+**/__generated_site*

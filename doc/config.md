@@ -55,8 +55,8 @@ To use LWR, include it and LWC as dependencies in `package.json`.
 // package.json
 {
     "devDependencies": {
-        "lwc": "2.17.0",
-        "lwr": "0.7.1"
+        "lwc": "2.40.0",
+        "lwr": "0.9.0"
     }
 }
 ```

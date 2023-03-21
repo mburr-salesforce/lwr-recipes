@@ -10,3 +10,4 @@ __lwr_cache__/*
 build/*
 src/assets/*
 !src/assets/utilitySprite.svg
+site/*

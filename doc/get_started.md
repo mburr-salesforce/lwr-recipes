@@ -6,7 +6,7 @@ Run a recipe in your local environment by following these steps.
 
 This project uses [Volta](https://volta.sh/) to ensure that all the contributors share the same version of Node and Yarn for development. Even if you aren't contributing to this project and are running and configuring recipes for your own use only, we recommend installing Volta before you install Node and Yarn.
 
--   [Node](https://nodejs.org/) >=14.16.0 <17
+-   [Node](https://nodejs.org/) >=16.0.0 <20
 -   [Yarn](https://yarnpkg.com/) >= 1.22.5
 
 _We use [Yarn](https://yarnpkg.com/) because it is significantly faster than npm for our use case. See this command [cheatsheet](https://yarnpkg.com/lang/en/docs/migrating-from-npm/)._
@@ -34,23 +34,31 @@ yarn build
 
 ## Run an LWR Recipe
 
-Navigate to your chosen recipe and run the recipe. Using `hello-world` for example:
+Using `hello-world` for example:
+
+Run your chosen recipe from the `lwr-recipes` root directory.
+
+```bash
+yarn w:run hello-world dev
+```
+
+Alternatively navigate to your chosen recipe from there.
 
 ```bash
 cd packages/hello-world
-yarn start
+yarn dev
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)
 
 Recipes can be started in four different modes:
 
-| Mode        | Start Command            | Format |     File Watch     |      Bundling      |       Minify       |
-| ----------- | ------------------------ | :----: | :----------------: | :----------------: | :----------------: |
-| dev         | `yarn dev`               |  ESM   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
-| prod        | `yarn start`             |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
-| compat      | `yarn start:compat`      |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
-| prod-compat | `yarn start:prod-compat` |  AMD   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
+| Mode        | Start Command                   | Format |     File Watch     |      Bundling      |       Minify       |
+| ----------- | ------------------------------- | :----: | :----------------: | :----------------: | :----------------: |
+| dev         | `yarn dev`                      |  ESM   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
+| prod        | `yarn start`                    |  ESM   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
+| compat      | `yarn dev --mode compat`        |  AMD   | :white_check_mark: |  :no_entry_sign:   |  :no_entry_sign:   |
+| prod-compat | `yarn start --mode prod-compat` |  AMD   |  :no_entry_sign:   | :white_check_mark: | :white_check_mark: |
 
 ### Hot Reloading
 

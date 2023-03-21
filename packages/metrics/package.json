@@ -10,19 +10,19 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rm -rf build && rm -rf __lwr_cache__",
         "build": "tsc -b",
+        "clean": "rm -rf build node_modules __lwr_cache__ tsconfig.tsbuildinfo",
         "start": "ENABLE_FINGERPRINTS=true MODE=prod-compat node build/index.js",
         "start:compat": "ENABLE_FINGERPRINTS=true MODE=compat node build/index.js"
     },
     "dependencies": {
         "express": "^4.17.1",
-        "lwc": "2.17.0",
-        "lwr": "0.8.8"
+        "lwc": "2.40.0",
+        "lwr": "0.9.0"
     },
     "devDependencies": {
-        "@lwrjs/types": "0.8.8",
-        "typescript": "^4.2.2"
+        "@lwrjs/types": "0.9.0",
+        "typescript": "^4.9.5"
     },
     "engines": {
         "node": ">=16.0.0 <20"

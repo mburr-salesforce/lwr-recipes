@@ -1,4 +1,4 @@
-import type { ContextConsumer } from 'lwc';
+import type { ContextConsumer, ContextValue } from 'lwc';
 
 function validateProvider(obj: object): void {
     if (obj === undefined || obj === null) {
@@ -43,7 +43,7 @@ export class ContextInfo<TContext> {
         validateProvider(targetProvider);
         const info = this.getInfo(targetProvider);
         info.contextValue = contextValue;
-        info.consumers.forEach((consumer: ContextConsumer) => consumer.provide(contextValue));
+        info.consumers.forEach((consumer: ContextConsumer) => consumer.provide(contextValue as ContextValue));
     }
 
     /**
@@ -84,7 +84,7 @@ export class ContextInfo<TContext> {
         const { consumers, contextValue } = this.getInfo(targetProvider);
         if (!consumers.has(consumer)) {
             consumers.add(consumer);
-            consumer.provide(contextValue);
+            consumer.provide(contextValue as ContextValue);
         }
     }
 

@@ -15,12 +15,22 @@ logfile
 # Project artifacts
 __benchmarks_results__/
 **/__lwr_cache__/
+**/__generated_site*
 
 # Builds
 scripts/private/
 **/build
 packages/*/pageObjects
-__generated_site*
+packages/*/site
 
 # db volume
 db-data/
+
+#yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

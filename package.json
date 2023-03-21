@@ -4,30 +4,34 @@
     "license": "MIT",
     "description": "LWR Javascript Implementation",
     "main": "index.js",
+    "version": "0.9.0",
     "scripts": {
-        "clean": "lerna run clean --stream && lerna exec -- rimraf build/ tsconfig.tsbuildinfo __lwr_cache__ node_modules && lerna clean --yes && rimraf node_modules",
-        "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
+        "build": "yarn workspaces foreach -pv run build; echo '*** build finished with exit code ' $? '****'",
+        "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
         "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
+        "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
         "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
-        "build": "lerna run build --stream && tsc -b",
-        "start": "lerna run start --scope simple-routing --stream",
-        "test:e2e": "lerna run test:e2e --scope simple-routing-e2e --stream",
-        "ready": "yarn && yarn lint && yarn prettier && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\""
+        "ready": "yarn lint && yarn prettier && yarn && yarn build && yarn test:e2e && echo \"\n\nPlease test the recipe in your browser before committing\n\n\"",
+        "test:e2e": "yarn workspace simple-routing-e2e run test:e2e",
+        "w:build": "yarn workspace ${0} build",
+        "w:clean": "yarn workspace ${0} clean",
+        "w:install": "yarn workspace ${0} install",
+        "w:run": "yarn workspace ${0} run ${1}"
     },
     "workspaces": [
         "packages/*"
     ],
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",
-        "@typescript-eslint/eslint-plugin": "^4.29.2",
-        "@typescript-eslint/parser": "^4.29.2",
+        "@typescript-eslint/eslint-plugin": "^5.55.0",
+        "@typescript-eslint/parser": "^5.55.0",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^7.2.0",
         "eslint-plugin-prettier": "^3.4.0",
         "husky": "^4.2.3",
-        "lerna": "^3.20.2",
         "lint-staged": "^10.1.1",
-        "prettier": "^2.0.2"
+        "prettier": "^2.0.2",
+        "typescript": "^4.9.5"
     },
     "engines": {
         "node": ">=16.0.0 <20"
@@ -41,5 +45,6 @@
             "pre-commit": "lint-staged --config ./config/lint-staged.config.js",
             "commit-msg": "commitlint -e $GIT_PARAMS --config ./config/commitlint.config.js"
         }
-    }
+    },
+    "packageManager": "yarn@3.4.1"
 }

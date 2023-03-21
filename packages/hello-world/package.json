@@ -5,15 +5,16 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "clean": "rm -rf __lwr_cache__",
-        "dev": "lwr serve",
-        "start": "lwr serve --mode prod",
-        "start:compat": "lwr serve --mode compat",
-        "start:prod-compat": "lwr serve --mode prod-compat"
+        "clean": "rm -rf build node_modules __lwr_cache__ site",
+        "dev": "lwr dev",
+        "lwr:build": "lwr build --clean",
+        "start": "lwr start",
+        "stage": "yarn lwr:build && yarn start",
+        "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "dependencies": {
-        "lwc": "2.17.0",
-        "lwr": "0.8.8"
+        "lwc": "2.40.0",
+        "lwr": "0.9.0"
     },
     "engines": {
         "node": ">=16.0.0 <20"

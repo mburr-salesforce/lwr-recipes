@@ -10,19 +10,23 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rimraf __generated_site__  __lwr_cache__",
-        "build:static": "yarn clean && lwr static-build",
-        "start:static": "serve __generated_site__",
-        "start": "lwr serve --mode prod"
+        "build": "tsc -b",
+        "clean": "rm -rf build node_modules __lwr_cache__ site tsconfig.tsbuildinfo",
+        "dev": "lwr dev",
+        "lwr:build": "lwr build --clean",
+        "start:static": "serve site",
+        "start": "lwr start",
+        "stage": "yarn lwr:build && yarn start",
+        "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "devDependencies": {
-        "@lwrjs/types": "0.8.8",
-        "rimraf": "^3.0.2"
+        "@lwrjs/types": "0.9.0"
     },
     "dependencies": {
-        "lwc": "2.17.0",
-        "lwr": "0.8.8",
-        "serve": "^13.0.0"
+        "lwc": "2.40.0",
+        "lwr": "0.9.0",
+        "serve": "^14.2.0",
+        "typescript": "^4.9.5"
     },
     "engines": {
         "node": ">=16.0.0 <20"

@@ -10,19 +10,19 @@
         "build/**/*.js"
     ],
     "scripts": {
-        "clean": "rm -rf build && rm -rf __lwr_cache__",
+        "clean": "rm -rf build && rm -rf __lwr_cache__ tsconfig.tsbuildinfo",
         "build": "tsc -b",
         "dev": "node build/express.js",
         "start:express": "node build/express.js",
         "start:koa": "node build/koa.js",
-        "start": "MODE=prod yarn dev",
-        "start:compat": "MODE=compat yarn dev",
-        "start:prod-compat": "MODE=prod-compat yarn dev"
+        "start": "MODE=prod node build/express.js",
+        "start:compat": "MODE=compat node build/express.js",
+        "start:prod-compat": "MODE=prod-compat node build/express.js"
     },
     "devDependencies": {
-        "lwc": "2.17.0",
-        "lwr": "0.8.8",
-        "typescript": "^4.2.2"
+        "lwc": "2.40.0",
+        "lwr": "0.9.0",
+        "typescript": "^4.9.5"
     },
     "engines": {
         "node": ">=16.0.0 <20"

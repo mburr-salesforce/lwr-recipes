@@ -76,7 +76,7 @@ This recipe uses the LWR `static-build` command to generate the static site:
 ```json
 // my-app/package.json
 "scripts": {
-    "build:static": "lwr static-build --outputDir __generated_site__"
+    "build:static": "lwr build --clean --outputDir __generated_site__"
 },
 ```
 
@@ -121,8 +121,9 @@ To build and run:
 # from the lwr-recipes root
 yarn install
 cd packages/static-generation
-yarn build:static # statically generate the app
-yarn start:static # run the app
+yarn lwr:build # statically generate the app
+yarn start:static # run the app in an static http server
+yarn start # run the app with the static site content taking precedence
 ```
 
 Open the static site at [http://localhost:3000](http://localhost:3000)
@@ -133,7 +134,7 @@ To build and run without static generation:
 # from the lwr-recipes root
 yarn install
 cd packages/static-generation
-yarn start
+yarn dev
 ```
 
 Open the live site at [http://localhost:3000](http://localhost:3000)

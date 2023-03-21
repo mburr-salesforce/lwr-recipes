@@ -14,5 +14,7 @@
             "wdio-utam-service"
         ]
     },
-    "include": ["./config/**/*.ts", "./services/**/*.ts", "./tests/**/*.ts", "./types/**/*.ts"]
+    "include": ["./config/**/*.ts", "./services/**/*.ts", "./tests/**/*.ts", "./types/**/*.ts"],
+    "exclude": ["./**/*spec.ts"],
+    "references": [{ "path": "../simple-routing" }]
 }

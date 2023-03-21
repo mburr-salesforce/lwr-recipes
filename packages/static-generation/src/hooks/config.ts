@@ -28,7 +28,7 @@ interface DocSiteGlobalData extends GlobalData {
     };
 }
 
-function generateGuideSidebar(guide): SidebarEntry[] {
+function generateGuideSidebar(guide: GuideEntry[]): SidebarEntry[] {
     return guide.map(({ label, content }) => {
         return {
             label,
@@ -59,7 +59,8 @@ function generateGuideRoutes(
 }
 
 export default class DocAppHooks implements HooksPlugin {
-    initConfigs(lwrConfig: NormalizedLwrGlobalConfig, globalData: DocSiteGlobalData): void {
+    initConfigs(lwrConfig: NormalizedLwrGlobalConfig, dataConfig: GlobalData): Promise<void> | void {
+        const globalData = dataConfig as DocSiteGlobalData;
         // The guide is just the ordered list of files we want
         const guide = globalData.site.guide;
 
