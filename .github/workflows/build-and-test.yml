@@ -24,8 +24,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
 
-      - name: Install Dependencies & Build
+      - name: Install Dependencies
         run: yarn install --frozen-lockfile
+        
+      - name: Build
+        run: yarn build
 
       - name: Cache Build
         uses: actions/cache@v3
