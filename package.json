@@ -6,7 +6,7 @@
     "main": "index.js",
     "version": "0.9.0",
     "scripts": {
-        "build": "yarn workspaces foreach -pv run build; echo '*** build finished with exit code ' $? '****'",
+        "build": "node scripts/build.js",
         "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
         "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
         "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
