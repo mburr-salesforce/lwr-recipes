@@ -17,7 +17,7 @@ We want to encourage the developer community to contribute Lightning Web Runtime
 The LWR recipes use the UI Testing Automation Model (UTAM) to validate your code. Before committing any changes, run [UTAM](https://pilot.utam.dev/guide/introduction) tests.
 
 ```bash
-yarn test:e2e
+yarn test
 ```
 
 For an example of a simple UTAM test using a Chrome driver, see the [utam-js-wdio-boilerplate](https://github.com/salesforce/utam-js-wdio-boilerplate) repo. The repo includes a simple boilerplate UTAM page object and an end-to-end test file. You can configure it to point to your own app instance.

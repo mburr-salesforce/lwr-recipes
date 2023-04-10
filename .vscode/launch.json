@@ -146,17 +146,30 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "simple-routing-e2e",
+            "name": "module-provider tests",
             "type": "node",
             "request": "launch",
-            "args": ["wdio.conf.js"],
-            "cwd": "${workspaceFolder}/packages/simple-routing-e2e",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["test"],
+            "cwd": "${workspaceFolder}/packages/module-provider",
             "autoAttachChildProcesses": true,
-            "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
             "console": "integratedTerminal",
             "skipFiles": [
-                "<node_internals>/**/*.js"
-            ]
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "name": "simple-routing tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["test"],
+            "cwd": "${workspaceFolder}/packages/simple-routing",
+            "autoAttachChildProcesses": true,
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
         },
         {
             "name": "templating",

@@ -37,5 +37,6 @@
             "example/pageHasError": ["modules/example/pageHasError/pageHasError.ts"]
         }
     },
+    "include": ["./src/services/**/*.ts", "./src/types/**/*.ts"],
     "exclude": ["build"]
 }

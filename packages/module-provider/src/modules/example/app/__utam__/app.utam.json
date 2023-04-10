@@ -1,0 +1,107 @@
+{
+    "root": true,
+    "selector": {
+        "css": "body"
+    },
+    "elements": [
+        {
+            "name": "example-app",
+            "selector": {
+                "css": "example-app"
+            },
+            "shadow": {
+                "elements": [
+                    {
+                        "name": "heading",
+                        "public": true,
+                        "selector": {
+                            "css": "h1"
+                        }
+                    },
+                    {
+                        "name": "esProviderHeading",
+                        "public": true,
+                        "selector": {
+                            "css": ".esProvider h2"
+                        }
+                    },
+                    {
+                        "name": "lwcProviderHeading",
+                        "public": true,
+                        "selector": {
+                            "css": ".lwcProvider h2"
+                        }
+                    },
+                    {
+                        "name": "lwrButton",
+                        "public": true,
+                        "type": "clickable",
+                        "selector": {
+                            "css": "#lwr"
+                        }
+                    },
+                    {
+                        "name": "helloButton",
+                        "public": true,
+                        "type": "clickable",
+                        "selector": {
+                            "css": "#hello"
+                        }
+                    },
+                    {
+                        "name": "echoMessage",
+                        "public": true,
+                        "selector": {
+                            "css": "#echo"
+                        }
+                    },
+                    {
+                        "name": "purpleButton",
+                        "public": true,
+                        "type": "clickable",
+                        "selector": {
+                            "css": "#purple"
+                        }
+                    },
+                    {
+                        "name": "navyButton",
+                        "public": true,
+                        "type": "clickable",
+                        "selector": {
+                            "css": "#navy"
+                        }
+                    },
+                    {
+                        "name": "maroonButton",
+                        "public": true,
+                        "type": "clickable",
+                        "selector": {
+                            "css": "#maroon"
+                        }
+                    },
+                    {
+                        "name": "purpleCircle",
+                        "public": true,
+                        "selector": {
+                            "css": "color-purple"
+                        }
+                    },
+                    {
+                        "name": "navyCircle",
+                        "public": true,
+                        "selector": {
+                            "css": "color-navy"
+                        }
+                    },
+                    {
+                        "name": "maroonCircle",
+                        "public": true,
+                        "selector": {
+                            "css": "color-maroon"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

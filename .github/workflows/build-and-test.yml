@@ -77,4 +77,4 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}  
 
       - name: e2e Tests
-        run: yarn test:e2e
+        run: yarn test

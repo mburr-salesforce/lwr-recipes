@@ -8,7 +8,7 @@ steps:
   node-unit-tests:
     description: Run WDIO/UTAM E2E Tests
     run:
-      command: yarn test:e2e
+      command: yarn test
 notifications:
     email:
         address: laf@salesforce.com

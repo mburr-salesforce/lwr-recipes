@@ -24,7 +24,7 @@
         "@babel/preset-typescript": "^7.21.0",
         "@babel/register": "^7.21.0",
         "@types/jest": "^25.2.1",
-        "chromedriver": "^110.0.0",
+        "chromedriver": "^111.0.0",
         "lwc": "2.40.0",
         "lwr": "0.9.0",
         "ts-node": "^9.0.0",

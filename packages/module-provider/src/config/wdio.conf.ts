@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UtamWdioService } from 'wdio-utam-service';
 import { Capabilities } from '@wdio/types';
-import SimpleRoutingService from '../services/simple-routing-service';
+import LWRService from '../services/lwr-service';
 import { existsSync } from 'fs';
+import { UtamWdioService } from 'wdio-utam-service';
 
 const NOHEADLESS = process.env.NOHEADLESS;
 // Use the same environment variable(s) as LWR does to initialize
@@ -44,10 +44,10 @@ export const config = {
         ['chromedriver', { port: 8015 }],
         [UtamWdioService, {}],
         [
-            SimpleRoutingService,
+            LWRService,
             {
                 config: {
-                    rootDir: '../simple-routing',
+                    rootDir: './',
                     port: 8080,
                     serverMode: 'prod',
                 },
@@ -55,7 +55,7 @@ export const config = {
         ],
     ],
 
-    specs: ['./tests/*.spec.ts'],
+    specs: ['./src/tests/module-provider.spec.ts'],
 
     before(caps: Capabilities.W3CCapabilities, spec: string[], browser: WebdriverIO.Browser): void {
         browser.addCommand('shadowDeep$', async (selector: string) => {
