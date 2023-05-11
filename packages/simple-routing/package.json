@@ -30,7 +30,7 @@
         "@wdio/mocha-framework": "^7.13.2",
         "chromedriver": "^111.0.0",
         "lwc": "2.40.0",
-        "lwr": "0.9.0",
+        "lwr": "^0.9.4",
         "ts-node": "^10.1.0",
         "typescript": "^4.9.5",
         "utam": "^1.7.0",

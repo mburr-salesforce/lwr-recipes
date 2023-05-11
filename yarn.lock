@@ -2811,182 +2811,109 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/app-service@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/app-service@npm:0.9.0"
+"@lwrjs/app-service@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/app-service@npm:0.9.4"
   dependencies:
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 5f97c785ffffccbae614d91117eca41ceeab5151118162f8ccab4404d90931a47d39443a0ad02739cf8551700e3b508a373b29fcccbcc945e8fdcbd8e9db79b9
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: e3d4483675fb75a1f21b4b539523b33d9fffb645765c901603c79e5b764be97a628e7a80a249b8b8b96c153943a489c87761e8668e01771508754585da14ce1b
   languageName: node
   linkType: hard
 
-"@lwrjs/app-service@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/app-service@npm:0.9.0-alpha.37"
+"@lwrjs/asset-registry@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/asset-registry@npm:0.9.4"
   dependencies:
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: 911a2290e3e96a07b1a0976837745d1b9c8fde04dfc96044e489f6d11086ab44f15bbab940f76424e43c1612d224ac819843dd9c7980244320d4a40daa1f4644
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: 013a0697187a2f65a9f592101dc839c2d2f4e58999ea2ef3140e6860d9d962f19b740a82c5dd25817a99ad5e2eb3442d5240f930cdc5a3135249a282c744f1c7
   languageName: node
   linkType: hard
 
-"@lwrjs/asset-registry@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/asset-registry@npm:0.9.0"
+"@lwrjs/asset-transformer@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/asset-transformer@npm:0.9.4"
   dependencies:
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: ca1828fe09f72f79e800e4659d14e419a758fb8619d9260e6aa3a33188d980bb9b73374c4d8f3daaa0ec2a74c5c825710b80abbe91ed647480ab22c6ebea8041
+    "@lwrjs/shared-utils": 0.9.4
+    postcss: ^8.4.23
+    postcss-value-parser: ^4.2.0
+  checksum: 12ca753203c8820f970de4718fea5b98b903cda9d5db5734c74fb42e690df9d5eb59f5db2e5e12a80026913d7e3daf08e18b4269a2f751c18570e4c2f7acec6c
   languageName: node
   linkType: hard
 
-"@lwrjs/asset-registry@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/asset-registry@npm:0.9.0-alpha.37"
+"@lwrjs/base-view-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/base-view-provider@npm:0.9.4"
   dependencies:
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: 41f3e9e83075cf86dfd409e94b110365e33bf434ab8becb46d2ba1d57af50b1516b84df2aaffe9cfce8130449562b57bb03ae826fdb8eef74917b1a7e36b94a5
-  languageName: node
-  linkType: hard
-
-"@lwrjs/asset-transformer@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/asset-transformer@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
-    postcss: ^8.3.6
-  checksum: 713b37a09a66793003f82b9002bbe3b0654c4bf99bdecf3b4fc4e463ffb4959cacdaaa9fd53a21d2cab00f4a8c3a4ebbdbd4da4227fe71b1bf415fe9d7d19965
-  languageName: node
-  linkType: hard
-
-"@lwrjs/asset-transformer@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/asset-transformer@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    postcss: ^8.3.6
-  checksum: a0029920dfbdfb6e1afb2300d0a19e3f78627d6d8e72e064b389c5f604db1f95e0f806fc812e39879e99f475df0430b5a54da8f2724c4aaaa0964e3bb83d2be3
-  languageName: node
-  linkType: hard
-
-"@lwrjs/base-view-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/base-view-provider@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     escape-goat: ^3.0.0
-  checksum: 100de569fbeba7b0b01bd005f78e0ffa02e1d13e41e5dbfb364f29d7acbe5af2eedec193d42fc8af9bd522109427455277ec4108f2142b10cea2ca9b2bf40a96
+  checksum: ebe6ab13e64c2fcbd22faa8fed47965e0709fed7f0ccfdb9dc997e4ae7eb17b68631d35daa985fa8a9c160d2cd434f52e1dd48a9bb7bae3a4500c08c35ab9d55
   languageName: node
   linkType: hard
 
-"@lwrjs/base-view-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/base-view-provider@npm:0.9.0-alpha.37"
+"@lwrjs/base-view-transformer@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/base-view-transformer@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    escape-goat: ^3.0.0
-  checksum: 2998bcfd78ce4a52772d08d2d56a2979da90db6b848eb01ee2dfa37f995fb95124ab1b84523c87ea7669ff3468ee3677019a7d04ff9c80c6af62f325048a266b
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: aa7c2c1482d423b8b8e2aeae327913a9fe46995ebee55ac8ea7af0196b802b70d4e49ec2bc874b5650eb77290db0c3cb14a0df49618dd542822a59b2bf271696
   languageName: node
   linkType: hard
 
-"@lwrjs/base-view-transformer@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/base-view-transformer@npm:0.9.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: c0127f0eeb968a6669dad0ef89e1f1682f432d7a19c28791940c9eb55aa42eb782d6c824eb24eb08ca59a520d01cff280000656376117ebafd27e8fdb58e16bc
-  languageName: node
-  linkType: hard
-
-"@lwrjs/base-view-transformer@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/base-view-transformer@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: cb158bcf8d8fb43a6105c4e2d2d7d356f91d253a55adfc85726e93e401fbae0ca0417d2c6e7e2ab488d5a7ce00088ac8dc3f38b3572e244129644c08af6bcde0
-  languageName: node
-  linkType: hard
-
-"@lwrjs/client-modules@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/client-modules@npm:0.9.0"
+"@lwrjs/client-modules@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/client-modules@npm:0.9.4"
   dependencies:
     "@locker/sandbox": 0.18.14
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 8d85054b1b39155eff8dcb0796bb6a98c674b0ed1e81164132acb904ec51e58087b9f0b759ce9d0394d26e3e5b4de3f31ad43820e36e386a6317c7f84b45750d
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: 40fdbc64d4e4f86eb7e16eac6d57883c725168aab9913918e0a3b5f295fb2e628484a48d9749070301fd7b5a69f7d9d6f0fb835b78c304f6bf3531ba402b2c4b
   languageName: node
   linkType: hard
 
-"@lwrjs/client-modules@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/client-modules@npm:0.9.0-alpha.37"
+"@lwrjs/config@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/config@npm:0.9.4"
   dependencies:
-    "@locker/sandbox": 0.18.14
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: 7fc8648de0662ec79164093d6271a1e3159632930cd366b3ad07a508e043892ced43464af1f8c682a07cf8e456282f48d65726dcf27c036fbe3ff99104fbd0cf
-  languageName: node
-  linkType: hard
-
-"@lwrjs/config@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/config@npm:0.9.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     fs-extra: ^11.1.0
     jsonc-parser: ^3.0.0
   peerDependencies:
     lwc: 2.x
-  checksum: 5df5784ac26d3d275a45317e6389f7ccb672fdb5e3b186851e00c32696e709e365bcb2fc93edafabb65914c70cd1fdc25644ef10b940215c7fb8d537852bebb7
+  checksum: 2d0c0875474056e62860212ca7c7ac56ece3437ea84a0a84128a57f4bf4803666e5784f2d0a4d4a5e316dbecb4658891951836eb2e667a7cf1b0443f718b2457
   languageName: node
   linkType: hard
 
-"@lwrjs/config@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/config@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    fs-extra: ^11.1.0
-    jsonc-parser: ^3.0.0
-  peerDependencies:
-    lwc: 2.x
-  checksum: 3b618a9d8b2811d305f7d23f3bcadd18341cd16d7edb513b37622cbf6b61100210043be7a65741e7392df7b12282fb06030697a322aee98d80aed95429075241
-  languageName: node
-  linkType: hard
-
-"@lwrjs/core@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/core@npm:0.9.0"
+"@lwrjs/core@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/core@npm:0.9.4"
   dependencies:
     "@locker/compiler": 0.18.14
-    "@lwrjs/app-service": 0.9.0
-    "@lwrjs/asset-registry": 0.9.0
-    "@lwrjs/asset-transformer": 0.9.0
-    "@lwrjs/base-view-provider": 0.9.0
-    "@lwrjs/base-view-transformer": 0.9.0
-    "@lwrjs/client-modules": 0.9.0
-    "@lwrjs/config": 0.9.0
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/fs-asset-provider": 0.9.0
-    "@lwrjs/html-view-provider": 0.9.0
-    "@lwrjs/loader": 0.9.0
-    "@lwrjs/lwc-module-provider": 0.9.0
-    "@lwrjs/markdown-view-provider": 0.9.0
-    "@lwrjs/module-bundler": 0.9.0
-    "@lwrjs/module-registry": 0.9.0
-    "@lwrjs/npm-module-provider": 0.9.0
-    "@lwrjs/nunjucks-view-provider": 0.9.0
-    "@lwrjs/o11y": 0.9.0
-    "@lwrjs/resource-registry": 0.9.0
-    "@lwrjs/router": 0.9.0
-    "@lwrjs/server": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-    "@lwrjs/view-registry": 0.9.0
+    "@lwrjs/app-service": 0.9.4
+    "@lwrjs/asset-registry": 0.9.4
+    "@lwrjs/asset-transformer": 0.9.4
+    "@lwrjs/base-view-provider": 0.9.4
+    "@lwrjs/base-view-transformer": 0.9.4
+    "@lwrjs/client-modules": 0.9.4
+    "@lwrjs/config": 0.9.4
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/fs-asset-provider": 0.9.4
+    "@lwrjs/html-view-provider": 0.9.4
+    "@lwrjs/loader": 0.9.4
+    "@lwrjs/lwc-module-provider": 0.9.4
+    "@lwrjs/markdown-view-provider": 0.9.4
+    "@lwrjs/module-bundler": 0.9.4
+    "@lwrjs/module-registry": 0.9.4
+    "@lwrjs/npm-module-provider": 0.9.4
+    "@lwrjs/nunjucks-view-provider": 0.9.4
+    "@lwrjs/o11y": 0.9.4
+    "@lwrjs/resource-registry": 0.9.4
+    "@lwrjs/router": 0.9.4
+    "@lwrjs/server": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+    "@lwrjs/view-registry": 0.9.4
     chokidar: ^3.5.3
     esbuild: ^0.9.7
     fs-extra: ^11.1.0
@@ -2996,202 +2923,101 @@ __metadata:
     ws: ^8.8.1
   peerDependencies:
     lwc: 2.x
-  checksum: 824ef52bd29ff522a86bf9a7303b3d7cf9956d357c219b444e113540d4fc14d297664abca94707a65f411e03dd724b2b90ed88ed435a968cac5bd2da0d5664b8
+  checksum: b15c173af050af75a5f7fdfe85b58e6c7b1eb0384410c4b11046c3428b4b6583bec177f43bee997a9c752fbe5f59609e2a6ad3e6699094a1e5ff735a94c1bde8
   languageName: node
   linkType: hard
 
-"@lwrjs/core@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/core@npm:0.9.0-alpha.37"
+"@lwrjs/diagnostics@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/diagnostics@npm:0.9.4"
+  checksum: 524953f336d12f284aa142b5dbe0a6a3a51aceefca2c77d5657180dd4497a20ae96a23604f7d1487785e511da33cdbb2464beca82f8662613a3940912349b5dd
+  languageName: node
+  linkType: hard
+
+"@lwrjs/fs-asset-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/fs-asset-provider@npm:0.9.4"
   dependencies:
-    "@locker/compiler": 0.18.14
-    "@lwrjs/app-service": 0.9.0-alpha.37
-    "@lwrjs/asset-registry": 0.9.0-alpha.37
-    "@lwrjs/asset-transformer": 0.9.0-alpha.37
-    "@lwrjs/base-view-provider": 0.9.0-alpha.37
-    "@lwrjs/base-view-transformer": 0.9.0-alpha.37
-    "@lwrjs/client-modules": 0.9.0-alpha.37
-    "@lwrjs/config": 0.9.0-alpha.37
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/fs-asset-provider": 0.9.0-alpha.37
-    "@lwrjs/html-view-provider": 0.9.0-alpha.37
-    "@lwrjs/loader": 0.9.0-alpha.37
-    "@lwrjs/lwc-module-provider": 0.9.0-alpha.37
-    "@lwrjs/markdown-view-provider": 0.9.0-alpha.37
-    "@lwrjs/module-bundler": 0.9.0-alpha.37
-    "@lwrjs/module-registry": 0.9.0-alpha.37
-    "@lwrjs/npm-module-provider": 0.9.0-alpha.37
-    "@lwrjs/nunjucks-view-provider": 0.9.0-alpha.37
-    "@lwrjs/o11y": 0.9.0-alpha.37
-    "@lwrjs/resource-registry": 0.9.0-alpha.37
-    "@lwrjs/router": 0.9.0-alpha.37
-    "@lwrjs/server": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    "@lwrjs/view-registry": 0.9.0-alpha.37
-    chokidar: ^3.5.3
-    esbuild: ^0.9.7
-    fs-extra: ^11.1.0
-    path-to-regexp: ^6.2.0
-    qs: ^6.9.4
-    rollup: ~2.45.2
-    ws: ^8.8.1
-  peerDependencies:
-    lwc: 2.x
-  checksum: 5f1ef1076cd86f4dba43e43120ca6fb76302ea9b52c67e4a5542347eec073d7e5dd817f175fe7882fcebe5c9564dce66e2fa0c49f2b76086125c90b46a15a5e8
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: 3d67024b08414e3e2bb85f44025383414810a675bd07693e2bc3564cab8fd38ed27a4ac0c364e083f1317840909750a1ac8a1d91bffd6b164dddd3fac7459df5
   languageName: node
   linkType: hard
 
-"@lwrjs/diagnostics@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/diagnostics@npm:0.9.0"
-  checksum: 62823bbaa187441605930edd641933b8f063853619f5c3145b14f7a1605dcd6b3e68718f700ddd5651628a21f848693ce236deedb80a9b223d5e696e192e849c
-  languageName: node
-  linkType: hard
-
-"@lwrjs/diagnostics@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/diagnostics@npm:0.9.0-alpha.37"
-  checksum: e0231e32a9f4425cbfb4ee1524c81aa377dc4a5f1647dcecdde782ca1465ae55e203cbbd83110fc169acd0fc3f551ace05678faef8b4bb00bfbc122f997a03a4
-  languageName: node
-  linkType: hard
-
-"@lwrjs/fs-asset-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/fs-asset-provider@npm:0.9.0"
+"@lwrjs/html-view-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/html-view-provider@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 6730a8803870b5f8ba5cab8b48a83223feea7530b4c80459b28e3c0cdc1e50482514c8c2649e41f35f3fd6a848dcc8c9dd3fa175ffaf4439d998ee5609c160a9
-  languageName: node
-  linkType: hard
-
-"@lwrjs/fs-asset-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/fs-asset-provider@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: 64a3a6e2b86e0a943b3788e71ecbe953e2f07617ecaaba20c271822f6703dd9c33d8b56044d77fcde589ddd1655ea1659bf5b9b361b75f8d8a3362a9b35c5d4f
-  languageName: node
-  linkType: hard
-
-"@lwrjs/html-view-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/html-view-provider@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     gray-matter: ^4.0.2
     parse5-sax-parser: ^6.0.1
-  checksum: 157df0eff8beae9aa69fd22da1d89d01fa6a6abb900267c75ee9df11e2cee27b2e2937465869091b0bae6faf2e19ff245fdea21018738b6a65f2760d476147ec
+  checksum: 7a7a27ec74d765353d4bcd3d79eaade62cd94686e08c3d4fb6289be39d3f19662b857aa12598a2d86859161ac2b3159384bb6810f08e71bdae7adaf5b3acba72
   languageName: node
   linkType: hard
 
-"@lwrjs/html-view-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/html-view-provider@npm:0.9.0-alpha.37"
+"@lwrjs/label-module-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/label-module-provider@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    gray-matter: ^4.0.2
-    parse5-sax-parser: ^6.0.1
-  checksum: e8fca79389a219054c8b0693aec377a2aec9abe8ab105f83108107c6f5405c771e6f7d28db7771d9e5d49fdde1113defcb431f6fddfe713550f24aa3675b0386
-  languageName: node
-  linkType: hard
-
-"@lwrjs/label-module-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/label-module-provider@npm:0.9.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     ajv: 6.12.6
-  checksum: da484db1c5ed1f9971fdb28482578deed15de34c774cdf5ea0210c26cc30eaf198d7ffdd338cf070041c7fbac091d076dd31c26b88e75e46be2514d636763725
+  checksum: fc7e7c9203fb411d20343e49c6268a95b2abae1ed4804a87973c6c330ee055f00076079f958fb4befb5b40cf868cf74f2d2dc74c06e9b9b9c9a4e25df77c4a62
   languageName: node
   linkType: hard
 
-"@lwrjs/lambda@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/lambda@npm:0.9.0-alpha.37"
+"@lwrjs/lambda@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/lambda@npm:0.9.4"
   dependencies:
-    "@lwrjs/core": 0.9.0-alpha.37
-    "@lwrjs/lwc-ssr": 0.9.0-alpha.37
-    "@lwrjs/server": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
+    "@lwrjs/core": 0.9.4
+    "@lwrjs/lwc-ssr": 0.9.4
+    "@lwrjs/server": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     mime-types: ^2.1.33
     pwa-kit-dev: 2.7.0
     pwa-kit-runtime: 2.7.0
-  checksum: 7c478dd061128e80f8ac93f63d180a11b2d96b7f4541512b2c4585f554cda8c9fd097d9c6a0049a71ade90b0eddd37e0d344fafc9791627862112356f7428d8e
+  checksum: 24d5794ef1f6b65e485d44c249d53d6486091688b3518ff469a82fd48138227bf2d9525f4ba53e4d80b1fe0ace9a3a66e85f2200525e7c325ee35a435e2d4e44
   languageName: node
   linkType: hard
 
-"@lwrjs/loader@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/loader@npm:0.9.0"
+"@lwrjs/loader@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/loader@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 3f9be5f740e5e3d778a7bc4985a381168a4f326cfb12f70f77fd1ea2babb74c09769038e9a0a1b5b067a79f207d67bf3323f0cee1845ad9709e923ecb21ad6e0
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: 9bd07e9fb420d10f36e786a16ac0d0dfadaf1d8eec8557effbfa983bf4aa67798080902401f45b82ab374fe7e0bf6ed4b6938c2f97150b1a49985edfee24fcb4
   languageName: node
   linkType: hard
 
-"@lwrjs/loader@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/loader@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: f20a7879c0aae73e832ccda11758fa15f40c89153cdf92bbb20b2ba6854b867974d4facc080c1822396bb22db07dd7f78ef3346d77e818d8ac6007023eeea8b9
-  languageName: node
-  linkType: hard
-
-"@lwrjs/lwc-module-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/lwc-module-provider@npm:0.9.0"
+"@lwrjs/lwc-module-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/lwc-module-provider@npm:0.9.4"
   dependencies:
     "@babel/preset-typescript": ^7.9.0
     "@lwc/module-resolver": 2.38.1
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     es-module-lexer: ^0.3.18
-  checksum: deb687b5dd4010627d72ec656faccf6ef6cc74e223cb8e6c89bd2caeca79705e09d47f6fe078e4eeab7be894fb9dde538fa54148ac3007067982312248cecbdb
+  checksum: 05318b99e8317fb7effb0ff04ad1e6b2190df6ae87f3346a2071152d78db5937c310a7497df731d3470e2f1e74be8ada8dea8aee97582cc559be373122840b02
   languageName: node
   linkType: hard
 
-"@lwrjs/lwc-module-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/lwc-module-provider@npm:0.9.0-alpha.37"
-  dependencies:
-    "@babel/preset-typescript": ^7.9.0
-    "@lwc/module-resolver": 2.38.1
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    es-module-lexer: ^0.3.18
-  checksum: 1533745547bef7c6df1f9a0034ff0491fd5d56a6395268a83701e74f7dde220f119f9b7b7c91ef0af5fd202ada98a1ff0bccf5e2e633ff55e1cb6f916006bfad
-  languageName: node
-  linkType: hard
-
-"@lwrjs/lwc-ssr@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/lwc-ssr@npm:0.9.0"
+"@lwrjs/lwc-ssr@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/lwc-ssr@npm:0.9.4"
   dependencies:
     "@locker/near-membrane-node": ^0.12.0
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     node-fetch: ^2.6.8
-  checksum: 718cdc64edcf91388c031cd31ac8fa8862437ccd1a7bd9c1b13a74b4fcd02fcce8651d863248e34aed50679d65d15e47a1d863448ec8b0febcfacdce6cd312be
+  checksum: 7dbb40b5c76e10c7d67ef93e941432a8a45d66c1f07522109c2a54066b2d253ab0fd81109f0aab5edb86d960407da12e4edabc81b22684abdd89574168304787
   languageName: node
   linkType: hard
 
-"@lwrjs/lwc-ssr@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/lwc-ssr@npm:0.9.0-alpha.37"
+"@lwrjs/markdown-view-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/markdown-view-provider@npm:0.9.4"
   dependencies:
-    "@locker/near-membrane-node": ^0.12.0
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    node-fetch: ^2.6.8
-  checksum: f316b1bab7e4d42417488019064508e19666f1eb44d5ef55c1643607dbaa9a18afad76fbb1b40080345abe03360688656730bdc0201d6ace83c7dbefd3d6babf
-  languageName: node
-  linkType: hard
-
-"@lwrjs/markdown-view-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/markdown-view-provider@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     gray-matter: ^4.0.2
     hast-util-has-property: ^1.0.4
     hast-util-heading-rank: ^1.0.1
@@ -3205,210 +3031,102 @@ __metadata:
     shiki: ^0.13.0
     unified: ^9.2.0
     vfile: ^4.2.1
-  checksum: 3a726c09d1f04a27ce5706ef821d75fe57e4562c9bc5c18003939a64ff7d3b1cec0608ffa8a13cbc16aba996346cc272a904d23b80b96d9be7098a7695b8e819
+  checksum: 0b9d31fa7d0a36dc4fa7a481b8e006fb5df61502caaefd114830c5f7ac47f34ad93e8d968f8986084554254545d82dcd8bd99f8cbdc123fc8204424490a3c76a
   languageName: node
   linkType: hard
 
-"@lwrjs/markdown-view-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/markdown-view-provider@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    gray-matter: ^4.0.2
-    hast-util-has-property: ^1.0.4
-    hast-util-heading-rank: ^1.0.1
-    hast-util-is-element: ^1.1.0
-    hast-util-to-string: ^1.0.4
-    rehype-raw: ^5.0.0
-    rehype-stringify: ^8.0.0
-    remark-gfm: ^1.0.0
-    remark-parse: ^9.0.0
-    remark-rehype: ^8.0.0
-    shiki: ^0.13.0
-    unified: ^9.2.0
-    vfile: ^4.2.1
-  checksum: 613536dfddafcf6efa4b6d5bddd7f4a009d05634f7e1f2a8d4b2190adc98579fa777bd55aab4eecd275f1398fb159bd9ddc7f582f8a38c9faa7e82dfb5a3ec05
-  languageName: node
-  linkType: hard
-
-"@lwrjs/module-bundler@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/module-bundler@npm:0.9.0"
+"@lwrjs/module-bundler@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/module-bundler@npm:0.9.4"
   dependencies:
     "@lwc/features": 2.38.1
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     "@rollup/plugin-replace": ^2.4.2
     esbuild: ^0.9.7
     rollup: ~2.45.2
   dependenciesMeta:
     esbuild:
       optional: true
-  checksum: 6bea6d4024a8188d5d1167975d24280462de360d9aceff273628f1a4e820f4f5f422a17273620d1f467c9d995b2b18543f35a4a3726fcf3faf8743b1eba562f5
+  checksum: ed67f71b70fd5fd2af1b4ab88db5652a9092947321923d823ee52db509cd5ef1dfe38ca2293d1e935c4113b9f4568618c2e44d8ab400d5440fc536a6aa62d360
   languageName: node
   linkType: hard
 
-"@lwrjs/module-bundler@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/module-bundler@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwc/features": 2.38.1
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    "@rollup/plugin-replace": ^2.4.2
-    esbuild: ^0.9.7
-    rollup: ~2.45.2
-  dependenciesMeta:
-    esbuild:
-      optional: true
-  checksum: ccc2d3449c5e174997962a3e10ac79c0d979bea18e2bb3231f93e8cb6ba645891f02c7463a5716404ba86c2dc384b6d3b4c69f734e023d9b35cea294ba10aec2
-  languageName: node
-  linkType: hard
-
-"@lwrjs/module-registry@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/module-registry@npm:0.9.0"
+"@lwrjs/module-registry@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/module-registry@npm:0.9.4"
   dependencies:
     "@locker/compiler": 0.18.14
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     es-module-lexer: ^0.3.18
     rollup: ~2.45.2
-  checksum: 9a5983c7ae4ad07825c16d4689d54946425426a327c1ff647f3a0879d0bfffd88decb223a580b34735202570561649ab19d3eca7e482d8cbe900cef1c3183b06
+  checksum: e892a2d10c54075c4cd7b75c097b326a134bc06657c667092219bb5a3245fa6002efe65155e4e4470e342e2b8d8e1297494522c4e814e655263b91609e71cc51
   languageName: node
   linkType: hard
 
-"@lwrjs/module-registry@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/module-registry@npm:0.9.0-alpha.37"
-  dependencies:
-    "@locker/compiler": 0.18.14
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    es-module-lexer: ^0.3.18
-    rollup: ~2.45.2
-  checksum: 335c0bc53d08bbc1360bdeb4e2eb457bd698c5a10785116d993a7b81314ed7f3ce05af134e620ecfb6fce0e3903737e48f6b58b65fa38ad93eb75de8d9b940b9
-  languageName: node
-  linkType: hard
-
-"@lwrjs/npm-module-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/npm-module-provider@npm:0.9.0"
+"@lwrjs/npm-module-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/npm-module-provider@npm:0.9.4"
   dependencies:
     "@esbuild-plugins/node-modules-polyfill": ^0.0.2
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     esbuild: ^0.9.7
     esinstall: ^1.1.7
     resolve: ^1.22.1
-  checksum: 8ed2403510e928510333f19aaacbb8b5bbfecbff40326cce40c459f214557a368610bdb74449bc1496e96dcb6251bfe292415a4f29cfe5ca2906da984a3dfe19
+  checksum: 5c503abbc8fc43f67717e2fac3cf7307cf06e4f15e805922744c3ec5183f8df3023de94f264815f03c49c1e37dceca540c5f2718e02efe27eb849069d24591fa
   languageName: node
   linkType: hard
 
-"@lwrjs/npm-module-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/npm-module-provider@npm:0.9.0-alpha.37"
+"@lwrjs/nunjucks-view-provider@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/nunjucks-view-provider@npm:0.9.4"
   dependencies:
-    "@esbuild-plugins/node-modules-polyfill": ^0.0.2
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    esbuild: ^0.9.7
-    esinstall: ^1.1.7
-    resolve: ^1.22.1
-  checksum: 224f859ad644e3eb358035a5fb46b1c3f97ef817ebf118f0d267e656cedb124fe6d7c9bd350781382b07451966ecc9d4d07b8939ca28ba160c5be46362d9449d
-  languageName: node
-  linkType: hard
-
-"@lwrjs/nunjucks-view-provider@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/nunjucks-view-provider@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     gray-matter: ^4.0.2
     nunjucks: ^3.2.2
     parse5-sax-parser: ^6.0.1
-  checksum: 51ab7febf6c20db10ddc512af5cf00a060c90a071e11582c70c45c5ccc53ae8f261d02cb542190a3b17f58f67df5f8f36a9312b6cfef11198e203b788e91c7b5
+  checksum: c00a0cdfc34ad7ab973183b9c3dc21019c1d888d9baa3177921bed951f85e3f4825b429be51048c33155b3e60420ea00613298ca1a4d0afa757ebe03a653540b
   languageName: node
   linkType: hard
 
-"@lwrjs/nunjucks-view-provider@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/nunjucks-view-provider@npm:0.9.0-alpha.37"
+"@lwrjs/o11y@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/o11y@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    gray-matter: ^4.0.2
-    nunjucks: ^3.2.2
-    parse5-sax-parser: ^6.0.1
-  checksum: 867a8bb6088b44655aeef43a4ddff3e1c6959f76bb513be53c61fe639884b58ff73330e8fb0bf093d0665b17f7cbbd35f8e896d02f7e0120f352c8b8a0fb8f9c
-  languageName: node
-  linkType: hard
-
-"@lwrjs/o11y@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/o11y@npm:0.9.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
   peerDependencies:
     o11y: 244.x
-  checksum: 2a11159d1af0e772de958c6061914ef95820aa4cd61c4f554aa436e1dd2a0753eaa53cdfd2aa26897f8a5390b8d3b6695846ac877fb4b35f6f1ad4219830bfd4
+  checksum: 6a877c22dc89cc014a22bd52b6f2acdcb5127465813a563bf1da579149078adfcad26dbed4fb4e4ac121166d904e9562d4accdac30cbc652a52a1430211ea8b7
   languageName: node
   linkType: hard
 
-"@lwrjs/o11y@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/o11y@npm:0.9.0-alpha.37"
+"@lwrjs/resource-registry@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/resource-registry@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  peerDependencies:
-    o11y: 244.x
-  checksum: f52406d879ace2b5264f34378f2e007863c8e5e62d435fdef882bf33f7f62483e3f98d83b08bb7c9090325fd9d8240dbc6e8b389550aa061d234244199d6a2f3
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: a46c26d15d9f02bde32f65f4fecf03ad1e3cb4053712bc5141936d0ade9f3e9603222c7cb85b6ae5ae1656357f92a02c7eacfec52f753006949b565348823de0
   languageName: node
   linkType: hard
 
-"@lwrjs/resource-registry@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/resource-registry@npm:0.9.0"
+"@lwrjs/router@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/router@npm:0.9.4"
   dependencies:
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 912816b9b4363c3489c3358060798586f8b95d7b435692190cb7728a0954dc2ab7caaa3f5e85a47cdd984345b2846c2cad7eafa63480ad8f63050b5492e81a5a
-  languageName: node
-  linkType: hard
-
-"@lwrjs/resource-registry@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/resource-registry@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: 40a41fa6dabeee76e372a22954fb0d0abb250dde4a07031e87c6c143a1ffd8c5c0aea26d6b06e8fc4b46656b3652dbdf9f66c1cc90ab3278dac26e74513dfcbc
-  languageName: node
-  linkType: hard
-
-"@lwrjs/router@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/router@npm:0.9.0"
-  dependencies:
-    "@lwrjs/client-modules": 0.9.0
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/client-modules": 0.9.4
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
     ajv: 6.12.6
-  checksum: db7789ad47b125a5b5f266fbc91804acd6d1eea9950380bb9a60a363533f97c4ab410082848ab2961b8f0db86fc990a61ebff902206746ddae9a19e1fe392135
+  checksum: 4dd706c486a86e82690be695dec02b9d3ba2e01d8e3ab52945269bc0a17179da219b16d92a7ca9b281430c6603445432b871d932c7f28766d7ef54e6824377fb
   languageName: node
   linkType: hard
 
-"@lwrjs/router@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/router@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/client-modules": 0.9.0-alpha.37
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    ajv: 6.12.6
-  checksum: feca35cb0ab2860eb34cb5a19d54fb852a682e28e405488123f77f029dded6bf3b3bc329917a78669bf39c6f963317f279aed5ef861cb7b612536aa45bcdccc8
-  languageName: node
-  linkType: hard
-
-"@lwrjs/server@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/server@npm:0.9.0"
+"@lwrjs/server@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/server@npm:0.9.4"
   dependencies:
     "@koa/router": ^10.0.0
-    "@lwrjs/shared-utils": 0.9.0
+    "@lwrjs/shared-utils": 0.9.4
     "@types/compression": ^1.7.2
     "@types/express": ^4.17.17
     "@types/koa": ^2.11.7
@@ -3427,41 +3145,13 @@ __metadata:
       optional: true
     shrink-ray-current:
       optional: true
-  checksum: 150a26a11d5bffa66ce150297e5672a8092c46820178cc0539d274d1a9c3f6a0d1b4386afaabb7ebefcab034423022f6ed76203eb302a6d52ed232b949cc5673
+  checksum: 353e11684ca68cc36e40d40c67d745ea7f06a4d4d9e8bd6e6d86097ba99b51e19a99691249fdd2c22873eb6beed761c9cfc2b44b3e5f6987368349732ec84559
   languageName: node
   linkType: hard
 
-"@lwrjs/server@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/server@npm:0.9.0-alpha.37"
-  dependencies:
-    "@koa/router": ^10.0.0
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    "@types/compression": ^1.7.2
-    "@types/express": ^4.17.17
-    "@types/koa": ^2.11.7
-    compression: ^1.7.4
-    express: ^4.18.2
-    iltorb: ^2.4.5
-    koa: ^2.13.1
-    koa-compose: ^4.1.0
-    koa-compress: ^5.0.1
-    node-zopfli-es: ^2.0.1
-    shrink-ray-current: ^4.1.3
-  dependenciesMeta:
-    iltorb:
-      optional: true
-    node-zopfli-es:
-      optional: true
-    shrink-ray-current:
-      optional: true
-  checksum: ce8d84d8491e95827330bb192f25396fa2c54692d51c5a9739397ff5d2ba0e972a3d09b9095496dd979a140ba2cb7dd0625eaa62f3f798fbc8f0a0287af87b43
-  languageName: node
-  linkType: hard
-
-"@lwrjs/shared-utils@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/shared-utils@npm:0.9.0"
+"@lwrjs/shared-utils@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/shared-utils@npm:0.9.4"
   dependencies:
     es-module-lexer: ^0.3.18
     fast-json-stable-stringify: ^2.1.0
@@ -3477,82 +3167,37 @@ __metadata:
     chokidar: ^3.5.3
     esbuild: ^0.9.7
     rollup: ~2.45.2
-  checksum: aa3dae422ba339a8cd82844cc0cb9058a8867c837ead36487fd555af5f05599507292bf4a87ee94b60d6ddca4791c0a323ede0a46488ca6db3116872fa2c2b15
+  checksum: 09dab665748f68d5c1ff4d06435dd1e9f4ae88e1e0a0bdcf2d2f71a74af5507c7aa268bba72bb2e3ecf80dd505e029aaeae11480b2f38cdd29d4720a861bf362
   languageName: node
   linkType: hard
 
-"@lwrjs/shared-utils@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/shared-utils@npm:0.9.0-alpha.37"
+"@lwrjs/tools@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/tools@npm:0.9.4"
   dependencies:
-    es-module-lexer: ^0.3.18
-    fast-json-stable-stringify: ^2.1.0
-    magic-string: ^0.25.7
-    mime-types: ^2.1.33
-    ms: ^2.1.3
-    parse5-sax-parser: ^6.0.1
-    path-to-regexp: ^6.2.0
-    resolve: ^1.22.1
-    slugify: ^1.4.5
-  peerDependencies:
-    "@locker/compiler": 0.18.14
-    chokidar: ^3.5.3
-    esbuild: ^0.9.7
-    rollup: ~2.45.2
-  checksum: ebc88dafd66fb195ac4aa15df7c5c4e3e640949431c09dd8933cfb9e784030bebbb0abf75849e212ff4d2fec056e16405890729d69847dca7794c261023da15f
-  languageName: node
-  linkType: hard
-
-"@lwrjs/tools@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/tools@npm:0.9.0"
-  dependencies:
-    "@lwrjs/core": 0.9.0
+    "@lwrjs/core": 0.9.4
     esbuild: ^0.17.4
   peerDependencies:
     lwc: 2.x
-  checksum: 097c7ac4b0de1a9c81631566c695f450ed7bf5ce823e9e7ae365165469bf9a7f5d55465ac34550fbb724a05a9de0d6402ca28477b0dc07552a7caf7415544d6d
+  checksum: 4c0722cc6de8c96f97a354aaccbd802218aa8d7ba031deac8bf9e0624f21664acddc08302e52da384422bb60eec2f21fb4c109ffd41f83e485469bdecc8a09dd
   languageName: node
   linkType: hard
 
-"@lwrjs/tools@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/tools@npm:0.9.0-alpha.37"
+"@lwrjs/types@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/types@npm:0.9.4"
+  checksum: 2c28fc146d8408d199f4787d69d6f0440e3b61b27f9bf945cea3c3944c1821333461368101c8f9ffc3d01fe149edf4c00c4dc6a1d0e423e0d5b0cda6c8954619
+  languageName: node
+  linkType: hard
+
+"@lwrjs/view-registry@npm:0.9.4":
+  version: 0.9.4
+  resolution: "@lwrjs/view-registry@npm:0.9.4"
   dependencies:
-    "@lwrjs/core": 0.9.0-alpha.37
-    esbuild: ^0.17.4
-  peerDependencies:
-    lwc: 2.x
-  checksum: 9f18cc3bbed44254a58a65315a5a2fd1897b1f108b25f40cf43722a7cfc7f61944dba379071d715f2a1f767d1bf004737a1968a204a49597d05b45692a4c9da3
-  languageName: node
-  linkType: hard
-
-"@lwrjs/types@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/types@npm:0.9.0"
-  checksum: a5adb91424bf15121b2c32ddb45c7a190dffa5ff1219e825db50e7a6fcdefcdf311e26b57710e5894729fbff6025ca2ea46063cae8c9c811608308828275d52e
-  languageName: node
-  linkType: hard
-
-"@lwrjs/view-registry@npm:0.9.0":
-  version: 0.9.0
-  resolution: "@lwrjs/view-registry@npm:0.9.0"
-  dependencies:
-    "@lwrjs/app-service": 0.9.0
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-  checksum: 635862abf922c64ced8549f873cc3ff450d827b381685cde8d4ee7b3085eb5b13b262f9f37586b242ec8a23bfa44cf3aa29b2dc3eea7828ecae5f49e005791b1
-  languageName: node
-  linkType: hard
-
-"@lwrjs/view-registry@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "@lwrjs/view-registry@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/app-service": 0.9.0-alpha.37
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-  checksum: d54da18898fe6f375ed4fe864ec369150796c64c2a1cb9c601c9a7521d05395894cb55b131a4271db61f3ca25bc7c14416d6f3c3e44f7877bfb4021350f69966
+    "@lwrjs/app-service": 0.9.4
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+  checksum: 5e4f3f810c49ca87c08ce928f1a582d5281522e72cd248da5030aef746616ebb7e75771abb015b567ff1f389694bc030f4bd6c38ffba52b1f248218f4b7a814c
   languageName: node
   linkType: hard
 
@@ -6095,7 +5740,7 @@ __metadata:
     "@salesforce-ux/design-system": ^2.20.1
     cpx: ^1.5.0
     lightning-base-components: ^1.17.3-alpha
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -7653,7 +7298,7 @@ __metadata:
   resolution: "custom-middleware@workspace:packages/custom-middleware"
   dependencies:
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -9470,7 +9115,7 @@ __metadata:
     "@salesforce-ux/design-system": ^2.20.1
     cpx: ^1.5.0
     lightning-base-components: ^1.17.3-alpha
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -10723,7 +10368,7 @@ __metadata:
   resolution: "hello-world@workspace:packages/hello-world"
   dependencies:
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
   languageName: unknown
   linkType: soft
 
@@ -12903,10 +12548,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "labels@workspace:packages/labels"
   dependencies:
-    "@lwrjs/label-module-provider": 0.9.0
-    "@lwrjs/types": 0.9.0
+    "@lwrjs/label-module-provider": 0.9.4
+    "@lwrjs/types": 0.9.4
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -13140,7 +12785,7 @@ __metadata:
   resolution: "locker@workspace:packages/locker"
   dependencies:
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -13377,39 +13022,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"lwr@npm:0.9.0":
-  version: 0.9.0
-  resolution: "lwr@npm:0.9.0"
+"lwr@npm:^0.9.4":
+  version: 0.9.4
+  resolution: "lwr@npm:0.9.4"
   dependencies:
-    "@lwrjs/config": 0.9.0
-    "@lwrjs/core": 0.9.0
-    "@lwrjs/diagnostics": 0.9.0
-    "@lwrjs/shared-utils": 0.9.0
-    "@lwrjs/tools": 0.9.0
+    "@lwrjs/config": 0.9.4
+    "@lwrjs/core": 0.9.4
+    "@lwrjs/diagnostics": 0.9.4
+    "@lwrjs/shared-utils": 0.9.4
+    "@lwrjs/tools": 0.9.4
     chalk: ^4.1.0
     commander: ^10.0.0
     fs-extra: ^11.1.0
   bin:
     lwr: bin/lwr.js
-  checksum: b4a9b73d4ae45e4158becb684bf8f21bd70e43b716bef601ecf5f33de7e00af2c95dc8bdd398b3c53fc0033dc1d296236fda88799ab59eeb9a0c9f49805fc57a
-  languageName: node
-  linkType: hard
-
-"lwr@npm:0.9.0-alpha.37":
-  version: 0.9.0-alpha.37
-  resolution: "lwr@npm:0.9.0-alpha.37"
-  dependencies:
-    "@lwrjs/config": 0.9.0-alpha.37
-    "@lwrjs/core": 0.9.0-alpha.37
-    "@lwrjs/diagnostics": 0.9.0-alpha.37
-    "@lwrjs/shared-utils": 0.9.0-alpha.37
-    "@lwrjs/tools": 0.9.0-alpha.37
-    chalk: ^4.1.0
-    commander: ^10.0.0
-    fs-extra: ^11.1.0
-  bin:
-    lwr: bin/lwr.js
-  checksum: ce86670253f52b2c1c0b2912f83f8206b592782804181f6d1eb08d740f11efcd5afd106d7e4f67f8508745976730772dca9e4a56d2ce50b5d113f5193260d3f4
+  checksum: cf35ae0aa52d61fd725250eca70ea535acfe5cf270f003d2566b04a2ee2aaaf2f2c3984bca70bd51539314b88f5a845adf3d814207dda8d6f15ea78a9ddfcdc6
   languageName: node
   linkType: hard
 
@@ -13485,9 +13112,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "managed-runtime@workspace:packages/managed-runtime"
   dependencies:
-    "@lwrjs/lambda": 0.9.0-alpha.37
+    "@lwrjs/lambda": 0.9.4
     lwc: 2.40.0
-    lwr: 0.9.0-alpha.37
+    lwr: ^0.9.4
     pwa-kit-dev: 2.7.0
   languageName: unknown
   linkType: soft
@@ -13764,10 +13391,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "metrics@workspace:packages/metrics"
   dependencies:
-    "@lwrjs/types": 0.9.0
+    "@lwrjs/types": 0.9.4
     express: ^4.17.1
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -14265,7 +13892,7 @@ __metadata:
     "@wdio/mocha-framework": ^7.13.2
     chromedriver: ^111.0.0
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     simple-routing: 0.0.1
     ts-node: ^10.1.0
     typescript: ^4.9.5
@@ -14333,7 +13960,7 @@ __metadata:
     "@babel/core": ^7.21.3
     "@babel/preset-typescript": ^7.21.0
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -14372,21 +13999,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.1":
-  version: 3.3.2
-  resolution: "nanoid@npm:3.3.2"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: 376717f0685251fad77850bd84c6b8d57837c71eeb1c05be7c742140cc1835a5a2953562add05166d6dbc8fb65f3fdffa356213037b967a470e1691dc3e7b9cc
-  languageName: node
-  linkType: hard
-
 "nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 2fddd6dee994b7676f008d3ffa4ab16035a754f4bb586c61df5a22cf8c8c94017aadd360368f47d653829e0569a92b129979152ff97af23a558331e47e37cd9c
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.3.6":
+  version: 3.3.6
+  resolution: "nanoid@npm:3.3.6"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 7d0eda657002738aa5206107bd0580aead6c95c460ef1bdd0b1a87a9c7ae6277ac2e9b945306aaa5b32c6dcb7feaf462d0f552e7f8b5718abfc6ead5c94a71b3
   languageName: node
   linkType: hard
 
@@ -14451,7 +14078,7 @@ __metadata:
     "@babel/core": ^7.21.3
     "@babel/preset-typescript": ^7.21.0
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -15490,7 +15117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:~4.2.0":
+"postcss-value-parser@npm:^4.2.0, postcss-value-parser@npm:~4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 819ffab0c9d51cf0acbabf8996dffbfafbafa57afc0e4c98db88b67f2094cb44488758f06e5da95d7036f19556a4a732525e84289a425f4f6fd8e412a9d7442f
@@ -15509,14 +15136,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.6":
-  version: 8.4.12
-  resolution: "postcss@npm:8.4.12"
+"postcss@npm:^8.4.23":
+  version: 8.4.23
+  resolution: "postcss@npm:8.4.23"
   dependencies:
-    nanoid: ^3.3.1
+    nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
+  checksum: 8bb9d1b2ea6e694f8987d4f18c94617971b2b8d141602725fedcc2222fdc413b776a6e1b969a25d627d7b2681ca5aabb56f59e727ef94072e1b6ac8412105a2f
   languageName: node
   linkType: hard
 
@@ -16884,7 +16511,7 @@ __metadata:
     "@types/jest": ^25.2.1
     chromedriver: ^111.0.0
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     ts-node: ^9.0.0
     typescript: ^4.9.5
     utam: ^1.0.6
@@ -17066,7 +16693,7 @@ __metadata:
     "@types/helmet": ^4.0.0
     helmet: ^4.3.1
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -17236,7 +16863,7 @@ __metadata:
   resolution: "services@workspace:packages/services"
   dependencies:
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -17425,7 +17052,7 @@ __metadata:
     "@wdio/mocha-framework": ^7.13.2
     chromedriver: ^111.0.0
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     ts-node: ^10.1.0
     typescript: ^4.9.5
     utam: ^1.7.0
@@ -17733,10 +17360,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ssr@workspace:packages/ssr"
   dependencies:
-    "@lwrjs/lwc-ssr": 0.9.0
-    "@lwrjs/types": 0.9.0
+    "@lwrjs/lwc-ssr": 0.9.4
+    "@lwrjs/types": 0.9.4
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -17789,9 +17416,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-generation@workspace:packages/static-generation"
   dependencies:
-    "@lwrjs/types": 0.9.0
+    "@lwrjs/types": 0.9.4
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     serve: ^14.2.0
     typescript: ^4.9.5
   languageName: unknown
@@ -18293,9 +17920,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "templating@workspace:packages/templating"
   dependencies:
-    "@lwrjs/types": 0.9.0
+    "@lwrjs/types": 0.9.4
     lwc: 2.40.0
-    lwr: 0.9.0
+    lwr: ^0.9.4
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft

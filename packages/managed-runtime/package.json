@@ -17,9 +17,9 @@
         "mrt:tail": "pwa-kit-dev tail-logs --cloud-origin https://cloud-staging.mobify-staging.com --project ssr-demo-app --environment production"
     },
     "devDependencies": {
-        "@lwrjs/lambda": "0.9.0-alpha.37",
+        "@lwrjs/lambda": "0.9.4",
         "lwc": "2.40.0",
-        "lwr": "0.9.0-alpha.37",
+        "lwr": "^0.9.4",
         "pwa-kit-dev": "2.7.0"
     },
     "engines": {
