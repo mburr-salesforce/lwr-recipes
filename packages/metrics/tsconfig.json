@@ -12,7 +12,8 @@
                 "../../../node_modules/@lwrjs/client-modules/build/modules/lwr/metrics/metrics.js"
             ],
             "lwr/navigation": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/navigation/navigation.d.ts"
             ]
         }
     },

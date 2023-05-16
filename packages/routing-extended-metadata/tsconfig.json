@@ -19,18 +19,25 @@
                 "modules/example/metadataPageAttributeApplier/metadataPageAttributeApplier.ts"
             ],
             "example/rootRouter": ["modules/example/rootRouter/rootRouter.ts"],
-            "lwr/router": ["../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts"],
+            "lwr/router": [
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/router/router.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/router/router.d.ts"
+            ],
             "lwr/routerUtils": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/routerUtils/routerUtils.d.ts"
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/routerUtils/routerUtils.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/routerUtils/routerUtils.d.ts"
             ],
             "lwr/navigation": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts"
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigation/navigation.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/navigation/navigation.d.ts"
             ],
             "lwr/navigationContext": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts"
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationContext/navigationContext.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/navigationContext/navigationContext.d.ts"
             ],
             "lwr/navigationService": [
-                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts"
+                "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts",
+                "../../../node_modules/@lwrjs/router/build/es/modules/lwr/navigationService/navigationService.d.ts"
             ]
         }
     },
