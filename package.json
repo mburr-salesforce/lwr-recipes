@@ -8,6 +8,7 @@
     "scripts": {
         "build": "yarn workspaces foreach -pv --topological-dev run build",
         "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
+        "createNewRecipe": "./scripts/init/init-new-package.js",
         "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
         "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
         "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",

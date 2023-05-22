@@ -55,6 +55,15 @@ git pull origin main
 git checkout -b <name-of-the-feature>
 ```
 
+### Create your new recipe
+
+The createNewRecipe script will give you a boilerplate recipe with wdio testing preconfigured. Run the following commands:
+
+```bash
+yarn createNewRecipe
+yarn install
+```
+
 ### Make your changes
 
 1. Modify the files

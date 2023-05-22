@@ -1,0 +1,46 @@
+{
+    "name": "{name}",
+    "version": "0.0.1",
+    "description": "Example Project",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+    "files": [
+        "build/**/*.js"
+    ],
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "rm -rf build node_modules __lwr_cache__ site pageObjects",
+        "dev": "lwr dev",
+        "lwr:build": "lwr build --clean",
+        "start": "lwr start",
+        "test": "wdio wdio.conf.ts",
+        "test:debug": "NOHEADLESS=true wdio wdio.conf.ts"
+    },
+    "dependencies": {
+        "lwr": "{lwrVersion}",
+        "lwc": "{lwcVersion}"
+    },
+    "devDependencies": {
+        "@wdio/cli": "{wdioVersion}",
+        "@wdio/devtools-service": "{wdioVersion}",
+        "@wdio/globals": "{wdioVersion}",
+        "@wdio/local-runner": "{wdioVersion}",
+        "@wdio/mocha-framework": "{wdioVersion}",
+        "chromedriver": "{chromedriverVersion}",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5",
+        "wdio-chromedriver-service": "^8.1.1",
+        "wdio-wait-for": "^3.0.4",
+        "webdriverio": "{wdioVersion}"
+    },
+    "engines": {
+        "node": ">=16.0.0 <20"
+    },
+    "volta": {
+        "node": "16.19.1",
+        "yarn": "1.22.19"
+    }
+}
