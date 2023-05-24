@@ -23,6 +23,7 @@ module.exports = {
                 '@typescript-eslint/camelcase': 0,
                 '@typescript-eslint/class-name-casing': 0,
                 '@typescript-eslint/ban-types': 0,
+                '@typescript-eslint/no-explicit-any': 'off',
             },
         },
         {

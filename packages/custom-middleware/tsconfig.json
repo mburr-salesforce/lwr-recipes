@@ -1,10 +1,9 @@
 {
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
-        "rootDir": "src",
+        "baseUrl": "src",
         "outDir": "build",
-        "experimentalDecorators": true,
-        "skipLibCheck": true
+        "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework", "expect-webdriverio", "webdriverio"]
     },
-    "exclude": ["build"]
+    "exclude": ["build", "pageObjects"]
 }

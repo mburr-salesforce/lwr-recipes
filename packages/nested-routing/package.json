@@ -14,7 +14,7 @@
         "clean": "rm -rf build node_modules __lwr_cache__ site tsconfig.tsbuildinfo",
         "dev": "lwr dev",
         "lwr:build": "lwr build --clean",
-        "start": "lwr start",
+        "start": "lwr start --mode=prod-compat",
         "stage": "yarn lwr:build && yarn start",
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },

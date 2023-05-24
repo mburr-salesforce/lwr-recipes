@@ -1,7 +1,5 @@
 import { existsSync } from 'fs';
 import { createServer } from 'lwr';
-import express from 'express';
-import fs from 'fs';
 import type { Services } from '@wdio/types';
 
 // Use the same environment variable(s) as LWR does to initialize
@@ -13,18 +11,27 @@ if (existsSync('/.dockerenv')) {
     CHROME_ARGS.push('--no-sandbox');
 }
 
-class LWRServiceLauncher implements Services.ServiceInstance {
+// interface Options {
+//     config: Partial<LwrGlobalConfig>;
+// }
+
+class LWRExpressServiceLauncher implements Services.ServiceInstance {
+    // TODO allow configuration options
     async onPrepare(): Promise<void> {
         const port = PORT;
-        const server = createServer({ port, serverType: 'express' });
-        const internalServer = server.getInternalServer<'express'>();
-        const dir = 'site';
-        // Allow the test to be run against prebuilt LWR static content
-        if (fs.existsSync(dir)) {
-            console.log('Using prebuilt content from directory: ' + dir);
-            internalServer.use(express.static(dir));
-        }
-        await server.listen(({ port, serverMode }) => {
+        // Create the LWR App Server with Express - http://expressjs.com/en/api.html
+        // Note: serverType can be set directly in the lwr.config.json
+        const lwrServer = createServer({ port, serverType: 'express' });
+
+        // Get the express app
+        const expressApp = lwrServer.getInternalServer<'express'>();
+
+        // Add Express middleware directly
+        expressApp.use(async (req: any, res: any, next: any) => {
+            res.setHeader('express-custom-header', 'Express middleware is running!');
+            next();
+        });
+        await lwrServer.listen(({ port, serverMode }) => {
             console.log(`[LWR Service] App listening on port ${port} in ${serverMode} mode\n`);
         });
     }
@@ -65,8 +72,7 @@ export const config: WebdriverIO.Config = {
     specs: ['./test/**/*.ts'],
     // Patterns to exclude.
     exclude: [
-        // Exclude utam tests until working again
-        './test/__utam__/*.ts',
+        // 'path/to/excluded/files'
     ],
     //
     // ============
@@ -142,7 +148,7 @@ export const config: WebdriverIO.Config = {
     },
     services: [
         ['chromedriver', { port: 8015 }],
-        [LWRServiceLauncher, {}],
+        [LWRExpressServiceLauncher, {}],
     ],
     before(caps, spec: string[], browser: WebdriverIO.Browser): void {
         browser.addCommand('shadowDeep$', async (selector: string) => {
@@ -155,7 +161,7 @@ export const config: WebdriverIO.Config = {
 
         browser.addCommand('waitForElement', async (selector: string) => {
             return browser.waitUntil(
-                async () => {
+                async (): Promise<any> => {
                     const element = await browser.shadowDeep$(selector);
 
                     if (!(await element.isExisting())) {

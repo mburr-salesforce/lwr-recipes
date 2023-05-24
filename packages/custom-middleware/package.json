@@ -12,17 +12,26 @@
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__ tsconfig.tsbuildinfo",
         "build": "tsc -b",
-        "dev": "node build/express.js",
-        "start:express": "node build/express.js",
-        "start:koa": "node build/koa.js",
-        "start": "MODE=prod node build/express.js",
-        "start:compat": "MODE=compat node build/express.js",
-        "start:prod-compat": "MODE=prod-compat node build/express.js"
+        "dev": "node build/src/express.js",
+        "start:express": "node build/src/express.js",
+        "start:koa": "node build/src/koa.js",
+        "start": "MODE=prod node build/src/express.js",
+        "start:compat": "MODE=compat node build/src/express.js",
+        "start:prod-compat": "MODE=prod-compat node build/src/express.js",
+        "test": "wdio wdio.conf.ts"
     },
     "devDependencies": {
+        "@wdio/cli": "^8.10.4",
+        "@wdio/globals": "^8.10.4",
+        "@wdio/local-runner": "^8.10.4",
+        "@wdio/mocha-framework": "^8.10.4",
+        "chromedriver": "^112.0.0",
         "lwc": "2.40.0",
         "lwr": "^0.9.4",
-        "typescript": "^4.9.5"
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5",
+        "wdio-chromedriver-service": "^8.1.1",
+        "webdriverio": "^8.10.4"
     },
     "engines": {
         "node": ">=16.0.0 <20"

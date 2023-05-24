@@ -2,9 +2,14 @@
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": "src",
-        "rootDir": "src",
         "outDir": "build",
-        "module": "commonjs",
+        "types": [
+            "node",
+            "@wdio/globals/types",
+            "@wdio/mocha-framework",
+            "expect-webdriverio",
+            "webdriverio"
+        ],
         "paths": {
             "example/home": ["modules/example/home/home.ts"],
             "example/contact": ["modules/example/contact/contact.ts"],
@@ -44,6 +49,5 @@
             ]
         }
     },
-    "include": ["./src/services/**/*.ts", "./src/types/**/*.ts"],
-    "exclude": ["build"]
+    "exclude": ["build", "pageObjects", "./test/__utam__/*spec.ts"]
 }

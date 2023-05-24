@@ -8,7 +8,7 @@ const lwrServer = createServer({ serverType: 'koa' });
 const koaApp = lwrServer.getInternalServer<'koa'>();
 
 // Add koa middleware directly
-koaApp.use(async (ctx, next) => {
+koaApp.use(async (ctx: any, next: any) => {
     ctx.response.set('koa-custom-header', 'Koa middleware is running!');
     await next();
 });

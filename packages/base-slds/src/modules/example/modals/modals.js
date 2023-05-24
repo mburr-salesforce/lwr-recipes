@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
-import SimpleModal from './simpleModal/SimpleModal';
-import FormModal from './formModal/FormModal';
+import SimpleModal from './simpleModal/simpleModal';
+import FormModal from './formModal/formModal';
 
 export default class Modals extends LightningElement {
     _result = 'unset';

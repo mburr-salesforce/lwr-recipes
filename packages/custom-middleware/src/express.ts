@@ -8,7 +8,7 @@ const lwrServer = createServer({ serverType: 'express' });
 const expressApp = lwrServer.getInternalServer<'express'>();
 
 // Add Express middleware directly
-expressApp.use(async (req, res, next) => {
+expressApp.use(async (req: any, res: any, next: any) => {
     res.setHeader('express-custom-header', 'Express middleware is running!');
     next();
 });

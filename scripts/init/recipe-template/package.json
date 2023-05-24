@@ -33,7 +33,6 @@
         "ts-node": "^10.9.1",
         "typescript": "^4.9.5",
         "wdio-chromedriver-service": "^8.1.1",
-        "wdio-wait-for": "^3.0.4",
         "webdriverio": "{wdioVersion}"
     },
     "engines": {

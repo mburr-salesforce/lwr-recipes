@@ -1,0 +1,49 @@
+{
+    "shadow": {
+        "elements": [
+            {
+                "name": "lightningTabset",
+                "selector": {
+                    "css": "lightning-tabset"
+                },
+                "public": true,
+                "type": "salesforce-pageobjects/lightning/pageObjects/tabset"
+            },
+            {
+                "name": "example-cards",
+                "public": true,
+                "selector": {
+                    "css": "example-cards"
+                }
+            },
+            {
+                "name": "example-nav",
+                "public": true,
+                "selector": {
+                    "css": "example-nav"
+                }
+            },
+            {
+                "name": "example-data",
+                "public": true,
+                "selector": {
+                    "css": "example-data"
+                }
+            },
+            {
+                "name": "example-modals",
+                "public": true,
+                "selector": {
+                    "css": "example-modals"
+                }
+            },
+            {
+                "name": "example-buttons",
+                "public": true,
+                "selector": {
+                    "css": "example-buttons"
+                }
+            }
+        ]
+    }
+}

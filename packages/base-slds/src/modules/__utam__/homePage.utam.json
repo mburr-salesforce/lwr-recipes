@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "selector": {
+        "css": "body"
+    },
+    "elements": [
+        {
+            "name": "app",
+            "type": "base-slds/pageObjects/app",
+            "public": true,
+            "selector": {
+                "css": "example-app"
+            }
+        }
+    ]
+}
