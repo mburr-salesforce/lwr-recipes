@@ -2,7 +2,6 @@
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": "src",
-        "rootDir": "src",
         "outDir": "build",
         "paths": {
             "example/animal": ["modules/example/animal/animal.ts"],
@@ -52,7 +51,8 @@
                 "../../../node_modules/@lwrjs/router/build/modules/lwr/navigationService/navigationService.d.ts",
                 "../../../node_modules/@lwrjs/router/build/es/modules/lwr/navigationService/navigationService.d.ts"
             ]
-        }
+        },
+        "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework", "expect-webdriverio", "webdriverio"]
     },
     "exclude": ["build"]
 }
