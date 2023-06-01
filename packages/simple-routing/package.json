@@ -17,8 +17,9 @@
         "lwr:build": "lwr build --clean",
         "start": "lwr start",
         "stage": "yarn lwr:build && yarn start",
+        "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat",
         "test": "wdio wdio.conf.ts",
-        "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
+        "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "devDependencies": {
         "@babel/core": "^7.21.3",

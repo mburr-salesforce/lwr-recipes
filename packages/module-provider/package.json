@@ -19,7 +19,7 @@
         "stage": "yarn lwr:build && yarn start",
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat",
         "test": "wdio wdio.conf.ts",
-        "test-debug": "NOHEADLESS=true wdio wdio.conf.ts"
+        "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "devDependencies": {
         "@types/jquery": "^3.5.16",

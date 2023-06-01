@@ -4,7 +4,8 @@ import type { Services } from '@wdio/types';
 // Use the same environment variable(s) as LWR does to initialize
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
 // default to running headless, but allow an override to be headed
-const NOHEADLESS = process.env.NOHEADLESS;
+const debug = process.env.DEBUG;
+const NOHEADLESS = process.env.NOHEADLESS || process.env.DEBUG;
 const CHROME_ARGS = ['--verbose'].concat(NOHEADLESS ? [] : ['--headless']);
 if (existsSync('/.dockerenv')) {
     CHROME_ARGS.push('--no-sandbox');
@@ -85,6 +86,7 @@ export const config: WebdriverIO.Config = {
             },
         },
     ],
+    execArgv: debug ? ['--inspect'] : [],
     //
     // ===================
     // Test Configurations

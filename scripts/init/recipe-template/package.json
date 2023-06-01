@@ -17,7 +17,7 @@
         "lwr:build": "lwr build --clean",
         "start": "lwr start",
         "test": "wdio wdio.conf.ts",
-        "test:debug": "NOHEADLESS=true wdio wdio.conf.ts"
+        "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "dependencies": {
         "lwr": "{lwrVersion}",

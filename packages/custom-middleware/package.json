@@ -18,7 +18,8 @@
         "start": "MODE=prod node build/src/express.js",
         "start:compat": "MODE=compat node build/src/express.js",
         "start:prod-compat": "MODE=prod-compat node build/src/express.js",
-        "test": "wdio wdio.conf.ts"
+        "test": "wdio wdio.conf.ts",
+        "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "devDependencies": {
         "@wdio/cli": "^8.10.4",
