@@ -1,4 +1,4 @@
-import { HandlerContext, RouteHandlerViewResponse, ViewRequest } from '@lwrjs/types';
+import type { HandlerContext, RouteHandlerViewResponse, ViewRequest } from '@lwrjs/types';
 
 // Return customized input, from which the LWR server will construct a response
 // viewRequest = { url, requestPath, params?, query? }

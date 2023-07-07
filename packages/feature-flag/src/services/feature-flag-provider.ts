@@ -1,4 +1,4 @@
-import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from 'lwr';
+import type { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from 'lwr';
 import { hashContent, readFile } from '@lwrjs/shared-utils';
 
 interface FlagConfig {

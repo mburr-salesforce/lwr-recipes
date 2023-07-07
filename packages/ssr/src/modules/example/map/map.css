@@ -1,0 +1,17 @@
+div.container {
+    overflow: hidden;
+    resize: none;
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+}
+div.map {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+iframe {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}

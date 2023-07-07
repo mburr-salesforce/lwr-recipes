@@ -2,7 +2,8 @@
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": "src",
-        "outDir": "build",
+        "outDir": "build/es",
+        "isolatedModules": false,
         "paths": {
             "example/animal": ["modules/example/animal/animal.ts"],
             "example/animalCat": ["modules/example/animalCat/animalCat.ts"],

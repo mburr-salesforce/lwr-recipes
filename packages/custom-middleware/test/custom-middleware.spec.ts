@@ -16,3 +16,5 @@ describe('custom-middleware header verification', () => {
         );
     });
 });
+
+export default {};

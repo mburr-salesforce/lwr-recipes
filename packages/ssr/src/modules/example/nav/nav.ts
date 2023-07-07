@@ -12,6 +12,7 @@ export default class ExampleNav extends LightningElement {
     pages: Page[] = [
         { name: 'Home', href: '/', selected: false },
         { name: 'Books', href: '/books/beverly+cleary', selected: false },
+        { name: 'Visit', href: '/visit', selected: false },
     ];
 
     get links(): Page[] {

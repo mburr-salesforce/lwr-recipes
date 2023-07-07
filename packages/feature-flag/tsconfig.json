@@ -1,12 +1,8 @@
 {
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
-        "baseUrl": ".",
         "rootDir": "src",
-        "outDir": "build",
-        "experimentalDecorators": true,
-        "skipLibCheck": true
+        "outDir": "build"
     },
-    "exclude": ["build"],
-    "include": ["src/**/*", "src/**/*.json"]
+    "exclude": ["build"]
 }

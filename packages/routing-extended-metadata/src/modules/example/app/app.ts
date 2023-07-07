@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 import { createRootRouter } from 'example/rootRouter';
 import { NAV_ITEMS } from './navItems';
-import { RoutingResult } from 'lwr/router';
+import type { RoutingResult } from 'lwr/router';
 import { CurrentRouteMetadata, ExtendedRouteDefinition } from 'example/currentRouteMetadata';
 import { currentRouteMetadataContextualizer, provideContext } from 'example/contextProvider';
 

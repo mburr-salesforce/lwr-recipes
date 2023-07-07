@@ -1,17 +1,21 @@
 {
-    "files": [
-        /* only process references */
-    ],
+    "extends": "./config/tsconfig.settings.json",
     "references": [
+        { "path": "./packages/custom-middleware" },
         { "path": "./packages/labels" },
+        { "path": "./packages/managed-runtime" },
+        { "path": "./packages/metrics" },
         { "path": "./packages/module-provider" },
+        { "path": "./packages/multiple-outlets" },
         { "path": "./packages/nested-routing" },
+        { "path": "./packages/routing-extended-metadata" },
         { "path": "./packages/security" },
         { "path": "./packages/simple-routing" },
+        { "path": "./packages/ssr" },
+        { "path": "./packages/static-generation" },
         { "path": "./packages/templating" }
     ],
-    "exclude": [
-        "node_modules/**",
-        "**/__tests__/**"
+    "files": [
+        /* only process references */
     ]
 }

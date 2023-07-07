@@ -1,14 +1,15 @@
 # Instrumentation Metrics in AMD
 
--   [Introduction](#introduction)
--   [Details](#details)
-    -   [Project Setup](#project-setup)
-    -   [Metrics](#metrics)
-    -   [Reading Metrics](#reading-metrics)
-    -   [Recording Metrics](#recording-metrics)
-    -   [Configuration](#configuration)
-    -   [Dispatcher Override](#dispatcher-override)
--   [Recipe Setup](#recipe-setup)
+-   [Instrumentation Metrics in AMD](#instrumentation-metrics-in-amd)
+    -   [Introduction](#introduction)
+    -   [Details](#details)
+        -   [Project Setup](#project-setup)
+        -   [Metrics](#metrics)
+        -   [Reading Metrics](#reading-metrics)
+        -   [Recording Metrics](#recording-metrics)
+        -   [Configuration](#configuration)
+        -   [Dispatcher Override](#dispatcher-override)
+    -   [Recipe Setup](#recipe-setup)
 
 ## Introduction
 
@@ -164,6 +165,8 @@ Where `LWRMetric` is one of the [names defined by LWR](#metrics) (excluding any 
 type LWRMetric =
     | 'lwr.bootstrap.end'
     | 'lwr.bootstrap.error'
+    | 'lwr.bootstrap.init'
+    | 'lwr.bootstrap.init.module'
     | 'lwr.loader.module.define'
     | 'lwr.loader.module.fetch'
     | 'lwr.loader.mappings.fetch'

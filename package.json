@@ -4,7 +4,7 @@
     "license": "MIT",
     "description": "LWR Javascript Implementation",
     "main": "index.js",
-    "version": "0.9.4",
+    "version": "0.10.0",
     "scripts": {
         "build": "yarn workspaces foreach -pv --topological-dev run build",
         "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
@@ -36,10 +36,10 @@
         "typescript": "^4.9.5"
     },
     "engines": {
-        "node": ">=16.0.0 <20"
+        "node": ">=16.0.0"
     },
     "volta": {
-        "node": "16.19.1",
+        "node": "16.20.1",
         "yarn": "1.22.19"
     },
     "husky": {
@@ -48,5 +48,5 @@
             "commit-msg": "commitlint -e $GIT_PARAMS --config ./config/commitlint.config.js"
         }
     },
-    "packageManager": "yarn@3.4.1"
+    "packageManager": "yarn@3.6.1"
 }

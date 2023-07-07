@@ -1,4 +1,4 @@
-import { Module, RouteHandlerCallback } from 'lwr/router';
+import type { Module, RouteHandlerCallback } from 'lwr/router';
 
 export default class RecipesPageHandler {
     callback: RouteHandlerCallback;

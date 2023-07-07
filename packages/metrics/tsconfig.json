@@ -3,7 +3,7 @@
     "compilerOptions": {
         "baseUrl": "src",
         "rootDir": "src",
-        "outDir": "build",
+        "outDir": "build/es",
         "paths": {
             "example/a": ["modules/example/a/a.ts"],
             "example/b": ["modules/example/b/b.ts"],

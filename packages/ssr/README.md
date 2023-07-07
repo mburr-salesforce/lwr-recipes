@@ -5,8 +5,10 @@
     -   [Project Setup](#project-setup)
     -   [Configuration](#configuration)
     -   [Root Components](#root-components)
+    -   [Client-side Rendering](#client-side-rendering)
     -   [Loading Data](#loading-data)
     -   [Code Portability](#code-portability)
+    -   [Hydration](#hydration)
 -   [Recipe Setup](#recipe-setup)
     -   [Live](#live)
     -   [Generated](#generated)
@@ -27,26 +29,18 @@ This recipe is a Multi-Page App (MPA), with all pages being SSRed. This means th
 ssr
 ├── src
 │   ├── assets/                     // static images and CSS
+│   ├── content/
+│   │   └── visit.html              // content template for the visit page
 │   ├── layouts/
 │   │   └── chrome.njk              // layout template for the pages
 │   └── modules/
 │       └── example/
-│           ├── bookDetails/        // book details page root component
-│           │   ├── bookDetails.css
-│           │   ├── bookDetails.html
-│           │   └── bookDetails.ts
-│           ├── bookList/           // book list page root component
-│           │   ├── bookList.css
-│           │   ├── bookList.html
-│           │   └── bookList.ts
-│           ├── home/               // home page root component
-│           │   ├── home.css
-│           │   ├── home.html
-│           │   └── home.ts
-│           └── nav/                // navigation component (embedded in the layout template)
-│               ├── nav.css
-│               ├── nav.html
-│               └── nav.ts
+│           ├── bookDetails/        // book details page component
+│           ├── bookList/           // book list page component
+│           ├── home/               // home page component
+│           ├── map/                // map component (not SSRed)
+│           ├── nav/                // navigation component (embedded in the layout template)
+│           └── visit/              // component which tracks when the site was last visited (hydrated)
 ├── lwr.config.json                 // LWR app configuration
 ├── package.json                    // npm package configuration
 └── tsconfig.json                   // typescript build configuration
@@ -54,27 +48,18 @@ ssr
 
 ### Configuration
 
-This recipe contains three pages. Each page:
+This recipe contains four pages. Each page:
 
--   turns on SSR by setting `bootstrap.ssr` to `true`.
--   has a `rootComponent`, which is SSRed.
+-   turns on SSR by setting `bootstrap.ssr` to `true` on each route.
+-   has one or more [root components](#root-components), which are SSRed.
 -   uses the _chrome.njk_ `layoutTemplate` (read more about templating [here](../templating/README.md#templates)).
 
 The `staticSiteGenerator` object lists parameterized `books` routes to generate when this app is pre-built. Read more about static site generation [here](../static-generation/README.md#configuration).
-
-The SSR `moduleProvider` and `viewTransformer` must be pulled in to handle the SSR processing.
 
 ```json
 // ssr/lwr.config.json
 {
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
-    "moduleProviders": [
-        "@lwrjs/app-service/moduleProvider",
-        "@lwrjs/lwc-ssr/moduleProvider",
-        "@lwrjs/lwc-module-provider",
-        "@lwrjs/npm-module-provider"
-    ],
-    "viewTransformers": ["@lwrjs/base-view-transformer", "@lwrjs/lwc-ssr/viewTransformer"],
     "routes": [
         {
             "id": "home",
@@ -98,6 +83,15 @@ The SSR `moduleProvider` and `viewTransformer` must be pulled in to handle the S
             "id": "books-details",
             "path": "/books/:author/:bookId",
             "rootComponent": "example/bookDetails",
+            "layoutTemplate": "$layoutsDir/chrome.njk",
+            "bootstrap": {
+                "ssr": true
+            }
+        },
+        {
+            "id": "visit",
+            "path": "/visit",
+            "contentTemplate": "$contentDir/visit.html",
             "layoutTemplate": "$layoutsDir/chrome.njk",
             "bootstrap": {
                 "ssr": true
@@ -130,6 +124,19 @@ If a root component in a content or layout template has attributes, these are pa
 ```
 
 > Read more about building SSRed pages [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#building-ssr-pages).
+
+### Client-side Rendering
+
+A root component in a content or layout template can opt-out of SSR by adding the `lwr:hydrate="client-only"` directive:
+
+```html
+<!-- ssr/src/content/visit.html-->
+<example-map lwr:hydrate="client-only"></example-map>
+```
+
+This is useful for components which are not [portable](#code-portability) or are heavily interactive, like a map or graph.
+
+> Read more about skipping SSR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#skip-ssr).
 
 ### Loading Data
 
@@ -182,7 +189,7 @@ Here are some tips to ensure component code is portable:
 
 ```ts
 connectedCallback() {
-    if (typeof window !== 'undefined') { // check the type of the browser API
+    if (!import.meta.env.SSR) {
         window.addEventListener('error', (evt) => {
             console.error(`⚠️ Uncaught error: ${evt.message}`);
         });
@@ -208,6 +215,17 @@ async connectedCallback() {
 ```
 
 > Read more about debugging SSR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#debugging).
+
+### Hydration
+
+To make an SSRed root component interactive, opt-in to [client hydration](https://rfcs.lwc.dev/rfcs/lwc/0117-ssr-rehydration) by adding the `lwr:hydrate` directive:
+
+```html
+<!-- ssr/src/content/visit.html-->
+<example-visit lwr:hydrate></example-visit>
+```
+
+> Read more about hydration [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#client-hydration).
 
 ## Recipe Setup
 

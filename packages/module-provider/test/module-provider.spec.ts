@@ -53,3 +53,5 @@ describe('Module Provider', () => {
         expect(maroon_element).toBeDisplayed();
     });
 });
+
+export default {};

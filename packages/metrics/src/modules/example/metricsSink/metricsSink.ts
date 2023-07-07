@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { BOOTSTRAP_PREFIX, BOOTSTRAP_END, BOOTSTRAP_ERROR } from 'lwr/metrics';
+import { BOOTSTRAP_PREFIX, BOOTSTRAP_END, BOOTSTRAP_ERROR, INIT_MODULE } from 'lwr/metrics';
 
 export default function (): void {
     if (PerformanceObserver) {
@@ -19,6 +19,11 @@ export default function (): void {
                 return mark.name === BOOTSTRAP_ERROR ? count + 1 : count;
             }, 0);
 
+            // Get root module initialization count
+            const moduleInitCount = bootstrapMarks.reduce((count, mark) => {
+                return mark.name.startsWith(INIT_MODULE) ? count + 1 : count;
+            }, 0);
+
             if (bootstrapEndCount > 0 || bootstrapErrorCount > 0) {
                 // These metrics only occur once, so disconnect after they are received
                 observer.disconnect();
@@ -30,6 +35,7 @@ export default function (): void {
                     body: JSON.stringify({
                         bootstrapEndCount,
                         bootstrapErrorCount,
+                        moduleInitCount,
                     }),
                 });
             }

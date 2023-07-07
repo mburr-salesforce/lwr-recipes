@@ -2,7 +2,7 @@
     "extends": "../../config/tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": "src",
-        "outDir": "build",
+        "outDir": "build/es",
         "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework", "expect-webdriverio", "webdriverio"]
     },
     "exclude": ["build", "pageObjects"]

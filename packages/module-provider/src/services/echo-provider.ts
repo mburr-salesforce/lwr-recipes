@@ -1,5 +1,5 @@
 import path from 'path';
-import { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from 'lwr';
+import type { AbstractModuleId, ModuleCompiled, ModuleEntry, ModuleProvider } from 'lwr';
 import { hashContent } from '@lwrjs/shared-utils';
 
 // This Module Provider returns generated ES modules.

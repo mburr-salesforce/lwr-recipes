@@ -1,6 +1,6 @@
 {
     "name": "security",
-    "version": "0.0.1",
+    "version": "0.10.0",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -8,7 +8,7 @@
     "main": "build/index.js",
     "scripts": {
         "build": "tsc -b",
-        "clean": "rm -rf build node_modules __lwr_cache__ site",
+        "clean": "rm -rf build node_modules __lwr_cache__ site tsconfig.tsbuildinfo",
         "dev": "MODE=dev node build/index.js",
         "lwr:build": "lwr build --clean",
         "start": "MODE=prod node build/index.js",
@@ -17,18 +17,18 @@
     },
     "devDependencies": {
         "@types/helmet": "^4.0.0",
-        "lwc": "2.40.0",
-        "lwr": "^0.9.4",
+        "lwc": "3.0.0",
+        "lwr": "0.10.0",
         "typescript": "^4.9.5"
     },
     "dependencies": {
         "helmet": "^4.3.1"
     },
     "engines": {
-        "node": ">=16.0.0 <20"
+        "node": ">=16.0.0"
     },
     "volta": {
-        "node": "16.19.1",
+        "node": "16.20.1",
         "yarn": "1.22.19"
     }
 }

@@ -52,3 +52,5 @@ describe('Nested Routing', () => {
         await catPic.waitForDisplayed();
     });
 });
+
+export default {};

@@ -1,6 +1,6 @@
 {
     "name": "{name}",
-    "version": "0.0.1",
+    "version": "{lwrVersion}",
     "description": "Example Project",
     "license": "MIT",
     "private": true,
@@ -29,11 +29,13 @@
         "@wdio/globals": "{wdioVersion}",
         "@wdio/local-runner": "{wdioVersion}",
         "@wdio/mocha-framework": "{wdioVersion}",
-        "chromedriver": "{chromedriverVersion}",
         "ts-node": "^10.9.1",
         "typescript": "^4.9.5",
         "wdio-chromedriver-service": "^8.1.1",
         "webdriverio": "{wdioVersion}"
+    },
+    "optionalDependencies": {
+        "chromedriver": "{chromedriverVersion}"
     },
     "engines": {
         "node": ">=16.0.0 <20"

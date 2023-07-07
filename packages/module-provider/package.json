@@ -1,6 +1,6 @@
 {
     "name": "module-provider",
-    "version": "0.0.1",
+    "version": "0.10.0",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -23,24 +23,26 @@
     },
     "devDependencies": {
         "@types/jquery": "^3.5.16",
-        "@wdio/cli": "8.10.4",
+        "@wdio/cli": "^8.10.4",
         "@wdio/globals": "^8.10.4",
-        "@wdio/local-runner": "8.10.4",
-        "@wdio/mocha-framework": "8.10.4",
-        "chromedriver": "^112.0.0",
-        "lwc": "2.40.0",
-        "lwr": "^0.9.4",
+        "@wdio/local-runner": "^8.10.4",
+        "@wdio/mocha-framework": "^8.10.4",
+        "lwc": "3.0.0",
+        "lwr": "0.10.0",
         "ts-node": "^10.9.1",
         "typescript": "^4.9.5",
         "utam": "^2.0.2",
         "wdio-chromedriver-service": "^8.1.1",
-        "webdriverio": "8.10.4"
+        "webdriverio": "^8.10.4"
+    },
+    "optionalDependencies": {
+        "chromedriver": "~114.0.0"
     },
     "engines": {
-        "node": ">=16.0.0 <20"
+        "node": ">=16.0.0"
     },
     "volta": {
-        "node": "16.19.1",
+        "node": "16.20.1",
         "yarn": "1.22.19"
     }
 }

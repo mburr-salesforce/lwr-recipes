@@ -1,6 +1,6 @@
 {
     "name": "hello-world",
-    "version": "0.0.1",
+    "version": "0.10.0",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -13,14 +13,14 @@
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "dependencies": {
-        "lwc": "2.40.0",
-        "lwr": "^0.9.4"
+        "lwc": "3.0.0",
+        "lwr": "0.10.0"
     },
     "engines": {
-        "node": ">=16.0.0 <20"
+        "node": ">=16.0.0"
     },
     "volta": {
-        "node": "16.19.1",
+        "node": "16.20.1",
         "yarn": "1.22.19"
     }
 }

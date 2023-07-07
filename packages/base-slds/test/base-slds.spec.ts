@@ -51,3 +51,5 @@ describe('Base SLDS Testing', () => {
         expect(modalLightningTab).toBeDisplayed();
     });
 });
+
+export default {};

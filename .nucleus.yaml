@@ -6,9 +6,9 @@ steps:
     params:
       registry-url: https://registry.npmjs.org
   node-unit-tests:
-    description: Run WDIO/UTAM E2E Tests
+    description: lwr build all project
     run:
-      command: yarn test
+      command: yarn workspaces foreach -v run lwr:build
 notifications:
     email:
         address: laf@salesforce.com

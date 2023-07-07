@@ -8,7 +8,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
 // default to running headless, but allow an override to be headed
 const debug = process.env.DEBUG;
 const NOHEADLESS = process.env.NOHEADLESS || process.env.DEBUG;
-const CHROME_ARGS = ['--verbose'].concat(NOHEADLESS ? [] : ['--headless']);
+const CHROME_ARGS = ['--verbose'].concat(NOHEADLESS ? [] : ['--headless', '--disable-gpu']);
 if (existsSync('/.dockerenv')) {
     CHROME_ARGS.push('--no-sandbox');
 }
