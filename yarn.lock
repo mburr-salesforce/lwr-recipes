@@ -6825,6 +6825,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bundling@workspace:packages/bundling":
+  version: 0.0.0-use.local
+  resolution: "bundling@workspace:packages/bundling"
+  dependencies:
+    lwc: 3.0.0
+    lwr: 0.10.0
+  languageName: unknown
+  linkType: soft
+
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
