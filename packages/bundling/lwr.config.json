@@ -1,0 +1,16 @@
+{
+    "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+    "bundleConfig": {
+        "exclude": ["example/example"],
+        "groups": {
+            "shared": ["lwc", "example/log"]
+        }
+    },
+    "routes": [
+        {
+            "id": "example",
+            "path": "/",
+            "rootComponent": "example/app"
+        }
+    ]
+}

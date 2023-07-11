@@ -155,7 +155,36 @@ See the [LWC documentation](https://github.com/salesforce/lwc/tree/main/packages
 
 #### Bundling
 
-If a recipe is running in [`prod` or `prod-compat` mode](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md#run-a-lwr-recipe), LWR bundles modules before sending them to the client. Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons.
+If a recipe is running in [production mode](<(https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/doc/get_started.md#run-a-lwr-recipe)>) (i.e. `prod` or `prod-compat` mode), LWR bundles the requested module and all of its static dependencies before sending them to the client.
+
+##### Bundling Configuration
+
+Optionally, LWR provides the following config customizations to control this behavior:
+
+-   `bundleConfig.exclude` - an array of module specifers to "exclude" from other bundles. The excluded module and its dependencies are then included in it's own JavaScript bundle.
+    -   **Note**: LWR automatically marks common modules such as `lwc` as excluded by default. See [bundling singletons](#bundling-singletons) for more details.
+-   `bundleConfig.groups` - an object containing key/value pairs, where the key represents the name of the bundling group, and the value is an array of module specifiers belonging to that group. Modules belonging to the group are bundled together into a single JavaScript bundle and excluded from other bundles.
+    -   **Note**: bundling groups are currently only supported in AMD module format. The configuration will be ignored if running in ESM.
+
+Example configuration:
+
+```json
+// lwr.config.json
+{
+    "bundleConfig": {
+        "exclude": ["my/dep"],
+        "groups": {
+            "shared": ["my/lib", "my/foo"]
+        }
+    }
+}
+```
+
+See [Bundling Recipe](../packages/bundling/README.md) for more examples.
+
+##### Bundling Singletons
+
+Depending on your project setup, the same module dependency may get pulled into more than one bundle. This does not cause a problem for most modules, but some must be treated as singletons.
 
 Examples of singleton modules are `lwc`, `lwr/navigation`, and `@lwc/synthetic-shadow`. Since these are framework modules, LWR automatically puts them into their own, shareable bundles. If an application contains additional singleton modules, exclude them from bundling as well:
 

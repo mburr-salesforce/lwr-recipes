@@ -1,0 +1,27 @@
+{
+    "name": "bundling",
+    "version": "0.10.0",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "clean": "rm -rf build node_modules __lwr_cache__ site",
+        "dev": "lwr dev",
+        "lwr:build": "lwr build --clean",
+        "start": "lwr start",
+        "start:amd": "lwr start --mode prod-compat",
+        "stage": "yarn lwr:build && yarn start",
+        "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
+    },
+    "dependencies": {
+        "lwc": "3.0.0",
+        "lwr": "0.10.0"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "volta": {
+        "node": "18.16.1",
+        "yarn": "1.22.19"
+    }
+}
