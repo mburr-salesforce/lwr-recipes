@@ -7,9 +7,13 @@
             "id": "security-base",
             "path": "/",
             "rootComponent": "example/app",
-            "bootstrap": {
-                "configAsSrc": true
-            }
+            "routeHandler": "$rootDir/src/routeHandlers/routeHandler.ts"
+        },
+        {
+            "id": "csp-disabled",
+            "path": "/csp-disabled",
+            "rootComponent": "example/app",
+            "routeHandler": ["@lwrjs/security", { "contentSecurityPolicy": false }]
         }
     ]
 }

@@ -34,7 +34,7 @@
         "webdriverio": "^8.10.4"
     },
     "optionalDependencies": {
-        "chromedriver": "~114.0.0"
+        "chromedriver": "latest"
     },
     "engines": {
         "node": ">=16.0.0"

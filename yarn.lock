@@ -3279,6 +3279,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lwrjs/security@npm:0.10.0":
+  version: 0.10.0
+  resolution: "@lwrjs/security@npm:0.10.0"
+  dependencies:
+    "@lwrjs/shared-utils": 0.10.0
+  checksum: acfdb1011382699fe5306b5593cd8da62dd43f841c7dd6c11dd191f448cc35fcaa66e88b234b765dc04efdf64eec1e36c1c7ffee393127265e6310f5f17b3260
+  languageName: node
+  linkType: hard
+
 "@lwrjs/server@npm:0.10.0":
   version: 0.10.0
   resolution: "@lwrjs/server@npm:0.10.0"
@@ -4500,15 +4509,6 @@ __metadata:
   dependencies:
     "@types/unist": "*"
   checksum: fff47998f4c11e21a7454b58673f70478740ecdafd95aaf50b70a3daa7da9cdc57315545bf9c039613732c40b7b0e9e49d11d03fe9a4304721cdc3b29a88141e
-  languageName: node
-  linkType: hard
-
-"@types/helmet@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@types/helmet@npm:4.0.0"
-  dependencies:
-    helmet: "*"
-  checksum: ded60d8d9960edbae4d10603511dca9b9c50a9937f49e0d2b14bc096302e85a038acd443889a132dab60bc950bfd0e47337bdca485d75bbb7b6224f74fc50ab7
   languageName: node
   linkType: hard
 
@@ -6490,7 +6490,7 @@ __metadata:
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
     "@wdio/mocha-framework": ^8.10.4
-    chromedriver: ~114.0.0
+    chromedriver: latest
     cpx: ^1.5.0
     lightning-base-components: ^1.17.3-alpha
     lwr: 0.10.0
@@ -7247,7 +7247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromedriver@npm:~114.0.0":
+"chromedriver@npm:latest":
   version: 114.0.2
   resolution: "chromedriver@npm:114.0.2"
   dependencies:
@@ -8039,7 +8039,7 @@ __metadata:
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
     "@wdio/mocha-framework": ^8.10.4
-    chromedriver: ~114.0.0
+    chromedriver: latest
     lwc: 3.0.0
     lwr: 0.10.0
     ts-node: ^10.9.1
@@ -11306,20 +11306,6 @@ __metadata:
     lwr: 0.10.0
   languageName: unknown
   linkType: soft
-
-"helmet@npm:*":
-  version: 7.0.0
-  resolution: "helmet@npm:7.0.0"
-  checksum: 3622b8b68b7ac4736369fe7717adb5b87ddcdcda7c11c13277d79fb5670acab032e8c971835565b1d2144d234f3e0dbcd327a44249b9e61f0f64c0c753faf1bc
-  languageName: node
-  linkType: hard
-
-"helmet@npm:^4.3.1":
-  version: 4.6.0
-  resolution: "helmet@npm:4.6.0"
-  checksum: 139ad678d1cab207b043c206f50f6744eff2ef1f463e4626d36718b45b337485c77d10260ef9d89d292fa678da5153d86b08172b3b365cc8e680241015ed3a49
-  languageName: node
-  linkType: hard
 
 "hexer@npm:^1.5.0":
   version: 1.5.0
@@ -15011,7 +14997,7 @@ __metadata:
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
     "@wdio/mocha-framework": ^8.10.4
-    chromedriver: ~114.0.0
+    chromedriver: latest
     lwc: 3.0.0
     lwr: 0.10.0
     ts-node: ^10.9.1
@@ -15186,7 +15172,7 @@ __metadata:
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
     "@wdio/mocha-framework": ^8.10.4
-    chromedriver: ~114.0.0
+    chromedriver: latest
     lwc: 3.0.0
     lwr: 0.10.0
     typescript: ^4.9.5
@@ -17805,11 +17791,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "security@workspace:packages/security"
   dependencies:
-    "@types/helmet": ^4.0.0
-    helmet: ^4.3.1
+    "@lwrjs/security": 0.10.0
+    "@wdio/cli": ^8.10.4
+    "@wdio/globals": ^8.10.4
+    "@wdio/local-runner": ^8.10.4
+    "@wdio/mocha-framework": ^8.10.4
+    chromedriver: latest
     lwc: 3.0.0
     lwr: 0.10.0
+    ts-node: ^10.9.1
     typescript: ^4.9.5
+    wdio-chromedriver-service: ^8.1.1
+    webdriverio: ^8.10.4
   languageName: unknown
   linkType: soft
 
@@ -18169,7 +18162,7 @@ __metadata:
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
     "@wdio/mocha-framework": ^8.10.4
-    chromedriver: ~114.0.0
+    chromedriver: latest
     lwc: 3.0.0
     lwr: 0.10.0
     ts-node: ^10.9.1

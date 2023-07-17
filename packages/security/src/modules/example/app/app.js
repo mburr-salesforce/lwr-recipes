@@ -14,7 +14,7 @@ export default class SecurityApp extends LightningElement {
     parseHttpHeaders(httpHeaders) {
         return httpHeaders
             .split('\n')
-            .map((x) => x.split(/: */, 2))
+            .map((x) => x.split(/: (.*)/s))
             .map((x) => ({ name: x[0], value: x[1] }));
     }
 }
