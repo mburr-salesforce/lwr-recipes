@@ -44,11 +44,11 @@ ts.config.json
 
 ### Security Wrapper
 
-Content-security-policies are set within the [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) file. Inline scripts from LWR are hashed automatically by the `secure()` wrapper from [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security). To set custom CSP headers, set headers within the `headers` object in [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) and they will be merged automatically with the inline LWR scripts.
+Content-security-policies are set within the [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) file. Inline scripts from LWR are hashed automatically by the `secure()` wrapper from [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security). To set custom CSP headers, set headers within the `headers` object in [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) and they will be merged automatically with the default headers.
 
 ### Default Handler
 
-The package can also be used with a default handler provided by [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security) by setting "@lwrjs/security" as the route handler. You can also optionally choose what headers are included in the handler by passing in an array with header tags. In [_lwr.config.json_](./lwr.config.json) you can see an example using the default handler with content security policy disabled
+The package can also be used with a default handler provided by [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security) by setting "@lwrjs/security" as the route handler. You can also optionally choose what headers are included in the handler by passing in an object with header tags. In [_lwr.config.json_](./lwr.config.json), you can see the default handler with header(s) disabled under routes csp-disabled and multiple-options.
 
 ### Headers
 
