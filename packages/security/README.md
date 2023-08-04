@@ -3,7 +3,10 @@
 -   [Introduction](#introduction)
 -   [Details](#details)
     -   [Project Setup](#project-setup)
-    -   [Helmet Configuration](#helmet-configuration)
+-   [Usage](#usage)
+    -   [Security Wrapper](#security-wrapper)
+    -   [Default Handler](#default-handler)
+    -   [Headers](#headers)
 -   [Recipe Setup](#Recipe-setup)
 -   [Heroku Deployment](#heroku-deployment)
 
@@ -13,7 +16,7 @@ In this recipe we will show you how to add and configure standard HTTP security 
 
 ## Details
 
-For this we are using an open source library call [Helmet](https://helmetjs.github.io/). We will show how to integrate this with the underlying Express application.
+For this we are using the Security package from LWRJS to hash incoming scripts from LWR.
 
 ### Project Setup
 
@@ -25,48 +28,43 @@ src/
   │           ├── app.css
   │           ├── app.html
   │           └── app.js
+  └── routeHandlers/
+      └── routeHandler.ts
   └── index.ts
+  └── test/
+      └── security.spec.ts
+  └── types
+      └── wdio.d.ts
 lwr.config.json
+package.json
+ts.config.json
 ```
 
-We have added the integration with Helmet in index.ts. In the app.js we are doing a client side request back to the app server to capture and display the HTTP headers coming from the server.
+## Usage
 
-### Helmet Configuration
+### Security Wrapper
 
-As you can see in index.ts we are setting up configuration with Helmet. In this case we are setting some specific values to return for our CSP. See [Helmet](https://helmetjs.github.io/) web site for additional configurations.
+Content-security-policies are set within the [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) file. Inline scripts from LWR are hashed automatically by the `secure()` wrapper from [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security). To set custom CSP headers, set headers within the `headers` object in [_routeHandler.ts_](./src/routeHandlers/routeHandler.ts) and they will be merged automatically with the default headers.
 
-```js
-//Use Helmet to enable several out of the box security headers
-expressApp.use(
-    Helmet({
-        contentSecurityPolicy: {
-            directives: {
-                defaultSrc: ["'self'"],
-                styleSrc: ["'self'", "'unsafe-inline'"],
-                scriptSrc: ["'self'", 'salesforce.com'],
-            },
-        },
-    }),
-);
-```
+### Default Handler
 
-### Client Bootstrap Configuration as Script Source
+The package can also be used with a default handler provided by [@lwrjs/security](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/security) by setting "@lwrjs/security" as the route handler. You can also optionally choose what headers are included in the handler by passing in an object with header tags. In [_lwr.config.json_](./lwr.config.json), you can see the default handler with header(s) disabled under routes csp-disabled and multiple-options.
 
-The Client Bootstrap Configuration is javascript code sent by the LWR-JS server to initialize the application bootstrap. By default this code is inlined in a script tag in the application HTML document. This would be a violation of the above content security policy. LWR-JS server allows an additional configuration (the `configAsSrc` property of the Bootstrap Config) to have the Client Bootstrap Configuration come as a src attribute on a script element in the HTML document.
+### Headers
 
-See the [lwr.config.json](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/security/lwr.config.json).
+The default handler and security wrapper provide the following headers. With the default handler, you can pass in arguments to disable or enable specific headers like in the csp-disabled route within [_lwr.config.json_](./lwr.config.json).
 
 ```js
-"routes": [
-    {
-        "id": "security-base",
-        "path": "/",
-        "rootComponent": "example/app",
-        "bootstrap": {
-            "configAsSrc": true
-        }
-    }
-]
+contentSecurityPolicy?: ContentSecurityPolicy | boolean;
+referrerPolicy?: ReferrerPolicy | boolean;
+strictTransportSecurity?: StrictTransportSecurity | boolean;
+crossOriginEmbedderPolicy?: string | boolean;
+crossOriginOpenerPolicy?: string | boolean;
+crossOriginResourcePolicy?: string | boolean;
+xContentTypeOptions?: boolean;
+xFrameOptions?: boolean;
+xPermittedCrossDomainPolicies?: boolean;
+xXSSProtection?: boolean;
 ```
 
 ## Recipe Setup
