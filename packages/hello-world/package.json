@@ -13,8 +13,8 @@
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "dependencies": {
-        "lwc": "3.0.0",
-        "lwr": "0.10.0"
+        "lwc": "3.1.2",
+        "lwr": "0.10.2"
     },
     "engines": {
         "node": ">=16.0.0"

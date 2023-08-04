@@ -20,8 +20,8 @@
     },
     "dependencies": {
         "@lwrjs/label-module-provider": "0.10.0",
-        "lwc": "3.0.0",
-        "lwr": "0.10.0"
+        "lwc": "3.1.2",
+        "lwr": "0.10.2"
     },
     "devDependencies": {
         "@lwrjs/types": "0.10.0",

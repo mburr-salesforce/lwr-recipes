@@ -18,8 +18,8 @@
     },
     "devDependencies": {
         "@lwrjs/lambda": "0.10.0",
-        "lwc": "3.0.0",
-        "lwr": "0.10.0",
+        "lwc": "3.1.2",
+        "lwr": "0.10.2",
         "pwa-kit-dev": "2.7.0"
     },
     "engines": {

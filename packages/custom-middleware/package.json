@@ -22,8 +22,8 @@
         "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "dependencies": {
-        "lwc": "3.0.0",
-        "lwr": "0.10.0"
+        "lwc": "3.1.2",
+        "lwr": "0.10.2"
     },
     "devDependencies": {
         "@wdio/cli": "^8.10.4",
