@@ -9,9 +9,14 @@
         "build": "yarn workspaces foreach -pv --topological-dev run build",
         "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
         "createNewRecipe": "./scripts/init/init-new-package.js",
-        "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
-        "lint": "eslint '**/*.{js,ts}' --max-warnings 0 -c ./config/.eslintrc.js --ignore-path ./config/.eslintignore",
-        "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}' --config ./config/.prettierrc --ignore-path ./config/.prettierignore",
+        "commitlint": "commitlint",
+        "lint": "eslint '**/*.{js,ts}' --max-warnings 0",
+        "lint:fix": "eslint '**/*.{js,ts}' --fix",
+        "lint-staged": "lint-staged",
+        "format": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}'",
+        "husky:init": "husky install",
+        "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}'",
+        "prettier:fix": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}'",
         "ready": "yarn lint && yarn prettier && yarn install && yarn test && echo \"\n\nPlease test the recipe in your browser before committing\n\n\"",
         "test": "yarn workspaces foreach -v run test",
         "w:build": "yarn workspace ${0} build",
@@ -25,14 +30,14 @@
     ],
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",
-        "@typescript-eslint/eslint-plugin": "^5.55.0",
-        "@typescript-eslint/parser": "^5.55.0",
-        "eslint": "^7.32.0",
+        "@typescript-eslint/eslint-plugin": "^5.60.1",
+        "@typescript-eslint/parser": "^5.59.11",
+        "eslint": "^8.46.0",
         "eslint-config-prettier": "^7.2.0",
         "eslint-plugin-prettier": "^3.4.0",
-        "husky": "^4.2.3",
-        "lint-staged": "^10.1.1",
-        "prettier": "^2.0.2",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.3",
+        "prettier": "^3.0.1",
         "typescript": "^4.9.5"
     },
     "engines": {
@@ -41,12 +46,6 @@
     "volta": {
         "node": "16.20.1",
         "yarn": "1.22.19"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged --config ./config/lint-staged.config.js",
-            "commit-msg": "commitlint -e $GIT_PARAMS --config ./config/commitlint.config.js"
-        }
     },
     "packageManager": "yarn@3.6.1"
 }

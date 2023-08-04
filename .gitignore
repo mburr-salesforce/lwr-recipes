@@ -11,6 +11,7 @@ coverage
 tsconfig.tsbuildinfo
 dump.rdb
 logfile
+.vscode/settings.json
 
 # Project artifacts
 __benchmarks_results__/

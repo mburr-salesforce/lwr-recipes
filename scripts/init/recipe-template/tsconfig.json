@@ -1,5 +1,5 @@
 {
-    "extends": "../../config/tsconfig.settings.json",
+    "extends": "../../tsconfig.settings.json",
     "compilerOptions": {
         "baseUrl": "src",
         "outDir": "build",

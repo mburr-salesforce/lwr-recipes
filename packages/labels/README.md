@@ -210,7 +210,7 @@ export default function translationRouteHandler(
 
 ```html
 <!-- src/layout.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{language}}">
     <head>
         <title>{{title}}</title>

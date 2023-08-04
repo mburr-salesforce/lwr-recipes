@@ -115,7 +115,7 @@ Here are examples of HTML and Nunjucks layout templates which use both propertie
 
 ```html
 <!-- $layoutsDir/main.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head></head>
     <body>

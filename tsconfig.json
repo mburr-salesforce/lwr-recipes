@@ -1,5 +1,5 @@
 {
-    "extends": "./config/tsconfig.settings.json",
+    "extends": "./tsconfig.settings.json",
     "references": [
         { "path": "./packages/custom-middleware" },
         { "path": "./packages/labels" },
