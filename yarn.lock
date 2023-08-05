@@ -2742,20 +2742,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@locker/distortion@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/distortion@npm:0.19.10"
-  dependencies:
-    "@locker/html-sanitizer": 0.19.10
-    "@locker/internal-policy": 0.19.10
-    "@locker/shared": 0.19.10
-    "@locker/shared-dom": 0.19.10
-    "@locker/shared-url": 0.19.10
-    "@locker/trusted-types": 0.19.10
-  checksum: 34bed82b7562544313a36bfaccd10a8fe16d02d3650f18f78475feea2cd7085e14c92236a16acdd384c547a92787f5e8e7bfa5b029e9e47919443330a573381d
-  languageName: node
-  linkType: hard
-
 "@locker/distortion@npm:0.19.12":
   version: 0.19.12
   resolution: "@locker/distortion@npm:0.19.12"
@@ -2770,20 +2756,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@locker/html-sanitizer@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/html-sanitizer@npm:0.19.10"
-  dependencies:
-    "@locker/shared": 0.19.10
-    "@locker/shared-dom": 0.19.10
-    "@locker/shared-url": 0.19.10
-    "@locker/trusted-types": 0.19.10
-    "@types/dompurify": 3.0.2
-    dompurify: 3.0.3
-  checksum: 9426b0d76b87ed982ca234395774d2fc71e0368efd38db1c86e971dd0f6c2e7bbce226ff9552c7f464fba1b76cd8f6e24dabea2239afd06c317503881087c9a3
-  languageName: node
-  linkType: hard
-
 "@locker/html-sanitizer@npm:0.19.12":
   version: 0.19.12
   resolution: "@locker/html-sanitizer@npm:0.19.12"
@@ -2795,19 +2767,6 @@ __metadata:
     "@types/dompurify": 3.0.2
     dompurify: 3.0.3
   checksum: d1b75a81f65d41d851dd032668e75bb5fd784e83b77039e1efe3d04d908a7c6a0e5a9bdcbf4742965be1f9aef647739287a1ac19c07cb716dd7d291a2af2f3a1
-  languageName: node
-  linkType: hard
-
-"@locker/internal-policy@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/internal-policy@npm:0.19.10"
-  dependencies:
-    "@locker/html-sanitizer": 0.19.10
-    "@locker/shared": 0.19.10
-    "@locker/shared-dom": 0.19.10
-    "@locker/shared-url": 0.19.10
-    "@locker/trusted-types": 0.19.10
-  checksum: 74f828db37e9f1f65c44ba93c42a3b1ab4d47c45a8fad28bb8dbf43b3a9c3e0e3ece859540a7cf5297827bf2e81cf4594856b06087ee74a70852c74ddb8d816f
   languageName: node
   linkType: hard
 
@@ -2850,20 +2809,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@locker/sandbox@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/sandbox@npm:0.19.10"
-  dependencies:
-    "@locker/distortion": 0.19.10
-    "@locker/html-sanitizer": 0.19.10
-    "@locker/shared": 0.19.10
-    "@locker/shared-dom": 0.19.10
-    "@locker/shared-url": 0.19.10
-    "@locker/trusted-types": 0.19.10
-  checksum: ee34c10f4ea3d590b475ac3920a16a306c19cbcb894735d2703512505a6d6ec9277325e69be42e70e915cdf895feed9d761a93232ae17e6635fefd29f7458a0f
-  languageName: node
-  linkType: hard
-
 "@locker/sandbox@npm:0.19.12":
   version: 0.19.12
   resolution: "@locker/sandbox@npm:0.19.12"
@@ -2878,31 +2823,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@locker/shared-dom@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/shared-dom@npm:0.19.10"
-  dependencies:
-    "@locker/shared": 0.19.10
-  checksum: 15fc1c178c2a6688ea8615f951daf80cc38119c56e708c423d771a3cc74fcbb6a8a68aa209595978d6c3bed6fad9ebec8eb17a0d7b50b73de6f76b440428d4e8
-  languageName: node
-  linkType: hard
-
 "@locker/shared-dom@npm:0.19.12":
   version: 0.19.12
   resolution: "@locker/shared-dom@npm:0.19.12"
   dependencies:
     "@locker/shared": 0.19.12
   checksum: 817bbe55eb1b8988196ea795bd6f4a1037f301afbc17ba1f79835b0b3af5ac7ec3ba5e1f3af9583804d6f49214bf44052fdf4b40d3d40e952dd0d65bd2cbb93d
-  languageName: node
-  linkType: hard
-
-"@locker/shared-url@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/shared-url@npm:0.19.10"
-  dependencies:
-    "@locker/shared": 0.19.10
-    "@locker/shared-dom": 0.19.10
-  checksum: eba5bf7e5af24f315202fc272348e9377388419ab5c5bea26d4564ab8681a3dba0f5f206c034bd2999d17caa663725cab6c5a7dcea5db29d97b4ac336d68a8d4
   languageName: node
   linkType: hard
 
@@ -2916,24 +2842,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@locker/shared@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/shared@npm:0.19.10"
-  checksum: 3ab6960d2f0eb0d69bca4e691ba35d4b889f25baae7445bc78f80851d9e260ef6268fa70f717d92a43b23300edbf8323ad84d0661a9248399aea6c87aea49895
-  languageName: node
-  linkType: hard
-
 "@locker/shared@npm:0.19.12":
   version: 0.19.12
   resolution: "@locker/shared@npm:0.19.12"
   checksum: 74a462c2fa880c449dff038c4f2b6f22297781f4145e25a7771601daf2f08455cd702abcaebc97bc9d0cfa2eff6a4b2f0ebd2effafd8bca790acad2d5d38f2c2
-  languageName: node
-  linkType: hard
-
-"@locker/trusted-types@npm:0.19.10":
-  version: 0.19.10
-  resolution: "@locker/trusted-types@npm:0.19.10"
-  checksum: 47681bccbdac3a89c344531b7e014541341a64b60e9679819ad17a3e9aa4fbe826036b8a0aab4a8f9cfe46fcdd5e3f2cee27c1cb83ba894fed4eeea67b489d60
   languageName: node
   linkType: hard
 
@@ -3114,16 +3026,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/app-service@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/app-service@npm:0.10.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: d493c99d89f68e396ed940a5003a5da9e7fdf21af0658ba389d51f8c21b86d2df274a16f2d4c030afdc0703851bdc969336dee10cda1acc0a9314dfa77af2c04
-  languageName: node
-  linkType: hard
-
 "@lwrjs/app-service@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/app-service@npm:0.10.2"
@@ -3134,16 +3036,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/asset-registry@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/asset-registry@npm:0.10.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: d623513318c1b1ef8b155536582506b75acb02f8b69ce5c157022e16842ae1332e58d83e22d6ad1f1481d39ff963d2df7660c48b69ab7f5ec693633a7d1a7f1d
-  languageName: node
-  linkType: hard
-
 "@lwrjs/asset-registry@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/asset-registry@npm:0.10.2"
@@ -3151,18 +3043,6 @@ __metadata:
     "@lwrjs/diagnostics": 0.10.2
     "@lwrjs/shared-utils": 0.10.2
   checksum: 555a4ab6c4551f355f50d41c14bbd013cbc469809964942ccc64358e43cd14c6a2793ba799c2c813b628556421461910249d7b4e46492a886219e24a955e9e26
-  languageName: node
-  linkType: hard
-
-"@lwrjs/asset-transformer@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/asset-transformer@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    fs-extra: ^11.1.1
-    postcss: ^8.4.23
-    postcss-value-parser: ^4.2.0
-  checksum: 2887bf88996087def54213d6b58594bcbaa2be6754a6753a11252b42ca7312e8d150e5ddafa4dbb2e6f5d520a431e757c9d7635dd68f69ce5114a33fe9bd9df5
   languageName: node
   linkType: hard
 
@@ -3178,16 +3058,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/base-view-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/base-view-provider@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    escape-goat: ^3.0.0
-  checksum: a493ad12cfb06f18c5b76d15f881e1e53c8b4459b31dd8f7e3e6bb0593218e54656355f4e25d24441c7b299bccc9fe1bf23495d4b4cc0057020e33d232600981
-  languageName: node
-  linkType: hard
-
 "@lwrjs/base-view-provider@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/base-view-provider@npm:0.10.2"
@@ -3195,16 +3065,6 @@ __metadata:
     "@lwrjs/shared-utils": 0.10.2
     escape-goat: ^3.0.0
   checksum: 6119bf1d50b207f962acff05b90dbe34f764e068e06204386d867e84e869dc027bc7f70b6da8aa31921dd3acf7ee6a81631b8c5a0bc4de60e72c08f13c56926a
-  languageName: node
-  linkType: hard
-
-"@lwrjs/base-view-transformer@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/base-view-transformer@npm:0.10.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: 4a59d9e07f769dc546d3e979f738aa963d00de6b65497abd8d9f0333455dd99771ac468e4d8a66341db02601d5b1d3e0318639e43766b0d9bac965b92a030bf8
   languageName: node
   linkType: hard
 
@@ -3218,16 +3078,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/client-modules@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/client-modules@npm:0.10.0"
-  dependencies:
-    "@locker/sandbox": 0.19.10
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: ce50ae507833d8bc4516af23d29347fd3d94aa7eaf0d153a6e6a17bbee25f7648ac96770dc39b5504ab7aa047aa7f658f0a87a3bb02ce5a6d89db856d7547ba9
-  languageName: node
-  linkType: hard
-
 "@lwrjs/client-modules@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/client-modules@npm:0.10.2"
@@ -3235,21 +3085,6 @@ __metadata:
     "@locker/sandbox": 0.19.12
     "@lwrjs/shared-utils": 0.10.2
   checksum: 141a7f65e6b62cc2f67710bf0e84439dccbfe897e7ef3e5220ec3c4eefaff9fc82c2f8a050948ecbb494ae63959e592241a767e6a2daf640ba7ba35532bcc3a7
-  languageName: node
-  linkType: hard
-
-"@lwrjs/config@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/config@npm:0.10.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/instrumentation": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    fs-extra: ^11.1.1
-    jsonc-parser: ^3.0.0
-  peerDependencies:
-    lwc: 2.x || 3.x
-  checksum: f81e568daf487f9f1f12c88b1600f63b09f3c0be77f0c572c4efa72a967cb3f5b50390225414a31090c144c247403ec4932d5fe83082f791ce664be584dc7433
   languageName: node
   linkType: hard
 
@@ -3265,48 +3100,6 @@ __metadata:
   peerDependencies:
     lwc: 2.x || 3.x
   checksum: 67a527f2255e00b79bab889bdc459757674ae6526a27b8656fee44e9c49dc142e5e693e2c84ee55596d69485a9167d2a4034b8204e650e95181ae8e8bbf50de7
-  languageName: node
-  linkType: hard
-
-"@lwrjs/core@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/core@npm:0.10.0"
-  dependencies:
-    "@lwrjs/app-service": 0.10.0
-    "@lwrjs/asset-registry": 0.10.0
-    "@lwrjs/asset-transformer": 0.10.0
-    "@lwrjs/base-view-provider": 0.10.0
-    "@lwrjs/base-view-transformer": 0.10.0
-    "@lwrjs/client-modules": 0.10.0
-    "@lwrjs/config": 0.10.0
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/fs-asset-provider": 0.10.0
-    "@lwrjs/html-view-provider": 0.10.0
-    "@lwrjs/instrumentation": 0.10.0
-    "@lwrjs/loader": 0.10.0
-    "@lwrjs/lwc-module-provider": 0.10.0
-    "@lwrjs/markdown-view-provider": 0.10.0
-    "@lwrjs/module-bundler": 0.10.0
-    "@lwrjs/module-registry": 0.10.0
-    "@lwrjs/npm-module-provider": 0.10.0
-    "@lwrjs/nunjucks-view-provider": 0.10.0
-    "@lwrjs/o11y": 0.10.0
-    "@lwrjs/resource-registry": 0.10.0
-    "@lwrjs/router": 0.10.0
-    "@lwrjs/server": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    "@lwrjs/static": 0.10.0
-    "@lwrjs/view-registry": 0.10.0
-    chokidar: ^3.5.3
-    esbuild: ^0.9.7
-    fs-extra: ^11.1.1
-    path-to-regexp: ^6.2.0
-    qs: ^6.11.2
-    rollup: ^2.78.0
-    ws: ^8.8.1
-  peerDependencies:
-    lwc: 2.x || 3.x
-  checksum: 57cbdd9f5f2318026f1bd2d963cf5b0d3eceab09c78bf19f0d2b6ffc3e7d21b0e837701e8f33d0bcc10bb019e7b823c5bfe9b4f7bfe022f633b1f50cec067735
   languageName: node
   linkType: hard
 
@@ -3352,27 +3145,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/diagnostics@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/diagnostics@npm:0.10.0"
-  checksum: 2f30f691e428e1ec6613132742547b35e8c924505afe6eb5cf0272195a313378ae245ec658998b08b0652298eb0b9b04ac8abac74922294ed6ac481cd09a81f3
-  languageName: node
-  linkType: hard
-
 "@lwrjs/diagnostics@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/diagnostics@npm:0.10.2"
   checksum: 64b8b572cca322c06312f355e716c36c0e5d40ec82bf3d6f8edb65af27cf53aeef2d9188d4753bada1dca3a2bf8bb6f6538a60bb8d800df67d8089c163643532
-  languageName: node
-  linkType: hard
-
-"@lwrjs/fs-asset-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/fs-asset-provider@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    fs-extra: ^11.1.1
-  checksum: 48c0d20357f9162d14d19771a7edcbecb0bb8989acc2125f487fd562e874c676e5f32786ef7919e111c004afbbf9f7ee7d8c7f2e9fb964ea609294b34d60f508
   languageName: node
   linkType: hard
 
@@ -3386,17 +3162,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/html-view-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/html-view-provider@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    gray-matter: ^4.0.2
-    parse5-sax-parser: ^6.0.1
-  checksum: 98f13161912253941657b644e98ae1a2b5cdb8c6cd895c89feb5f65c7f88d5b3d61ae8931a983671fe4f31d18f0f22813b25bb34da6935f9725d17bf3ff1beca
-  languageName: node
-  linkType: hard
-
 "@lwrjs/html-view-provider@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/html-view-provider@npm:0.10.2"
@@ -3405,21 +3170,6 @@ __metadata:
     gray-matter: ^4.0.2
     parse5-sax-parser: ^6.0.1
   checksum: 9743114b6a97e5f17e828f6d2da56645685dba8672a73f3b9ff702faa81f2520aa71b244d489bd1238196f2fcca44770a15bb21a861d9b53b6922162bb8f5f82
-  languageName: node
-  linkType: hard
-
-"@lwrjs/instrumentation@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/instrumentation@npm:0.10.0"
-  dependencies:
-    "@opentelemetry/api": ^1.4.1
-    "@opentelemetry/resources": ^1.14.0
-    "@opentelemetry/sdk-node": ^0.40.0
-    "@opentelemetry/sdk-trace-node": ^1.14.0
-    "@opentelemetry/semantic-conventions": ^1.14.0
-  peerDependencies:
-    "@salesforce/pwa-kit-runtime": ^3.x
-  checksum: 486f6f9f2dd0b766b1aa8aaf08d5ea2bc934cbb95d713077a8d58c4e55bc3a0b88526cd8739da9ce809e2256c6290591b4caad616aaf2126eec80ca2a78c837f
   languageName: node
   linkType: hard
 
@@ -3438,41 +3188,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/label-module-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/label-module-provider@npm:0.10.0"
+"@lwrjs/label-module-provider@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@lwrjs/label-module-provider@npm:0.10.2"
   dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
+    "@lwrjs/diagnostics": 0.10.2
+    "@lwrjs/shared-utils": 0.10.2
     ajv: 6.12.6
-  checksum: 0ab0586d8fd2813316de9589513df9f4bb16e184bec83468fc255a9d85a10752d9aae826dec6b409c6a1d7bd22cf92609e4b1ae5177ffe2713717379d09ad8d0
+  checksum: 2ebff52cad06c77a51199055c3b46bbcaa506f3182b19346fec65692e178d9a3cacdf591ec87cee27b4ccc34bd6b44bd9ff53240fbe0dc0f3b6cbbb45d4cecc6
   languageName: node
   linkType: hard
 
-"@lwrjs/lambda@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/lambda@npm:0.10.0"
+"@lwrjs/lambda@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@lwrjs/lambda@npm:0.10.2"
   dependencies:
-    "@lwrjs/core": 0.10.0
-    "@lwrjs/instrumentation": 0.10.0
-    "@lwrjs/lwc-ssr": 0.10.0
-    "@lwrjs/server": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    "@lwrjs/static": 0.10.0
+    "@lwrjs/core": 0.10.2
+    "@lwrjs/instrumentation": 0.10.2
+    "@lwrjs/lwc-ssr": 0.10.2
+    "@lwrjs/server": 0.10.2
+    "@lwrjs/shared-utils": 0.10.2
+    "@lwrjs/static": 0.10.2
     "@salesforce/pwa-kit-dev": 3.0.0
     "@salesforce/pwa-kit-runtime": 3.0.0
     mime-types: ^2.1.33
-  checksum: 18ac2808241bb2d64d8deee3128097e92a895e72f5aec5eaa4e0576026e80989cbe469d816b4c0bd6a76ae095bca57ba6d08d7529e8f40f14e379d871953bb7a
-  languageName: node
-  linkType: hard
-
-"@lwrjs/loader@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/loader@npm:0.10.0"
-  dependencies:
-    "@lwrjs/client-modules": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: 5a4e40bb5b20f92a4f29b84221bd34ad08c93dacdb2727f9df6e78a897d0d2bfbe028734b38dde9a2d1c14137776ca9c2a1eafb90912feb7de7b0473fce1b96a
+  checksum: ee7768b957189f09c733bffa21065c4bc6a5a8e9121898cea9e7388cff68d367e26ace19b29aae1d0cb6a50a80ad7eeee2afe0b476194f6d7c0001a9690b4b89
   languageName: node
   linkType: hard
 
@@ -3483,18 +3223,6 @@ __metadata:
     "@lwrjs/client-modules": 0.10.2
     "@lwrjs/shared-utils": 0.10.2
   checksum: d117f1dc9065b152c1ccc4dbad18d7bb8fa7063719bcf0abb3847baaa36f0a73be37e0450ecf797e526fe51b623fbb04f2678100b529aad7a46e90453429bd55
-  languageName: node
-  linkType: hard
-
-"@lwrjs/lwc-module-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/lwc-module-provider@npm:0.10.0"
-  dependencies:
-    "@babel/preset-typescript": ^7.9.0
-    "@lwrjs/shared-utils": 0.10.0
-  peerDependencies:
-    "@lwc/module-resolver": 2.x || 3.x
-  checksum: 088276753eff44f5f8686ff6fabdf78fc1122bdc05af467f5c31fff709598d138dd0e2a7864491bdefdedeb1b8ffb00a2d8d90f37c0c9d5f73706170920a6650
   languageName: node
   linkType: hard
 
@@ -3510,38 +3238,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/lwc-ssr@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/lwc-ssr@npm:0.10.0"
+"@lwrjs/lwc-ssr@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@lwrjs/lwc-ssr@npm:0.10.2"
   dependencies:
     "@locker/near-membrane-node": ^0.12.15
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/instrumentation": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
+    "@lwrjs/diagnostics": 0.10.2
+    "@lwrjs/instrumentation": 0.10.2
+    "@lwrjs/shared-utils": 0.10.2
     node-fetch: ^2.6.8
-  checksum: 06c1b8f11507bde6f3964efdec03dc2f56a71be98b4d7163f086aa2bf1894dd1ce0f7d2177a6177e160702317c97a55c7a8ebd87f4e2f209bccbf580a88561b4
-  languageName: node
-  linkType: hard
-
-"@lwrjs/markdown-view-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/markdown-view-provider@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    gray-matter: ^4.0.2
-    hast-util-has-property: ^1.0.4
-    hast-util-heading-rank: ^1.0.1
-    hast-util-is-element: ^1.1.0
-    hast-util-to-string: ^1.0.4
-    rehype-raw: ^5.0.0
-    rehype-stringify: ^8.0.0
-    remark-gfm: ^1.0.0
-    remark-parse: ^9.0.0
-    remark-rehype: ^8.0.0
-    shiki: ^0.13.0
-    unified: ^9.2.0
-    vfile: ^4.2.1
-  checksum: c74f2de78410b94f070b6462fe9bd5726d3f5c728117bb11c7545687e3895655a2f5c37147aa23e196be16d7edaf17bcff009e8738bbfe1e4a8c43a9212ec62f
+  checksum: e847ac5d6398eb8ee436a812f3a2e76420e1de422d01ba1456d127e144e9096068d52b8443a4985f9d28afeef68fa364f4e23f4eff91ca55eca517b19a367d8c
   languageName: node
   linkType: hard
 
@@ -3567,22 +3273,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/module-bundler@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/module-bundler@npm:0.10.0"
-  dependencies:
-    "@lwc/features": ~2.50.0
-    "@lwrjs/shared-utils": 0.10.0
-    "@rollup/plugin-replace": ^2.4.2
-    esbuild: ^0.9.7
-    rollup: ^2.78.0
-  dependenciesMeta:
-    esbuild:
-      optional: true
-  checksum: 60ea7ae4eb0ab09441dd3e3ec4dbb34099cb9e090e837bb1daadd799cf1c7b8eed190e72ce2794c10d6eb49d6fa455660b6d57e210395d6c6551d5d33ea886a7
-  languageName: node
-  linkType: hard
-
 "@lwrjs/module-bundler@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/module-bundler@npm:0.10.2"
@@ -3599,17 +3289,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/module-registry@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/module-registry@npm:0.10.0"
-  dependencies:
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    rollup: ^2.78.0
-  checksum: 946a6ee13c27ad27c08cdbb59e86558362f8288e9594f53ed113c0adf649e4382140811fb2aaf417df2da7dfc7dc0f63cf1564a591c7193eb19bf4ee0dc26f2c
-  languageName: node
-  linkType: hard
-
 "@lwrjs/module-registry@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/module-registry@npm:0.10.2"
@@ -3618,19 +3297,6 @@ __metadata:
     "@lwrjs/shared-utils": 0.10.2
     rollup: ^2.78.0
   checksum: 1661c103fdff9af21570f087876395387e2a36f950a0787a301e5dbecb265e8552c95e61656028682b3e16c9e723982be7a321cb71ce9bb21a9ca3b7df5156bb
-  languageName: node
-  linkType: hard
-
-"@lwrjs/npm-module-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/npm-module-provider@npm:0.10.0"
-  dependencies:
-    "@esbuild-plugins/node-modules-polyfill": ^0.2.2
-    "@lwrjs/shared-utils": 0.10.0
-    esbuild: ^0.9.7
-    esinstall: ^1.1.7
-    resolve: ^1.22.1
-  checksum: b7571d68f498143a4a2c4575d6460be0f4ffe1aab36293cdbfca519f93319c4fc6bda6334d9cf362f19b1e4f44ea2e4fa89433928b7626a34cf36a366d975a2f
   languageName: node
   linkType: hard
 
@@ -3646,18 +3312,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/nunjucks-view-provider@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/nunjucks-view-provider@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-    gray-matter: ^4.0.2
-    nunjucks: ^3.2.4
-    parse5-sax-parser: ^6.0.1
-  checksum: 0ab682d107a80e2566a39d0fb7ae54522916bc0087b680b42d1c42ed1f1935216623aba7b3fd2187375ea5c27a433acf0446d2ac73aed8700df4644fec2266b8
-  languageName: node
-  linkType: hard
-
 "@lwrjs/nunjucks-view-provider@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/nunjucks-view-provider@npm:0.10.2"
@@ -3667,17 +3321,6 @@ __metadata:
     nunjucks: ^3.2.4
     parse5-sax-parser: ^6.0.1
   checksum: f980ee821002ea06f16484c1bc10ae2ed812e3b4335912293745b0cf49c54980bd0db6b70404e1be33ef89785b4bb081d93b4953c579d63ef7452fd1e4e9ec99
-  languageName: node
-  linkType: hard
-
-"@lwrjs/o11y@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/o11y@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-  peerDependencies:
-    o11y: 246.x
-  checksum: ee1b27aaae556345fead4940e7939d35c7ded71923d00401c5bd430fece11f67ccb2a1a0ca38bc3aae630b23ea3075bd63e6d1df5da0062ed09600d394dcebb4
   languageName: node
   linkType: hard
 
@@ -3692,35 +3335,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/resource-registry@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/resource-registry@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: 80b527cce3c3c80adad3578de52c82dcfd271be593a7c4cb9b3b3e00ac109cd531006fa92eb3278a4e97213bb39aa388c426c92bec492e19aef784cff71958fa
-  languageName: node
-  linkType: hard
-
 "@lwrjs/resource-registry@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/resource-registry@npm:0.10.2"
   dependencies:
     "@lwrjs/shared-utils": 0.10.2
   checksum: 208c7962f2c5ba31a50470844d73a6e2cd0349406b02578d5afc5eea3fc52a0e2b421a5875184a202e5096ccc810e4ce7abf7672207e065aea473a5e9fbb6f7d
-  languageName: node
-  linkType: hard
-
-"@lwrjs/router@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/router@npm:0.10.0"
-  dependencies:
-    "@lwrjs/client-modules": 0.10.0
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    ajv: 6.12.6
-  peerDependencies:
-    lwc: 2.x || 3.x
-  checksum: 76d14a05955da992616fa648c4b3ee936f53aa2f50279f4d363b57eb4a1aa9e7f824502b29a1118792b4de2c239eaac6148f441140d29f8fb824b9418ba8b28b
   languageName: node
   linkType: hard
 
@@ -3738,40 +3358,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/security@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/security@npm:0.10.0"
+"@lwrjs/security@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@lwrjs/security@npm:0.10.2"
   dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: acfdb1011382699fe5306b5593cd8da62dd43f841c7dd6c11dd191f448cc35fcaa66e88b234b765dc04efdf64eec1e36c1c7ffee393127265e6310f5f17b3260
-  languageName: node
-  linkType: hard
-
-"@lwrjs/server@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/server@npm:0.10.0"
-  dependencies:
-    "@koa/router": ^10.0.0
-    "@lwrjs/shared-utils": 0.10.0
-    "@types/compression": ^1.7.2
-    "@types/express": ^4.17.17
-    "@types/koa": ^2.11.7
-    compression: ^1.7.4
-    express: ^4.18.2
-    iltorb: ^2.4.5
-    koa: ^2.13.1
-    koa-compose: ^4.1.0
-    koa-compress: ^5.0.1
-    node-zopfli-es: ^2.0.1
-    shrink-ray-current: ^4.1.3
-  dependenciesMeta:
-    iltorb:
-      optional: true
-    node-zopfli-es:
-      optional: true
-    shrink-ray-current:
-      optional: true
-  checksum: fd666af8917ecbc5427cd46904d00c1cf90897bb88f41c6bb456f4ba500849b90f00635d0f1ceda590d26e38cbdc58e01b5ba39b126c3a2b7123419b2f34d7d0
+    "@lwrjs/shared-utils": 0.10.2
+  checksum: e2cb2c940b5334035b574ef96b88d681515b2cb543fbcad74576be25302b78ae822886aebd7d506767750da20d2ffcba8e85503dc8b60d5e665292eaecda0200
   languageName: node
   linkType: hard
 
@@ -3803,27 +3395,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/shared-utils@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/shared-utils@npm:0.10.0"
-  dependencies:
-    es-module-lexer: ^1.2.1
-    fast-json-stable-stringify: ^2.1.0
-    magic-string: ^0.30.0
-    mime-types: ^2.1.33
-    ms: ^2.1.3
-    parse5-sax-parser: ^6.0.1
-    path-to-regexp: ^6.2.0
-    resolve: ^1.22.1
-    slugify: ^1.4.5
-  peerDependencies:
-    chokidar: ^3.5.3
-    esbuild: ^0.9.7
-    rollup: ^2.78.0
-  checksum: 8cdc2e60f4ce09792a1a30182a29b07f3a4b3b0a84409e3298f78a06a13329f5d59cbd76733e8dcbc8d3c8cd29ae24af96cff58fecc9439e0d78d25ec23e22f8
-  languageName: node
-  linkType: hard
-
 "@lwrjs/shared-utils@npm:0.10.2":
   version: 0.10.2
   resolution: "@lwrjs/shared-utils@npm:0.10.2"
@@ -3842,15 +3413,6 @@ __metadata:
     esbuild: ^0.9.7
     rollup: ^2.78.0
   checksum: 3c091a34d8eb4aeaf82e23e3753b31430134c2a7f4ed92732b30c05578d405d5058c996717ce2940a64f9b2c296aea438bd0f9ea4671304c8764555b5608ed3e
-  languageName: node
-  linkType: hard
-
-"@lwrjs/static@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/static@npm:0.10.0"
-  dependencies:
-    "@lwrjs/shared-utils": 0.10.0
-  checksum: 8dd082c25866dc76d3c0f7e316162d8ac2789aec21717847391b6f038c3326e12d61be0ffb9f905b40b472485f4ac9f5430f16960fcc7a292f8c16ac1864cd79
   languageName: node
   linkType: hard
 
@@ -3875,23 +3437,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lwrjs/types@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/types@npm:0.10.0"
-  checksum: 61a748b88b7707f01eeb7ea721a6f77164b2194b20d7a198526905b711cfb75836004ece41888bd84200c6c37890827a22ee0c493a180a11ad5da789ce21218b
-  languageName: node
-  linkType: hard
-
-"@lwrjs/view-registry@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@lwrjs/view-registry@npm:0.10.0"
-  dependencies:
-    "@lwrjs/app-service": 0.10.0
-    "@lwrjs/diagnostics": 0.10.0
-    "@lwrjs/instrumentation": 0.10.0
-    "@lwrjs/shared-utils": 0.10.0
-    lru-cache: ^10.0.0
-  checksum: a06855af247c548a7a124e4fcd0e900d0139a70a10187fafa6379be56f31c837873ba6ba469e974359cdc1eb10f6401e4dae0a1d647afd822e1fc3612bd2cf3a
+"@lwrjs/types@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@lwrjs/types@npm:0.10.2"
+  checksum: 825ad88a58aafe700a3a3f0b1efbd399685e05ee3ab525c6eeb138a511160e4e97fdb3531a2e305e418ebd1aa5d2ce900eb8e25ecbe2ade2827a99a786a46df2
   languageName: node
   linkType: hard
 
@@ -4537,63 +4086,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^16.0.0":
-  version: 16.0.0
-  resolution: "@rollup/plugin-commonjs@npm:16.0.0"
-  dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    commondir: ^1.0.1
-    estree-walker: ^2.0.1
-    glob: ^7.1.6
-    is-reference: ^1.2.1
-    magic-string: ^0.25.7
-    resolve: ^1.17.0
-  peerDependencies:
-    rollup: ^2.30.0
-  checksum: 70b6b2d8df189ad84788b5a18946a48e0476ec0d1d53109f5b7cafed7530c0e21c96532f571b9e0fb6a97a139828daaec9a112e3dfb1404b643d054d35e99f48
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-inject@npm:^4.0.0, @rollup/plugin-inject@npm:^4.0.2":
-  version: 4.0.4
-  resolution: "@rollup/plugin-inject@npm:4.0.4"
-  dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    estree-walker: ^2.0.1
-    magic-string: ^0.25.7
-  peerDependencies:
-    rollup: ^1.20.0 || ^2.0.0
-  checksum: 22a1847372a96296a5b176af3d5b23ac7b48143a32c77ec4efed38daf4b0d1399a3cd144496d65731299984c5f98c9e00dc6a7f53d0fe87bd4aab2d4bd7b8289
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-json@npm:^4.0.0":
-  version: 4.1.0
-  resolution: "@rollup/plugin-json@npm:4.1.0"
-  dependencies:
-    "@rollup/pluginutils": ^3.0.8
-  peerDependencies:
-    rollup: ^1.20.0 || ^2.0.0
-  checksum: 867bc9339b4ccf0b9ff3b2617a95b3b8920115163f86c8e3b1f068a14ca25949472d3c05b09a5ac38ca0fe2185756e34617eaeb219d4a2b6e2307c501c7d4552
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-node-resolve@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "@rollup/plugin-node-resolve@npm:10.0.0"
-  dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    "@types/resolve": 1.17.1
-    builtin-modules: ^3.1.0
-    deepmerge: ^4.2.2
-    is-module: ^1.0.0
-    resolve: ^1.17.0
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0
-  checksum: 1e449755c12bc973820c0b58de52746d61d41cb1ea8f5dec8df963a48886fc7e2d184c7edaba9ed873817f93f3f87231afcf6363301319a456ab12583b8dfc95
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-replace@npm:^2.4.2":
   version: 2.4.2
   resolution: "@rollup/plugin-replace@npm:2.4.2"
@@ -4606,7 +4098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^3.0.8, @rollup/pluginutils@npm:^3.1.0":
+"@rollup/pluginutils@npm:^3.1.0":
   version: 3.1.0
   resolution: "@rollup/pluginutils@npm:3.1.0"
   dependencies:
@@ -5285,15 +4777,6 @@ __metadata:
   version: 1.2.4
   resolution: "@types/range-parser@npm:1.2.4"
   checksum: b7c0dfd5080a989d6c8bb0b6750fc0933d9acabeb476da6fe71d8bdf1ab65e37c136169d84148034802f48378ab94e3c37bb4ef7656b2bec2cb9c0f8d4146a95
-  languageName: node
-  linkType: hard
-
-"@types/resolve@npm:1.17.1":
-  version: 1.17.1
-  resolution: "@types/resolve@npm:1.17.1"
-  dependencies:
-    "@types/node": "*"
-  checksum: dc6a6df507656004e242dcb02c784479deca516d5f4b58a1707e708022b269ae147e1da0521f3e8ad0d63638869d87e0adc023f0bd5454aa6f72ac66c7525cf5
   languageName: node
   linkType: hard
 
@@ -6169,7 +5652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.0.0, acorn-walk@npm:^8.1.1, acorn-walk@npm:^8.2.0":
+"acorn-walk@npm:^8.0.0, acorn-walk@npm:^8.1.1":
   version: 8.2.0
   resolution: "acorn-walk@npm:8.2.0"
   checksum: 1715e76c01dd7b2d4ca472f9c58968516a4899378a63ad5b6c2d668bba8da21a71976c14ec5f5b75f887b6317c4ae0b897ab141c831d741dc76024d8745f1ad1
@@ -6185,7 +5668,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.4, acorn@npm:^8.2.4, acorn@npm:^8.4.1, acorn@npm:^8.7.0, acorn@npm:^8.7.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0, acorn@npm:~8.10.0":
+"acorn@npm:^8.0.4, acorn@npm:^8.2.4, acorn@npm:^8.4.1, acorn@npm:^8.7.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0, acorn@npm:~8.10.0":
   version: 8.10.0
   resolution: "acorn@npm:8.10.0"
   bin:
@@ -6745,16 +6228,6 @@ __metadata:
   version: 1.0.0
   resolution: "assert-plus@npm:1.0.0"
   checksum: 19b4340cb8f0e6a981c07225eacac0e9d52c2644c080198765d63398f0075f83bbc0c8e95474d54224e297555ad0d631c1dcd058adb1ddc2437b41a6b424ac64
-  languageName: node
-  linkType: hard
-
-"assert@npm:^1.4.1":
-  version: 1.5.0
-  resolution: "assert@npm:1.5.0"
-  dependencies:
-    object-assign: ^4.1.1
-    util: 0.10.3
-  checksum: 9be48435f726029ae7020c5888a3566bf4d617687aab280827f2e4029644b6515a9519ea10d018b342147c02faf73d9e9419e780e8937b3786ee4945a0ca71e5
   languageName: node
   linkType: hard
 
@@ -7453,20 +6926,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"builtin-modules@npm:^3.1.0, builtin-modules@npm:^3.2.0":
-  version: 3.3.0
-  resolution: "builtin-modules@npm:3.3.0"
-  checksum: db021755d7ed8be048f25668fe2117620861ef6703ea2c65ed2779c9e3636d5c3b82325bd912244293959ff3ae303afa3471f6a15bf5060c103e4cc3a839749d
-  languageName: node
-  linkType: hard
-
-"builtins@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "builtins@npm:1.0.3"
-  checksum: 47ce94f7eee0e644969da1f1a28e5f29bd2e48b25b2bbb61164c345881086e29464ccb1fb88dbc155ea26e8b1f5fc8a923b26c8c1ed0935b67b644d410674513
-  languageName: node
-  linkType: hard
-
 "bundling@workspace:packages/bundling":
   version: 0.0.0-use.local
   resolution: "bundling@workspace:packages/bundling"
@@ -7942,13 +7401,6 @@ __metadata:
   version: 0.6.0
   resolution: "cjs-module-lexer@npm:0.6.0"
   checksum: 445b039607efd74561d7db8d0867031c8b6a69f25e83fdd861b0fa1fbc11f12de057ba1db80637f3c9016774354092af5325eebb90505d65ccc5389cae09d1fd
-  languageName: node
-  linkType: hard
-
-"cjs-module-lexer@npm:^1.2.1":
-  version: 1.2.3
-  resolution: "cjs-module-lexer@npm:1.2.3"
-  checksum: 5ea3cb867a9bb609b6d476cd86590d105f3cfd6514db38ff71f63992ab40939c2feb68967faa15a6d2b1f90daa6416b79ea2de486e9e2485a6f8b66a21b4fb0a
   languageName: node
   linkType: hard
 
@@ -9444,13 +8896,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "es-module-lexer@npm:0.6.0"
-  checksum: ef04832d0f118e07c5aafc3824f274df380e9f86915a2d665884d9498f580b1f5607bc633504460a6c6247b7689aaa774b024d6733de28614d1fab72991a6fc3
-  languageName: node
-  linkType: hard
-
 "es-module-lexer@npm:^1.2.1":
   version: 1.3.0
   resolution: "es-module-lexer@npm:1.3.0"
@@ -9639,34 +9084,6 @@ __metadata:
     escodegen: bin/escodegen.js
     esgenerate: bin/esgenerate.js
   checksum: 096696407e161305cd05aebb95134ad176708bc5cb13d0dcc89a5fcbb959b8ed757e7f2591a5f8036f8f4952d4a724de0df14cd419e29212729fa6df5ce16bf6
-  languageName: node
-  linkType: hard
-
-"esinstall@npm:^1.1.7":
-  version: 1.1.7
-  resolution: "esinstall@npm:1.1.7"
-  dependencies:
-    "@rollup/plugin-commonjs": ^16.0.0
-    "@rollup/plugin-inject": ^4.0.2
-    "@rollup/plugin-json": ^4.0.0
-    "@rollup/plugin-node-resolve": ^10.0.0
-    "@rollup/plugin-replace": ^2.4.2
-    builtin-modules: ^3.2.0
-    cjs-module-lexer: ^1.2.1
-    es-module-lexer: ^0.6.0
-    execa: ^5.1.1
-    is-valid-identifier: ^2.0.2
-    kleur: ^4.1.1
-    mkdirp: ^1.0.3
-    picomatch: ^2.3.0
-    resolve: ^1.20.0
-    rimraf: ^3.0.0
-    rollup: ~2.37.1
-    rollup-plugin-polyfill-node: ^0.6.2
-    slash: ~3.0.0
-    validate-npm-package-name: ^3.0.0
-    vm2: ^3.9.2
-  checksum: d43eb066d61b5a4758361249453f6c8ef6790c5be3ee9eb6f82f2bc3dcfcb712ca4896b7c757f2e08a180561333ff1b866cf122d142af4680efe1d7dccfde73d
   languageName: node
   linkType: hard
 
@@ -10236,7 +9653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"estree-walker@npm:^2.0.1, estree-walker@npm:^2.0.2, estree-walker@npm:~2.0.2":
+"estree-walker@npm:^2.0.2, estree-walker@npm:~2.0.2":
   version: 2.0.2
   resolution: "estree-walker@npm:2.0.2"
   checksum: 6151e6f9828abe2259e57f5fd3761335bb0d2ebd76dc1a01048ccee22fabcfef3c0859300f6d83ff0d1927849368775ec5a6d265dde2f6de5a1be1721cd94efc
@@ -11138,16 +10555,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:~2.1.2":
-  version: 2.1.3
-  resolution: "fsevents@npm:2.1.3"
-  dependencies:
-    node-gyp: latest
-  checksum: b5ec0516b44d75b60af5c01ff80a80cd995d175e4640d2a92fbabd02991dd664d76b241b65feef0775c23d531c3c74742c0fbacd6205af812a9c3cef59f04292
-  conditions: os=darwin
-  languageName: node
-  linkType: hard
-
 "fsevents@patch:fsevents@^1.0.0#~builtin<compat/fsevents>":
   version: 1.2.13
   resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=d11327"
@@ -11161,15 +10568,6 @@ __metadata:
 "fsevents@patch:fsevents@^2.1.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
   resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
-  dependencies:
-    node-gyp: latest
-  conditions: os=darwin
-  languageName: node
-  linkType: hard
-
-"fsevents@patch:fsevents@~2.1.2#~builtin<compat/fsevents>":
-  version: 2.1.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.1.3#~builtin<compat/fsevents>::version=2.1.3&hash=31d12a"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -11462,7 +10860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:7.2.3, glob@npm:^7.0.0, glob@npm:^7.0.5, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6, glob@npm:^7.2.0":
+"glob@npm:7.2.3, glob@npm:^7.0.0, glob@npm:^7.0.5, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.0":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -12363,13 +11761,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2.0.1":
-  version: 2.0.1
-  resolution: "inherits@npm:2.0.1"
-  checksum: 6536b9377296d4ce8ee89c5c543cb75030934e61af42dba98a428e7d026938c5985ea4d1e3b87743a5b834f40ed1187f89c2d7479e9d59e41d2d1051aefba07b
-  languageName: node
-  linkType: hard
-
 "ini@npm:^1.3.4, ini@npm:~1.3.0":
   version: 1.3.8
   resolution: "ini@npm:1.3.8"
@@ -12783,13 +12174,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-module@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "is-module@npm:1.0.0"
-  checksum: 8cd5390730c7976fb4e8546dd0b38865ee6f7bacfa08dfbb2cc07219606755f0b01709d9361e01f13009bbbd8099fa2927a8ed665118a6105d66e40f1b838c3f
-  languageName: node
-  linkType: hard
-
 "is-negative-zero@npm:^2.0.2":
   version: 2.0.2
   resolution: "is-negative-zero@npm:2.0.2"
@@ -12910,15 +12294,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-reference@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "is-reference@npm:1.2.1"
-  dependencies:
-    "@types/estree": "*"
-  checksum: e7b48149f8abda2c10849ea51965904d6a714193d68942ad74e30522231045acf06cbfae5a4be2702fede5d232e61bf50b3183acdc056e6e3afe07fcf4f4b2bc
-  languageName: node
-  linkType: hard
-
 "is-regex@npm:^1.1.3, is-regex@npm:^1.1.4":
   version: 1.1.4
   resolution: "is-regex@npm:1.1.4"
@@ -13031,15 +12406,6 @@ __metadata:
   version: 0.2.1
   resolution: "is-utf8@npm:0.2.1"
   checksum: 167ccd2be869fc228cc62c1a28df4b78c6b5485d15a29027d3b5dceb09b383e86a3522008b56dcac14b592b22f0a224388718c2505027a994fd8471465de54b3
-  languageName: node
-  linkType: hard
-
-"is-valid-identifier@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "is-valid-identifier@npm:2.0.2"
-  dependencies:
-    assert: ^1.4.1
-  checksum: 79e5237998621f09b76582d8ef6928eb4cc96e78795d317aa1ea260aa5d22d4dae3c5baa519414f8e9a4833ee948e3bf0bd98496802f492c30640d672b528117
   languageName: node
   linkType: hard
 
@@ -14113,13 +13479,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.1.1":
-  version: 4.1.5
-  resolution: "kleur@npm:4.1.5"
-  checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
-  languageName: node
-  linkType: hard
-
 "koa-compose@npm:^4.1.0":
   version: 4.1.0
   resolution: "koa-compose@npm:4.1.0"
@@ -14198,8 +13557,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "labels@workspace:packages/labels"
   dependencies:
-    "@lwrjs/label-module-provider": 0.10.0
-    "@lwrjs/types": 0.10.0
+    "@lwrjs/label-module-provider": 0.10.2
+    "@lwrjs/types": 0.10.2
     lwc: 3.1.2
     lwr: 0.10.2
     typescript: ^4.9.5
@@ -14844,7 +14203,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "managed-runtime@workspace:packages/managed-runtime"
   dependencies:
-    "@lwrjs/lambda": 0.10.0
+    "@lwrjs/lambda": 0.10.2
     lwc: 3.1.2
     lwr: 0.10.2
     pwa-kit-dev: 2.7.0
@@ -15130,7 +14489,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "metrics@workspace:packages/metrics"
   dependencies:
-    "@lwrjs/types": 0.10.0
+    "@lwrjs/types": 0.10.2
     express: ^4.17.1
     lwc: 3.1.2
     lwr: 0.10.2
@@ -16762,7 +16121,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.2, picomatch@npm:^2.2.3, picomatch@npm:^2.3.0, picomatch@npm:^2.3.1":
+"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.2, picomatch@npm:^2.2.3, picomatch@npm:^2.3.1":
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
@@ -18030,7 +17389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.6, resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.18.1, resolve@npm:^1.20.0, resolve@npm:^1.22.1, resolve@npm:^1.9.0, resolve@npm:~1.22.2":
+"resolve@npm:^1.1.6, resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.14.2, resolve@npm:^1.18.1, resolve@npm:^1.20.0, resolve@npm:^1.22.1, resolve@npm:^1.9.0, resolve@npm:~1.22.2":
   version: 1.22.3
   resolution: "resolve@npm:1.22.3"
   dependencies:
@@ -18056,7 +17415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>, resolve@patch:resolve@~1.22.2#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>, resolve@patch:resolve@~1.22.2#~builtin<compat/resolve>":
   version: 1.22.3
   resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
   dependencies:
@@ -18198,15 +17557,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-polyfill-node@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "rollup-plugin-polyfill-node@npm:0.6.2"
-  dependencies:
-    "@rollup/plugin-inject": ^4.0.0
-  checksum: ab54c237be140b814ac178bafe4f6e9518e893d52f8ed8399ade979f335e0d41d6aebf23b16e39aa24ecc6e7146e476903518c234f038d8e07920ed9e2c6dcb7
-  languageName: node
-  linkType: hard
-
 "rollup-pluginutils@npm:^2.8.1":
   version: 2.8.2
   resolution: "rollup-pluginutils@npm:2.8.2"
@@ -18241,20 +17591,6 @@ __metadata:
   bin:
     rollup: dist/bin/rollup
   checksum: 7186beeba0e6fd33b37aa33ede7157e77af0a0be4b75d345a51dab4be5962a8e7a1c5ec8868e7c4cd361b456eb1b47bdb75e5db32ab37a546bed383d06b40384
-  languageName: node
-  linkType: hard
-
-"rollup@npm:~2.37.1":
-  version: 2.37.1
-  resolution: "rollup@npm:2.37.1"
-  dependencies:
-    fsevents: ~2.1.2
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  bin:
-    rollup: dist/bin/rollup
-  checksum: ef6c124c0feda22423e7dc97ea626fbd63f63bf72c8facd70bf461fa97ea55975cc80da5317be7118084d4d6fb15490cafa6c7c2b902e8adfa94a1a544f4782d
   languageName: node
   linkType: hard
 
@@ -18443,7 +17779,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "security@workspace:packages/security"
   dependencies:
-    "@lwrjs/security": 0.10.0
+    "@lwrjs/security": 0.10.2
     "@wdio/cli": ^8.10.4
     "@wdio/globals": ^8.10.4
     "@wdio/local-runner": ^8.10.4
@@ -18847,7 +18183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"slash@npm:^3.0.0, slash@npm:~3.0.0":
+"slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
   checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
@@ -19131,8 +18467,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ssr@workspace:packages/ssr"
   dependencies:
-    "@lwrjs/lwc-ssr": 0.10.0
-    "@lwrjs/types": 0.10.0
+    "@lwrjs/lwc-ssr": 0.10.2
+    "@lwrjs/types": 0.10.2
     lwc: 3.1.2
     lwr: 0.10.2
     typescript: ^4.9.5
@@ -19187,7 +18523,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-generation@workspace:packages/static-generation"
   dependencies:
-    "@lwrjs/types": 0.10.0
+    "@lwrjs/types": 0.10.2
     lwc: 3.1.2
     lwr: 0.10.2
     serve: ^14.2.0
@@ -19694,7 +19030,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "templating@workspace:packages/templating"
   dependencies:
-    "@lwrjs/types": 0.10.0
+    "@lwrjs/types": 0.10.2
     lwc: 3.1.2
     lwr: 0.10.2
     typescript: ^4.9.5
@@ -20485,15 +19821,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"util@npm:0.10.3":
-  version: 0.10.3
-  resolution: "util@npm:0.10.3"
-  dependencies:
-    inherits: 2.0.1
-  checksum: bd800f5d237a82caddb61723a6cbe45297d25dd258651a31335a4d5d981fd033cb4771f82db3d5d59b582b187cb69cfe727dc6f4d8d7826f686ee6c07ce611e0
-  languageName: node
-  linkType: hard
-
 "util@npm:^0.12.4":
   version: 0.12.5
   resolution: "util@npm:0.12.5"
@@ -20585,15 +19912,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"validate-npm-package-name@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "validate-npm-package-name@npm:3.0.0"
-  dependencies:
-    builtins: ^1.0.3
-  checksum: ce4c68207abfb22c05eedb09ff97adbcedc80304a235a0844f5344f1fd5086aa80e4dbec5684d6094e26e35065277b765c1caef68bcea66b9056761eddb22967
-  languageName: node
-  linkType: hard
-
 "validator@npm:^13.7.0, validator@npm:^13.9.0":
   version: 13.9.0
   resolution: "validator@npm:13.9.0"
@@ -20645,18 +19963,6 @@ __metadata:
     unist-util-stringify-position: ^2.0.0
     vfile-message: ^2.0.0
   checksum: ee5726e10d170472cde778fc22e0f7499caa096eb85babea5d0ce0941455b721037ee1c9e6ae506ca2803250acd313d0f464328ead0b55cfe7cb6315f1b462d6
-  languageName: node
-  linkType: hard
-
-"vm2@npm:^3.9.2":
-  version: 3.9.19
-  resolution: "vm2@npm:3.9.19"
-  dependencies:
-    acorn: ^8.7.0
-    acorn-walk: ^8.2.0
-  bin:
-    vm2: bin/vm2
-  checksum: fc6cf553134145cd7bb5246985bf242b056e3fb5ea71e2eef6710b2a5d6c6119cc6bc960435ff62480ee82efb43369be8f4db07b6690916ae7d3b2e714f395d8
   languageName: node
   linkType: hard
 

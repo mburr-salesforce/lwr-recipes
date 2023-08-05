@@ -1,6 +1,6 @@
 {
     "name": "routing-extended-metadata",
-    "version": "0.10.0",
+    "version": "0.10.2",
     "license": "MIT",
     "private": true,
     "types": "build/index.d.ts",

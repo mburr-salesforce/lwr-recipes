@@ -1,6 +1,6 @@
 {
     "name": "metrics",
-    "version": "0.10.0",
+    "version": "0.10.2",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -21,7 +21,7 @@
         "lwr": "0.10.2"
     },
     "devDependencies": {
-        "@lwrjs/types": "0.10.0",
+        "@lwrjs/types": "0.10.2",
         "typescript": "^4.9.5"
     },
     "engines": {

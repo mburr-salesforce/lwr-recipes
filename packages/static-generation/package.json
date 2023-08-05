@@ -1,6 +1,6 @@
 {
     "name": "static-generation",
-    "version": "0.10.0",
+    "version": "0.10.2",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -20,7 +20,7 @@
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "devDependencies": {
-        "@lwrjs/types": "0.10.0"
+        "@lwrjs/types": "0.10.2"
     },
     "dependencies": {
         "lwc": "3.1.2",

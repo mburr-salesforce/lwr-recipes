@@ -1,6 +1,6 @@
 {
     "name": "managed-runtime",
-    "version": "0.10.0",
+    "version": "0.10.2",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -17,7 +17,7 @@
         "mrt:tail": "pwa-kit-dev tail-logs --cloud-origin https://cloud-staging.mobify-staging.com --project ssr-demo-app --environment production"
     },
     "devDependencies": {
-        "@lwrjs/lambda": "0.10.0",
+        "@lwrjs/lambda": "0.10.2",
         "lwc": "3.1.2",
         "lwr": "0.10.2",
         "pwa-kit-dev": "2.7.0"

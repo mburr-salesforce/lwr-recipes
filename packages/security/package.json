@@ -1,6 +1,6 @@
 {
     "name": "security",
-    "version": "0.10.0",
+    "version": "0.10.2",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -18,7 +18,7 @@
         "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },
     "devDependencies": {
-        "@lwrjs/security": "0.10.0",
+        "@lwrjs/security": "0.10.2",
         "@wdio/cli": "^8.10.4",
         "@wdio/globals": "^8.10.4",
         "@wdio/local-runner": "^8.10.4",
