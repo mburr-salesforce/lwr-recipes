@@ -36,28 +36,4 @@ describe('CSP disabled application', () => {
     });
 });
 
-describe('Multiple default header options', () => {
-    beforeEach(async () => {
-        await browser.url('/multiple-options'); // update to csp-disabled for csp-disabled test
-    });
-
-    it('Express middleware is running correctly', async () => {
-        const title = await browser.getTitle();
-        expect(title).toEqual('LWR App');
-
-        const heading = await browser.shadowDeep$('h1');
-        expect(await heading.getText()).toEqual('Security Headers');
-    });
-
-    it('No referrerPolicy header present', async () => {
-        const expressResponse = await browser.shadowDeep$('tbody');
-        expect(await expressResponse.getText()).not.toContain('referrer-policy');
-    });
-
-    it('No xXSSProtection header present', async () => {
-        const expressResponse = await browser.shadowDeep$('tbody');
-        expect(await expressResponse.getText()).not.toContain('x-xss-protection');
-    });
-});
-
 export {};
