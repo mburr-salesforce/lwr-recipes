@@ -1,0 +1,70 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+---
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+      time: "00:00"
+    versioning-strategy: increase
+    commit-message:
+      prefix: "chore: [dependbot]"
+    groups:
+      lwc:
+        patterns:
+          - "lwc"
+          - "@lwc/*"
+          - "@lwc/engine-server"
+          - "@salesforce/wire-service-jest-util"
+      opentelemetry:
+        patterns:
+          - "@opentelemetry/*"
+      wdio:
+        patterns:
+          - "webdriverio"
+          - "wdio*"
+          - "@wdio/*"
+      rollup:
+        patterns:
+          - "rollup"
+          - "@rollup/*"
+      esbuild:
+        patterns:
+          - "esbuild"
+          - "@esbuild*"
+      jest:
+        patterns:
+          - "jest"
+          - "jest*"
+          - "@types/jest"
+          - "ts-jest"
+          - "*-puppeteer"
+      babel:
+        patterns:
+          - "babel*"
+          - "@babel/*"
+      locker:
+        patterns:
+          - "@locker/*"
+      lds:
+        patterns:
+          - "luvio"
+          - "@luvio/*"
+          - "@salesforce/lds-default-luvio"
+      pwakit:
+        patterns:
+          - "@salesforce/pwa*"
+      markdown:
+        patterns:
+          - "hast-*"
+          - "rehype-*"
+          - "remark-*"
+          - "unified"
+      karma:
+        patterns:
+          - "karma"
+          - "karma-*"
