@@ -213,6 +213,7 @@ Each server-side route includes these properties:
     -   `ttl`: number, in seconds, or a [time string](https://github.com/vercel/ms#examples) to use as the `max-age` on the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header
 -   `bootstrap`: specifies the client options that shape how an application page is bootstrapped. See an example in the [services](https://github.com/salesforce-experience-platform-emu/lwr-recipes/blob/main/packages/services/lwr.config.json) recipe.
     -   `syntheticShadow`: set to `true` to turn on [lwc synthetic shadow](https://www.npmjs.com/package/@lwc/synthetic-shadow), default is `false`
+    -   `mixedMode`: set to `true` to turn on [mixed shadow mode](https://developer.salesforce.com/docs/platform/lwc/guide/create-mixed-shadow.html), default is `false`
     -   `services`: an array of lwc modules to run when the app is bootstrapping (i.e. on page load), see the [Metrics](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/metrics#recipe-setup) and [Services](https://github.com/salesforce-experience-platform-emu/lwr-recipes/tree/main/packages/services) recipes
     -   `configAsSrc`: set to `true` if the LWR config script should be servied via a URI rather than inline
     -   `ssr`: set to `true` to turn on [Server-side Rendering](../packages/ssr/README.md)
