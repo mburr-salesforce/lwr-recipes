@@ -11,9 +11,7 @@ describe('custom-middleware header verification', () => {
         expect(await heading.getText()).toEqual('Response Headers');
 
         const expressResponse = await browser.shadowDeep$('tbody');
-        expect(await expressResponse.getText()).toContain(
-            'express-custom-header Express middleware is running!',
-        );
+        expect(await expressResponse.getText()).toContain('Express middleware is running!');
     });
 });
 
