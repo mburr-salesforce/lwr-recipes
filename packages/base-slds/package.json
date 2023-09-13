@@ -1,6 +1,6 @@
 {
     "name": "base-slds",
-    "version": "0.10.2",
+    "version": "0.11.0-alpha.6",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "lightning-base-components": "^1.17.3-alpha",
-        "lwr": "0.10.2"
+        "lwr": "0.11.0-alpha.6"
     },
     "devDependencies": {
         "@salesforce-ux/design-system": "^2.20.1",

@@ -14,6 +14,12 @@
             "path": "/csp-disabled",
             "rootComponent": "example/app",
             "routeHandler": ["@lwrjs/security", { "contentSecurityPolicy": false }]
+        },
+        {
+            "id": "multiple-options",
+            "path": "/multiple-options",
+            "rootComponent": "example/app",
+            "routeHandler": ["@lwrjs/security", { "referrerPolicy": false, "xXSSProtection": false }]
         }
     ]
 }

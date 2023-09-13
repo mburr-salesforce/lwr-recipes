@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-import type { SsrRequestContext, PageDataResponse } from '@lwrjs/types';
+import type { SsrDataResponse, SsrRequestContext } from '@lwrjs/types';
 
 interface Book {
     volumeInfo: {
@@ -21,7 +21,7 @@ export default class ExampleBookDetails extends LightningElement {
     @api bookId?: string;
 }
 
-export async function getPageData(context: SsrRequestContext): Promise<PageDataResponse> {
+export async function getServerData(context: SsrRequestContext): Promise<SsrDataResponse> {
     // This is called to fetch data when the component is SSRed, including preloading the book image
     const bookId = context.params.bookId;
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`);

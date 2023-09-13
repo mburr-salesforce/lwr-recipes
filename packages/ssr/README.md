@@ -6,9 +6,8 @@
     -   [Configuration](#configuration)
     -   [Root Components](#root-components)
     -   [Client-side Rendering](#client-side-rendering)
-    -   [Loading Data](#loading-data)
-    -   [Code Portability](#code-portability)
     -   [Hydration](#hydration)
+    -   [Loading Data](#loading-data)
 -   [Recipe Setup](#recipe-setup)
     -   [Live](#live)
     -   [Generated](#generated)
@@ -134,23 +133,34 @@ A root component in a content or layout template can opt-out of SSR by adding th
 <example-map lwr:hydrate="client-only"></example-map>
 ```
 
-This is useful for components which are not [portable](#code-portability) or are heavily interactive, like a map or graph.
+This is useful for components which are not [portable](https://github.com/salesforce-experience-platform-emu/lwr/tree/main/packages/%40lwrjs/lwc-ssr#portability) or are heavily interactive, like a map or graph.
 
 > Read more about skipping SSR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#skip-ssr).
 
+### Hydration
+
+To make an SSRed root component interactive, opt-in to [client hydration](https://rfcs.lwc.dev/rfcs/lwc/0117-ssr-rehydration) by adding the `lwr:hydrate` directive:
+
+```html
+<!-- ssr/src/content/visit.html-->
+<example-visit lwr:hydrate></example-visit>
+```
+
+> Read more about hydration [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#client-hydration).
+
 ### Loading Data
 
-Many components depend on external data and resources. LWR provides a `getPageData()` hook for developers to fetch data on the server. During SSR, LWR calls the `getPageData()` hook for each **root component**. The `props` returned by the hook get passed to the root component as public properties during SSR **and** on the client. For example:
+Many components depend on external data and resources. LWR provides a `getServerData()` hook for developers to fetch data on the server. During SSR, LWR calls the `getServerData()` hook for each **root component**. The `props` returned by the hook get passed to the root component as public properties during SSR **and** on the client. For example:
 
 ```ts
 // ssr/src/modules/example/bookDetails/bookDetails.ts
 export default class BookDetails extends LightningElement {
-    // These public properties are bound to the "props" returned by getPageData() below
+    // These public properties are bound to the "props" returned by getServerData() below
     @api data?: Book;
     @api bookId?: string;
 }
 
-export async function getPageData(context: SsrRequestContext): Promise<PageDataResponse> {
+export async function getServerData(context: SsrRequestContext): Promise<SsrDataResponse> {
     // This is called to fetch data before the root component is SSRed
     const bookId = context.params.bookId; // The "bookId" path param is declared in lwr.config.json
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
@@ -173,59 +183,6 @@ export async function getPageData(context: SsrRequestContext): Promise<PageDataR
 ```
 
 > Read more about data fetching [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/%40lwrjs/lwc-ssr/README.md#loading-data-during-ssr).
-
-### Code Portability
-
-> Code is _portable_ when it can run in a headless environment, where there is no access to browser APIs (eg: [window](https://www.w3schools.com/jsref/obj_window.asp), [eventing](https://www.w3schools.com/js/js_events.asp), etc).
-
-Component code must be portable to SSR successfully. Note that:
-
--   only the `constructor` and `connectedCallback` are executed during SSR; the `renderedCallback` is **not** called.
--   asynchronous code is **not** resolved during SSR (e.g. `async`/`await`, Promises, [dynamic module imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import), etc)
-
-Here are some tips to ensure component code is portable:
-
--   guard non-portable code with a conditional statement:
-
-```ts
-connectedCallback() {
-    if (!import.meta.env.SSR) {
-        window.addEventListener('error', (evt) => {
-            console.error(`⚠️ Uncaught error: ${evt.message}`);
-        });
-    }
-}
-```
-
--   put non-portable code in the `renderedCallback`:
-
-```ts
-renderedCallback() {
-    document.title = 'Welcome!'; // does not need to be guarded
-}
-```
-
--   import non-portable code dynamically:
-
-```ts
-async connectedCallback() {
-     const functions = await import('my/functions'); // will not resolve during SSR
-     functions.doNonPortableWork();
-}
-```
-
-> Read more about debugging SSR [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#debugging).
-
-### Hydration
-
-To make an SSRed root component interactive, opt-in to [client hydration](https://rfcs.lwc.dev/rfcs/lwc/0117-ssr-rehydration) by adding the `lwr:hydrate` directive:
-
-```html
-<!-- ssr/src/content/visit.html-->
-<example-visit lwr:hydrate></example-visit>
-```
-
-> Read more about hydration [here](https://github.com/salesforce-experience-platform-emu/lwr/blob/main/packages/@lwrjs/lwc-ssr/README.md#client-hydration).
 
 ## Recipe Setup
 

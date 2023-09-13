@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-import type { SsrRequestContext, PageDataResponse } from '@lwrjs/types';
+import type { SsrDataResponse, SsrRequestContext } from '@lwrjs/types';
 
 interface Book {
     id: string;
@@ -35,7 +35,7 @@ export default class ExampleBookList extends LightningElement {
     }
 }
 
-export async function getPageData(context: SsrRequestContext): Promise<PageDataResponse> {
+export async function getServerData(context: SsrRequestContext): Promise<SsrDataResponse> {
     // This is called to fetch data when the component is SSRed
     const author = context.params.author;
     const response = await fetch(
