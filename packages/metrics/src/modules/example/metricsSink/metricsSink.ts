@@ -1,14 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { BOOTSTRAP_PREFIX, BOOTSTRAP_END, BOOTSTRAP_ERROR, INIT_MODULE } from 'lwr/metrics';
+import { BOOTSTRAP_PREFIX, BOOTSTRAP_END, BOOTSTRAP_ERROR, INIT_MODULE, MODULE_DEFINE } from 'lwr/metrics';
 
 export default function (): void {
     if (PerformanceObserver) {
+        let existingMarks: PerformanceEntry[] | null;
+        if (performance) {
+            existingMarks = performance
+                .getEntriesByType('mark')
+                .filter((e) => e.name.startsWith(MODULE_DEFINE));
+        }
+
         // Watch for new metrics
         const observer = new PerformanceObserver((list) => {
             // Gather all the bootstrap marks
             const bootstrapMarks = list.getEntries().filter((e) => e.name.startsWith(BOOTSTRAP_PREFIX));
-
+            const moduleMarks = list.getEntries().filter((e) => e.name.startsWith(MODULE_DEFINE));
             // Get bootstrap end count (should be 0 or 1)
             const bootstrapEndCount = bootstrapMarks.reduce((count, mark) => {
                 return mark.name === BOOTSTRAP_END ? count + 1 : count;
@@ -24,21 +31,32 @@ export default function (): void {
                 return mark.name.startsWith(INIT_MODULE) ? count + 1 : count;
             }, 0);
 
-            if (bootstrapEndCount > 0 || bootstrapErrorCount > 0) {
-                // These metrics only occur once, so disconnect after they are received
-                observer.disconnect();
+            // Remove lwr.loader.module.define- and version name from mark
+            const processMarkNames = (markName: string): string => {
+                return markName.replace(/lwr\.loader\.module\.define-|\/v\/.*/g, '');
+            };
 
-                // Send the metrics to the server to be [mock] recorded
-                fetch('/lwr/metrics', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        bootstrapEndCount,
-                        bootstrapErrorCount,
-                        moduleInitCount,
-                    }),
-                });
+            let moduleMarkNames: string[] = moduleMarks.map((mark) => processMarkNames(mark.name));
+            if (existingMarks) {
+                const existingMarkNames: string[] = existingMarks.map((mark) => processMarkNames(mark.name));
+                moduleMarkNames = [...existingMarkNames, ...moduleMarkNames];
+                existingMarks = null;
             }
+            const nameCounts: { [key: string]: number } = {};
+            moduleMarkNames.forEach((e: string) => {
+                nameCounts[e] = (nameCounts[e] || 0) + 1;
+            });
+            // Send the metrics to the server to be [mock] recorded
+            fetch('/lwr/metrics', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    bootstrapEndCount,
+                    bootstrapErrorCount,
+                    moduleInitCount,
+                    nameCounts,
+                }),
+            });
         });
 
         observer.observe({ entryTypes: ['mark'] });

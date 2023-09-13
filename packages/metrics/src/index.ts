@@ -8,9 +8,14 @@ app.use(express.json());
 
 // Add middleware to accept mock metric APIs
 // In production, the data would be saved to a database or elsewhere
+const moduleCounts: { [key: string]: number } = {};
 app.post('/lwr/metrics', async (req, res) => {
     const data = req.body;
-    console.log('LWR Metrics: ', data, '\n'); // save data here
+    for (const key in data.nameCounts) {
+        moduleCounts[key] = (moduleCounts[key] || 0) + data.nameCounts[key];
+    }
+    console.log('LWR Metrics: ', data, '\n');
+    console.log('Module Counts', moduleCounts);
     res.status(200).send();
 });
 

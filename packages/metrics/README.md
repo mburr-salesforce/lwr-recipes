@@ -112,7 +112,7 @@ if (PerformanceObserver) {
 
 ### Recording Metrics
 
-LWR application developers may want to record metrics. The [`example/metricsSink` module](./src/modules/example/metricsSink/metricsSink.ts) listens for metrics from the Performance API, then sends them to the server at [_index.ts_](./src/index.ts).
+LWR application developers may want to record metrics. The [`example/metricsSink` module](./src/modules/example/metricsSink/metricsSink.ts) uses the pefromance observer and listens for metrics from the Performance API, then sends them to the server at [_index.ts_](./src/index.ts). We use this hybdrid Performance API + performance observer approach since marks created before the performance observer is initialized will not be recorder by the observer.
 
 The `example/metricsSink` module is set up as a [bootstrap service/hook](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-app-config#client-bootstrap-config). Its code will be run just before the root application component (i.e. `example/app`) is initialized [during bootstrap](https://rfcs.lwc.dev/rfcs/lwr/0000-lwr-bootstrap#application-bootstrap-module).
 
