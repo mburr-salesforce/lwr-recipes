@@ -6,8 +6,7 @@
 node_modules/*
 
 # Builds
-__lwr_cache__/*
-build/*
-site/*
-src/assets/*
-!src/assets/utilitySprite.svg
+__lwr_cache__
+build
+site
+assets

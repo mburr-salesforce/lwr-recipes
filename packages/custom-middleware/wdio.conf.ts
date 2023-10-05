@@ -96,7 +96,6 @@ export const config: WebdriverIO.Config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
-            browserVersion: 'stable',
             'goog:chromeOptions': {
                 args: CHROME_ARGS,
             },
@@ -149,7 +148,10 @@ export const config: WebdriverIO.Config = {
     mochaOpts: {
         timeout: 30 * 1000,
     },
-    services: [[LWRExpressServiceLauncher, {}]],
+    services: [
+        ['chromedriver', { port: 8016 }],
+        [LWRExpressServiceLauncher, {}],
+    ],
     before(caps, spec: string[], browser: WebdriverIO.Browser): void {
         browser.addCommand('shadowDeep$', async (selector: string) => {
             return browser.$('>>>' + selector);

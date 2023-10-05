@@ -1,3 +1,20 @@
+display-name: Lightning Web Runtime Recipes
+team-name: Lightning Web Runtime - JS (LWRJS)
+jobs:
+    build-and-test:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    create-canary-release:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    build-dependency:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    release:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    bump-version:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    update-dep-versions:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
+    core-deploy:
+        image: 331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/uiplatform/nucleus-rhel9-jdk-nodejs-browsers:22
 steps:
   npm-configure:
     params:
@@ -6,9 +23,9 @@ steps:
     params:
       registry-url: https://registry.npmjs.org
   node-unit-tests:
-    description: lwr build all project
+    description: Run e2e Tests
     run:
-      command: yarn workspaces foreach -v run lwr:build
+      command: yarn test
 notifications:
     email:
         address: laf@salesforce.com
