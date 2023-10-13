@@ -4,6 +4,7 @@
     },
     "locker": {
         "enabled": true,
+        "clientOnly": true,
         "trustedComponents": ["example/app", "example/trustedCmp"]
     },
     "routes": [

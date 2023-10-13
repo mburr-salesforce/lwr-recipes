@@ -15,6 +15,8 @@ The locker recipe shows you how to enable and configure Lightning Locker for an 
 
 [Lightning Locker](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm) is a powerful security architecture for Lightning components. Lightning Locker enhances security by isolating Lightning components that belong to one namespace from components in a different namespace. Lightning Locker also promotes best practices that improve the supportability of your code by only allowing access to supported APIs and eliminating access to non-published framework internals.
 
+Note: Locker is now only supported in AMD mode (`MODE=compat or prod-compat`) and no longer works in ESM (`MODE=dev or MODE=prod`)
+
 ## Details
 
 ### Project Setup
@@ -71,7 +73,7 @@ Use the following command to build this recipe.
 yarn install
 yarn build
 cd packages/locker
-yarn start # prod mode and ESM format
+yarn start # prod-compat mode (AMD format)
 ```
 
 Open the site at [http://localhost:3000](http://localhost:3000)

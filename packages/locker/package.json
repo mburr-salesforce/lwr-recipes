@@ -11,10 +11,9 @@
     ],
     "scripts": {
         "clean": "rm -rf build node_modules __lwr_cache__ site",
-        "dev": "lwr dev",
         "lwr:build": "lwr build --clean",
-        "start": "lwr start",
-        "stage": "yarn lwr:build && yarn start",
+        "start": "MODE=prod-compat lwr start",
+        "stage": "MODE=prod-compat yarn lwr:build && yarn start",
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "devDependencies": {
