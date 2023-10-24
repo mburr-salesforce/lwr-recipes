@@ -6,8 +6,8 @@
     "main": "index.js",
     "version": "0.11.0-alpha.7",
     "scripts": {
-        "build": "yarn workspaces foreach -pv --topological-dev run build",
-        "clean": "yarn workspaces foreach -pv run clean && yarn cache clean --all && rm -rf node_modules",
+        "build": "yarn workspaces foreach -Apv --topological-dev run build",
+        "clean": "yarn workspaces foreach -Apv run clean && yarn cache clean --all && rm -rf node_modules",
         "createNewRecipe": "./scripts/init/init-new-package.js",
         "commitlint": "commitlint",
         "lint": "eslint '**/*.{js,ts}' --max-warnings 0",
@@ -18,7 +18,7 @@
         "prettier": "prettier --check '{packages,config,doc}/**/*.{js,ts,json,md}'",
         "prettier:fix": "prettier --write '{packages,config,doc}/**/*.{js,ts,json,md}'",
         "ready": "yarn lint && yarn prettier && yarn install && yarn test && echo \"\n\nPlease test the recipe in your browser before committing\n\n\"",
-        "test": "yarn workspaces foreach -v run test",
+        "test": "yarn workspaces foreach -Av run test",
         "w:build": "yarn workspace ${0} build",
         "w:clean": "yarn workspace ${0} clean",
         "w:install": "yarn workspace ${0} install",
@@ -41,11 +41,11 @@
         "typescript": "^4.9.5"
     },
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=18.0.0"
     },
     "volta": {
-        "node": "16.20.1",
+        "node": "18.18.2",
         "yarn": "1.22.19"
     },
-    "packageManager": "yarn@3.6.1"
+    "packageManager": "yarn@4.0.0"
 }
