@@ -1,6 +1,6 @@
 {
     "name": "labels",
-    "version": "0.11.0-alpha.7",
+    "version": "0.11.0-alpha.13",
     "license": "MIT",
     "private": true,
     "type": "module",
@@ -19,12 +19,12 @@
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "dependencies": {
-        "@lwrjs/label-module-provider": "0.11.0-alpha.7",
+        "@lwrjs/label-module-provider": "0.11.0-alpha.13",
         "lwc": "3.1.2",
-        "lwr": "0.11.0-alpha.7"
+        "lwr": "0.11.0-alpha.13"
     },
     "devDependencies": {
-        "@lwrjs/types": "0.11.0-alpha.7",
+        "@lwrjs/types": "0.11.0-alpha.13",
         "typescript": "^4.9.5"
     },
     "engines": {
