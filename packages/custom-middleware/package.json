@@ -4,20 +4,20 @@
     "license": "MIT",
     "private": true,
     "type": "module",
-    "types": "build/index.d.ts",
-    "main": "build/index.js",
+    "types": "build/es/index.d.ts",
+    "main": "build/es/index.js",
     "files": [
         "build/**/*.js"
     ],
     "scripts": {
         "clean": "rm -rf build && rm -rf __lwr_cache__ node_modules tsconfig.tsbuildinfo",
         "build": "tsc -b",
-        "dev": "node build/src/express.js",
-        "start:express": "node build/src/express.js",
-        "start:koa": "node build/src/koa.js",
-        "start": "MODE=prod node build/src/express.js",
-        "start:compat": "MODE=compat node build/src/express.js",
-        "start:prod-compat": "MODE=prod-compat node build/src/express.js",
+        "dev": "node build/es/src/express.js",
+        "start:express": "node build/es/src/express.js",
+        "start:koa": "node build/es/src/koa.js",
+        "start": "MODE=prod node build/es/src/express.js",
+        "start:compat": "MODE=compat node build/es/src/express.js",
+        "start:prod-compat": "MODE=prod-compat node build/es/src/express.js",
         "test": "wdio wdio.conf.ts",
         "test:debug": "DEBUG=true wdio wdio.conf.ts"
     },

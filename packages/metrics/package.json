@@ -4,16 +4,16 @@
     "license": "MIT",
     "private": true,
     "type": "module",
-    "types": "build/index.d.ts",
-    "main": "build/index.js",
+    "types": "build/es/index.d.ts",
+    "main": "build/es/index.js",
     "files": [
         "build/**/*.js"
     ],
     "scripts": {
         "build": "tsc -b",
         "clean": "rm -rf build node_modules __lwr_cache__ tsconfig.tsbuildinfo",
-        "start": "ENABLE_FINGERPRINTS=true MODE=prod-compat node build/index.js",
-        "start:compat": "ENABLE_FINGERPRINTS=true MODE=compat node build/index.js"
+        "start": "ENABLE_FINGERPRINTS=true MODE=prod-compat node build/es/index.js",
+        "start:compat": "ENABLE_FINGERPRINTS=true MODE=compat node build/es/index.js"
     },
     "dependencies": {
         "express": "^4.17.1",
