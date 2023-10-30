@@ -19,7 +19,7 @@
         "stage:prod-compat": "yarn lwr:build --mode prod-compat && yarn start --mode prod-compat"
     },
     "dependencies": {
-        "lwc": "3.1.2",
+        "lwc": "4.0.0",
         "lwr": "0.11.0-alpha.13"
     },
     "devDependencies": {

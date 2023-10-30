@@ -1,4 +1,4 @@
-import type { ContextConsumer, ContextValue } from 'lwc';
+import type { ContextConsumer, ContextValue, StringKeyedRecord } from 'lwc';
 
 function validateProvider(obj: object): void {
     if (obj === undefined || obj === null) {
@@ -24,7 +24,10 @@ export class ContextInfo<TContext> {
      * Gets the stored info for a context provider
      * @param targetProvider the context provider
      */
-    getInfo(targetProvider: object): { consumers: Set<ContextConsumer>; contextValue: TContext } {
+    getInfo(targetProvider: object): {
+        consumers: Set<ContextConsumer<StringKeyedRecord>>;
+        contextValue: TContext;
+    } {
         let info = this.infoMap.get(targetProvider);
         if (info === undefined) {
             info = { consumers: new Set() };
@@ -43,7 +46,9 @@ export class ContextInfo<TContext> {
         validateProvider(targetProvider);
         const info = this.getInfo(targetProvider);
         info.contextValue = contextValue;
-        info.consumers.forEach((consumer: ContextConsumer) => consumer.provide(contextValue as ContextValue));
+        info.consumers.forEach((consumer: ContextConsumer<StringKeyedRecord>) =>
+            consumer.provide(contextValue as ContextValue),
+        );
     }
 
     /**
@@ -79,7 +84,7 @@ export class ContextInfo<TContext> {
      * @param {Object} targetProvider
      * @param {ContextConsumer} consumer object with a provide(context) function property.
      */
-    subscribeContext(targetProvider: object, consumer: ContextConsumer): void {
+    subscribeContext(targetProvider: object, consumer: ContextConsumer<StringKeyedRecord>): void {
         validateProvider(targetProvider);
         const { consumers, contextValue } = this.getInfo(targetProvider);
         if (!consumers.has(consumer)) {
@@ -94,7 +99,7 @@ export class ContextInfo<TContext> {
      * @param {Object} targetProvider
      * @param {ContextConsumer} consumer
      */
-    unsubscribeContext(targetProvider: object, consumer: ContextConsumer): void {
+    unsubscribeContext(targetProvider: object, consumer: ContextConsumer<StringKeyedRecord>): void {
         validateProvider(targetProvider);
         this.getInfo(targetProvider).consumers.delete(consumer);
     }

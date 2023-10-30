@@ -1,4 +1,4 @@
-import { createContextProvider, Contextualizer } from 'lwc';
+import { createContextProvider, Contextualizer, StringKeyedRecord } from 'lwc';
 import { CurrentRouteMetadata } from 'example/currentRouteMetadata';
 import type { ContextualWireAdapter } from 'example/contextUtils';
 
@@ -14,7 +14,7 @@ export const currentRouteMetadataContextualizer = createContextProvider(CurrentR
 export function provideContext<TContext, TEmit, TConfig>(
     contextValue: TContext,
     providerNode: EventTarget,
-    contextualizer: Contextualizer,
+    contextualizer: Contextualizer<StringKeyedRecord>,
     contextualAdapter: ContextualWireAdapter<TContext, TEmit, TConfig>,
 ): void {
     // Set up provider to give context to wire adapters so that a component connected

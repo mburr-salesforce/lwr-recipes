@@ -1,4 +1,4 @@
-import type { ContextConsumer } from 'lwc';
+import type { ContextConsumer, StringKeyedRecord } from 'lwc';
 
 import { ContextInfo } from './contextInfo';
 export { ContextInfo };
@@ -18,8 +18,14 @@ export interface ContextualWireAdapter<TContext, TConfig, TEmit> {
     setContext: (targetProvider: globalThis.EventTarget, contextValue: TContext) => void;
     getContext: (targetProvider: globalThis.EventTarget) => TContext;
     clearContext: (targetProvider: globalThis.EventTarget) => void;
-    subscribeContext: (targetProvider: globalThis.EventTarget, consumer: ContextConsumer) => void;
-    unsubscribeContext: (targetProvider: globalThis.EventTarget, consumer: ContextConsumer) => void;
+    subscribeContext: (
+        targetProvider: globalThis.EventTarget,
+        consumer: ContextConsumer<StringKeyedRecord>,
+    ) => void;
+    unsubscribeContext: (
+        targetProvider: globalThis.EventTarget,
+        consumer: ContextConsumer<StringKeyedRecord>,
+    ) => void;
 }
 
 export function generateContextualWireAdapter<TContext, TConfig = unknown, TEmit = TContext>(
@@ -88,7 +94,10 @@ export function generateContextualWireAdapter<TContext, TConfig = unknown, TEmit
          * @param {EventTarget} targetProvider
          * @param {ContextConsumer} consumer object with a provide(context) function property.
          */
-        static subscribeContext(targetProvider: globalThis.EventTarget, consumer: ContextConsumer): void {
+        static subscribeContext(
+            targetProvider: globalThis.EventTarget,
+            consumer: ContextConsumer<StringKeyedRecord>,
+        ): void {
             contextInstance.subscribeContext(targetProvider, consumer);
         }
 
@@ -98,7 +107,10 @@ export function generateContextualWireAdapter<TContext, TConfig = unknown, TEmit
          * @param {EventTarget} targetProvider
          * @param {ContextConsumer} consumer
          */
-        static unsubscribeContext(targetProvider: globalThis.EventTarget, consumer: ContextConsumer): void {
+        static unsubscribeContext(
+            targetProvider: globalThis.EventTarget,
+            consumer: ContextConsumer<StringKeyedRecord>,
+        ): void {
             contextInstance.unsubscribeContext(targetProvider, consumer);
         }
 
