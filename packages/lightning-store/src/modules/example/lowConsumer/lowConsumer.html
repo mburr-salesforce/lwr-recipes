@@ -1,0 +1,11 @@
+<template>
+    <h2>low-code</h2>
+    <hr/>
+    quantity: <input id="low-code-quantity" type="number" value="1"/>
+    <br/>
+    count:
+    <span lwc:if={updatingCart}>(updating)</span>
+    <span lwc:else>{count}</span>
+    <hr/>
+    <button onclick={myAddToCart} disabled={updatingCart}>Add to cart</button>
+</template>

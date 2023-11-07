@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.settings.json",
+    "compilerOptions": {
+        "baseUrl": "src",
+        "rootDir": "src",
+        "outDir": "build/es",
+        "paths": {
+            "stores/cart": ["modules/stores/cart/cart.ts"],
+            "stores/lightningStore": ["modules/stores/lightningStore/lightningStore.ts"],
+            "stores/pageReference": ["modules/stores/pageReference/pageReference.ts"],
+            "stores/recordStore": ["modules/stores/recordStore/recordStore.ts"]
+        }
+    },
+    "exclude": ["build"]
+}

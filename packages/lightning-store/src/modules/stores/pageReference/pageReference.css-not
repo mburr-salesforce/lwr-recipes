@@ -1,0 +1,4 @@
+.store {
+    background-color: #009edb;
+    color: white;
+}

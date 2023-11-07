@@ -1,0 +1,9 @@
+<template>
+    <h2>mid-code</h2>
+    <hr/>
+    count:
+    <span lwc:if={cart.updatingCart}>(updating)</span>
+    <span lwc:else>{cart.count}</span>
+    <hr/>
+    <button onclick={addToCart} disabled={cart.updatingCart}>Add to cart</button>
+</template>
